@@ -61,10 +61,14 @@ const DEFAULT_ITEMS = [
 /* ------------------------------------------------------------------- */
 
 export default function UseCases({
-    title,
-    paragraphs,
+    title = DEFAULT_TITLE,
+    paragraphs = DEFAULT_PARAGRAPHS,
     items,
+    rightCards,
 }) {
+    const cardItems = items ?? rightCards ?? DEFAULT_ITEMS;
+
+
     return (
         <section
             aria-labelledby="use-cases-title"
@@ -85,13 +89,13 @@ export default function UseCases({
 
                 {/* Cards */}
                 <ul className="space-y-4">
-                    {items.map((item) => (
-                        <li key={item.title} className="rounded-3xl bg-white p-6 shadow-sm sm:p-7">
+                    {cardItems.map((item) => (
+                        <li key={item.id ?? item.title} className="rounded-3xl bg-white p-6 shadow-sm sm:p-7">
                             <div className="flex items-start justify-between gap-4">
                                 <h3 className="text-lg font-semibold text-gray-900">{item?.title}</h3>
                                 {item.icon && <span className="shrink-0 text-green-600">{item?.icon}</span>}
                             </div>
-                            <p className="mt-4 text-[13px] leading-relaxed text-gray-600">{item?.text}</p>
+                            <p className="mt-4 text-[13px] leading-relaxed text-gray-600">{item?.text ?? item?.description}</p>
                         </li>
                     ))}
                 </ul>

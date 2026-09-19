@@ -1,29 +1,5 @@
 import { useState } from "react";
 
-/* ---------- Default content (can also be passed as props) ---------- */
-const DEFAULT_BADGE = "Ride Options";
-const DEFAULT_TITLE = "What Are You Looking For? Tailored Travel Solutions";
-
-/* Put the photos in /public/options/ (or change the paths) */
-const DEFAULT_ITEMS = [
-    {
-        title: "Airport & Railway Transfers",
-        image: "/options/transfers.jpg",
-        text: "Smooth, stress-free arrival. Your driver tracks your flight or train, waits a reasonable time after you land, and helps with luggage. No queues, no surprises.",
-    },
-    {
-        title: "Full-Day Sightseeing & Tours",
-        image: "/options/sightseeing.jpg",
-        text: "Planning a full day out? Go by the day or by the hour. Perfect for tea gardens, waterfalls and viewpoints, family trips or group outings. You set the itinerary, we handle the drive.",
-    },
-    {
-        title: "One-Way & Outstation Hire",
-        image: "/options/outstation.jpg",
-        text: "Need a simple one-way transfer? Easy. Whether it's from your hotel to Thekkady, Kochi or Alleppey, or just across town, we have a straightforward point-to-point option.",
-    },
-];
-/* ------------------------------------------------------------------- */
-
 function PinIcon() {
     return (
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -52,9 +28,9 @@ function CardImage({ src }) {
 }
 
 export default function RideOptions({
-    badge = DEFAULT_BADGE,
-    title = DEFAULT_TITLE,
-    items = DEFAULT_ITEMS,
+    badge,
+    title,
+    items = [],
 }) {
     return (
         <section

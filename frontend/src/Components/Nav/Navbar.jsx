@@ -13,7 +13,7 @@ const NAV_LINKS = [
     { label: "Tour Packages", to: "/packages" },
     { label: "Vehicles", to: "/vehicles" },
     { label: "About Us", to: "/about" },
-    { label: "Contact us", to: "/contact-us" },
+    { label: "Contact Us", to: "/contact-us" },
 ];
 /* ------------------------------------------- */
 

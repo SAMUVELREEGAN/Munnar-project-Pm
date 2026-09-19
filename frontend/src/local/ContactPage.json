@@ -1,72 +1,101 @@
 {
+    "heroSection": {
+        "title": "Contact us",
+        "description": "Contact us for best taxi services & tour packages"
+    },
     "contactSection": {
-        "form": {
-            "title": "Leave A Reply",
-            "subtitle": "Fill-Up The Form And Message Us Of Your Amazing Question",
-            "fields": {
-                "fullName": {
-                    "label": "Full Name",
-                    "placeholder": "Enter Full Name"
-                },
-                "email": {
-                    "label": "Email Address",
-                    "placeholder": "Enter Email Address"
-                },
-                "phone": {
-                    "label": "Phone Number",
-                    "placeholder": "+91 Enter Phone Number"
-                },
-                "subject": {
-                    "label": "Subject",
-                    "placeholder": "Enter Subject"
-                },
-                "message": {
-                    "label": "Message",
-                    "placeholder": "Enter Message"
-                }
+        "infoTitle": "Contact Information",
+        "infoText": "Have a question or need help planning your Munnar trip? Our team is here to help with reliable support and clear answers. Reach out and we will respond as quickly as possible.",
+        "contacts": [
+            {
+                "id": 1,
+                "icon": "phone",
+                "label": "Phone Number",
+                "value": "+91 98765 43210",
+                "href": "tel:+919876543210"
             },
-            "submitButton": "Submit"
-        },
-        "officeInfo": {
-            "title": "Office Information",
-            "subtitle": "Have A Question About Our Services Or Need A Hand With Your Booking? Our Friendly Team Is Ready To Assist You.",
-            "details": [
-                {
-                    "id": 1,
-                    "icon": "📍",
-                    "label": "Address",
-                    "value": "Munnar Jothi Maxi Taxi, Aluva - Munnar Road, Munnar, Kerala 685612, India"
-                },
-                {
-                    "id": 2,
-                    "icon": "📄",
-                    "label": "Co. Reg",
-                    "value": "Munnar Taxi Services Pvt Ltd KERALA 20241512Z"
-                },
-                {
-                    "id": 3,
-                    "icon": "✉️",
-                    "label": "Email",
-                    "value": "support@munnartaxiservice.com"
-                }
-            ],
-            "socialMedia": {
-                "title": "Social Media",
-                "links": [
-                    {
-                        "id": 1,
-                        "platform": "Facebook",
-                        "icon": "📘",
-                        "url": "https://facebook.com/munnartaxiservice"
-                    },
-                    {
-                        "id": 2,
-                        "platform": "Youtube",
-                        "icon": "▶️",
-                        "url": "https://youtube.com/@munnartaxiservice"
-                    }
-                ]
+            {
+                "id": 2,
+                "icon": "email",
+                "label": "Email Address",
+                "value": "info@munnartaxiservice.com",
+                "href": "mailto:info@munnartaxiservice.com"
+            },
+            {
+                "id": 3,
+                "icon": "clock",
+                "label": "Opening Hours",
+                "value": "Every day: 6:00 AM – 10:00 PM"
+            },
+            {
+                "id": 4,
+                "icon": "location",
+                "label": "Our Location",
+                "value": "Main Road, Munnar, Idukki, Kerala 685612"
             }
-        }
+        ],
+        "socialsTitle": "Follow us",
+        "socials": [
+            {
+                "id": 1,
+                "icon": "facebook",
+                "label": "Facebook",
+                "href": "https://www.facebook.com/your-page"
+            },
+            {
+                "id": 2,
+                "icon": "instagram",
+                "label": "Instagram",
+                "href": "https://www.instagram.com/your-account"
+            },
+            {
+                "id": 3,
+                "icon": "youtube",
+                "label": "YouTube",
+                "href": "https://www.youtube.com/@your-channel"
+            },
+            {
+                "id": 4,
+                "icon": "whatsapp",
+                "label": "WhatsApp",
+                "href": "https://wa.me/919876543210"
+            }
+        ],
+        "formBadge": "Get In Touch",
+        "formTitle": "Get In Touch",
+        "formText": "Tell us about your trip and we will get back to you soon with the best possible options, whether it is a quick transfer or a multi-day tour.",
+        "services": [
+            "Kerala Taxi Services",
+            "Cochin to Munnar Routes",
+            "South Kerala Routesl",
+            "Tamil Nadu Routes",
+            "Tourist Destination Routes",
+            "Outstation Trip",
+            "Other"
+        ]
+    },
+    "rideOptionsSection": {
+        "badge": "Ride Options",
+        "title": "What Are You Looking For? Tailored Travel Solutions",
+        "items": [
+            {
+                "id": 1,
+                "title": "Airport & Railway Transfers",
+                "image": "/options/transfers.jpg",
+                "text": "Smooth, stress-free arrival. Your driver tracks your flight or train, waits a reasonable time after you land, and helps with luggage. No queues, no surprises."
+            },
+            {
+                "id": 2,
+                "title": "Full-Day Sightseeing & Tours",
+                "image": "/options/sightseeing.jpg",
+                "text": "Planning a full day out? Go by the day or by the hour. Perfect for tea gardens, waterfalls and viewpoints, family trips or group outings. You set the itinerary, we handle the drive."
+            },
+            {
+                "id": 3,
+                "title": "One-Way & Outstation Hire",
+                "image": "/options/outstation.jpg",
+                "text": "Need a simple one-way transfer? Easy. Whether it's from your hotel to Thekkady, Kochi or Alleppey, or just across town, we have a straightforward point-to-point option."
+            }
+        ]
     }
 }

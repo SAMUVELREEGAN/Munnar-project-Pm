@@ -1,10 +1,6 @@
 import { useState } from "react";
 
-/* ---------- Easy-to-edit content (contact details are placeholders) ---------- */
-const INFO_TITLE = "Contact Information";
-const INFO_TEXT =
-    "Have a question or need help planning your Munnar trip? Our team is here to help with reliable support and clear answers. Reach out and we will respond as quickly as possible.";
-
+/* ---------- Presentational icons (keyed by name from ContactPage.json) ---------- */
 const iconProps = {
     width: 28,
     height: 28,
@@ -17,65 +13,65 @@ const iconProps = {
     "aria-hidden": true,
 };
 
-const CONTACTS = [
-    {
-        label: "Phone Number",
-        value: "+91 98765 43210",
-        href: "tel:+919876543210",
-        icon: (
-            <svg {...iconProps}>
-                <rect x="7" y="2" width="10" height="20" rx="2" />
-                <path d="M11 18h2" />
-            </svg>
-        ),
-    },
-    {
-        label: "Email Address",
-        value: "info@munnartaxiservice.com",
-        href: "mailto:info@munnartaxiservice.com",
-        icon: (
-            <svg {...iconProps}>
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <path d="m3 7 9 6 9-6" />
-            </svg>
-        ),
-    },
-    {
-        label: "Opening Hours",
-        value: "Every day: 6:00 AM – 10:00 PM",
-        icon: (
-            <svg {...iconProps}>
-                <circle cx="12" cy="12" r="9" />
-                <path d="M12 7v5l3 2" />
-            </svg>
-        ),
-    },
-    {
-        label: "Our Location",
-        value: "Main Road, Munnar, Idukki, Kerala 685612",
-        icon: (
-            <svg {...iconProps}>
-                <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />
-                <circle cx="12" cy="10" r="2.5" />
-            </svg>
-        ),
-    },
-];
+const CONTACT_ICONS = {
+    phone: (
+        <svg {...iconProps}>
+            <rect x="7" y="2" width="10" height="20" rx="2" />
+            <path d="M11 18h2" />
+        </svg>
+    ),
+    email: (
+        <svg {...iconProps}>
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+        </svg>
+    ),
+    clock: (
+        <svg {...iconProps}>
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+        </svg>
+    ),
+    location: (
+        <svg {...iconProps}>
+            <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />
+            <circle cx="12" cy="10" r="2.5" />
+        </svg>
+    ),
+};
 
-const FORM_BADGE = "Get In Touch";
-const FORM_TITLE = "Get In Touch";
-const FORM_TEXT =
-    "Tell us about your trip and we will get back to you soon with the best possible options, whether it is a quick transfer or a multi-day tour.";
+const socialIconProps = {
+    ...iconProps,
+    width: 20,
+    height: 20,
+    strokeWidth: 1.8,
+};
 
-const SERVICES = [
-    "Local Sightseeing",
-    "Airport & Railway Transfer",
-    "Tempo Traveller / Group Travel",
-    "Jeep Safari",
-    "Honeymoon & Family Package",
-    "Outstation Trip",
-    "Other",
-];
+const SOCIAL_ICONS = {
+    facebook: (
+        <svg {...socialIconProps}>
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+        </svg>
+    ),
+    instagram: (
+        <svg {...socialIconProps}>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <path d="M17.5 6.5h.01" />
+        </svg>
+    ),
+    youtube: (
+        <svg {...socialIconProps}>
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+            <path d="M9.75 15.02 15.5 11.75 9.75 8.48z" />
+        </svg>
+    ),
+    whatsapp: (
+        <svg {...socialIconProps}>
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        </svg>
+    ),
+};
 /* ------------------------------------------------------------------------------ */
 
 const emptyForm = { name: "", email: "", phone: "", service: "", message: "" };
@@ -99,7 +95,18 @@ function Label({ htmlFor, children }) {
   <Contact onSubmit={(data) => fetch("/api/contact", { method: "POST", ... })} />
   Throw inside it to show the error message.
 */
-export default function Contact({ onSubmit = async () => { } }) {
+export default function Contact({
+    onSubmit = async () => { },
+    infoTitle,
+    infoText,
+    contacts = [],
+    socialsTitle,
+    socials = [],
+    formBadge,
+    formTitle,
+    formText,
+    services = [],
+}) {
     const [form, setForm] = useState(emptyForm);
     const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
@@ -123,24 +130,23 @@ export default function Contact({ onSubmit = async () => { } }) {
 
     return (
         <>
-
             <section
                 aria-label="Contact details and enquiry form"
                 className="bg-[#f7f9f6] py-12 font-['Nunito_Sans',system-ui,sans-serif] sm:py-16"
             >
-                <div className="mx-auto grid max-w-[1200px] items-start gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)]">
+                <div className="mx-auto grid max-w-[1200px] items-start gap-6 px-4 sm:px-6 lg:grid-cols-2">
                     {/* Contact information */}
                     <div className="rounded-3xl bg-white p-6 shadow-sm sm:p-8">
-                        <h2 className="text-xl font-bold text-gray-900">{INFO_TITLE}</h2>
-                        <p className="mt-3 text-[13px] leading-relaxed text-gray-600">{INFO_TEXT}</p>
+                        <h2 className="text-xl font-bold text-gray-900">{infoTitle}</h2>
+                        <p className="mt-3 text-[13px] leading-relaxed text-gray-600">{infoText}</p>
 
                         <ul className="mt-6">
-                            {CONTACTS.map((item) => (
+                            {contacts.map((item) => (
                                 <li
-                                    key={item.label}
+                                    key={item.id ?? item.label}
                                     className="flex items-start gap-4 border-b border-gray-200 py-5 first:pt-2 last:border-b-0 last:pb-0"
                                 >
-                                    <span className="mt-0.5 shrink-0 text-green-600">{item.icon}</span>
+                                    <span className="mt-0.5 shrink-0 text-green-600">{CONTACT_ICONS[item.icon]}</span>
                                     <div className="min-w-0">
                                         <p className="text-base font-semibold text-gray-900">{item.label}</p>
                                         {item.href ? (
@@ -157,6 +163,27 @@ export default function Contact({ onSubmit = async () => { } }) {
                                 </li>
                             ))}
                         </ul>
+
+                        {/* Social icons */}
+                        <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-gray-200 pt-6">
+                            <p className="text-base font-semibold text-gray-900">{socialsTitle}</p>
+                            <ul className="flex items-center gap-2">
+                                {socials.map((s) => (
+                                    <li key={s.label}>
+                                        <a
+                                            href={s.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={`${s.label} (opens in a new tab)`}
+                                            title={s.label}
+                                            className={`grid h-10 w-10 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                        >
+                                            {SOCIAL_ICONS[s.icon]}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
                     {/* Form */}
@@ -165,13 +192,13 @@ export default function Contact({ onSubmit = async () => { } }) {
                             <svg width="14" height="14" viewBox="0 0 14 14" className="text-green-600" aria-hidden="true">
                                 <path d="M7 1v12M1.8 4l10.4 6M1.8 10l10.4-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                             </svg>
-                            {FORM_BADGE}
+                            {formBadge}
                         </span>
 
-                        <h2 className="mt-5 text-3xl font-bold text-gray-900 sm:text-4xl">{FORM_TITLE}</h2>
-                        <p className="mt-4 max-w-[560px] text-[13px] leading-relaxed text-gray-600">{FORM_TEXT}</p>
+                        <h2 className="mt-5 text-3xl font-bold text-gray-900 sm:text-4xl">{formTitle}</h2>
+                        <p className="mt-4 max-w-[560px] text-[13px] leading-relaxed text-gray-600">{formText}</p>
 
-                        <form onSubmit={handleSubmit} className="mt-8 grid gap-4 sm:grid-cols-2">
+                        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                             <div>
                                 <Label htmlFor="contact-name">Name</Label>
                                 <input
@@ -226,7 +253,7 @@ export default function Contact({ onSubmit = async () => { } }) {
                                     className={`${field} ${form.service ? "text-gray-900" : "text-gray-500"}`}
                                 >
                                     <option value="">Service You're Interested In</option>
-                                    {SERVICES.map((s) => (
+                                    {services.map((s) => (
                                         <option key={s} value={s}>
                                             {s}
                                         </option>
