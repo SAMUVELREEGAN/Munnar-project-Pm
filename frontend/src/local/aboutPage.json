@@ -1,0 +1,63 @@
+{
+    "CompanySection": {
+        "title": "Company",
+        "image": "/images/munnar-taxi-about.jpg",
+        "imageAlt": "Munnar taxi van driving through hill roads",
+        "paragraphs": [
+            "Munnar Taxi Services positions itself as a premier transportation provider in Kerala, offering Sedan, SUV, and Maxi Cab transport services through a structured and system-driven platform. The company operates across multiple transport use cases, including airport transfers, Munnar sightseeing, corporate travel, and family vacation trips.",
+            "With over 10,000 trips completed within a 12-month period, the company emphasizes operational experience and service consistency. Its driver network includes trained professionals capable of handling both standard and customized travel itineraries, particularly for tourists exploring the hill stations and families requiring additional care during long journeys.",
+            "The company differentiates itself through its digital-first approach, where all bookings are handled via its website or mobile application instead of manual coordination. This system-driven model enables better scheduling, reduced operational errors, and consistent service delivery across different travel types.",
+            "Additionally, the company places strong focus on local expertise, positioning Munnar sightseeing not as an optional feature but as a core offering. This includes hill-driving-certified chauffeurs, well-maintained vehicles suited for mountain terrain, and structured booking processes tailored for both daily commutes and multi-day Kerala tour packages.",
+            "Overall, the company is structured around reliability, operational control, and comfort, aiming to deliver consistent transport services across different customer segments and travel requirements."
+        ]
+    },
+    "bookingSection": {
+        "title": "Booking",
+        "image": "/images/munnar-taxi-booking.jpg",
+        "imageAlt": "Munnar taxi booking process with vehicle and passenger",
+        "paragraphs": [
+            "Bookings Can Be Made Via Website Or Mobile App, Allowing Users To Select Vehicle, Enter Trip Details, And Schedule A Booking Based On Their Requirements. The Process Includes Driver Assignment And Real-Time Communication, Ensuring That Each Trip Is Coordinated Clearly From Request To Completion. Users Are Required To Place Advance Bookings Through The System, Typically With A Minimum Notice Period, Using The Booking Form Available On The Website Or Through The Mobile Application.",
+            "The Booking Flow Involves Selecting The Appropriate Vehicle Type Based On Passenger Count And Luggage, Followed By Entering Pickup Location, Destination, Date, And Time. Accurate Details Are Important, As Vehicle Allocation And Pricing Depend On The Selected Service And Requirements Once The Booking Is Confirmed, A Driver Is Assigned, And Trip Coordination Begins. For Airport Transfers, Additional Features Such As Flight Monitoring, Meet And Greet, And Waiting Time Handling Are Included To Ensure Timely Pickup Even In Case Of Delays.",
+            "Bookings Can Also Be Made Through The Mobile Application For Faster Processing And Better Availability, Especially For Shorter Notice Periods. The Entire Process Is System-Driven, Ensuring Structured Scheduling, Accurate Service Allocation, And Consistent Execution Across Different Types Of Transport Requirements."
+        ]
+    },
+    "useCasesSection": {
+        "title": "Use Cases",
+        "leftParagraphs": [
+            "Airport Transfers, Sightseeing Tours, Weddings & Events, Family Vacations, Honeymoon Trips, Corporate Travel, City Tours, And Personal Travel Represent The Different Ways The Services Are Utilized. These Use Cases Reflect Real-World Scenarios Where Structured And Reliable Transport Is Required For Both Planned And On-Demand Travel, Supported By Chauffeur-Driven Vehicles, Flexible Booking Options, And Coordinated Service Execution.",
+            "Airport Transfers Include Scheduled Pickup And Drop-Off With Flight Monitoring, Meet And Greet Services, And Waiting Time Support To Handle Delays. Corporate Travel And Roadshows Require Timely And Professional Transport For Meetings And Business Movement. Weddings, Events, And City Tours Involve Coordinated Group Travel, While Honeymoon And Family Tour Transport Ensure Comfortable And Safe Mobility For Couples And Assisted Passengers."
+        ],
+        "rightCards": [
+            {
+                "id": 1,
+                "title": "Airport Transfers",
+                "icon": "✈️",
+                "description": "Airport Transfers Include Pickup And Drop-Off Services Between Locations And The Airport, Supported By Flight Monitoring, Meet And Greet Assistance, And Waiting Time Handling. This Ensures Passengers Are Picked Up On Time Even During Delays, Providing A Structured And Reliable Travel Experience For Both Arrivals And Departures."
+            },
+            {
+                "id": 2,
+                "title": "Corporate Travel",
+                "icon": "🏢",
+                "description": "Corporate Travel Is Designed For Business Professionals Requiring Timely And Organized Transport For Meetings, Office Commutes, And Roadshows. The Service Ensures Punctuality, Professional Chauffeur Support, And Efficient Movement Across Locations, Making It Suitable For Companies That Require Consistent And Dependable Transportation For Employees And Business Operations."
+            },
+            {
+                "id": 3,
+                "title": "Weddings & Events",
+                "icon": "💍",
+                "description": "Weddings And Events Require Coordinated Group Travel And Special Attention To Detail. Our Service Provides Well-Maintained Vehicles, Professional Chauffeurs, And Flexible Scheduling To Ensure Your Special Day Runs Smoothly, From Guest Pickups To Venue Transfers Across Munnar And Surrounding Areas."
+            }
+        ]
+    },
+    "pricingSection": {
+        "title": "Pricing",
+        "introParagraph": "One-Way Trips, Hourly Booking, Airport Transfer Pricing, Sightseeing Package Pricing, Pricing Based On Distance, And Pricing Based On Vehicle Type Define How Costs Are Structured. The Pricing Model Is Segmented Based On Vehicle Category, Service Type, And Usage Duration, Ensuring Flexibility Across Different Travel Needs.",
+        "image": "/images/munnar-taxi-pricing.jpg",
+        "imageAlt": "Munnar taxi van driving through scenic hill roads",
+        "paragraphs": [
+            "Each Vehicle Type Follows A Predefined Pricing Structure. For Example, Sedan, SUV, And Maxi Cab Services Typically Include Fixed Rates For Airport Pickup, Standard One-Way Trips, And Hourly Charter Services With Minimum Booking Durations. Hourly Charter Services Generally Start With A Minimum Number Of Hours, Allowing Users To Retain The Vehicle For Continuous Use Across Multiple Stops.",
+            "Airport Transfer Pricing Includes Additional Service Elements Such As Meet And Greet, Flight Monitoring, And Waiting Time, Ensuring Passengers Are Accommodated Even In Case Of Delays. Pricing Remains Consistent Based On Vehicle Selection And Service Scope.",
+            "Sightseeing Packages Follow A More Dynamic Pricing Model, Where Charges Are Calculated Based On Distance Traveled, Base Fare, And Additional Factors Such As Time Of Booking, Waiting Time, And Service Requirements. Additional Charges May Apply For Late-Night Hours, Non-Office Hours, Extra Stops, Or Door-To-Door Assistance.",
+            "The Overall Pricing System Is Designed To Provide Transparency By Clearly Separating Costs Based On Service Type, Duration, And Operational Requirements, Allowing Users To Estimate And Control Their Travel Expenses Effectively."
+        ]
+    }
+}

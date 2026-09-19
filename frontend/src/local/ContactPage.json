@@ -1,0 +1,72 @@
+{
+    "contactSection": {
+        "form": {
+            "title": "Leave A Reply",
+            "subtitle": "Fill-Up The Form And Message Us Of Your Amazing Question",
+            "fields": {
+                "fullName": {
+                    "label": "Full Name",
+                    "placeholder": "Enter Full Name"
+                },
+                "email": {
+                    "label": "Email Address",
+                    "placeholder": "Enter Email Address"
+                },
+                "phone": {
+                    "label": "Phone Number",
+                    "placeholder": "+91 Enter Phone Number"
+                },
+                "subject": {
+                    "label": "Subject",
+                    "placeholder": "Enter Subject"
+                },
+                "message": {
+                    "label": "Message",
+                    "placeholder": "Enter Message"
+                }
+            },
+            "submitButton": "Submit"
+        },
+        "officeInfo": {
+            "title": "Office Information",
+            "subtitle": "Have A Question About Our Services Or Need A Hand With Your Booking? Our Friendly Team Is Ready To Assist You.",
+            "details": [
+                {
+                    "id": 1,
+                    "icon": "📍",
+                    "label": "Address",
+                    "value": "Munnar Jothi Maxi Taxi, Aluva - Munnar Road, Munnar, Kerala 685612, India"
+                },
+                {
+                    "id": 2,
+                    "icon": "📄",
+                    "label": "Co. Reg",
+                    "value": "Munnar Taxi Services Pvt Ltd KERALA 20241512Z"
+                },
+                {
+                    "id": 3,
+                    "icon": "✉️",
+                    "label": "Email",
+                    "value": "support@munnartaxiservice.com"
+                }
+            ],
+            "socialMedia": {
+                "title": "Social Media",
+                "links": [
+                    {
+                        "id": 1,
+                        "platform": "Facebook",
+                        "icon": "📘",
+                        "url": "https://facebook.com/munnartaxiservice"
+                    },
+                    {
+                        "id": 2,
+                        "platform": "Youtube",
+                        "icon": "▶️",
+                        "url": "https://youtube.com/@munnartaxiservice"
+                    }
+                ]
+            }
+        }
+    }
+}

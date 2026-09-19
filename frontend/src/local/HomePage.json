@@ -1,0 +1,285 @@
+{
+    "homePage": {
+        "heroSection": {
+            "title": "Munnar Taxi & Service",
+            "desc": "Explore Munnar in comfort and convenience with our reliable taxi services, offering comfortable rides for local sightseeing, airport transfers, and outstation travel. Enjoy easy booking, professional drivers, and a smooth travel experience throughout Munnar",
+            "bgImage": "/public/uploads/Munnar-bg.webp"
+        },
+        "OurTourPackages": {
+            "title": "Our Tour Packages & Munnar Taxi & Travel Services",
+            "desc": "Book reliable, comfortable taxi services designed to support local sightseeing, airport transfers, outstation trips, and personal travel needs. From convenient city rides to customized tour packages, every service is designed to provide a smooth, safe, and dependable travel experience across Munnar."
+        }
+    },
+    "statsSection": {
+        "badge": "More Than",
+        "number": "10,000",
+        "label": "Trips In 12 Months",
+        "leftParagraph": "The Company Focuses On Operational Consistency, Supported By Trained Drivers Who Handle Both Standard And Assisted Transport, Including Services For Elderly Passengers And Families.",
+        "rightTitle": "How Many Travelers Have Benefited?",
+        "rightParagraph": "The Service Has Benefited Many Travelers By Making Transport More Accessible And Affordable, Contributing To Improved Mobility Support Across The Community. Therefore, It Enables Safer And More Comfortable Travel For Individuals With Mobility Needs, Supporting Their Daily Routines, Medical Visits, And Overall Independence."
+    },
+    "scheduleSection": {
+        "title": "Our Munnar Airport Pickup Schedule",
+        "features": [
+            {
+                "id": 1,
+                "icon": "🤝",
+                "title": "Meet And Greet",
+                "description": "A Professional Chauffeur Will Wait At The Airport Arrival Hall Holding A Signboard With The Passenger's Name, Making It Easier To Identify The Driver Immediately After Arrival."
+            },
+            {
+                "id": 2,
+                "icon": "✈️",
+                "title": "Flight Monitoring",
+                "description": "The Flight Is Monitored In Real Time To Track Delays Or Early Arrivals. The Service Also Includes Up To One Hour Of Waiting Time After The Flight Lands."
+            },
+            {
+                "id": 3,
+                "icon": "📞",
+                "title": "Establish Contact",
+                "description": "The Assigned Driver Will Contact The Passenger Through WhatsApp, Phone Call, Or SMS Before Arrival To Ensure Smooth Coordination And Easier Pickup."
+            },
+            {
+                "id": 4,
+                "icon": "👶",
+                "title": "Child Seats Available",
+                "description": "Child Seats And Booster Seats Can Be Provided Upon Request To Ensure Safer Travel For Families Traveling With Young Children."
+            }
+        ]
+    },
+    "VehiclePackages": {
+        "pageTitle": "Munnar Taxi Services",
+        "pageDescription": "Reliable Taxi Services For Your Everyday And Special Travel Needs. Whether It's An Airport Pickup, A Business Trip, Or A Personal Ride, We Make Sure Your Journey Is Comfortable, Well-Coordinated, And Easy From Start To Finish.",
+        "vehicles": [
+            {
+                "id": 1,
+                "capacity": 5,
+                "image": "/images/wheelchair-van.png",
+                "isLowestPrice": true,
+                "tag": "Wheelchair Accessible Vehicle",
+                "title": "Wheelchair Transport",
+                "pricing": [
+                    {
+                        "label": "Airport Arrival Pick Up",
+                        "value": "₹2,500"
+                    },
+                    {
+                        "label": "Charter Service",
+                        "value": "₹1,800/Hour (Min 3)"
+                    },
+                    {
+                        "label": "One Way",
+                        "value": "₹800 - ₹2,000"
+                    }
+                ],
+                "footerInfo": {
+                    "icon": "♿",
+                    "label": "Wheelchair Users",
+                    "value": "1-2"
+                },
+                "buttonText": "Find More",
+                "buttonLink": "#wheelchair"
+            },
+            {
+                "id": 2,
+                "capacity": 6,
+                "image": "/images/toyota-alphard.png",
+                "isLowestPrice": false,
+                "tag": "Toyota Alphard",
+                "title": "6 Seater Maxicab",
+                "pricing": [
+                    {
+                        "label": "Airport Arrival Pick Up",
+                        "value": "₹2,800"
+                    },
+                    {
+                        "label": "Charter Service",
+                        "value": "₹2,000/Hour (Min 3)"
+                    },
+                    {
+                        "label": "One Way",
+                        "value": "₹1,200"
+                    }
+                ],
+                "footerInfo": {
+                    "icon": "🧳",
+                    "label": "Luggage",
+                    "value": "4"
+                },
+                "buttonText": "Book Now",
+                "buttonLink": "#book-alphard"
+            },
+            {
+                "id": 3,
+                "capacity": "9-13",
+                "image": "/images/toyota-hiace.png",
+                "isLowestPrice": false,
+                "tag": "Toyota Hiace",
+                "title": "13 Seater Maxicab",
+                "pricing": [
+                    {
+                        "label": "Airport Arrival Pick Up",
+                        "value": "₹3,500"
+                    },
+                    {
+                        "label": "Charter Service",
+                        "value": "₹2,500/Hour (Min 3)"
+                    },
+                    {
+                        "label": "One Way",
+                        "value": "₹1,800"
+                    }
+                ],
+                "footerInfo": {
+                    "icon": "🧳",
+                    "label": "Luggage",
+                    "value": "9"
+                },
+                "buttonText": "Book Now",
+                "buttonLink": "#book-hiace"
+            },
+            {
+                "id": 4,
+                "capacity": 3,
+                "image": "/images/mercedes-e-class.png",
+                "isLowestPrice": false,
+                "tag": "Mercedes E Class",
+                "title": "Luxury Sedan",
+                "pricing": [
+                    {
+                        "label": "Airport Arrival Pick Up",
+                        "value": "₹3,000"
+                    },
+                    {
+                        "label": "Charter Service",
+                        "value": "₹2,200/Hour (Min 3)"
+                    },
+                    {
+                        "label": "One Way",
+                        "value": "₹1,500"
+                    }
+                ],
+                "footerInfo": {
+                    "icon": "🧳",
+                    "label": "Luggage",
+                    "value": "2"
+                },
+                "buttonText": "Book Now",
+                "buttonLink": "#book-mercedes"
+            },
+            {
+                "id": 5,
+                "capacity": 7,
+                "image": "/images/mercedes-viano.png",
+                "isLowestPrice": false,
+                "tag": "Mercedes Viano",
+                "title": "7 Seater Maxicab",
+                "pricing": [
+                    {
+                        "label": "Airport Arrival Pick Up",
+                        "value": "₹4,000"
+                    },
+                    {
+                        "label": "Charter Service",
+                        "value": "₹3,000/Hour (Min 3)"
+                    },
+                    {
+                        "label": "One Way",
+                        "value": "₹2,000"
+                    }
+                ],
+                "footerInfo": {
+                    "icon": "🧳",
+                    "label": "Luggage",
+                    "value": "6"
+                },
+                "buttonText": "Book Now",
+                "buttonLink": "#book-viano"
+            },
+            {
+                "id": 6,
+                "capacity": 5,
+                "image": "/images/bicycle-transport.png",
+                "isLowestPrice": false,
+                "tag": "Viano / Hiace",
+                "title": "Bicycle Transport",
+                "pricing": [
+                    {
+                        "label": "One Way",
+                        "value": "₹1,000 - ₹2,500"
+                    }
+                ],
+                "footerInfo": {
+                    "icon": "🚲",
+                    "label": "Bicycles",
+                    "value": "4"
+                },
+                "buttonText": "Book Now",
+                "buttonLink": "#book-bicycle"
+            }
+        ]
+    },
+    "whyChooseUs": {
+        "image": "/images/munnar-tea-gardens.jpg",
+        "imageAlt": "Scenic view of Munnar tea plantations and hills",
+        "title": "Why Choose Us",
+        "features": [
+            {
+                "id": 1,
+                "icon": "✔️",
+                "title": "Refined & Reliable Travel:",
+                "description": "Precision-Driven Service With Punctuality And Smooth Coordination Across All Munnar Routes."
+            },
+            {
+                "id": 2,
+                "icon": "✔️",
+                "title": "Local Expertise & Safety:",
+                "description": "Experienced Drivers Who Know The Hill Terrain, Ensuring Safe And Comfortable Travel."
+            },
+            {
+                "id": 3,
+                "icon": "✔️",
+                "title": "Tailored Travel Experience:",
+                "description": "Flexible Packages And Customizable Itineraries Designed To Match Your Exact Munnar Travel Needs."
+            }
+        ]
+    },
+    "accessibilitySection": {
+        "title": "Making Everyday Travel More Accessible",
+        "subtitle": "Helping Passengers Reach Their Destinations With Comfort, Safety, And Ease.",
+        "features": [
+            {
+                "id": 1,
+                "icon": "💬",
+                "title": "Easy Communication",
+                "description": "Stay Connected With Your Driver Through Call Or Message For Smooth Coordination Before And During Your Trip."
+            },
+            {
+                "id": 2,
+                "icon": "✈️",
+                "title": "On-Time Pickup",
+                "description": "We Ensure Timely Arrivals And Well-Planned Scheduling So Your Travel Stays On Track Without Unnecessary Waiting."
+            },
+            {
+                "id": 3,
+                "icon": "🧘",
+                "title": "Comfortable Travel",
+                "description": "Enjoy A Relaxed Journey With Clean, Well-Maintained Vehicles Designed For Comfort And Convenience."
+            },
+            {
+                "id": 4,
+                "icon": "🎟️",
+                "title": "Flexible Booking",
+                "description": "Book Your Ride Based On Your Schedule With Options That Suit Both Planned And Last-Minute Travel Needs."
+            }
+        ]
+    },
+    "excellencySection": {
+        "title": "Our Excellency",
+        "description": "Munnar's Best And Prime Taxi Service For Customers. They Can Access Our Wide Range Of Vehicles Effortlessly And Enjoy The Convenience Of Rides.",
+        "form": {
+            "placeholder": "Enter Email Address",
+            "buttonText": "Subscribe Now"
+        }
+    }
+}
