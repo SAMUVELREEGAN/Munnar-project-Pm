@@ -16,8 +16,8 @@ export const Home = () => {
             <Services OurTourPackages={HomeSection?.homePage?.OurTourPackages} />
             <PickupProcess StepCard={HomeSection?.scheduleSection} />
             <Vehicles VehiclePackages={HomeSection?.VehiclePackages} />
-            <WhyChooseUs />
-            <Features />
+            <WhyChooseUs whyChooseUs={HomeSection?.whyChooseUs} />
+            <Features accessibilitySection={HomeSection?.accessibilitySection} />
         </section>
     )
 }

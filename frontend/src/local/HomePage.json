@@ -3,7 +3,7 @@
         "heroSection": {
             "title": "Munnar Taxi & Service",
             "desc": "Explore Munnar in comfort and convenience with our reliable taxi services, offering comfortable rides for local sightseeing, airport transfers, and outstation travel. Enjoy easy booking, professional drivers, and a smooth travel experience throughout Munnar",
-            "bgImage": "/public/uploads/Munnar-bg.webp"
+            "bgImage": "/images/Munnar-bg.webp"
         },
         "OurTourPackages": {
             "title": "Our Tour Packages & Munnar Taxi & Travel Services",
@@ -54,7 +54,7 @@
             {
                 "id": 1,
                 "capacity": 5,
-                "image": "/images/wheelchair-van.png",
+                "image": "/images/van.png",
                 "isLowestPrice": true,
                 "tag": "Wheelchair Accessible Vehicle",
                 "title": "Wheelchair Transport",
@@ -83,7 +83,7 @@
             {
                 "id": 2,
                 "capacity": 6,
-                "image": "/images/toyota-alphard.png",
+                "image": "/images/van2.png",
                 "isLowestPrice": false,
                 "tag": "Toyota Alphard",
                 "title": "6 Seater Maxicab",
@@ -112,7 +112,7 @@
             {
                 "id": 3,
                 "capacity": "9-13",
-                "image": "/images/toyota-hiace.png",
+                "image": "/images/van3.png",
                 "isLowestPrice": false,
                 "tag": "Toyota Hiace",
                 "title": "13 Seater Maxicab",
@@ -141,7 +141,7 @@
             {
                 "id": 4,
                 "capacity": 3,
-                "image": "/images/mercedes-e-class.png",
+                "image": "/images/car.png",
                 "isLowestPrice": false,
                 "tag": "Mercedes E Class",
                 "title": "Luxury Sedan",
@@ -170,7 +170,7 @@
             {
                 "id": 5,
                 "capacity": 7,
-                "image": "/images/mercedes-viano.png",
+                "image": "/images/van2.png",
                 "isLowestPrice": false,
                 "tag": "Mercedes Viano",
                 "title": "7 Seater Maxicab",
@@ -199,7 +199,7 @@
             {
                 "id": 6,
                 "capacity": 5,
-                "image": "/images/bicycle-transport.png",
+                "image": "/images/van3.png",
                 "isLowestPrice": false,
                 "tag": "Viano / Hiace",
                 "title": "Bicycle Transport",

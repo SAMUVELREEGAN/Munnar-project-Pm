@@ -1,7 +1,11 @@
 {
+    "heroSection": {
+        "title": "About us",
+        "description": "Your trusted travel partner for safe and comfortable journeys"
+    },
     "CompanySection": {
         "title": "Company",
-        "image": "/images/munnar-taxi-about.jpg",
+        "image": "/images/Munnar-bg.webp",
         "imageAlt": "Munnar taxi van driving through hill roads",
         "paragraphs": [
             "Munnar Taxi Services positions itself as a premier transportation provider in Kerala, offering Sedan, SUV, and Maxi Cab transport services through a structured and system-driven platform. The company operates across multiple transport use cases, including airport transfers, Munnar sightseeing, corporate travel, and family vacation trips.",
@@ -13,7 +17,7 @@
     },
     "bookingSection": {
         "title": "Booking",
-        "image": "/images/munnar-taxi-booking.jpg",
+        "image": "/images/munnar-alapuzha.webp",
         "imageAlt": "Munnar taxi booking process with vehicle and passenger",
         "paragraphs": [
             "Bookings Can Be Made Via Website Or Mobile App, Allowing Users To Select Vehicle, Enter Trip Details, And Schedule A Booking Based On Their Requirements. The Process Includes Driver Assignment And Real-Time Communication, Ensuring That Each Trip Is Coordinated Clearly From Request To Completion. Users Are Required To Place Advance Bookings Through The System, Typically With A Minimum Notice Period, Using The Booking Form Available On The Website Or Through The Mobile Application.",

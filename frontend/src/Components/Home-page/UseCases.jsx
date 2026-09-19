@@ -61,9 +61,9 @@ const DEFAULT_ITEMS = [
 /* ------------------------------------------------------------------- */
 
 export default function UseCases({
-    title = DEFAULT_TITLE,
-    paragraphs = DEFAULT_PARAGRAPHS,
-    items = DEFAULT_ITEMS,
+    title,
+    paragraphs,
+    items,
 }) {
     return (
         <section
@@ -88,10 +88,10 @@ export default function UseCases({
                     {items.map((item) => (
                         <li key={item.title} className="rounded-3xl bg-white p-6 shadow-sm sm:p-7">
                             <div className="flex items-start justify-between gap-4">
-                                <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                                {item.icon && <span className="shrink-0 text-green-600">{item.icon}</span>}
+                                <h3 className="text-lg font-semibold text-gray-900">{item?.title}</h3>
+                                {item.icon && <span className="shrink-0 text-green-600">{item?.icon}</span>}
                             </div>
-                            <p className="mt-4 text-[13px] leading-relaxed text-gray-600">{item.text}</p>
+                            <p className="mt-4 text-[13px] leading-relaxed text-gray-600">{item?.text}</p>
                         </li>
                     ))}
                 </ul>

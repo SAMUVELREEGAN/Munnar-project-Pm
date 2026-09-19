@@ -140,7 +140,6 @@ export default function Vehicles({ VehiclePackages = {} }) {
 
     const { pageTitle, pageDescription, vehicles } = VehiclePackages;
 
-
     return (
         <section
             aria-labelledby="vehicles-title"

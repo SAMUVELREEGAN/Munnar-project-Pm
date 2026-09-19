@@ -5,7 +5,7 @@
       "id": 1,
       "title": "Full Day Munnar Sight Seeing",
       "description": "Explore the tea factory and enjoy the breathtaking views at Mattupetty Dam and Echo Point. If you're looking for a relaxing experience, consider boating at Kundala Dam or visiting the top station of Eravikulam National Park.",
-      "image": "/images/munnar-sightseeing.jpg",
+      "image": "images/Ertiga.webp",
       "buttonText": "Book Now",
       "buttonLink": "#book"
     },
@@ -21,7 +21,7 @@
       "id": 3,
       "title": "Munnar Sightseeing with Innova Tavera",
       "description": "Make your journey a memorable and comfortable experience with AngelCabs, offering the best Kerala tour packages. Explore the beauty of Munnar with our Munnar holiday packages, and enjoy convenient transportation with our local taxi service for your coach to munnar taxis.",
-      "image": "/images/innova-tavera.jpg",
+      "image": "/images/innova-tavera.png",
       "buttonText": "Book Now",
       "buttonLink": "#book"
     },
@@ -45,7 +45,7 @@
       "id": 6,
       "title": "Munnar to Alapuzha with Sedan Car",
       "description": "Erutte Alleppey offers a visual treat with breathtaking waterfalls, lush pineapple plantations, and expansive rubber plantations, all of which can be explored through various Kerala tour packages.",
-      "image": "/images/munnar-alapuzha.jpg",
+      "image": "/images/munnar-alapuzha.webp",
       "buttonText": "Book Now",
       "buttonLink": "#book"
     },
@@ -53,31 +53,7 @@
       "id": 7,
       "title": "Kerala Tour Package",
       "description": "Kerala, a stunning state on India's tropical Malabar Coast, boasts nearly 600km of beautiful Arabian Sea shoreline. Known for its palm-lined beaches and picturesque backwaters, which form a unique network of canals, Kerala is a top destination for travelers.",
-      "image": "/images/kerala-tour.jpg",
-      "buttonText": "Book Now",
-      "buttonLink": "#book"
-    },
-    {
-      "id": 8,
-      "title": "05 Days Package Innova",
-      "description": "Enjoy the natural beauty of Cochin, Thekkady, Munnar, and Alleppey with Munnar Angel Cabs, the perfect choice for your Kerala tour packages. Explore the stunning landscapes with our Munnar holiday packages. Our network of canals, Kerala packages is a top destination for travelers. use our Munnar local taxi service for seamless transport from Cochin to Munnar.",
-      "image": "/images/05-days-innova.jpg",
-      "buttonText": "Book Now",
-      "buttonLink": "#book"
-    },
-    {
-      "id": 9,
-      "title": "05 Days honeymoon Package Sedan Car",
-      "description": "Explore the breathtaking honeymoon destination of Munnar, Thekkady, Alleppey, and Cochin with Munnar Angel Cabs, offering tailored Kerala tour packages. Visit historic sites such as St. Francis Church, Vasco Da Gama Square, and Santacruz Basilica. Enjoy a day at Fort Cochin Beach, and don't miss the Mattancherry Synagogue and Dutch Palace.",
-      "image": "/images/honeymoon-sedan.jpg",
-      "buttonText": "Book Now",
-      "buttonLink": "#book"
-    },
-    {
-      "id": 10,
-      "title": "Cochin Sightseeing",
-      "description": "Explore the Dutch Colonial past through Fort Cochin while considering various Kerala tour packages. Visit historic sites such as St. Francis Church, Vasco Da Gama Square, and Santacruz Basilica. Enjoy a day at Fort Cochin Beach, and don't miss the Mattancherry Synagogue and Dutch Palace.",
-      "image": "/images/cochin-sightseeing.jpg",
+      "image": "/images/kerala-tour.png",
       "buttonText": "Book Now",
       "buttonLink": "#book"
     }
