@@ -7,7 +7,7 @@ import PlacesToVisit from '../Our-Package/PlacesToVisit'
 
 export const OurPackage = () => {
     return (
-        <section>
+        <section className='space-y-8 lg:space-y-16' >
             <PageHero title={PackageSection?.pageTitle} description={PackageSection?.pageDescription} />
             <Packages />
             <VehiclePackages />

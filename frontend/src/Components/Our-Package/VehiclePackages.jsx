@@ -20,11 +20,8 @@ export default function VehiclePackages({ title = TITLE, desc = DESC }) {
     const vehicles = vehicleData?.vehicles ?? [];
 
     return (
-        <section
-            aria-labelledby="vehicles-title"
-            className="bg-[#f7f9f6] py-14 sm:py-20"
-        >
-            <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <section aria-labelledby="vehicles-title" className="" >
+            <div className="container">
                 {/* Header */}
                 <div className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12">
                     <h2 id="vehicles-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">

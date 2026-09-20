@@ -23,4 +23,8 @@
   .text-h4 {
     @apply text-[16px] lg:text-[18px] leading-snug;
   }
+
+  .text-h5 {
+    @apply text-[12px] lg:text-[15px] leading-snug;
+  }
 }

@@ -134,7 +134,7 @@ export default function Contact({
                 aria-label="Contact details and enquiry form"
                 className="bg-[#f7f9f6] py-12 sm:py-16"
             >
-                <div className="mx-auto grid max-w-[1200px] items-start gap-6 px-4 sm:px-6 lg:grid-cols-2">
+                <div className="container grid items-start gap-6 px-4 sm:px-6 lg:grid-cols-2">
                     {/* Contact information */}
                     <div className="rounded-3xl bg-white p-6 shadow-sm sm:p-8">
                         <h2 className="text-xl font-bold text-gray-900">{infoTitle}</h2>

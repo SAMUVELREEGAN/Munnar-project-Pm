@@ -176,6 +176,40 @@
       "priceUnit": "per trip",
       "buttonText": "Book Now",
       "buttonLink": "#book"
+    },
+    {
+      "id": 11,
+      "badge": "Half Day",
+      "title": "Munnar to Alapuzha with Sedan Car",
+      "location": "Munnar → Alappuzha",
+      "description": "Erutte Alleppey offers a visual treat with breathtaking waterfalls, lush pineapple plantations, and expansive rubber plantations, all of which can be explored through various Kerala tour packages.",
+      "image": "/tour-pacage-images/alleppey-kerala-1024x576.webp",
+      "duration": "8-10 Hrs",
+      "vehicle": "Sedan",
+      "groupType": "Private",
+      "rating": 4.5,
+      "reviews": "640",
+      "price": "₹2,800",
+      "priceUnit": "per trip",
+      "buttonText": "Book Now",
+      "buttonLink": "#book"
+    },
+    {
+      "id": 12,
+      "badge": "Full Day",
+      "title": "Full Day Munnar SightSeeing Innova",
+      "location": "Munnar",
+      "description": "Explore the enchanting flower garden photo point and the honey bee tree while enjoying Munnar sightseeing tours. Don't miss the tea factory and the stunning Mattupetty Dam eco-point. Boating at Kundaldam and visiting the top station or Eravikulam National Park are must-do activities.",
+      "image": "/tour-pacage-images/one-day-munnar-top-places-to-visit-header-munnar-tourism.jpg.webp",
+      "duration": "8-10 Hrs",
+      "vehicle": "Innova",
+      "groupType": "Private",
+      "rating": 4.6,
+      "reviews": "860",
+      "price": "₹3,200",
+      "priceUnit": "per trip",
+      "buttonText": "Book Now",
+      "buttonLink": "#book"
     }
   ]
 }

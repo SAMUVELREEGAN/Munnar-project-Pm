@@ -78,34 +78,6 @@ const ArrowRight = () => (
     </Icon>
 );
 
-/* ---------- Illustrations shown when the photo is missing ---------- */
-function ScenicFallback({ variant }) {
-    if (variant === "water") {
-        return (
-            <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" className="h-full w-full" aria-hidden="true">
-                <rect width="400" height="250" fill="#e6f2f0" />
-                <circle cx="80" cy="60" r="26" fill="#fdf3c8" />
-                <path d="M0 120 Q60 95 120 118 T240 116 T360 112 T400 118 V150 H0Z" fill="#7dbb88" />
-                <path d="M0 130 Q80 110 160 130 T320 128 T400 132 V150 H0Z" fill="#4f9d62" />
-                <rect y="145" width="400" height="105" fill="#82c7cb" />
-                <rect y="190" width="400" height="60" fill="#5daab4" />
-                <path d="M140 170h120l-14 20h-92z" fill="#7c4a2d" />
-                <rect x="158" y="146" width="84" height="24" rx="3" fill="#f3e3c3" />
-                <path d="M150 146h100l-8-14h-84z" fill="#c9a266" />
-            </svg>
-        );
-    }
-    return (
-        <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" className="h-full w-full" aria-hidden="true">
-            <rect width="400" height="250" fill="#e8f3e6" />
-            <circle cx="320" cy="55" r="26" fill="#fdf3c8" />
-            <path d="M0 140 C60 95 120 115 180 90 S300 70 400 115 V250 H0Z" fill="#a9d3a4" />
-            <path d="M0 175 C70 130 140 160 210 122 S330 112 400 150 V250 H0Z" fill="#5fae6a" />
-            <path d="M0 210 C80 172 150 200 230 165 S340 165 400 192 V250 H0Z" fill="#2f8a4a" />
-            <path d="M-20 250 C40 226 120 240 200 216 S340 224 420 240 V250 Z" fill="#166534" />
-        </svg>
-    );
-}
 
 function CardImage({ src, title, variant }) {
     const [failed, setFailed] = useState(false);
@@ -113,18 +85,14 @@ function CardImage({ src, title, variant }) {
 
     return (
         <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-green-50">
-            {failed || !url ? (
-                <ScenicFallback variant={variant} />
-            ) : (
-                <img
-                    src={url}
-                    alt={title}
-                    loading="lazy"
-                    draggable="false"
-                    onError={() => setFailed(true)}
-                    className="h-full w-full object-cover"
-                />
-            )}
+            <img
+                src={url}
+                alt={title}
+                loading="lazy"
+                draggable="false"
+                onError={() => setFailed(true)}
+                className="h-full w-full object-cover"
+            />
         </div>
     );
 }
@@ -167,7 +135,8 @@ export default function PackageCard({
     ].filter(Boolean);
 
     const hasRating = typeof rating === "number";
-    const hasPrice = price !== undefined && price !== null && price !== "";
+
+    console.log("price", price)
 
     const bookClass = `mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-700 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-green-800 ${focusRing}`;
     const bookContent = (
@@ -267,7 +236,7 @@ export default function PackageCard({
                 {/* Pushes rating, price and button to the bottom so cards line up */}
                 <div className="mt-auto" />
 
-                {(hasRating || hasPrice) && (
+                {(hasRating) && (
                     <div className="mt-3 flex items-end justify-between gap-2 border-t border-gray-100 pt-3">
                         {hasRating ? (
                             <p className="inline-flex items-center gap-1 text-xs text-gray-600">
@@ -279,12 +248,12 @@ export default function PackageCard({
                             <span />
                         )}
 
-                        {hasPrice && (
-                            <p className="text-right leading-tight">
-                                <span className="block text-base font-bold text-green-700">{formatPrice(price)}</span>
-                                {priceNote && <span className="block text-[10px] text-gray-500">{priceNote}</span>}
-                            </p>
-                        )}
+
+                        <p className="text-right leading-tight">
+                            <span className="block text-base font-bold text-green-700">{price || 0}</span>
+                            {priceNote && <span className="block text-[10px] text-gray-500">{priceNote}</span>}
+                        </p>
+
                     </div>
                 )}
 

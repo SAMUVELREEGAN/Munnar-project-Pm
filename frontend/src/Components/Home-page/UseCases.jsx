@@ -72,15 +72,15 @@ export default function UseCases({
     return (
         <section
             aria-labelledby="use-cases-title"
-            className="bg-[#f7f9f6] py-14 sm:py-20"
+            className=""
         >
-            <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-16">
+            <div className="container grid gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-16">
                 {/* Intro (stays in view while the cards scroll on desktop) */}
-                <div className="lg:sticky lg:top-10 lg:self-start lg:pt-6">
+                <div className="lg:sticky lg:top-10 lg:self-start lg:pt-6 ">
                     <h2 id="use-cases-title" className="text-3xl font-bold text-gray-900 sm:text-4xl">
                         {title}
                     </h2>
-                    <div className="mt-6 max-w-[440px] space-y-4 text-[13px] leading-relaxed text-gray-600">
+                    <div className="mt-6 max-w-[440px] space-y-4 text-h5 text-gray-600">
                         {paragraphs.map((text, i) => (
                             <p key={i}>{text}</p>
                         ))}

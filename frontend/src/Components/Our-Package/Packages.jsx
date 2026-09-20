@@ -11,16 +11,14 @@ const whatsappLink = (number, text) =>
 
 export default function Packages() {
     const packages = data?.packages ?? [];
-    const pageTitle = data?.pageTitle ?? "Tour Packages & Taxi Services in Munnar";
-    const pageDescription =
-        data?.pageDescription ??
-        "Choose a ready-made sightseeing, transfer or holiday package, or tell us what you have in mind.";
-    const phoneLabel = data?.phone?.label ?? "+91 98765 43210";
-    const phoneHref = data?.phone?.href ?? "tel:+919876543210";
-    const whatsappNumber = data?.whatsappNumber ?? "919876543210";
+    const pageTitle = data?.pageTitle
+    const pageDescription = data?.pageDescription
+
+    const phoneLabel = data?.phone?.label
+    const phoneHref = data?.phone?.href
+    const whatsappNumber = data?.whatsappNumber
     const [active, setActive] = useState("All");
 
-    // Filter chips come from the optional "category" field in the JSON
     const filters = useMemo(() => {
         const cats = [...new Set(packages.map((p) => p.category).filter(Boolean))];
         return cats.length > 1 ? ["All", ...cats] : [];
@@ -29,7 +27,7 @@ export default function Packages() {
     const visible = active === "All" ? packages : packages.filter((p) => p.category === active);
 
     return (
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
+        <div className="container">
 
             {/* Filters */}
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4">

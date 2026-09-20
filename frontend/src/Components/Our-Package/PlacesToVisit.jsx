@@ -24,11 +24,8 @@ export default function PlacesToVisit({ title = TITLE, desc = DESC }) {
     const visible = active === "All" ? places : places.filter((p) => p.region === active);
 
     return (
-        <section
-            aria-labelledby="places-title"
-            className="bg-[#f7f9f6] py-14 sm:py-20"
-        >
-            <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <section aria-labelledby="places-title" className="" >
+            <div className="container">
                 {/* Header */}
                 <div className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12">
                     <h2 id="places-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">

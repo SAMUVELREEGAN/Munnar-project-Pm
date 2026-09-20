@@ -7,10 +7,12 @@ import { About } from './Components/Screen/About';
 import { ContactUs } from './Components/Screen/ContactUs';
 import { OurPackage } from './Components/Screen/OurPackage';
 import Footer from './Components/Footer/Footer';
+import ScrollToTop from './Components/Reuseable/ScrollToTop';
 
 function App() {
   return (
     <div className="App bg-[#f7f9f6]">
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>
