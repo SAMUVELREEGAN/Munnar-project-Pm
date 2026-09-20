@@ -8,7 +8,7 @@ import AboutSection from "../../local/aboutPage.json"
 export const About = () => {
 
     return (
-        <section>
+        <section className='space-y-8 lg:space-y-16' >
             <PageHero title={AboutSection?.heroSection?.title} description={AboutSection?.heroSection?.description} />
             <ContentSection
                 title={AboutSection?.CompanySection?.title}

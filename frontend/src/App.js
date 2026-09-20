@@ -8,6 +8,7 @@ import { ContactUs } from './Components/Screen/ContactUs';
 import { OurPackage } from './Components/Screen/OurPackage';
 import Footer from './Components/Footer/Footer';
 import ScrollToTop from './Components/Reuseable/ScrollToTop';
+import NotFound from './Components/Reuseable/Notfound';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/our-tour-packages' element={<OurPackage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </main>

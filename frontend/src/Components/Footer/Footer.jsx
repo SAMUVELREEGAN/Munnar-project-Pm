@@ -10,9 +10,8 @@ const ABOUT_TEXT =
 const COMPANY_LINKS = [
     { label: "Home", to: "/" },
     { label: "About Us", to: "/about" },
-    { label: "Tour Packages", to: "/packages" },
-    { label: "Places to Visit", to: "/places" },
-    { label: "Contact Us", to: "/contact" },
+    { label: "Tour Packages", to: "/our-tour-packages" },
+    { label: "Contact Us", to: "/contact-us" },
 ];
 
 const SERVICE_LINKS = [
