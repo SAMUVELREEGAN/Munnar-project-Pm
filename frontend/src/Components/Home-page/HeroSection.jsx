@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -21,8 +20,6 @@ function Arrow() {
 export default function HeroSection({ HeroContent }) {
 
     const { title, desc, bgImage } = HeroContent
-
-    const CTA_LABEL = "book"
 
     return (
         <section

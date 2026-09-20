@@ -13,6 +13,21 @@ const iconProps = {
     "aria-hidden": true,
 };
 
+function Arrow() {
+    return (
+        <svg className="text-green-600" width="22" height="14" viewBox="0 0 22 14" aria-hidden="true">
+            <path
+                d="M1 7h19M14 1l6 6-6 6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+
 const CONTACT_ICONS = {
     phone: (
         <svg {...iconProps}>
@@ -74,19 +89,78 @@ const SOCIAL_ICONS = {
 };
 /* ------------------------------------------------------------------------------ */
 
+/* ---------- Validation rules (edit the limits / messages here) ---------- */
+const MESSAGE_MIN = 10;
+const MESSAGE_MAX = 500;
+
+const validators = {
+    name: (value) => {
+        const v = value.trim();
+        if (!v) return "Please enter your name.";
+        if (v.length < 2) return "Name must be at least 2 characters.";
+        if (!/^[\p{L}][\p{L}\s.'-]*$/u.test(v)) return "Use letters only (spaces, . ' and - are allowed).";
+        return "";
+    },
+    email: (value) => {
+        const v = value.trim();
+        if (!v) return "Please enter your email address.";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return "Enter a valid email, e.g. name@example.com.";
+        return "";
+    },
+    // optional – only checked when something is typed
+    phone: (value) => {
+        const v = value.trim();
+        if (!v) return "";
+        const digits = v.replace(/\D/g, "");
+        if (digits.length < 10 || digits.length > 13) return "Enter a valid phone number (10 to 13 digits).";
+        return "";
+    },
+    // optional
+    service: () => "",
+    message: (value) => {
+        const v = value.trim();
+        if (!v) return "Please write a message.";
+        if (v.length < MESSAGE_MIN) return `Message must be at least ${MESSAGE_MIN} characters.`;
+        if (v.length > MESSAGE_MAX) return `Message must be ${MESSAGE_MAX} characters or fewer.`;
+        return "";
+    },
+};
+
+const FIELD_ORDER = ["name", "email", "phone", "service", "message"];
+
+const validateAll = (form) =>
+    FIELD_ORDER.reduce((acc, key) => ({ ...acc, [key]: validators[key](form[key]) }), {});
+/* ------------------------------------------------------------------------ */
+
 const emptyForm = { name: "", email: "", phone: "", service: "", message: "" };
+const noneTouched = { name: false, email: false, phone: false, service: false, message: false };
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
-const field =
-    "w-full rounded-md border border-green-200 bg-green-50 px-3.5 py-3 text-sm text-gray-900 placeholder:text-gray-500 focus:border-green-600 focus:outline-none focus:ring-1 focus:ring-green-600";
+const fieldBase =
+    "w-full rounded-md border bg-green-50 px-3.5 py-3 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-1";
+
+const fieldStates = {
+    idle: "border-green-200 focus:border-green-600 focus:ring-green-600",
+    valid: "border-green-600 focus:border-green-600 focus:ring-green-600",
+    invalid: "border-red-500 focus:border-red-600 focus:ring-red-600",
+};
 
 function Label({ htmlFor, children }) {
     return (
         <label htmlFor={htmlFor} className="sr-only">
             {children}
         </label>
+    );
+}
+
+function FieldError({ id, message }) {
+    if (!message) return null;
+    return (
+        <p id={id} className="mt-1.5 text-xs font-medium text-red-600">
+            {message}
+        </p>
     );
 }
 
@@ -108,21 +182,77 @@ export default function Contact({
     services = [],
 }) {
     const [form, setForm] = useState(emptyForm);
+    const [touched, setTouched] = useState(noneTouched);
+    const [submitted, setSubmitted] = useState(false); // true after the first submit attempt
     const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
+    // Recomputed on every render, so messages update as the person types
+    const errors = validateAll(form);
+
+    // An error is shown once the field was left (blur) or after a submit attempt
+    const showError = (name) => (touched[name] || submitted) && Boolean(errors[name]);
+    const isValid = (name) => touched[name] && form[name].trim() !== "" && !errors[name];
+
     const update = (e) => {
-        setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+        const { name } = e.target;
+        let { value } = e.target;
+
+        // phone: allow only digits, +, spaces, brackets and dashes while typing
+        if (name === "phone") value = value.replace(/[^\d+\s()-]/g, "");
+
+        setForm((f) => ({ ...f, [name]: value }));
         if (status !== "loading") setStatus("idle");
+    };
+
+    const handleBlur = (e) => {
+        const { name, value } = e.target;
+        setTouched((t) => ({ ...t, [name]: true }));
+        // tidy up leading/trailing spaces once the person leaves the field
+        if (value !== value.trim()) setForm((f) => ({ ...f, [name]: value.trim() }));
+    };
+
+    const fieldProps = (name) => {
+        const state = showError(name) ? "invalid" : isValid(name) ? "valid" : "idle";
+        const textColor = name === "service" && !form.service ? "text-gray-500" : "text-gray-900";
+        return {
+            id: `contact-${name}`,
+            name,
+            value: form[name],
+            onChange: update,
+            onBlur: handleBlur,
+            "aria-invalid": showError(name) ? "true" : undefined,
+            "aria-describedby": showError(name) ? `contact-${name}-error` : undefined,
+            className: `${fieldBase} ${fieldStates[state]} ${textColor}`,
+        };
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (status === "loading") return;
+
+        setSubmitted(true);
+
+        // stop and jump to the first field that needs attention
+        const firstInvalid = FIELD_ORDER.find((key) => errors[key]);
+        if (firstInvalid) {
+            setTouched({ name: true, email: true, phone: true, service: true, message: true });
+            document.getElementById(`contact-${firstInvalid}`)?.focus();
+            return;
+        }
+
         setStatus("loading");
         try {
-            await onSubmit({ ...form });
+            await onSubmit({
+                name: form.name.trim(),
+                email: form.email.trim(),
+                phone: form.phone.trim(),
+                service: form.service,
+                message: form.message.trim(),
+            });
             setStatus("success");
             setForm(emptyForm);
+            setTouched(noneTouched);
+            setSubmitted(false);
         } catch {
             setStatus("error");
         }
@@ -198,60 +328,48 @@ export default function Contact({
                         <h2 className="mt-5 text-3xl font-bold text-gray-900 sm:text-4xl">{formTitle}</h2>
                         <p className="mt-4 max-w-[560px] text-[13px] leading-relaxed text-gray-600">{formText}</p>
 
-                        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                        {/* noValidate: the browser's pop-up bubbles are replaced by the inline messages below */}
+                        <form onSubmit={handleSubmit} noValidate className="mt-4 space-y-4">
                             <div>
                                 <Label htmlFor="contact-name">Name</Label>
                                 <input
-                                    id="contact-name"
-                                    name="name"
+                                    {...fieldProps("name")}
                                     type="text"
                                     required
                                     autoComplete="name"
                                     placeholder="Name"
-                                    value={form.name}
-                                    onChange={update}
-                                    className={field}
                                 />
+                                {showError("name") && <FieldError id="contact-name-error" message={errors.name} />}
                             </div>
 
                             <div>
                                 <Label htmlFor="contact-email">Email address</Label>
                                 <input
-                                    id="contact-email"
-                                    name="email"
+                                    {...fieldProps("email")}
                                     type="email"
                                     required
                                     autoComplete="email"
                                     placeholder="Email Address"
-                                    value={form.email}
-                                    onChange={update}
-                                    className={field}
                                 />
+                                {showError("email") && <FieldError id="contact-email-error" message={errors.email} />}
                             </div>
 
                             <div>
                                 <Label htmlFor="contact-phone">Phone number</Label>
                                 <input
-                                    id="contact-phone"
-                                    name="phone"
+                                    {...fieldProps("phone")}
                                     type="tel"
+                                    inputMode="tel"
+                                    maxLength={18}
                                     autoComplete="tel"
-                                    placeholder="Phone Number"
-                                    value={form.phone}
-                                    onChange={update}
-                                    className={field}
+                                    placeholder="Phone Number (optional)"
                                 />
+                                {showError("phone") && <FieldError id="contact-phone-error" message={errors.phone} />}
                             </div>
 
                             <div>
                                 <Label htmlFor="contact-service">Service you're interested in</Label>
-                                <select
-                                    id="contact-service"
-                                    name="service"
-                                    value={form.service}
-                                    onChange={update}
-                                    className={`${field} ${form.service ? "text-gray-900" : "text-gray-500"}`}
-                                >
+                                <select {...fieldProps("service")}>
                                     <option value="">Service You're Interested In</option>
                                     {services.map((s) => (
                                         <option key={s} value={s}>
@@ -261,42 +379,39 @@ export default function Contact({
                                 </select>
                             </div>
 
-                            <div className="sm:col-span-2">
+                            <div>
                                 <Label htmlFor="contact-message">Message</Label>
                                 <textarea
-                                    id="contact-message"
-                                    name="message"
+                                    {...fieldProps("message")}
                                     rows={5}
                                     required
+                                    maxLength={MESSAGE_MAX}
                                     placeholder="Message"
-                                    value={form.message}
-                                    onChange={update}
-                                    className={`${field} resize-y`}
+                                    className={`${fieldProps("message").className} resize-y`}
                                 />
+                                <div className="mt-1.5 flex items-start justify-between gap-3">
+                                    <div className="min-w-0">
+                                        {showError("message") && <FieldError id="contact-message-error" message={errors.message} />}
+                                    </div>
+                                    <span
+                                        className={`ml-auto shrink-0 text-xs ${form.message.length >= MESSAGE_MAX ? "font-semibold text-red-600" : "text-gray-500"}`}
+                                    >
+                                        {form.message.length}/{MESSAGE_MAX}
+                                    </span>
+                                </div>
                             </div>
 
-                            <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
+                            <div className="flex flex-wrap items-center gap-4">
                                 <button
                                     type="submit"
                                     disabled={status === "loading"}
-                                    className={`inline-flex items-center gap-3 rounded-full bg-green-600 py-2 pl-6 pr-2 text-sm font-bold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-70 ${focusRing}`}
+                                    className={`inline-flex items-center gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-7 text-[15px] font-bold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-70 ${focusRing}`}
                                 >
-                                    {status === "loading" ? "Sending…" : "Send Message"}
-                                    <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-green-600">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                                            <path d="M2.5 9.5 9.5 2.5M3.5 2.5h6v6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
+                                    <span className="grid h-9 w-[52px] place-items-center rounded-full bg-white">
+                                        <Arrow />
                                     </span>
+                                    {status === "loading" ? "Sending…" : "Send Message"}
                                 </button>
-
-                                <p role="status" aria-live="polite" className="text-sm">
-                                    {status === "success" && (
-                                        <span className="font-semibold text-green-700">Thanks! We'll get back to you soon.</span>
-                                    )}
-                                    {status === "error" && (
-                                        <span className="font-semibold text-red-600">Something went wrong. Please try again.</span>
-                                    )}
-                                </p>
                             </div>
                         </form>
                     </div>

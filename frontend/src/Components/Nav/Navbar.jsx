@@ -34,17 +34,6 @@ function Arrow() {
     );
 }
 
-/* Shown only if the logo image fails to load */
-function FallbackMark() {
-    return (
-        <svg className="h-[38px] w-[38px] shrink-0 sm:h-[46px] sm:w-[46px]" viewBox="0 0 48 48" aria-hidden="true">
-            <rect x="2" y="2" width="44" height="44" rx="12" className="fill-green-600" />
-            <path d="M8 34 19 18l7 10 5-6 9 12z" fill="#fff" />
-            <circle cx="34" cy="14" r="4" fill="#fff" opacity="0.85" />
-        </svg>
-    );
-}
-
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const barRef = useRef(null);

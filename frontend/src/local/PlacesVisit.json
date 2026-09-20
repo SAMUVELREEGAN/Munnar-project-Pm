@@ -97,7 +97,7 @@
             "location": "Kollam",
             "type": "hills",
             "description": "Home to the world's largest bird sculpture and a famous adventure tourism destination in Kerala.",
-            "image": "/images/places/jadayu-eagle.jpg"
+            "image": "/place-visite/jadayu.webp"
         },
         {
             "title": "Padmanabha Temple",
@@ -106,7 +106,7 @@
             "location": "Thiruvananthapuram",
             "type": "temple",
             "description": "A historic Hindu temple in Thiruvananthapuram known for its stunning architecture and rich treasures.",
-            "image": "/place-visite/jadayu.webp"
+            "image": "/place-visite/padmanabhaswamy-temple.webp"
         },
         {
             "title": "Varkala Beach",

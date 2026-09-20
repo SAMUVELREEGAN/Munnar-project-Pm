@@ -1,17 +1,4 @@
 
-const iconProps = {
-    width: 34,
-    height: 34,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.6,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    "aria-hidden": true,
-};
-
-
 export default function Features({ accessibilitySection }) {
 
     const { title, subtitle, features } = accessibilitySection;

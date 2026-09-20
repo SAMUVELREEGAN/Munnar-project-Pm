@@ -1,33 +1,3 @@
-/* ---------- Easy-to-edit content ---------- */
-const STAT = {
-    eyebrow: "More than",
-    value: "10,000", // replace with your real number
-    label: "Trips in 12 months",
-    text: "Our drivers know Munnar's hill roads well and focus on safe, punctual and comfortable trips for families, couples, seniors and groups.",
-};
-
-const ABOUT = {
-    title: "How Many Travellers Have We Served?",
-    text: "Our taxi service has helped visitors reach Munnar's tea gardens, viewpoints and hotels with ease. Clear pricing, local drivers and well-kept vehicles mean fewer worries, so you can enjoy the trip from the first pick-up to the last drop-off.",
-};
-
-const PROCESS_TITLE = "Our Airport & Railway Pickup Process";
-
-const iconProps = {
-    width: 22,
-    height: 22,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.8,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    "aria-hidden": true,
-};
-
-
-/* ------------------------------------------ */
-
 export default function PickupProcess({ StepCard }) {
 
     const { title, features } = StepCard

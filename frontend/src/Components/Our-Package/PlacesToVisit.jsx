@@ -11,8 +11,10 @@ const DESC =
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
+const EMPTY_PLACES = [];
+
 export default function PlacesToVisit({ title = TITLE, desc = DESC }) {
-    const places = placeData?.places ?? [];
+    const places = placeData?.places ?? EMPTY_PLACES;
     const [active, setActive] = useState("All");
 
     // Filter chips come from the optional "region" field in the JSON

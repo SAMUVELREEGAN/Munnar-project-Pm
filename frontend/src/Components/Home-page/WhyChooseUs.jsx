@@ -1,27 +1,3 @@
-import { useState } from "react";
-
-/* ---------- Easy-to-edit content ---------- */
-const HEADING = "Why Choose Us";
-
-/* Put the photo in /public (public/why-choose-us.jpg) or pass image={photo} */
-const DEFAULT_IMAGE = "/why-choose-us.jpg";
-
-const REASONS = [
-    {
-        title: "Local Drivers Who Know Munnar:",
-        text: "Experienced drivers familiar with the hill roads, viewpoints and shortcuts, for safe and smooth journeys.",
-    },
-    {
-        title: "Clean, Comfortable Vehicles:",
-        text: "Well-maintained cars, SUVs and tempo travellers with comfortable seating for the whole trip.",
-    },
-    {
-        title: "Tailored Trip Planning:",
-        text: "Flexible routes and timings designed to match your plans, from sunrise viewpoints to full-day tours.",
-    },
-];
-/* ------------------------------------------ */
-
 function CheckIcon() {
     return (
         <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">

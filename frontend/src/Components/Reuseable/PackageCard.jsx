@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
-const formatPrice = (n) => `₹${Number(n).toLocaleString("en-IN")}`;
 const formatCount = (n) =>
     n >= 1000 ? `${(n / 1000).toFixed(1).replace(/\.0$/, "")}k` : String(n);
 
@@ -80,7 +79,7 @@ const ArrowRight = () => (
 
 
 function CardImage({ src, title, variant }) {
-    const [failed, setFailed] = useState(false);
+    const [, setFailed] = useState(false);
     const url = resolveSrc(src);
 
     return (

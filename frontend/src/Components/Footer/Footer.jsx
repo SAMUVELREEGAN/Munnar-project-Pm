@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 /* ---------- Easy-to-edit content ---------- */
 const BRAND = "Munnar Jothi Laxmi Taxi";
 
+const logoSrc = "/images/munnar_logo.webp";
+
 const ABOUT_TEXT =
     "Reliable Munnar taxi and tour services with experienced local drivers, clean well-maintained vehicles and fair rates. From airport transfers to full-day sightseeing, we make every trip across Kerala safe, comfortable and stress-free.";
 
@@ -25,7 +27,6 @@ const SERVICE_LINKS = [
     { label: "Outstation Taxi", to: "/packages" },
 ];
 
-/* Replace each href with your real profile / chat link */
 const iconProps = {
     width: 18,
     height: 18,
@@ -38,6 +39,7 @@ const iconProps = {
     "aria-hidden": true,
 };
 
+/* Replace each href with your real profile / chat link */
 const SOCIALS = [
     {
         label: "Facebook",
@@ -86,32 +88,6 @@ const focusRing =
 
 const linkClass = `rounded text-[13px] text-gray-600 transition-colors hover:text-green-700 ${focusRing}`;
 
-/* Logo: pass logoSrc="/images/logo.png" to use your image, otherwise a wordmark is shown */
-function Brand({ logoSrc }) {
-    if (logoSrc) {
-        return (
-            <Link to="/" aria-label={`${BRAND} – home`} className={`inline-block rounded ${focusRing}`}>
-                <img src={logoSrc} alt={BRAND} className="h-14 w-auto" />
-            </Link>
-        );
-    }
-    return (
-        <Link to="/" aria-label={`${BRAND} – home`} className={`inline-flex items-center gap-3 rounded ${focusRing}`}>
-            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M5 16V11l2-5h10l2 5v5" />
-                <path d="M3 16h18v3H3z" />
-                <path d="M7 11h10" />
-                <circle cx="7.5" cy="19" r="1.2" fill="#16a34a" />
-                <circle cx="16.5" cy="19" r="1.2" fill="#16a34a" />
-            </svg>
-            <span className="leading-none">
-                <span className="block text-[22px] font-medium tracking-[0.1em] text-gray-900">MUNNAR</span>
-                <span className="mt-1.5 block text-[9px] font-medium tracking-[0.32em] text-gray-500">JOTHI LAXMI TAXI</span>
-            </span>
-        </Link>
-    );
-}
-
 function ColumnTitle({ children }) {
     return (
         <div>
@@ -132,7 +108,7 @@ function CornerShape({ className = "" }) {
     );
 }
 
-export default function Footer({ logoSrc }) {
+export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
@@ -149,7 +125,9 @@ export default function Footer({ logoSrc }) {
                 <div className="grid gap-10 lg:grid-cols-[1.35fr_0.8fr_1.9fr] lg:gap-12">
                     {/* About */}
                     <div>
-                        <Brand logoSrc={logoSrc} />
+                        <Link to="/" aria-label={`${BRAND} – home`} className={`inline-block rounded ${focusRing}`}>
+                            <img src={logoSrc} alt={BRAND} className="h-14 w-auto" />
+                        </Link>
                         <p className="mt-6 max-w-sm text-[13px] leading-[1.9] text-gray-600">{ABOUT_TEXT}</p>
                     </div>
 

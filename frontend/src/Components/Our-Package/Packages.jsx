@@ -1,21 +1,17 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import PackageCard from "../Reuseable/PackageCard";
 import data from "../../local/OurPackage.json";
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
+const EMPTY_PACKAGES = [];
+
 const whatsappLink = (number, text) =>
     `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 
 export default function Packages() {
-    const packages = data?.packages ?? [];
-    const pageTitle = data?.pageTitle
-    const pageDescription = data?.pageDescription
-
-    const phoneLabel = data?.phone?.label
-    const phoneHref = data?.phone?.href
+    const packages = data?.packages ?? EMPTY_PACKAGES;
     const whatsappNumber = data?.whatsappNumber
     const [active, setActive] = useState("All");
 
