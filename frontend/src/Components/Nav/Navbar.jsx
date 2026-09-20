@@ -11,7 +11,6 @@ const DEFAULT_LOGO = "/logo.png";
 const NAV_LINKS = [
     { label: "Home", to: "/", end: true },
     { label: "Tour Packages", to: "/our-tour-packages" },
-    { label: "Vehicles", to: "/vehicles" },
     { label: "About Us", to: "/about" },
     { label: "Contact Us", to: "/contact-us" },
 ];
