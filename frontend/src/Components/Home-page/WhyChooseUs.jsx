@@ -36,10 +36,8 @@ export default function WhyChooseUs({ whyChooseUs }) {
 
     return (
         <section
-            aria-labelledby="why-title"
-            className="bg-[#f7f9f6] py-14 sm:py-20"
-        >
-            <div className="mx-auto grid max-w-[1200px] gap-4 px-4 sm:px-6 lg:grid-cols-2 lg:gap-5">
+            aria-labelledby="why-title" className="" >
+            <div className="container grid gap-4 px-4 sm:px-6 lg:grid-cols-2 lg:gap-5">
                 {/* Photo */}
                 <div className="relative min-h-[260px] overflow-hidden rounded-[40px] bg-gradient-to-br from-green-700 to-green-900 sm:min-h-[360px] sm:rounded-[56px]">
 

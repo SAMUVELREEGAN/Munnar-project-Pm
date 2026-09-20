@@ -80,11 +80,8 @@ export default function Services({ OurTourPackages }) {
     const navBtn = `grid h-10 w-10 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-600 ${focusRing}`;
 
     return (
-        <section
-            aria-labelledby="services-title"
-            className="overflow-hidden bg-[#f7f9f6] py-14 sm:py-20"
-        >
-            <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <section aria-labelledby="services-title" className="overflow-hidden">
+            <div className="container">
                 {/* Header */}
                 <div className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12">
                     <h2 id="services-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
@@ -147,9 +144,9 @@ export default function Services({ OurTourPackages }) {
                                         {item.description}
                                     </p>
                                     <Link
-                                        to={item.to}
+                                        to={"/contact-us"}
                                         aria-label={`Learn more about ${item.title}`}
-                                        className={`mt-5 inline-flex items-center gap-2 self-start rounded-full bg-green-100 px-5 py-2 text-sm font-semibold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                        className={`mt-5 inline-flex items-center gap-2 self-start rounded-full bg-green-100 px-5 py-3 text-sm font-semibold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
                                     >
                                         Learn more
                                         <ArrowRight />

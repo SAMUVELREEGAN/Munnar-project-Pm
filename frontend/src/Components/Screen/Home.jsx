@@ -11,7 +11,7 @@ export const Home = () => {
 
 
     return (
-        <section>
+        <section className='space-y-16' >
             <HeroSection HeroContent={HomeSection?.homePage?.heroSection} />
             <Services OurTourPackages={HomeSection?.homePage?.OurTourPackages} />
             <PickupProcess StepCard={HomeSection?.scheduleSection} />

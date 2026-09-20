@@ -103,7 +103,7 @@ function VehicleCard({ vehicle }) {
             <h3 className="mt-3 text-base font-semibold text-gray-900">{vehicle.title}</h3>
 
             {/* Rates */}
-            <dl className="mt-4 flex-1 space-y-2.5 rounded-2xl bg-[#f4f6f2] p-4">
+            <dl className="my-4 flex-1 space-y-2.5 rounded-2xl bg-[#f4f6f2] p-4">
                 {vehicle.pricing.map(({ label, value }) => (
                     <div key={label} className="flex items-baseline justify-between gap-3 text-xs">
                         <dt className="text-gray-500">{label}</dt>
@@ -113,16 +113,9 @@ function VehicleCard({ vehicle }) {
             </dl>
 
             {/* Luggage + book */}
-            <div className="mt-4 grid grid-cols-[1fr_1.25fr] gap-3">
-                <div className="flex flex-col items-center justify-center rounded-full bg-[#f4f6f2] px-3 py-2 text-gray-700">
-                    <span className="text-[11px] text-gray-500">{vehicle.footerInfo?.label ?? "Luggage"}</span>
-                    <span className="mt-0.5 inline-flex items-center gap-1 text-sm font-semibold">
-                        <LuggageIcon />
-                        {vehicle.footerInfo?.value}
-                    </span>
-                </div>
+            <div className="">
                 <Link
-                    to={`/book?vehicle=${vehicle.id}`}
+                    to={`/contact-us`}
                     aria-label={`Book ${vehicle.title}`}
                     className={`inline-flex items-center justify-center gap-2 rounded-full bg-green-100 px-4 py-3 text-sm font-semibold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
                 >
@@ -141,11 +134,8 @@ export default function Vehicles({ VehiclePackages = {} }) {
     const { pageTitle, pageDescription, vehicles } = VehiclePackages;
 
     return (
-        <section
-            aria-labelledby="vehicles-title"
-            className="bg-[#f7f9f6] py-14 sm:py-20"
-        >
-            <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+        <section aria-labelledby="vehicles-title" className="py-10" >
+            <div className="container">
                 {/* Header */}
                 <div className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12">
                     <h2 id="vehicles-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">

@@ -137,7 +137,7 @@ export default function Footer({ logoSrc }) {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="relative overflow-hidden bg-green-700 px-4 py-12 sm:px-6 sm:py-16">
+        <footer className="relative overflow-hidden bg-green-700 px-4 py-12 sm:px-6 sm:py-16 mt-20">
             {/* Decorative shapes */}
             <div
                 aria-hidden="true"
@@ -146,7 +146,7 @@ export default function Footer({ logoSrc }) {
             <CornerShape className="-right-3 top-4" />
             <CornerShape className="-left-3 bottom-4" />
 
-            <div className="relative mx-auto max-w-[1100px] rounded-[2rem] bg-white p-7 shadow-xl sm:p-12">
+            <div className="relative container rounded-[2rem] bg-white p-7 shadow-xl sm:p-12">
                 <div className="grid gap-10 lg:grid-cols-[1.35fr_0.8fr_1.9fr] lg:gap-12">
                     {/* About */}
                     <div>

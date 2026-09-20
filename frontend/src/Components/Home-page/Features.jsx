@@ -18,11 +18,8 @@ export default function Features({ accessibilitySection }) {
 
 
     return (
-        <section
-            aria-labelledby="features-title"
-            className="bg-[#f7f9f6] py-14 sm:py-20"
-        >
-            <div className="mx-auto grid max-w-[1200px] items-center gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-12">
+        <section aria-labelledby="features-title" className="" >
+            <div className="grid container items-center gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-12">
                 {/* Intro */}
                 <div>
                     <h2 id="features-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">

@@ -2,9 +2,23 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
-export default function HeroSection({ HeroContent }) {
+function Arrow() {
+    return (
+        <svg className="text-green-600" width="22" height="14" viewBox="0 0 22 14" aria-hidden="true">
+            <path
+                d="M1 7h19M14 1l6 6-6 6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
 
-    console.log("dd", HeroContent)
+
+export default function HeroSection({ HeroContent }) {
 
     const { title, desc, bgImage } = HeroContent
 
@@ -25,7 +39,7 @@ export default function HeroSection({ HeroContent }) {
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/30" />
 
             {/* Content */}
-            <div className="relative mx-auto flex min-h-[560px] max-w-[1200px] items-center px-4 pb-12 pt-10 sm:min-h-[640px] sm:px-6 lg:min-h-[720px]">
+            <div className="relative container flex min-h-[560px] items-center px-4 pb-12 pt-10 sm:min-h-[640px] sm:px-6 lg:min-h-[720px]">
                 <div className="w-full rounded-[28px] bg-black/60 p-6 backdrop-blur-[2px] sm:p-10 md:ml-auto md:max-w-[640px] lg:max-w-[720px] lg:p-12">
                     <h1
                         id="hero-title"
@@ -39,12 +53,18 @@ export default function HeroSection({ HeroContent }) {
                         {desc}
                     </p>
 
-                    <Link
-                        to={"/"}
-                        className="mt-7 inline-flex items-center rounded-full bg-green-600 px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:mt-8"
-                    >
-                        {CTA_LABEL}
-                    </Link>
+                    <div className="py-3 lg:py-0 mt-5">
+                        <Link
+                            to="/book"
+                            aria-label="Book Now"
+                            className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-[5px] pr-3.5 text-sm font-bold text-white transition-colors hover:bg-green-700 max-[400px]:pr-[5px] sm:gap-4 sm:p-1.5 sm:pr-7 sm:text-[15px]`}
+                        >
+                            <span className="grid h-8 w-[38px] place-items-center rounded-full bg-white sm:h-9 sm:w-[52px]">
+                                <Arrow />
+                            </span>
+                            <span className="max-[400px]:hidden">Book Now</span>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>
