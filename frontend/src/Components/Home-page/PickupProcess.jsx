@@ -33,7 +33,7 @@ export default function PickupProcess({ StepCard }) {
     const { title, features } = StepCard
 
     return (
-        <section className="bg-[#f7f9f6] py-14 font-['Nunito_Sans',system-ui,sans-serif] sm:py-20">
+        <section className="bg-[#f7f9f6] py-14 sm:py-20">
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
 
                 {/* Process */}

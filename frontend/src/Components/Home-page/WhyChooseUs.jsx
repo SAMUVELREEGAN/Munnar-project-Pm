@@ -37,7 +37,7 @@ export default function WhyChooseUs({ whyChooseUs }) {
     return (
         <section
             aria-labelledby="why-title"
-            className="bg-[#f7f9f6] py-14 font-['Nunito_Sans',system-ui,sans-serif] sm:py-20"
+            className="bg-[#f7f9f6] py-14 sm:py-20"
         >
             <div className="mx-auto grid max-w-[1200px] gap-4 px-4 sm:px-6 lg:grid-cols-2 lg:gap-5">
                 {/* Photo */}

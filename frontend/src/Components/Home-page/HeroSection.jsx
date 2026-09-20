@@ -13,7 +13,7 @@ export default function HeroSection({ HeroContent }) {
     return (
         <section
             aria-labelledby="hero-title"
-            className="relative -mt-[78px] overflow-hidden  pt-[78px] font-['Nunito_Sans',system-ui,sans-serif] sm:-mt-[94px] sm:pt-[94px]"
+            className="relative -mt-[78px] overflow-hidden  pt-[78px] sm:-mt-[94px] sm:pt-[94px]"
         >
             <img
                 src={bgImage}

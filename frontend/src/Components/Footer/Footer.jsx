@@ -137,7 +137,7 @@ export default function Footer({ logoSrc }) {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="relative overflow-hidden bg-green-700 px-4 py-12 font-['Nunito_Sans',system-ui,sans-serif] sm:px-6 sm:py-16">
+        <footer className="relative overflow-hidden bg-green-700 px-4 py-12 sm:px-6 sm:py-16">
             {/* Decorative shapes */}
             <div
                 aria-hidden="true"

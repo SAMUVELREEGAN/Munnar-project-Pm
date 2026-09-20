@@ -82,7 +82,7 @@ export default function Services({ OurTourPackages }) {
     return (
         <section
             aria-labelledby="services-title"
-            className="overflow-hidden bg-[#f7f9f6] py-14 font-['Nunito_Sans',system-ui,sans-serif] sm:py-20"
+            className="overflow-hidden bg-[#f7f9f6] py-14 sm:py-20"
         >
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
                 {/* Header */}

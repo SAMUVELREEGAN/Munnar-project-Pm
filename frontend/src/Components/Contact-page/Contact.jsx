@@ -132,7 +132,7 @@ export default function Contact({
         <>
             <section
                 aria-label="Contact details and enquiry form"
-                className="bg-[#f7f9f6] py-12 font-['Nunito_Sans',system-ui,sans-serif] sm:py-16"
+                className="bg-[#f7f9f6] py-12 sm:py-16"
             >
                 <div className="mx-auto grid max-w-[1200px] items-start gap-6 px-4 sm:px-6 lg:grid-cols-2">
                     {/* Contact information */}

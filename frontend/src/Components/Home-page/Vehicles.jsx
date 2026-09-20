@@ -143,7 +143,7 @@ export default function Vehicles({ VehiclePackages = {} }) {
     return (
         <section
             aria-labelledby="vehicles-title"
-            className="bg-[#f7f9f6] py-14 font-['Nunito_Sans',system-ui,sans-serif] sm:py-20"
+            className="bg-[#f7f9f6] py-14 sm:py-20"
         >
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
                 {/* Header */}

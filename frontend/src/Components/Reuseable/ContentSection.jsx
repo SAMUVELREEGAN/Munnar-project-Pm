@@ -14,7 +14,7 @@ export default function ContentSection({
 
     return (
         <section
-            className={`bg-[#f7f9f6] py-12 font-['Nunito_Sans',system-ui,sans-serif] sm:py-16 ${className}`}
+            className={`bg-[#f7f9f6] py-12 sm:py-16 ${className}`}
         >
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
                 {(title || intro) && (

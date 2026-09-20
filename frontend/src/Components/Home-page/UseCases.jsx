@@ -72,7 +72,7 @@ export default function UseCases({
     return (
         <section
             aria-labelledby="use-cases-title"
-            className="bg-[#f7f9f6] py-14 font-['Nunito_Sans',system-ui,sans-serif] sm:py-20"
+            className="bg-[#f7f9f6] py-14 sm:py-20"
         >
             <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-16">
                 {/* Intro (stays in view while the cards scroll on desktop) */}

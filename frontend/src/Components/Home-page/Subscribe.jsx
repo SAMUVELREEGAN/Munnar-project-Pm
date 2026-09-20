@@ -39,7 +39,7 @@ export default function Subscribe({ onSubscribe = async () => { } }) {
     return (
         <section
             aria-labelledby="subscribe-title"
-            className="bg-white px-4 py-10 font-['Nunito_Sans',system-ui,sans-serif] sm:px-6 sm:py-16"
+            className="bg-white px-4 py-10 sm:px-6 sm:py-16"
         >
             <div className="mx-auto max-w-[1200px] rounded-[32px] bg-[#f1f5ef] px-5 py-12 text-center sm:px-10 sm:py-16">
                 <h2 id="subscribe-title" className="text-3xl font-bold text-gray-900 sm:text-4xl">

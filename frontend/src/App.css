@@ -3,3 +3,24 @@
 @tailwind utilities;
 
 
+@layer components {
+  .container {
+    @apply w-full max-w-[1320px] mx-auto px-5 sm:px-6 lg:px-8;
+  }
+
+  .text-h1 {
+    @apply text-[40px] lg:text-[60px] leading-tight;
+  }
+
+  .text-h2 {
+    @apply text-[28px] lg:text-[40px] leading-tight;
+  }
+
+  .text-h3 {
+    @apply text-[20px] lg:text-[28px] leading-tight;
+  }
+
+  .text-h4 {
+    @apply text-[16px] lg:text-[18px] leading-snug;
+  }
+}

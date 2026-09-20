@@ -15,7 +15,7 @@ export default function PageHero({ title, description, children, className = "" 
     return (
         <section
             aria-labelledby={titleId}
-            className={`relative min-h-[50vh] overflow-hidden bg-[radial-gradient(ellipse_at_center,#f7fbf6_0%,#e6f2e5_100%)] pt-[78px] font-['Nunito_Sans',system-ui,sans-serif] sm:-mt-[94px] sm:pt-[94px] ${className}`}
+            className={`relative min-h-[50vh] overflow-hidden bg-[radial-gradient(ellipse_at_center,#f7fbf6_0%,#e6f2e5_100%)] pt-[78px] sm:-mt-[94px] sm:pt-[94px] ${className}`}
         >
             <div className="absolute inset-0" style={dotPattern} aria-hidden="true" />
 
