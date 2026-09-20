@@ -1,0 +1,67 @@
+{
+    "vehicles": [
+        {
+            "title": "Sedan",
+            "type": "sedan",
+            "seats": 4,
+            "duration": "1 day",
+            "distance": "100 km",
+            "price": 2500,
+            "image": "/images/vehicles/sedan.png"
+        },
+        {
+            "title": "Ertiga",
+            "type": "mpv",
+            "seats": 5,
+            "duration": "1 day",
+            "distance": "100 km",
+            "price": 3000,
+            "image": "/images/vehicles/ertiga.png"
+        },
+        {
+            "title": "Innova",
+            "type": "mpv",
+            "seats": 7,
+            "duration": "1 day",
+            "distance": "100 km",
+            "price": 3500,
+            "image": "/images/vehicles/innova.png"
+        },
+        {
+            "title": "Innova Crysta",
+            "type": "mpv",
+            "seats": 8,
+            "duration": "1 day",
+            "distance": "100 km",
+            "price": 4000,
+            "image": "/images/vehicles/innova-crysta.png"
+        },
+        {
+            "title": "Tempo Traveller",
+            "type": "van",
+            "seats": 12,
+            "duration": "1 day",
+            "distance": "100 km",
+            "price": 4500,
+            "image": "/images/vehicles/tempo-traveller-12.png"
+        },
+        {
+            "title": "Tempo Traveller",
+            "type": "van",
+            "seats": 14,
+            "duration": "1 day",
+            "distance": "100 km",
+            "price": 5000,
+            "image": "/images/vehicles/tempo-traveller-14.png"
+        },
+        {
+            "title": "Tempo Traveller",
+            "type": "van",
+            "seats": 17,
+            "duration": "1 day",
+            "distance": "100 km",
+            "price": 5500,
+            "image": "/images/vehicles/tempo-traveller-17.png"
+        }
+    ]
+}

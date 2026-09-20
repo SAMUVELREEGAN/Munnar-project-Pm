@@ -22,7 +22,7 @@ export const About = () => {
                 image={AboutSection?.bookingSection?.image}
                 imageAlt={AboutSection?.bookingSection?.imageAlt}
                 paragraphs={AboutSection?.bookingSection?.paragraphs}
-
+                imagePosition="left"
             />
             <UseCases
                 title={AboutSection?.useCasesSection?.title}
