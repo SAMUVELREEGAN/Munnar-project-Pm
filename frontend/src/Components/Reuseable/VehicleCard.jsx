@@ -1,39 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-/*
-  Reusable vehicle rate card.
-
-  Usage:
-    <VehicleCard
-      title="Innova"
-      type="mpv"
-      seats={7}
-      duration="1 day"
-      distance="100 km"
-      price={3500}
-      image="/images/vehicles/innova.png"
-      bookHref="https://wa.me/919876543210?text=..."   // or use `to` / `onBook`
-    />
-
-  Every prop except `title` is optional – a block is simply hidden when its data is missing.
-
-  Props
-    title         string   vehicle name, e.g. "Sedan", "Tempo Traveller"
-    subtitle      string   small line under the title, e.g. "Etios or similar"
-    image         string   vehicle photo, e.g. "/images/vehicles/sedan.png"
-                           (a PNG/JPG with a white background is fine – it is blended into the panel)
-    type          "sedan" | "mpv" | "van"   which illustration to show if the photo is missing
-    seats         number   passenger seats
-    duration      string   e.g. "1 day"
-    distance      string   e.g. "100 km"
-    price         number   amount in rupees
-    priceNote     string   text under the price (optional)
-    bookHref      string   external link for the button (opens in a new tab)
-    to            string   router path for the button (used when bookHref is not set)
-    onBook        func     click handler (used when neither bookHref nor to is set)
-    headingLevel  2-6      heading tag for the title (default 3)
-*/
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";

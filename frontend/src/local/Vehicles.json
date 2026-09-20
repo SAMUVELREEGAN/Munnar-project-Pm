@@ -7,7 +7,7 @@
             "duration": "1 day",
             "distance": "100 km",
             "price": 2500,
-            "image": "/images/vehicles/sedan.png"
+            "image": "/images/cochin-airport.jpg"
         },
         {
             "title": "Ertiga",
@@ -16,7 +16,7 @@
             "duration": "1 day",
             "distance": "100 km",
             "price": 3000,
-            "image": "/images/vehicles/ertiga.png"
+            "image": "/images/kochi-direction.jpg"
         },
         {
             "title": "Innova",
@@ -25,7 +25,7 @@
             "duration": "1 day",
             "distance": "100 km",
             "price": 3500,
-            "image": "/images/vehicles/innova.png"
+            "image": "/images/innova-tavera.png"
         },
         {
             "title": "Innova Crysta",
@@ -34,7 +34,7 @@
             "duration": "1 day",
             "distance": "100 km",
             "price": 4000,
-            "image": "/images/vehicles/innova-crysta.png"
+            "image": "/images/kerala-tour.png"
         },
         {
             "title": "Tempo Traveller",
@@ -43,7 +43,7 @@
             "duration": "1 day",
             "distance": "100 km",
             "price": 4500,
-            "image": "/images/vehicles/tempo-traveller-12.png"
+            "image": "/images/kochi-direction.jpg"
         },
         {
             "title": "Tempo Traveller",
@@ -52,7 +52,7 @@
             "duration": "1 day",
             "distance": "100 km",
             "price": 5000,
-            "image": "/images/vehicles/tempo-traveller-14.png"
+            "image": "/images/munnar-innova.jpg"
         },
         {
             "title": "Tempo Traveller",
@@ -61,7 +61,16 @@
             "duration": "1 day",
             "distance": "100 km",
             "price": 5500,
-            "image": "/images/vehicles/tempo-traveller-17.png"
+            "image": "/images/van.png"
+        },
+        {
+            "title": "Tempo Traveller",
+            "type": "van",
+            "seats": 17,
+            "duration": "1 day",
+            "distance": "100 km",
+            "price": 5500,
+            "image": "/images/van3.png"
         }
     ]
 }
