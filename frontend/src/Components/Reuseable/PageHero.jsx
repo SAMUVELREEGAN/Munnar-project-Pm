@@ -19,7 +19,7 @@ export default function PageHero({ title, description, children, className = "" 
         >
             <div className="absolute inset-0" style={dotPattern} aria-hidden="true" />
 
-            <div className="relative mx-auto max-w-[1200px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:py-[72px]">
+            <div className="relative mx-auto max-w-[1350px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:py-[72px]">
                 <h1 id={titleId} className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
                     {title}
                 </h1>

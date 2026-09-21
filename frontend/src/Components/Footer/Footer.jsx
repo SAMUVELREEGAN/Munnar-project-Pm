@@ -82,7 +82,7 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="relative overflow-hidden bg-green-700 px-4 py-12 sm:px-6 sm:py-16 mt-20">
+        <footer className="relative overflow-hidden bg-green-700 px-4 py-12 sm:px-6 sm:py-16">
             {/* Decorative shapes */}
             <div
                 aria-hidden="true"

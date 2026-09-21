@@ -50,11 +50,10 @@ export default function PlacesToVisit() {
                                     key={tab.value}
                                     type="button"
                                     onClick={() => setActiveRegion(tab.value)}
-                                    className={`rounded-full px-4 py-2 text-xs sm:text-sm font-bold transition-all ${
-                                        isActive
+                                    className={`rounded-full px-4 py-2 text-xs sm:text-sm font-bold transition-all ${isActive
                                             ? "bg-green-600 text-white border border-green-600 shadow-sm"
                                             : "bg-white text-gray-700 border border-gray-200 hover:border-green-600 hover:text-green-700 shadow-sm"
-                                    } ${focusRing}`}
+                                        } ${focusRing}`}
                                 >
                                     {tab.label} {tab.count > 0 && <span className="opacity-80">({tab.count})</span>}
                                 </button>

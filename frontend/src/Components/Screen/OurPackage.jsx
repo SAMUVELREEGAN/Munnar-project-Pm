@@ -5,6 +5,7 @@ import VehiclePackages from '../Our-Package/VehiclePackages';
 import PlacesToVisit from '../Our-Package/PlacesToVisit';
 import TrustBanner from '../Our-Package/TrustBanner';
 import PageHero from '../Reuseable/PageHero';
+import Subscribe from '../Home-page/Subscribe';
 
 export const OurPackage = () => {
     return (
@@ -17,6 +18,7 @@ export const OurPackage = () => {
             <VehiclePackages />
             <PlacesToVisit />
             <TrustBanner />
+            <Subscribe />
         </div>
     );
 };

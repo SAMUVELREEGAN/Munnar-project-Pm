@@ -3,6 +3,7 @@ import PageHero from '../Reuseable/PageHero'
 import ContentSection from '../Reuseable/ContentSection'
 import UseCases from '../Home-page/UseCases'
 import AboutSection from "../../local/aboutPage.json"
+import Subscribe from '../Home-page/Subscribe'
 
 
 export const About = () => {
@@ -29,6 +30,7 @@ export const About = () => {
                 paragraphs={AboutSection?.useCasesSection?.leftParagraphs}
                 rightCards={AboutSection?.useCasesSection?.rightCards}
             />
+            <Subscribe />
         </section>
     )
 }

@@ -105,11 +105,10 @@ export default function VehiclePackages() {
                         return (
                             <article
                                 key={v.id}
-                                className={`relative flex flex-col overflow-hidden rounded-3xl border bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
-                                    v.isPopular
+                                className={`relative flex flex-col overflow-hidden rounded-3xl border bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${v.isPopular
                                         ? "border-amber-400 ring-2 ring-amber-400/30"
                                         : "border-gray-200/90 hover:border-green-600/30"
-                                }`}
+                                    }`}
                             >
                                 {/* Most Popular Ribbon */}
                                 {v.isPopular && (
