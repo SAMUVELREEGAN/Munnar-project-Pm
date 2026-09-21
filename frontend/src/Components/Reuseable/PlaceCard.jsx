@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaLocationDot, FaArrowRight } from "react-icons/fa6";
 
 /*
   Reusable tourist-place card.
@@ -39,37 +40,6 @@ function resolveSrc(src) {
     const clean = src.replace(/^(\.{1,2}\/)+/, "").replace(/^public\//, "").replace(/^\/+/, "");
     return `/${clean}`;
 }
-
-/* ---------- Icons ---------- */
-function Icon({ children, size = 14 }) {
-    return (
-        <svg
-            width={size}
-            height={size}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-        >
-            {children}
-        </svg>
-    );
-}
-
-const PinIcon = () => (
-    <Icon>
-        <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />
-        <circle cx="12" cy="10" r="2.5" />
-    </Icon>
-);
-const ArrowRight = () => (
-    <Icon>
-        <path d="M4 12h15M13 6l6 6-6 6" />
-    </Icon>
-);
 
 /* ---------- Illustrations shown when the photo is missing ---------- */
 const ART = {
@@ -191,7 +161,7 @@ export default function PlaceCard({
     const Heading = `h${headingLevel}`;
 
     return (
-        <article className="flex h-full flex-col rounded-2xl bg-white p-2.5 shadow-sm ring-1 ring-gray-100 transition-shadow duration-200 hover:shadow-lg">
+        <article className="flex h-full flex-col rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100 transition-shadow duration-200 hover:shadow-lg">
             <div className="relative">
                 <PlaceImage src={image} title={title} type={type} />
                 {category && (
@@ -201,19 +171,19 @@ export default function PlaceCard({
                 )}
             </div>
 
-            <div className="flex flex-1 flex-col px-2 pb-2 pt-3.5">
-                <Heading className="text-[15px] font-bold leading-snug text-gray-900">{title}</Heading>
+            <div className="flex flex-1 flex-col px-2 pb-2 pt-4">
+                <Heading className="text-base sm:text-lg font-bold leading-snug text-gray-900">{title}</Heading>
 
                 {location && (
-                    <p className="mt-1.5 flex items-center gap-1.5 text-xs font-semibold text-green-800">
-                        <PinIcon />
+                    <p className="mt-2 flex items-center gap-1.5 text-sm font-semibold text-green-800">
+                        <FaLocationDot size={15} />
                         <span>{location}</span>
                     </p>
                 )}
 
                 {description && (
                     <p
-                        className="mt-2 flex-1 text-xs leading-relaxed text-gray-600"
+                        className="mt-2 flex-1 text-sm leading-relaxed text-gray-600"
                         style={{
                             display: "-webkit-box",
                             WebkitLineClamp: 3,
@@ -229,10 +199,10 @@ export default function PlaceCard({
                     <Link
                         to={to}
                         aria-label={`Learn more about ${title}`}
-                        className={`mt-3 inline-flex items-center gap-1.5 self-start rounded text-xs font-bold text-green-700 hover:text-green-900 ${focusRing}`}
+                        className={`mt-3 inline-flex items-center gap-1.5 self-start rounded text-sm font-bold text-green-700 hover:text-green-900 ${focusRing}`}
                     >
                         Learn more
-                        <ArrowRight />
+                        <FaArrowRight size={15} />
                     </Link>
                 )}
             </div>

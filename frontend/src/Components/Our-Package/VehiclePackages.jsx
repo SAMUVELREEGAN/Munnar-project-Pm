@@ -27,14 +27,14 @@ export default function VehiclePackages({ title = TITLE, desc = DESC }) {
                     <h2 id="vehicles-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
                         {title}
                     </h2>
-                    <p className="text-sm leading-relaxed text-gray-600 md:pt-1">{desc}</p>
+                    <p className="text-base sm:text-lg leading-relaxed text-gray-600 md:pt-1">{desc}</p>
                 </div>
 
                 <hr className="mt-8 border-gray-200 sm:mt-10" />
 
                 {/* Cards */}
                 {vehicles.length > 0 ? (
-                    <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                         {vehicles.map((v, i) => (
                             <VehicleCard
                                 key={`${v.title}-${v.seats}-${i}`}
@@ -44,7 +44,7 @@ export default function VehiclePackages({ title = TITLE, desc = DESC }) {
                         ))}
                     </div>
                 ) : (
-                    <p className="mt-8 rounded-3xl bg-white p-8 text-center text-sm text-gray-600">
+                    <p className="mt-8 rounded-3xl bg-white p-8 text-center text-base text-gray-600">
                         Vehicle rates will be listed here soon. Message us for a quote in the meantime.
                     </p>
                 )}

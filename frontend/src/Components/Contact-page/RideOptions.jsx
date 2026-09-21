@@ -1,13 +1,5 @@
 import { useState } from "react";
-
-function PinIcon() {
-    return (
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />
-            <circle cx="12" cy="10" r="2.5" />
-        </svg>
-    );
-}
+import { FaLocationDot } from "react-icons/fa6";
 
 function CardImage({ src }) {
     const [failed, setFailed] = useState(false);
@@ -39,8 +31,8 @@ export default function RideOptions({
         >
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
                 {badge && (
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1.5 text-xs font-semibold text-green-700">
-                        <PinIcon />
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3.5 py-1.5 text-sm font-semibold text-green-700">
+                        <FaLocationDot size={15} />
                         {badge}
                     </span>
                 )}
@@ -52,15 +44,15 @@ export default function RideOptions({
                     {title}
                 </h2>
 
-                <ul className="mt-10 grid gap-x-4 gap-y-10 md:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+                <ul className="mt-10 grid gap-x-5 gap-y-10 md:grid-cols-2 lg:mt-12 lg:grid-cols-3">
                     {items.map((item) => (
                         <li key={item.title} className="flex flex-col">
                             <CardImage src={item.image} />
 
                             {/* Text card overlaps the bottom of the photo */}
-                            <div className="relative z-10 -mt-28 mx-5 flex flex-1 flex-col items-center rounded-xl bg-white px-5 py-6 text-center shadow-[0_4px_12px_rgba(0,0,0,0.18)] sm:-mt-36 sm:mx-6 sm:px-6">
-                                <h3 className="text-[15px] font-bold text-gray-900">{item.title}</h3>
-                                <p className="mt-3 text-[13px] leading-relaxed text-gray-600">{item.text}</p>
+                            <div className="relative z-10 -mt-28 mx-5 flex flex-1 flex-col items-center rounded-2xl bg-white px-6 py-7 text-center shadow-[0_4px_16px_rgba(0,0,0,0.12)] ring-1 ring-gray-100 sm:-mt-36 sm:mx-6">
+                                <h3 className="text-base sm:text-lg font-bold text-gray-900">{item.title}</h3>
+                                <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-gray-600">{item.text}</p>
                             </div>
                         </li>
                     ))}

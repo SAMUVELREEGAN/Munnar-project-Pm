@@ -4,45 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Keyboard } from "swiper/modules";
 import "swiper/css";
 import service from "../../local/OurPackage.json";
+import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
-
-function ArrowRight({ className = "" }) {
-    return (
-        <svg className={className} width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-            <path
-                d="M1.5 7h10M7.5 3l4 4-4 4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    );
-}
-
-function ChevronIcon({ direction }) {
-    return (
-        <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            aria-hidden="true"
-            className={direction === "left" ? "" : "rotate-180"}
-        >
-            <path
-                d="M11 3.5 5.5 9 11 14.5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    );
-}
 
 /* Card photo with a green placeholder if the file is missing */
 function CardImage({ src }) {
@@ -77,7 +42,7 @@ export default function Services({ OurTourPackages }) {
         setAtEnd(s.isEnd);
     };
 
-    const navBtn = `grid h-10 w-10 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-600 ${focusRing}`;
+    const navBtn = `grid h-11 w-11 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-600 ${focusRing}`;
 
     return (
         <section aria-labelledby="services-title" className="overflow-hidden">
@@ -87,7 +52,7 @@ export default function Services({ OurTourPackages }) {
                     <h2 id="services-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
                         {title}
                     </h2>
-                    <p className="text-sm leading-relaxed text-gray-600 md:pt-1">{desc}</p>
+                    <p className="text-base sm:text-lg leading-relaxed text-gray-600 md:pt-1">{desc}</p>
                 </div>
 
                 <hr className="mt-8 border-gray-200 sm:mt-10" />
@@ -101,7 +66,7 @@ export default function Services({ OurTourPackages }) {
                         onClick={() => swiper?.slidePrev()}
                         className={navBtn}
                     >
-                        <ChevronIcon direction="left" />
+                        <FaChevronLeft size={20} />
                     </button>
                     <button
                         type="button"
@@ -110,7 +75,7 @@ export default function Services({ OurTourPackages }) {
                         onClick={() => swiper?.slideNext()}
                         className={navBtn}
                     >
-                        <ChevronIcon direction="right" />
+                        <FaChevronRight size={20} />
                     </button>
                 </div>
 
@@ -139,17 +104,17 @@ export default function Services({ OurTourPackages }) {
                             <SwiperSlide key={item.title} className="!h-auto">
                                 <article className="flex h-full flex-col">
                                     <CardImage src={item.image} />
-                                    <h3 className="mt-4 text-base font-bold text-gray-900">{item.title}</h3>
-                                    <p className="mt-2 flex-1 text-[13px] leading-relaxed text-gray-600">
+                                    <h3 className="mt-4 text-lg sm:text-xl font-bold text-gray-900">{item.title}</h3>
+                                    <p className="mt-2.5 flex-1 text-sm sm:text-base leading-relaxed text-gray-600">
                                         {item.description}
                                     </p>
                                     <Link
                                         to={"/contact-us"}
                                         aria-label={`Learn more about ${item.title}`}
-                                        className={`mt-5 inline-flex items-center gap-2 self-start rounded-full bg-green-100 px-5 py-3 text-sm font-semibold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                        className={`mt-5 inline-flex items-center gap-2 self-start rounded-full bg-green-100 px-5 py-3 text-sm sm:text-base font-semibold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
                                     >
                                         Learn more
-                                        <ArrowRight />
+                                        <FaArrowRight size={16} />
                                     </Link>
                                 </article>
                             </SwiperSlide>

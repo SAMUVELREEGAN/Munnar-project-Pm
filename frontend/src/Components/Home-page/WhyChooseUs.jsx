@@ -1,10 +1,5 @@
-function CheckIcon() {
-    return (
-        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-            <path d="m2.5 6.3 2.3 2.3 4.7-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    );
-}
+import iconMap from "../Reuseable/iconMap";
+import { FaCircleCheck } from "react-icons/fa6";
 
 export default function WhyChooseUs({ whyChooseUs }) {
 
@@ -32,18 +27,21 @@ export default function WhyChooseUs({ whyChooseUs }) {
                         {title}
                     </h2>
 
-                    <ul className="mt-8 space-y-5">
-                        {features.map((reason) => (
-                            <li key={reason.title} className="flex gap-3">
-                                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-green-100 text-green-600">
-                                    <CheckIcon />
-                                </span>
-                                <div>
-                                    <h3 className="text-sm font-semibold text-gray-900">{reason.title}</h3>
-                                    <p className="mt-1 text-[13px] leading-relaxed text-gray-600">{reason.description}</p>
-                                </div>
-                            </li>
-                        ))}
+                    <ul className="mt-8 space-y-6">
+                        {features.map((reason) => {
+                            const IconComponent = iconMap[reason.icon] || FaCircleCheck;
+                            return (
+                                <li key={reason.title} className="flex items-start gap-4">
+                                    <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-green-100 text-green-600 shadow-sm">
+                                        <IconComponent size={20} />
+                                    </span>
+                                    <div>
+                                        <h3 className="text-base sm:text-lg font-bold text-gray-900">{reason.title}</h3>
+                                        <p className="mt-1.5 text-sm sm:text-[15px] leading-relaxed text-gray-600">{reason.description}</p>
+                                    </div>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
             </div>

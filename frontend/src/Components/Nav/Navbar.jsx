@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
 
 /* ---------- Easy-to-edit settings ---------- */
 const SITE_NAME = "Munnar Taxi Service";
@@ -18,21 +19,6 @@ const NAV_LINKS = [
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
-
-function Arrow() {
-    return (
-        <svg className="text-green-600" width="22" height="14" viewBox="0 0 22 14" aria-hidden="true">
-            <path
-                d="M1 7h19M14 1l6 6-6 6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    );
-}
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -82,7 +68,7 @@ export default function Navbar() {
                         <span className="whitespace-nowrap text-base font-extrabold text-green-600 min-[400px]:text-[17px] sm:text-[22px]">
                             {SITE_NAME}
                         </span>
-                        <span className="mt-[3px] hidden whitespace-nowrap text-[9.5px] font-bold text-gray-900 md:block lg:hidden xl:block">
+                        <span className="mt-[2px] hidden whitespace-nowrap text-xs font-semibold text-gray-600 md:block lg:hidden xl:block">
                             {SITE_TAGLINE}
                         </span>
                     </span>
@@ -113,12 +99,12 @@ export default function Navbar() {
                         {/* Book Now – wrapped in <li> (valid HTML) */}
                         <li className="py-3 lg:py-0">
                             <Link
-                                to="/book"
+                                to="/contact-us"
                                 aria-label="Book Now"
-                                className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-[5px] pr-3.5 text-sm font-bold text-white transition-colors hover:bg-green-700 max-[400px]:pr-[5px] sm:gap-4 sm:p-1.5 sm:pr-7 sm:text-[15px] ${focusRing}`}
+                                className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-[5px] pr-3.5 text-sm font-bold text-white transition-colors hover:bg-green-700 max-[400px]:pr-[5px] sm:gap-4 sm:p-1.5 sm:pr-7 sm:text-base ${focusRing}`}
                             >
                                 <span className="grid h-8 w-[38px] place-items-center rounded-full bg-white sm:h-9 sm:w-[52px]">
-                                    <Arrow />
+                                    <FaArrowRight size={16} className="text-green-600" />
                                 </span>
                                 <span className="max-[400px]:hidden">Book Now</span>
                             </Link>

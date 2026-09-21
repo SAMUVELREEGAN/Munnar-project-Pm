@@ -1,18 +1,11 @@
 import { useState } from "react";
+import { FaArrowRight } from "react-icons/fa6";
 
 /* ---------- Easy-to-edit content ---------- */
 const HEADING = "Get Travel Offers & Updates";
 const TEXT =
     "Subscribe for seasonal offers, new tour packages and travel tips for exploring Munnar and the nearby hill stations.";
 /* ------------------------------------------ */
-
-function ArrowRight() {
-    return (
-        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-            <path d="M1.5 7h10M7.5 3l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    );
-}
 
 /*
   onSubscribe(email) should return a Promise – connect it to your API, e.g.
@@ -45,9 +38,9 @@ export default function Subscribe({ onSubscribe = async () => { } }) {
                 <h2 id="subscribe-title" className="text-3xl font-bold text-gray-900 sm:text-4xl">
                     {HEADING}
                 </h2>
-                <p className="mx-auto mt-4 max-w-[520px] text-sm leading-relaxed text-gray-600">{TEXT}</p>
+                <p className="mx-auto mt-4 max-w-[560px] text-base leading-relaxed text-gray-600 sm:text-lg">{TEXT}</p>
 
-                <form onSubmit={handleSubmit} className="mx-auto mt-8 max-w-[480px] sm:mt-10" noValidate={false}>
+                <form onSubmit={handleSubmit} className="mx-auto mt-8 max-w-[520px] sm:mt-10" noValidate={false}>
                     <div className="flex items-center gap-2 rounded-full bg-white p-1.5 shadow-sm focus-within:ring-2 focus-within:ring-green-600">
                         <label htmlFor="subscribe-email" className="sr-only">
                             Email address
@@ -63,15 +56,15 @@ export default function Subscribe({ onSubscribe = async () => { } }) {
                                 setEmail(e.target.value);
                                 if (status !== "loading") setStatus("idle");
                             }}
-                            className="min-w-0 flex-1 bg-transparent px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none"
+                            className="min-w-0 flex-1 bg-transparent px-4 py-3 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none"
                         />
                         <button
                             type="submit"
                             disabled={status === "loading"}
-                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:cursor-not-allowed disabled:opacity-70"
+                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green-600 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:cursor-not-allowed disabled:opacity-70"
                         >
                             {status === "loading" ? "Subscribing…" : "Subscribe Now"}
-                            {status !== "loading" && <ArrowRight />}
+                            {status !== "loading" && <FaArrowRight size={16} />}
                         </button>
                     </div>
 

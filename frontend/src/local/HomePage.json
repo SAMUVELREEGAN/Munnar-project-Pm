@@ -23,25 +23,25 @@
         "features": [
             {
                 "id": 1,
-                "icon": "🤝",
+                "icon": "FaHandshake",
                 "title": "Meet And Greet",
                 "description": "A Professional Chauffeur Will Wait At The Airport Arrival Hall Holding A Signboard With The Passenger's Name, Making It Easier To Identify The Driver Immediately After Arrival."
             },
             {
                 "id": 2,
-                "icon": "✈️",
+                "icon": "FaPlaneDeparture",
                 "title": "Flight Monitoring",
                 "description": "The Flight Is Monitored In Real Time To Track Delays Or Early Arrivals. The Service Also Includes Up To One Hour Of Waiting Time After The Flight Lands."
             },
             {
                 "id": 3,
-                "icon": "📞",
+                "icon": "FaPhoneVolume",
                 "title": "Establish Contact",
                 "description": "The Assigned Driver Will Contact The Passenger Through WhatsApp, Phone Call, Or SMS Before Arrival To Ensure Smooth Coordination And Easier Pickup."
             },
             {
                 "id": 4,
-                "icon": "👶",
+                "icon": "MdChildFriendly",
                 "title": "Child Seats Available",
                 "description": "Child Seats And Booster Seats Can Be Provided Upon Request To Ensure Safer Travel For Families Traveling With Young Children."
             }
@@ -73,7 +73,7 @@
                     }
                 ],
                 "footerInfo": {
-                    "icon": "♿",
+                    "icon": "FaWheelchair",
                     "label": "Wheelchair Users",
                     "value": "1-2"
                 },
@@ -102,7 +102,7 @@
                     }
                 ],
                 "footerInfo": {
-                    "icon": "🧳",
+                    "icon": "FaSuitcaseRolling",
                     "label": "Luggage",
                     "value": "4"
                 },
@@ -131,7 +131,7 @@
                     }
                 ],
                 "footerInfo": {
-                    "icon": "🧳",
+                    "icon": "FaSuitcaseRolling",
                     "label": "Luggage",
                     "value": "9"
                 },
@@ -160,7 +160,7 @@
                     }
                 ],
                 "footerInfo": {
-                    "icon": "🧳",
+                    "icon": "FaSuitcaseRolling",
                     "label": "Luggage",
                     "value": "2"
                 },
@@ -189,7 +189,7 @@
                     }
                 ],
                 "footerInfo": {
-                    "icon": "🧳",
+                    "icon": "FaSuitcaseRolling",
                     "label": "Luggage",
                     "value": "6"
                 },
@@ -210,7 +210,7 @@
                     }
                 ],
                 "footerInfo": {
-                    "icon": "🚲",
+                    "icon": "FaBicycle",
                     "label": "Bicycles",
                     "value": "4"
                 },
@@ -226,19 +226,19 @@
         "features": [
             {
                 "id": 1,
-                "icon": "✔️",
+                "icon": "FaCircleCheck",
                 "title": "Refined & Reliable Travel:",
                 "description": "Precision-Driven Service With Punctuality And Smooth Coordination Across All Munnar Routes."
             },
             {
                 "id": 2,
-                "icon": "✔️",
+                "icon": "FaCircleCheck",
                 "title": "Local Expertise & Safety:",
                 "description": "Experienced Drivers Who Know The Hill Terrain, Ensuring Safe And Comfortable Travel."
             },
             {
                 "id": 3,
-                "icon": "✔️",
+                "icon": "FaCircleCheck",
                 "title": "Tailored Travel Experience:",
                 "description": "Flexible Packages And Customizable Itineraries Designed To Match Your Exact Munnar Travel Needs."
             }
@@ -250,25 +250,25 @@
         "features": [
             {
                 "id": 1,
-                "icon": "💬",
+                "icon": "FaComments",
                 "title": "Easy Communication",
                 "description": "Stay Connected With Your Driver Through Call Or Message For Smooth Coordination Before And During Your Trip."
             },
             {
                 "id": 2,
-                "icon": "✈️",
+                "icon": "FaPlaneDeparture",
                 "title": "On-Time Pickup",
                 "description": "We Ensure Timely Arrivals And Well-Planned Scheduling So Your Travel Stays On Track Without Unnecessary Waiting."
             },
             {
                 "id": 3,
-                "icon": "🧘",
+                "icon": "MdSelfImprovement",
                 "title": "Comfortable Travel",
                 "description": "Enjoy A Relaxed Journey With Clean, Well-Maintained Vehicles Designed For Comfort And Convenience."
             },
             {
                 "id": 4,
-                "icon": "🎟️",
+                "icon": "FaTicket",
                 "title": "Flexible Booking",
                 "description": "Book Your Ride Based On Your Schedule With Options That Suit Both Planned And Last-Minute Travel Needs."
             }

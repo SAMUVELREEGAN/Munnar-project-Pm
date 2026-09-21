@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaUsers, FaClock, FaRoute, FaArrowRight } from "react-icons/fa6";
 
 
 const focusRing =
@@ -14,51 +15,6 @@ function resolveSrc(src) {
     const clean = src.replace(/^(\.{1,2}\/)+/, "").replace(/^public\//, "").replace(/^\/+/, "");
     return `/${clean}`;
 }
-
-/* ---------- Icons ---------- */
-function Icon({ children, size = 14 }) {
-    return (
-        <svg
-            width={size}
-            height={size}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-        >
-            {children}
-        </svg>
-    );
-}
-
-const UsersIcon = () => (
-    <Icon>
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-    </Icon>
-);
-const ClockIcon = () => (
-    <Icon>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 2" />
-    </Icon>
-);
-const RouteIcon = () => (
-    <Icon>
-        <circle cx="6" cy="19" r="2" />
-        <circle cx="18" cy="5" r="2" />
-        <path d="M8 19h8a3 3 0 0 0 0-6H8a3 3 0 0 1 0-6h8" />
-    </Icon>
-);
-const ArrowRight = () => (
-    <Icon>
-        <path d="M4 12h15M13 6l6 6-6 6" />
-    </Icon>
-);
 
 /* ---------- Illustrations shown when the photo is missing ---------- */
 function VehicleArt({ type }) {
@@ -169,16 +125,16 @@ export default function VehicleCard({
     const hasPrice = price !== undefined && price !== null && price !== "";
 
     const chips = [
-        seats && { icon: <UsersIcon />, text: `${seats} seater` },
-        duration && { icon: <ClockIcon />, text: duration },
-        distance && { icon: <RouteIcon />, text: distance },
+        seats && { icon: <FaUsers size={16} />, text: `${seats} seater` },
+        duration && { icon: <FaClock size={16} />, text: duration },
+        distance && { icon: <FaRoute size={16} />, text: distance },
     ].filter(Boolean);
 
-    const bookClass = `mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-700 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-green-800 ${focusRing}`;
+    const bookClass = `mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-700 px-4 py-3 text-sm sm:text-base font-bold text-white transition-colors hover:bg-green-800 ${focusRing}`;
     const bookContent = (
         <>
             Book Now
-            <ArrowRight />
+            <FaArrowRight size={16} />
         </>
     );
     const label = `Book ${title}${seats ? `, ${seats} seater` : ""}`;
@@ -211,17 +167,17 @@ export default function VehicleCard({
     }
 
     return (
-        <article className="flex h-full flex-col rounded-2xl bg-white p-2.5 shadow-sm ring-1 ring-gray-100 transition-shadow duration-200 hover:shadow-lg">
+        <article className="flex h-full flex-col rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100 transition-shadow duration-200 hover:shadow-lg">
             <VehicleImage src={image} title={title} type={type} />
 
             <div className="flex flex-1 flex-col px-2 pb-2 pt-4">
-                <Heading className="text-base font-bold leading-snug text-gray-900">{title}</Heading>
-                {subtitle && <p className="mt-0.5 text-xs text-gray-500">{subtitle}</p>}
+                <Heading className="text-lg font-bold leading-snug text-gray-900">{title}</Heading>
+                {subtitle && <p className="mt-1 text-sm text-gray-500">{subtitle}</p>}
 
                 {chips.length > 0 && (
-                    <ul className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-green-800">
+                    <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm font-semibold text-green-800">
                         {chips.map((c) => (
-                            <li key={c.text} className="inline-flex items-center gap-1.5 rounded-full bg-green-50 px-2.5 py-1">
+                            <li key={c.text} className="inline-flex items-center gap-1.5 rounded-full bg-green-50 px-3 py-1">
                                 {c.icon}
                                 {c.text}
                             </li>
@@ -234,8 +190,8 @@ export default function VehicleCard({
 
                 {hasPrice && (
                     <div className="mt-4 flex items-baseline justify-between gap-2 border-t border-gray-100 pt-3">
-                        <span className="text-xl font-bold text-green-700">{formatPrice(price)}</span>
-                        {priceNote && <span className="text-[11px] text-gray-500">{priceNote}</span>}
+                        <span className="text-xl sm:text-2xl font-bold text-green-700">{formatPrice(price)}</span>
+                        {priceNote && <span className="text-xs text-gray-500">{priceNote}</span>}
                     </div>
                 )}
 

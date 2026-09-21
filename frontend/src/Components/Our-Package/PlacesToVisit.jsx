@@ -33,7 +33,7 @@ export default function PlacesToVisit({ title = TITLE, desc = DESC }) {
                     <h2 id="places-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
                         {title}
                     </h2>
-                    <p className="text-sm leading-relaxed text-gray-600 md:pt-1">{desc}</p>
+                    <p className="text-base sm:text-lg leading-relaxed text-gray-600 md:pt-1">{desc}</p>
                 </div>
 
                 <hr className="mt-8 border-gray-200 sm:mt-10" />
@@ -41,7 +41,7 @@ export default function PlacesToVisit({ title = TITLE, desc = DESC }) {
                 {/* Filters */}
                 {filters.length > 0 && (
                     <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-                        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter places by region">
+                        <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter places by region">
                             {filters.map((f) => {
                                 const on = f === active;
                                 return (
@@ -50,9 +50,9 @@ export default function PlacesToVisit({ title = TITLE, desc = DESC }) {
                                         type="button"
                                         aria-pressed={on}
                                         onClick={() => setActive(f)}
-                                        className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${focusRing} ${on
-                                            ? "border-green-600 bg-green-600 text-white"
-                                            : "border-gray-200 bg-white text-gray-700 hover:border-green-600 hover:text-green-700"
+                                        className={`rounded-full border px-5 py-2.5 text-sm sm:text-base font-semibold transition-colors ${focusRing} ${on
+                                            ? "border-green-600 bg-green-600 text-white shadow-sm"
+                                            : "border-gray-200 bg-white text-gray-700 hover:border-green-600 hover:text-green-700 shadow-sm"
                                             }`}
                                     >
                                         {f}
@@ -60,21 +60,21 @@ export default function PlacesToVisit({ title = TITLE, desc = DESC }) {
                                 );
                             })}
                         </div>
-                        <p className="text-sm text-gray-600" aria-live="polite">
-                            Showing {visible.length} of {places.length} places
+                        <p className="text-sm sm:text-base font-medium text-gray-600" aria-live="polite">
+                            Showing <strong className="text-gray-900">{visible.length}</strong> of {places.length} places
                         </p>
                     </div>
                 )}
 
                 {/* Cards */}
                 {visible.length > 0 ? (
-                    <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                         {visible.map((p, i) => (
                             <PlaceCard key={`${p.title}-${i}`} {...p} />
                         ))}
                     </div>
                 ) : (
-                    <p className="mt-6 rounded-3xl bg-white p-8 text-center text-sm text-gray-600">
+                    <p className="mt-8 rounded-3xl bg-white p-8 text-center text-base text-gray-600">
                         Places will be listed here soon. Message us and we will suggest a route.
                     </p>
                 )}

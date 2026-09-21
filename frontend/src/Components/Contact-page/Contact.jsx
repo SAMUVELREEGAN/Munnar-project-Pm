@@ -1,91 +1,30 @@
 import { useState } from "react";
+import {
+    FaArrowRight,
+    FaMobileScreenButton,
+    FaEnvelope,
+    FaClock,
+    FaLocationDot,
+    FaFacebookF,
+    FaInstagram,
+    FaYoutube,
+    FaWhatsapp,
+    FaAsterisk,
+} from "react-icons/fa6";
 
 /* ---------- Presentational icons (keyed by name from ContactPage.json) ---------- */
-const iconProps = {
-    width: 28,
-    height: 28,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.6,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    "aria-hidden": true,
-};
-
-function Arrow() {
-    return (
-        <svg className="text-green-600" width="22" height="14" viewBox="0 0 22 14" aria-hidden="true">
-            <path
-                d="M1 7h19M14 1l6 6-6 6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    );
-}
-
 const CONTACT_ICONS = {
-    phone: (
-        <svg {...iconProps}>
-            <rect x="7" y="2" width="10" height="20" rx="2" />
-            <path d="M11 18h2" />
-        </svg>
-    ),
-    email: (
-        <svg {...iconProps}>
-            <rect x="3" y="5" width="18" height="14" rx="2" />
-            <path d="m3 7 9 6 9-6" />
-        </svg>
-    ),
-    clock: (
-        <svg {...iconProps}>
-            <circle cx="12" cy="12" r="9" />
-            <path d="M12 7v5l3 2" />
-        </svg>
-    ),
-    location: (
-        <svg {...iconProps}>
-            <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />
-            <circle cx="12" cy="10" r="2.5" />
-        </svg>
-    ),
-};
-
-const socialIconProps = {
-    ...iconProps,
-    width: 20,
-    height: 20,
-    strokeWidth: 1.8,
+    phone: <FaMobileScreenButton size={28} />,
+    email: <FaEnvelope size={28} />,
+    clock: <FaClock size={28} />,
+    location: <FaLocationDot size={28} />,
 };
 
 const SOCIAL_ICONS = {
-    facebook: (
-        <svg {...socialIconProps}>
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-        </svg>
-    ),
-    instagram: (
-        <svg {...socialIconProps}>
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-            <path d="M17.5 6.5h.01" />
-        </svg>
-    ),
-    youtube: (
-        <svg {...socialIconProps}>
-            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-            <path d="M9.75 15.02 15.5 11.75 9.75 8.48z" />
-        </svg>
-    ),
-    whatsapp: (
-        <svg {...socialIconProps}>
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-        </svg>
-    ),
+    facebook: <FaFacebookF size={22} />,
+    instagram: <FaInstagram size={22} />,
+    youtube: <FaYoutube size={22} />,
+    whatsapp: <FaWhatsapp size={22} />,
 };
 /* ------------------------------------------------------------------------------ */
 
@@ -264,30 +203,32 @@ export default function Contact({
                 aria-label="Contact details and enquiry form"
                 className="bg-[#f7f9f6] py-12 sm:py-16"
             >
-                <div className="container grid items-start gap-6 px-4 sm:px-6 lg:grid-cols-2">
+                <div className="container grid items-start gap-8 px-4 sm:px-6 lg:grid-cols-2">
                     {/* Contact information */}
-                    <div className="rounded-3xl bg-white p-6 shadow-sm sm:p-8">
-                        <h2 className="text-xl font-bold text-gray-900">{infoTitle}</h2>
-                        <p className="mt-3 text-[13px] leading-relaxed text-gray-600">{infoText}</p>
+                    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-100 sm:p-10">
+                        <h2 className="text-2xl font-bold text-gray-900">{infoTitle}</h2>
+                        <p className="mt-3 text-base leading-relaxed text-gray-600">{infoText}</p>
 
-                        <ul className="mt-6">
+                        <ul className="mt-8">
                             {contacts.map((item) => (
                                 <li
                                     key={item.id ?? item.label}
-                                    className="flex items-start gap-4 border-b border-gray-200 py-5 first:pt-2 last:border-b-0 last:pb-0"
+                                    className="flex items-start gap-4 border-b border-gray-100 py-5 first:pt-2 last:border-b-0 last:pb-0"
                                 >
-                                    <span className="mt-0.5 shrink-0 text-green-600">{CONTACT_ICONS[item.icon]}</span>
-                                    <div className="min-w-0">
-                                        <p className="text-base font-semibold text-gray-900">{item.label}</p>
+                                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-600 shadow-sm">
+                                        {CONTACT_ICONS[item.icon]}
+                                    </span>
+                                    <div className="min-w-0 pt-0.5">
+                                        <p className="text-base sm:text-lg font-bold text-gray-900">{item.label}</p>
                                         {item.href ? (
                                             <a
                                                 href={item.href}
-                                                className={`mt-1 block break-words rounded text-[13px] text-gray-600 hover:text-green-700 ${focusRing}`}
+                                                className={`mt-1 block break-words rounded text-sm sm:text-base text-gray-600 transition-colors hover:text-green-700 ${focusRing}`}
                                             >
                                                 {item.value}
                                             </a>
                                         ) : (
-                                            <p className="mt-1 break-words text-[13px] text-gray-600">{item.value}</p>
+                                            <p className="mt-1 break-words text-sm sm:text-base text-gray-600">{item.value}</p>
                                         )}
                                     </div>
                                 </li>
@@ -295,8 +236,8 @@ export default function Contact({
                         </ul>
 
                         {/* Social icons */}
-                        <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-gray-200 pt-6">
-                            <p className="text-base font-semibold text-gray-900">{socialsTitle}</p>
+                        <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-gray-100 pt-6">
+                            <p className="text-base font-bold text-gray-900">{socialsTitle}</p>
                             <ul className="flex items-center gap-2">
                                 {socials.map((s) => (
                                     <li key={s.label}>
@@ -306,7 +247,7 @@ export default function Contact({
                                             rel="noopener noreferrer"
                                             aria-label={`${s.label} (opens in a new tab)`}
                                             title={s.label}
-                                            className={`grid h-10 w-10 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                            className={`grid h-11 w-11 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
                                         >
                                             {SOCIAL_ICONS[s.icon]}
                                         </a>
@@ -319,17 +260,15 @@ export default function Contact({
                     {/* Form */}
                     <div className="rounded-3xl bg-[#eef4ec] p-6 shadow-sm sm:p-10">
                         <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-900">
-                            <svg width="14" height="14" viewBox="0 0 14 14" className="text-green-600" aria-hidden="true">
-                                <path d="M7 1v12M1.8 4l10.4 6M1.8 10l10.4-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                            </svg>
+                            <FaAsterisk size={15} className="text-green-600" />
                             {formBadge}
                         </span>
 
                         <h2 className="mt-5 text-3xl font-bold text-gray-900 sm:text-4xl">{formTitle}</h2>
-                        <p className="mt-4 max-w-[560px] text-[13px] leading-relaxed text-gray-600">{formText}</p>
+                        <p className="mt-4 max-w-[560px] text-base leading-relaxed text-gray-600">{formText}</p>
 
                         {/* noValidate: the browser's pop-up bubbles are replaced by the inline messages below */}
-                        <form onSubmit={handleSubmit} noValidate className="mt-4 space-y-4">
+                        <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-4">
                             <div>
                                 <Label htmlFor="contact-name">Name</Label>
                                 <input
@@ -405,10 +344,10 @@ export default function Contact({
                                 <button
                                     type="submit"
                                     disabled={status === "loading"}
-                                    className={`inline-flex items-center gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-7 text-[15px] font-bold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-70 ${focusRing}`}
+                                    className={`inline-flex items-center gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-7 text-base font-bold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-70 ${focusRing}`}
                                 >
                                     <span className="grid h-9 w-[52px] place-items-center rounded-full bg-white">
-                                        <Arrow />
+                                        <FaArrowRight size={16} className="text-green-600" />
                                     </span>
                                     {status === "loading" ? "Sending…" : "Send Message"}
                                 </button>

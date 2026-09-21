@@ -3,28 +3,39 @@
 @tailwind utilities;
 
 
+@layer base {
+  body {
+    @apply font-sans text-gray-800 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
 @layer components {
   .container {
     @apply w-full max-w-[1320px] mx-auto px-5 sm:px-6 lg:px-8;
   }
 
   .text-h1 {
-    @apply text-[40px] lg:text-[60px] leading-tight;
+    @apply text-[34px] sm:text-[46px] lg:text-[58px] font-extrabold leading-[1.15];
   }
 
   .text-h2 {
-    @apply text-[28px] lg:text-[40px] leading-tight;
+    @apply text-[26px] sm:text-[34px] lg:text-[42px] font-bold leading-tight;
   }
 
   .text-h3 {
-    @apply text-[20px] lg:text-[28px] leading-tight;
+    @apply text-[20px] sm:text-[24px] lg:text-[30px] font-bold leading-snug;
   }
 
   .text-h4 {
-    @apply text-[16px] lg:text-[18px] leading-snug;
+    @apply text-[17px] sm:text-[19px] lg:text-[22px] font-semibold leading-snug;
   }
 
   .text-h5 {
-    @apply text-[12px] lg:text-[15px] leading-snug;
+    @apply text-[15px] sm:text-[16px] lg:text-[17px] leading-relaxed;
   }
 }

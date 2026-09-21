@@ -28,7 +28,7 @@ export default function Packages() {
             {/* Filters */}
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
                 {filters.length > 0 ? (
-                    <div className="flex flex-wrap gap-2" role="group" aria-label="Filter packages by type">
+                    <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter packages by type">
                         {filters.map((f) => {
                             const on = f === active;
                             return (
@@ -37,9 +37,9 @@ export default function Packages() {
                                     type="button"
                                     aria-pressed={on}
                                     onClick={() => setActive(f)}
-                                    className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${focusRing} ${on
-                                        ? "border-green-600 bg-green-600 text-white"
-                                        : "border-gray-200 bg-white text-gray-700 hover:border-green-600 hover:text-green-700"
+                                    className={`rounded-full border px-5 py-2.5 text-sm sm:text-base font-semibold transition-colors ${focusRing} ${on
+                                        ? "border-green-600 bg-green-600 text-white shadow-sm"
+                                        : "border-gray-200 bg-white text-gray-700 hover:border-green-600 hover:text-green-700 shadow-sm"
                                         }`}
                                 >
                                     {f}
@@ -50,14 +50,14 @@ export default function Packages() {
                 ) : (
                     <span />
                 )}
-                <p className="text-sm text-gray-600" aria-live="polite">
-                    Showing {visible.length} of {packages.length} packages
+                <p className="text-sm sm:text-base font-medium text-gray-600" aria-live="polite">
+                    Showing <strong className="text-gray-900">{visible.length}</strong> of {packages.length} packages
                 </p>
             </div>
 
             {/* Cards */}
             {visible.length > 0 ? (
-                <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {visible.map((pkg, i) => (
                         <PackageCard
                             key={`${pkg.title}-${i}`}
@@ -70,7 +70,7 @@ export default function Packages() {
                     ))}
                 </div>
             ) : (
-                <p className="mt-10 rounded-3xl bg-white p-8 text-center text-sm text-gray-600">
+                <p className="mt-10 rounded-3xl bg-white p-8 text-center text-base text-gray-600">
                     No packages in this category yet. Choose another filter or message us to plan a custom trip.
                 </p>
             )}

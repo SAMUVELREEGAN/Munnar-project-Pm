@@ -35,19 +35,19 @@
             {
                 "id": 1,
                 "title": "Airport Transfers",
-                "icon": "✈️",
+                "icon": "FaPlaneDeparture",
                 "description": "Airport Transfers Include Pickup And Drop-Off Services Between Locations And The Airport, Supported By Flight Monitoring, Meet And Greet Assistance, And Waiting Time Handling. This Ensures Passengers Are Picked Up On Time Even During Delays, Providing A Structured And Reliable Travel Experience For Both Arrivals And Departures."
             },
             {
                 "id": 2,
                 "title": "Corporate Travel",
-                "icon": "🏢",
+                "icon": "FaBuilding",
                 "description": "Corporate Travel Is Designed For Business Professionals Requiring Timely And Organized Transport For Meetings, Office Commutes, And Roadshows. The Service Ensures Punctuality, Professional Chauffeur Support, And Efficient Movement Across Locations, Making It Suitable For Companies That Require Consistent And Dependable Transportation For Employees And Business Operations."
             },
             {
                 "id": 3,
                 "title": "Weddings & Events",
-                "icon": "💍",
+                "icon": "FaRing",
                 "description": "Weddings And Events Require Coordinated Group Travel And Special Attention To Detail. Our Service Provides Well-Maintained Vehicles, Professional Chauffeurs, And Flexible Scheduling To Ensure Your Special Day Runs Smoothly, From Guest Pickups To Venue Transfers Across Munnar And Surrounding Areas."
             }
         ]

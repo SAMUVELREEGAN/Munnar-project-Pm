@@ -20,12 +20,12 @@ export default function PageHero({ title, description, children, className = "" 
             <div className="absolute inset-0" style={dotPattern} aria-hidden="true" />
 
             <div className="relative mx-auto max-w-[1200px] px-4 py-12 text-center sm:px-6 sm:py-16 lg:py-[72px]">
-                <h1 id={titleId} className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-[42px]">
+                <h1 id={titleId} className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
                     {title}
                 </h1>
 
                 {description && (
-                    <p className="mx-auto mt-4 max-w-[560px] text-sm leading-relaxed text-gray-600 sm:text-base">
+                    <p className="mx-auto mt-4 max-w-[640px] text-base leading-relaxed text-gray-600 sm:text-lg">
                         {description}
                     </p>
                 )}

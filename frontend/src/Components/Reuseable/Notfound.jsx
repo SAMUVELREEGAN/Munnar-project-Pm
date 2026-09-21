@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
 
 /* ---------- Easy-to-edit settings ---------- */
 const SITE_NAME = "Munnar Taxi Service";
@@ -15,21 +16,6 @@ const focusRing =
 /* Hill outlines (reused for the tea-terrace contour lines) */
 const BACK_HILL_TOP = "M0 165 C 100 100 220 88 330 128 S 520 68 640 108 S 760 98 800 118";
 const MID_HILL_TOP = "M0 205 C 90 140 170 130 260 165 S 420 118 520 148 S 700 108 800 158";
-
-function Arrow({ className = "" }) {
-    return (
-        <svg className={`text-green-600 ${className}`} width="22" height="14" viewBox="0 0 22 14" aria-hidden="true">
-            <path
-                d="M1 7h19M14 1l6 6-6 6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    );
-}
 
 function DeadEndScene() {
     return (
@@ -170,23 +156,23 @@ export default function NotFound() {
                     <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                         <Link
                             to={HOME_LINK}
-                            className={`inline-flex items-center gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-7 text-[15px] font-bold text-white transition-colors hover:bg-green-700 ${focusRing}`}
+                            className={`inline-flex items-center gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-7 text-base font-bold text-white transition-colors hover:bg-green-700 ${focusRing}`}
                         >
                             <span className="grid h-9 w-[52px] place-items-center rounded-full bg-white">
-                                <Arrow className="rotate-180" />
+                                <FaArrowRight size={16} className="rotate-180 text-green-600" />
                             </span>
                             Back to home
                         </Link>
 
                         <Link
                             to={PACKAGES_LINK}
-                            className={`inline-flex items-center whitespace-nowrap rounded-full border-2 border-green-600 px-7 py-[10px] text-[15px] font-bold text-green-700 transition-colors hover:bg-white ${focusRing}`}
+                            className={`inline-flex items-center whitespace-nowrap rounded-full border-2 border-green-600 px-7 py-[10px] text-base font-bold text-green-700 transition-colors hover:bg-white ${focusRing}`}
                         >
                             See tour packages
                         </Link>
                     </div>
 
-                    <p className="mt-6 text-sm text-gray-600">
+                    <p className="mt-6 text-base text-gray-600">
                         Still stuck?{" "}
                         <Link
                             to={CONTACT_LINK}

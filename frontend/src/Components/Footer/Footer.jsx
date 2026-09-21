@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa6";
 
 /* ---------- Easy-to-edit content ---------- */
 const BRAND = "Munnar Jothi Laxmi Taxi";
@@ -27,58 +28,27 @@ const SERVICE_LINKS = [
     { label: "Outstation Taxi", to: "/packages" },
 ];
 
-const iconProps = {
-    width: 18,
-    height: 18,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.8,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    "aria-hidden": true,
-};
-
 /* Replace each href with your real profile / chat link */
 const SOCIALS = [
     {
         label: "Facebook",
         href: "https://www.facebook.com/your-page",
-        icon: (
-            <svg {...iconProps}>
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-            </svg>
-        ),
+        icon: <FaFacebookF size={20} />,
     },
     {
         label: "Instagram",
         href: "https://www.instagram.com/your-account",
-        icon: (
-            <svg {...iconProps}>
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <path d="M17.5 6.5h.01" />
-            </svg>
-        ),
+        icon: <FaInstagram size={20} />,
     },
     {
         label: "YouTube",
         href: "https://www.youtube.com/@your-channel",
-        icon: (
-            <svg {...iconProps}>
-                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-                <path d="M9.75 15.02 15.5 11.75 9.75 8.48z" />
-            </svg>
-        ),
+        icon: <FaYoutube size={20} />,
     },
     {
         label: "WhatsApp",
         href: "https://wa.me/919876543210",
-        icon: (
-            <svg {...iconProps}>
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-            </svg>
-        ),
+        icon: <FaWhatsapp size={20} />,
     },
 ];
 /* ------------------------------------------ */
@@ -86,12 +56,12 @@ const SOCIALS = [
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
-const linkClass = `rounded text-[13px] text-gray-600 transition-colors hover:text-green-700 ${focusRing}`;
+const linkClass = `rounded text-sm sm:text-[15px] font-medium text-gray-600 transition-colors hover:text-green-700 ${focusRing}`;
 
 function ColumnTitle({ children }) {
     return (
         <div>
-            <h3 className="text-[15px] font-semibold text-gray-900">{children}</h3>
+            <h3 className="text-base sm:text-lg font-bold text-gray-900">{children}</h3>
             <span aria-hidden="true" className="mt-3 block h-[3px] w-10 overflow-hidden rounded-full bg-gray-200">
                 <span className="block h-full w-1/2 rounded-full bg-green-600" />
             </span>
@@ -128,7 +98,7 @@ export default function Footer() {
                         <Link to="/" aria-label={`${BRAND} – home`} className={`inline-block rounded ${focusRing}`}>
                             <img src={logoSrc} alt={BRAND} className="h-14 w-auto" />
                         </Link>
-                        <p className="mt-6 max-w-sm text-[13px] leading-[1.9] text-gray-600">{ABOUT_TEXT}</p>
+                        <p className="mt-6 max-w-sm text-sm sm:text-[15px] leading-relaxed text-gray-600">{ABOUT_TEXT}</p>
                     </div>
 
                     {/* Company */}
@@ -164,7 +134,7 @@ export default function Footer() {
 
                 {/* Bottom bar */}
                 <div className="mt-6 flex flex-col items-center justify-between gap-5 sm:flex-row">
-                    <p className="text-center text-[13px] text-gray-600 sm:text-left">
+                    <p className="text-center text-sm text-gray-600 sm:text-left">
                         Copyright © {year} <strong className="font-bold text-gray-900">{BRAND}</strong>. All Rights Reserved
                     </p>
 
@@ -177,7 +147,7 @@ export default function Footer() {
                                     rel="noopener noreferrer"
                                     aria-label={`${s.label} (opens in a new tab)`}
                                     title={s.label}
-                                    className={`grid h-9 w-9 place-items-center rounded-full text-green-700 transition-colors hover:bg-green-700 hover:text-white ${focusRing}`}
+                                    className={`grid h-10 w-10 place-items-center rounded-full text-green-700 transition-colors hover:bg-green-700 hover:text-white ${focusRing}`}
                                 >
                                     {s.icon}
                                 </a>
