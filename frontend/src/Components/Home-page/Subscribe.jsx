@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight, FaCircleCheck, FaCircleExclamation } from "react-icons/fa6";
 import HomeSection from "../../local/HomePage.json";
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-export default function Subscribe({ onSubscribe = async () => { } }) {
+export default function Subscribe({ onSubscribe = async () => {} }) {
     const [email, setEmail] = useState("");
     const [error, setError] = useState("");
     const [touched, setTouched] = useState(false);
@@ -71,7 +72,13 @@ export default function Subscribe({ onSubscribe = async () => { } }) {
             aria-labelledby="subscribe-title"
             className="bg-white px-4 py-10 sm:px-6 sm:py-16"
         >
-            <div className="mx-auto max-w-[1200px] rounded-[32px] bg-[#f1f5ef] px-5 py-12 text-center sm:px-10 sm:py-16">
+            <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="mx-auto max-w-[1200px] rounded-[32px] bg-[#f1f5ef] px-5 py-12 text-center sm:px-10 sm:py-16"
+            >
                 <h2 id="subscribe-title" className="text-3xl font-bold text-gray-900 sm:text-4xl">
                     {heading}
                 </h2>
@@ -83,10 +90,11 @@ export default function Subscribe({ onSubscribe = async () => { } }) {
 
                 <form onSubmit={handleSubmit} className="mx-auto mt-8 max-w-[540px] sm:mt-10" noValidate>
                     <div
-                        className={`flex items-center gap-2 rounded-full bg-white p-1.5 shadow-sm transition-all duration-200 ${isError
+                        className={`flex items-center gap-2 rounded-full bg-white p-1.5 shadow-sm transition-all duration-200 ${
+                            isError
                                 ? "border-2 border-red-500 ring-4 ring-red-100"
                                 : "border-2 border-green-600 focus-within:border-green-700 focus-within:ring-4 focus-within:ring-green-100"
-                            }`}
+                        }`}
                     >
                         <label htmlFor="subscribe-email" className="sr-only">
                             Email address (required)
@@ -104,39 +112,61 @@ export default function Subscribe({ onSubscribe = async () => { } }) {
                             aria-describedby="subscribe-error-msg"
                             className="min-w-0 flex-1 bg-transparent px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none"
                         />
-                        <button
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.96 }}
                             type="submit"
                             disabled={status === "loading"}
-                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green-600 px-6 py-3.5 text-base font-bold text-white transition-all hover:bg-green-700 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:cursor-not-allowed disabled:opacity-70 shadow-sm"
+                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-green-600 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:cursor-not-allowed disabled:opacity-70 shadow-sm"
                         >
                             {status === "loading" ? "Subscribing..." : buttonText}
                             {status !== "loading" && <FaArrowRight size={16} />}
-                        </button>
+                        </motion.button>
                     </div>
 
                     {/* In-UI Validation & Status Feedback */}
                     <div id="subscribe-error-msg" role="status" aria-live="polite" className="mt-2.5 min-h-[22px]">
-                        {isError && (
-                            <p className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-red-600 animate-in fade-in">
-                                <FaCircleExclamation size={14} className="text-red-500 shrink-0" />
-                                <span>{error}</span>
-                            </p>
-                        )}
-                        {!isError && status === "success" && (
-                            <p className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-green-700 animate-in fade-in">
-                                <FaCircleCheck size={14} className="text-green-600 shrink-0" />
-                                <span>Thank you! You've successfully subscribed.</span>
-                            </p>
-                        )}
-                        {!isError && status === "error" && (
-                            <p className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-red-600 animate-in fade-in">
-                                <FaCircleExclamation size={14} className="text-red-500 shrink-0" />
-                                <span>Something went wrong. Please try again later.</span>
-                            </p>
-                        )}
+                        <AnimatePresence mode="wait">
+                            {isError && (
+                                <motion.p
+                                    key="error"
+                                    initial={{ opacity: 0, y: -6 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-red-600"
+                                >
+                                    <FaCircleExclamation size={14} className="text-red-500 shrink-0" />
+                                    <span>{error}</span>
+                                </motion.p>
+                            )}
+                            {!isError && status === "success" && (
+                                <motion.p
+                                    key="success"
+                                    initial={{ opacity: 0, y: -6 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-green-700"
+                                >
+                                    <FaCircleCheck size={14} className="text-green-600 shrink-0" />
+                                    <span>Thank you! You've successfully subscribed.</span>
+                                </motion.p>
+                            )}
+                            {!isError && status === "error" && (
+                                <motion.p
+                                    key="err"
+                                    initial={{ opacity: 0, y: -6 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-red-600"
+                                >
+                                    <FaCircleExclamation size={14} className="text-red-500 shrink-0" />
+                                    <span>Something went wrong. Please try again later.</span>
+                                </motion.p>
+                            )}
+                        </AnimatePresence>
                     </div>
                 </form>
-            </div>
+            </motion.div>
         </section>
     );
 }

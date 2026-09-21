@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Keyboard } from "swiper/modules";
 import "swiper/css";
+import { motion } from "framer-motion";
 import service from "../../local/OurPackage.json";
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
@@ -25,7 +26,7 @@ function CardImage({ src }) {
                 loading="lazy"
                 draggable="false"
                 onError={() => setFailed(true)}
-                className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
             />
         </div>
     );
@@ -50,18 +51,31 @@ export default function Services({ OurTourPackages }) {
         <section aria-labelledby="services-title" className="overflow-hidden">
             <div className="container">
                 {/* Header */}
-                <div className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12"
+                >
                     <h2 id="services-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
                         {title}
                     </h2>
                     <p className="text-base sm:text-lg leading-relaxed text-gray-600 md:pt-1">{desc}</p>
-                </div>
+                </motion.div>
 
                 <hr className="mt-8 border-gray-200 sm:mt-10" />
 
                 {/* Prev / next */}
-                <div className="mb-5 mt-6 flex justify-end gap-2">
-                    <button
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.05 }}
+                    className="mb-5 mt-6 flex justify-end gap-2"
+                >
+                    <motion.button
+                        whileTap={{ scale: 0.9 }}
                         type="button"
                         aria-label="Previous services"
                         disabled={atStart}
@@ -69,8 +83,9 @@ export default function Services({ OurTourPackages }) {
                         className={navBtn}
                     >
                         <FaChevronLeft size={20} />
-                    </button>
-                    <button
+                    </motion.button>
+                    <motion.button
+                        whileTap={{ scale: 0.9 }}
                         type="button"
                         aria-label="Next services"
                         disabled={atEnd}
@@ -78,11 +93,17 @@ export default function Services({ OurTourPackages }) {
                         className={navBtn}
                     >
                         <FaChevronRight size={20} />
-                    </button>
-                </div>
+                    </motion.button>
+                </motion.div>
 
                 {/* Carousel – clipped to the container */}
-                <div className="-mx-2 px-2">
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.35, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+                    className="-mx-2 px-2"
+                >
                     <Swiper
                         modules={[A11y, Keyboard]}
                         keyboard={{ enabled: true }}
@@ -104,7 +125,11 @@ export default function Services({ OurTourPackages }) {
                     >
                         {SERVICES.map((item) => (
                             <SwiperSlide key={item.title} className="!h-auto">
-                                <article className="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                                <motion.article
+                                    whileHover={{ y: -6 }}
+                                    transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                                    className="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-xl hover:border-green-600/30 transition-shadow duration-300"
+                                >
                                     <CardImage src={item.image} />
                                     <div className="flex flex-1 flex-col pt-3">
                                         <h3
@@ -119,21 +144,23 @@ export default function Services({ OurTourPackages }) {
                                             {item.description}
                                         </p>
                                         <div className="mt-auto flex items-center justify-center pt-4">
-                                            <Link
-                                                to={"/contact-us"}
-                                                aria-label={`Learn more about ${item.title}`}
-                                                className={`inline-flex items-center gap-2 rounded-full bg-green-100 px-6 py-2.5 text-sm sm:text-base font-bold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
-                                            >
-                                                <span>Learn more</span>
-                                                <FaArrowRight size={15} />
-                                            </Link>
+                                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                                <Link
+                                                    to={"/contact-us"}
+                                                    aria-label={`Learn more about ${item.title}`}
+                                                    className={`inline-flex items-center gap-2 rounded-full bg-green-100 px-6 py-2.5 text-sm sm:text-base font-bold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                                >
+                                                    <span>Learn more</span>
+                                                    <FaArrowRight size={15} />
+                                                </Link>
+                                            </motion.div>
                                         </div>
                                     </div>
-                                </article>
+                                </motion.article>
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

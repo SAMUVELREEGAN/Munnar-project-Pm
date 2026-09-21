@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { FaLocationDot } from "react-icons/fa6";
 
 function resolveSrc(src) {
@@ -19,7 +20,11 @@ export default function PlaceCard({
     const url = resolveSrc(image);
 
     return (
-        <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200/80 bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-green-600/30">
+        <motion.article
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 350, damping: 25 }}
+            className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200/80 bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-green-600/30 transition-shadow duration-300"
+        >
             {/* Image Container with Category Badge */}
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gray-100">
                 {failed || !url ? (
@@ -36,7 +41,7 @@ export default function PlaceCard({
                 )}
 
                 {category && (
-                    <span className="absolute left-3 top-3 rounded-md bg-green-600 px-2.5 py-1 text-[11px] font-bold text-white shadow-sm">
+                    <span className="rounded-md bg-green-600 px-2.5 py-1 text-[11px] font-bold text-white shadow-sm absolute left-3 top-3">
                         {category}
                     </span>
                 )}
@@ -61,6 +66,6 @@ export default function PlaceCard({
                     </p>
                 )}
             </div>
-        </article>
+        </motion.article>
     );
 }

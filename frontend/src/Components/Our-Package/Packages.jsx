@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import PackageCard from "../Reuseable/PackageCard";
 import data from "../../local/OurPackage.json";
 import { FaMagnifyingGlass, FaRotateLeft, FaCheck } from "react-icons/fa6";
@@ -102,17 +103,18 @@ export default function Packages() {
                         const isActive = activeCategory === cat;
 
                         return (
-                            <button
+                            <motion.button
+                                whileTap={{ scale: 0.95 }}
                                 key={cat}
                                 type="button"
                                 onClick={() => setActiveCategory(cat)}
-                                className={`rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold transition-all duration-200 ${isActive
+                                className={`rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold transition-colors duration-200 ${isActive
                                         ? "bg-green-600 text-white border border-green-600 shadow-sm"
                                         : "bg-white text-gray-700 border border-gray-200 hover:border-green-600 hover:text-green-700 shadow-sm"
                                     } ${focusRing}`}
                             >
                                 {cat} {count > 0 && <span className="opacity-80">({count})</span>}
-                            </button>
+                            </motion.button>
                         );
                     })}
                 </div>
@@ -196,34 +198,65 @@ export default function Packages() {
                 </div>
 
                 {/* Cards Grid */}
-                {filteredAndSorted.length > 0 ? (
-                    <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                        {filteredAndSorted.map((pkg, i) => (
-                            <PackageCard
-                                key={`${pkg.title}-${i}`}
-                                {...pkg}
-                                to="/contact-us"
-                            />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="mt-8 rounded-3xl border border-gray-200 bg-white p-10 text-center">
-                        <p className="text-base text-gray-600">
-                            No packages match your search criteria. Try adjusting your filters.
-                        </p>
-                        <button
-                            type="button"
-                            onClick={handleReset}
-                            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-green-700"
+                <AnimatePresence mode="popLayout">
+                    {filteredAndSorted.length > 0 ? (
+                        <motion.div
+                            key={activeCategory + searchTerm + durationFilter + sortBy}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
                         >
-                            <FaRotateLeft size={14} />
-                            <span>Reset Filters</span>
-                        </button>
-                    </div>
-                )}
+                            {filteredAndSorted.map((pkg, i) => (
+                                <motion.div
+                                    key={`${pkg.title}-${i}`}
+                                    initial={{ opacity: 0, y: 14 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.32,
+                                        delay: Math.min(i * 0.03, 0.2),
+                                        ease: [0.16, 1, 0.3, 1],
+                                    }}
+                                >
+                                    <PackageCard
+                                        {...pkg}
+                                        to="/contact-us"
+                                    />
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.96 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.25 }}
+                            className="mt-8 rounded-3xl border border-gray-200 bg-white p-10 text-center"
+                        >
+                            <p className="text-base text-gray-600">
+                                No packages match your search criteria. Try adjusting your filters.
+                            </p>
+                            <motion.button
+                                whileTap={{ scale: 0.95 }}
+                                type="button"
+                                onClick={handleReset}
+                                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-green-700"
+                            >
+                                <FaRotateLeft size={14} />
+                                <span>Reset Filters</span>
+                            </motion.button>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 {/* Custom Itinerary Callout Banner */}
-                <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-3xl border border-green-200/80 bg-gradient-to-r from-[#eef7ee] via-white to-[#eef7ee] p-6 text-center sm:flex-row sm:text-left sm:p-8 shadow-sm">
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="mt-12 flex flex-col items-center justify-between gap-5 rounded-3xl border border-green-200/80 bg-gradient-to-r from-[#eef7ee] via-white to-[#eef7ee] p-6 text-center sm:flex-row sm:text-left sm:p-8 shadow-sm"
+                >
                     <div>
                         <h3 className="text-base sm:text-lg font-bold text-gray-900">
                             Looking for custom dates, luxury tempo travellers, or honeymoon-tailored packages?
@@ -233,22 +266,26 @@ export default function Packages() {
                         </p>
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-                        <a
+                        <motion.a
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.96 }}
                             href="/contact-us"
                             className={`rounded-xl border border-gray-300 bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-gray-800 shadow-sm transition-colors hover:border-green-600 hover:text-green-700 ${focusRing}`}
                         >
                             BUILD CUSTOM ITINERARY
-                        </a>
-                        <a
+                        </motion.a>
+                        <motion.a
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.96 }}
                             href={whatsappLink(whatsappNumber, "Hi Munnar Taxi, I would like to speak to a tour planner for a custom Kerala trip.")}
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`rounded-xl bg-green-600 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 ${focusRing}`}
                         >
                             SPEAK TO TOUR PLANNER
-                        </a>
+                        </motion.a>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { FaUsers, FaClock, FaSnowflake, FaWandMagicSparkles } from "react-icons/fa6";
 
 const WHATSAPP_NUMBER = "919876543210";
@@ -73,7 +74,13 @@ export default function VehiclePackages() {
         <section aria-labelledby="vehicles-title" className="py-8">
             <div className="container">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col md:flex-row md:items-end md:justify-between gap-4"
+                >
                     <div>
                         <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100/80 px-3.5 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800">
                             <FaWandMagicSparkles size={11} className="text-emerald-600" />
@@ -93,22 +100,30 @@ export default function VehiclePackages() {
                             Includes 100 km, Toll & Chauffeur
                         </span>
                     </div>
-                </div>
+                </motion.div>
 
                 <hr className="mt-6 border-gray-200" />
 
                 {/* 4-Card Vehicle Grid */}
                 <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {VEHICLE_FLEET.map((v) => {
-                        const bookMsg = `Hi Munnar Taxi, I would like to book the ${v.title} (${v.seats}, ${v.price}/day).`;
-
+                    {VEHICLE_FLEET.map((v, i) => {
                         return (
-                            <article
+                            <motion.article
                                 key={v.id}
-                                className={`relative flex flex-col overflow-hidden rounded-3xl border bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${v.isPopular
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-40px" }}
+                                transition={{
+                                    duration: 0.32,
+                                    delay: i * 0.04,
+                                    ease: [0.16, 1, 0.3, 1],
+                                }}
+                                whileHover={{ y: -6 }}
+                                className={`relative flex flex-col overflow-hidden rounded-3xl border bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow duration-300 ${
+                                    v.isPopular
                                         ? "border-amber-400 ring-2 ring-amber-400/30"
                                         : "border-gray-200/90 hover:border-green-600/30"
-                                    }`}
+                                }`}
                             >
                                 {/* Most Popular Ribbon */}
                                 {v.isPopular && (
@@ -118,13 +133,13 @@ export default function VehiclePackages() {
                                 )}
 
                                 {/* Vehicle Image */}
-                                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gray-50 flex items-center justify-center p-2">
+                                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gray-50 flex items-center justify-center p-2 group">
                                     <img
                                         src={v.image}
                                         alt={v.title}
                                         loading="lazy"
                                         onError={() => handleImgError(v.id)}
-                                        className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
+                                        className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>
 
@@ -163,16 +178,18 @@ export default function VehiclePackages() {
                                             <span className="text-lg font-extrabold text-gray-900">{v.price}</span>
                                         </div>
 
-                                        <Link
-                                            to="/contact-us"
-                                            aria-label={`Book ${v.title}`}
-                                            className="rounded-xl bg-green-600 px-4 py-2 text-xs sm:text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700"
-                                        >
-                                            Book Cab
-                                        </Link>
+                                        <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
+                                            <Link
+                                                to="/contact-us"
+                                                aria-label={`Book ${v.title}`}
+                                                className="inline-block rounded-xl bg-green-600 px-4 py-2 text-xs sm:text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700"
+                                            >
+                                                Book Cab
+                                            </Link>
+                                        </motion.div>
                                     </div>
                                 </div>
-                            </article>
+                            </motion.article>
                         );
                     })}
                 </div>

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function ContentSection({
     title,
     intro,
@@ -14,9 +16,14 @@ export default function ContentSection({
             <div className="container">
                 <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
                     {/* Text column */}
-                    <div
-                        className={`flex flex-col justify-center ${imageOnLeft ? "lg:order-2" : "lg:order-1"
-                            }`}
+                    <motion.div
+                        initial={{ opacity: 0, x: imageOnLeft ? 20 : -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-40px" }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        className={`flex flex-col justify-center ${
+                            imageOnLeft ? "lg:order-2" : "lg:order-1"
+                        }`}
                     >
                         {title && (
                             <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
@@ -33,23 +40,28 @@ export default function ContentSection({
                                 <p key={i}>{text}</p>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Image column */}
                     {image && (
-                        <div
-                            className={`flex w-full items-center justify-center ${imageOnLeft ? "lg:order-1" : "lg:order-2"
-                                }`}
+                        <motion.div
+                            initial={{ opacity: 0, x: imageOnLeft ? -20 : 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-40px" }}
+                            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                            className={`flex w-full items-center justify-center ${
+                                imageOnLeft ? "lg:order-1" : "lg:order-2"
+                            }`}
                         >
-                            <div className="relative w-full overflow-hidden rounded-3xl sm:rounded-[36px] bg-green-50 shadow-md">
+                            <div className="group relative w-full overflow-hidden rounded-3xl sm:rounded-[36px] bg-green-50 shadow-md">
                                 <img
                                     src={image}
                                     alt={imageAlt}
                                     loading="lazy"
-                                    className="aspect-[4/3] sm:aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
+                                    className="aspect-[4/3] sm:aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
-                        </div>
+                        </motion.div>
                     )}
                 </div>
             </div>

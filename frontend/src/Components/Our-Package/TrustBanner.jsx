@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FaComments, FaClipboardList, FaFileInvoiceDollar, FaCar } from "react-icons/fa6";
 
 const HOW_IT_WORKS_STEPS = [
@@ -27,7 +28,13 @@ export default function TrustBanner() {
     return (
         <section aria-labelledby="how-it-works-title" className="py-8">
             <div className="container">
-                <div className="rounded-3xl bg-white p-6 sm:p-10 lg:p-12 shadow-sm border border-gray-100">
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="rounded-3xl bg-white p-6 sm:p-10 lg:p-12 shadow-sm border border-gray-100"
+                >
                     <h2 id="how-it-works-title" className="sr-only">
                         How Our Booking Process Works
                     </h2>
@@ -38,7 +45,18 @@ export default function TrustBanner() {
                             const isLast = index === HOW_IT_WORKS_STEPS.length - 1;
 
                             return (
-                                <div key={index} className="relative flex flex-col items-start group">
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 14 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-40px" }}
+                                    transition={{
+                                        duration: 0.32,
+                                        delay: index * 0.04,
+                                        ease: [0.16, 1, 0.3, 1],
+                                    }}
+                                    className="relative flex flex-col items-start group"
+                                >
                                     {/* Horizontal Dashed Connector Line for Desktop */}
                                     {!isLast && (
                                         <div
@@ -48,22 +66,26 @@ export default function TrustBanner() {
                                     )}
 
                                     {/* Icon Badge with Brand Green */}
-                                    <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-green-50 text-green-600 ring-1 ring-green-100/80 shadow-sm transition-transform duration-200 group-hover:scale-105">
+                                    <motion.div
+                                        whileHover={{ scale: 1.15, rotate: 4 }}
+                                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                        className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-green-50 text-green-600 ring-1 ring-green-100/80 shadow-sm cursor-pointer"
+                                    >
                                         <Icon className="text-xl text-green-600" />
-                                    </div>
+                                    </motion.div>
 
                                     {/* Content */}
-                                    <h3 className="mt-5 text-base sm:text-lg font-bold text-gray-900 tracking-tight">
+                                    <h3 className="mt-5 text-base sm:text-lg font-bold text-gray-900 tracking-tight transition-colors duration-200 group-hover:text-green-700">
                                         {step.title}
                                     </h3>
                                     <p className="mt-2 text-xs sm:text-sm text-gray-500 leading-relaxed">
                                         {step.desc}
                                     </p>
-                                </div>
+                                </motion.div>
                             );
                         })}
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

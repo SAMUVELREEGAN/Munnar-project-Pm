@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { FaUsers, FaClock, FaRoute, FaArrowRight } from "react-icons/fa6";
-
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
@@ -133,7 +133,7 @@ export default function VehicleCard({
     const bookClass = `mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-700 px-4 py-3 text-sm sm:text-base font-bold text-white transition-colors hover:bg-green-800 ${focusRing}`;
     const bookContent = (
         <>
-            Book Now
+            <span>Book Now</span>
             <FaArrowRight size={16} />
         </>
     );
@@ -142,7 +142,9 @@ export default function VehicleCard({
     let bookButton;
     if (bookHref) {
         bookButton = (
-            <a
+            <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.96 }}
                 href={bookHref}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -150,24 +152,37 @@ export default function VehicleCard({
                 className={bookClass}
             >
                 {bookContent}
-            </a>
+            </motion.a>
         );
     } else if (to) {
         bookButton = (
-            <Link to={to} aria-label={label} className={bookClass}>
-                {bookContent}
-            </Link>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.96 }}>
+                <Link to={to} aria-label={label} className={bookClass}>
+                    {bookContent}
+                </Link>
+            </motion.div>
         );
     } else {
         bookButton = (
-            <button type="button" onClick={onBook} aria-label={label} className={bookClass}>
+            <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.96 }}
+                type="button"
+                onClick={onBook}
+                aria-label={label}
+                className={bookClass}
+            >
                 {bookContent}
-            </button>
+            </motion.button>
         );
     }
 
     return (
-        <article className="flex h-full flex-col rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100 transition-shadow duration-200 hover:shadow-lg">
+        <motion.article
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 350, damping: 25 }}
+            className="flex h-full flex-col rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100 hover:shadow-lg transition-shadow duration-300"
+        >
             <VehicleImage src={image} title={title} type={type} />
 
             <div className="flex flex-1 flex-col px-2 pb-2 pt-4">
@@ -197,6 +212,6 @@ export default function VehicleCard({
 
                 {bookButton}
             </div>
-        </article>
+        </motion.article>
     );
 }

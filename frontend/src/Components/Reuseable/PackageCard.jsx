@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
     FaLocationDot,
     FaClock,
@@ -64,12 +65,14 @@ export default function PackageCard({
         </>
     );
 
-    const bookClass = `inline-flex items-center justify-center gap-1.5 rounded-xl bg-green-600 px-4 py-2.5 text-xs sm:text-sm font-bold text-white transition-all duration-200 hover:bg-green-700 hover:shadow-md ${focusRing}`;
+    const bookClass = `inline-flex items-center justify-center gap-1.5 rounded-xl bg-green-600 px-4 py-2.5 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-green-700 hover:shadow-md ${focusRing}`;
 
     let bookButton;
     if (bookHref) {
         bookButton = (
-            <a
+            <motion.a
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.95 }}
                 href={bookHref}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,24 +80,37 @@ export default function PackageCard({
                 className={bookClass}
             >
                 {bookContent}
-            </a>
+            </motion.a>
         );
     } else if (to) {
         bookButton = (
-            <Link to={to} aria-label={`Book ${title}`} className={bookClass}>
-                {bookContent}
-            </Link>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
+                <Link to={to} aria-label={`Book ${title}`} className={bookClass}>
+                    {bookContent}
+                </Link>
+            </motion.div>
         );
     } else {
         bookButton = (
-            <button type="button" onClick={onBook} aria-label={`Book ${title}`} className={bookClass}>
+            <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.95 }}
+                type="button"
+                onClick={onBook}
+                aria-label={`Book ${title}`}
+                className={bookClass}
+            >
                 {bookContent}
-            </button>
+            </motion.button>
         );
     }
 
     return (
-        <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200/80 bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-green-600/30">
+        <motion.article
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 350, damping: 25 }}
+            className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200/80 bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-green-600/30 transition-shadow duration-300"
+        >
             {/* Image Container with Badges */}
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gray-100">
                 {imgFailed || !image ? (
@@ -125,16 +141,18 @@ export default function PackageCard({
                 </div>
 
                 {/* Favorite Heart Button */}
-                <button
+                <motion.button
+                    whileTap={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.15 }}
                     type="button"
                     onClick={toggleFav}
                     aria-label={fav ? "Remove from wishlist" : "Add to wishlist"}
-                    className={`absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm transition-transform hover:scale-110 ${
+                    className={`absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm ${
                         fav ? "text-rose-600" : "text-gray-700 hover:text-rose-600"
                     } ${focusRing}`}
                 >
                     {fav ? <FaHeart size={15} /> : <FaRegHeart size={15} />}
-                </button>
+                </motion.button>
 
                 {/* Location Overlay Badge */}
                 {location && (
@@ -225,6 +243,6 @@ export default function PackageCard({
                     {bookButton}
                 </div>
             </div>
-        </article>
+        </motion.article>
     );
 }

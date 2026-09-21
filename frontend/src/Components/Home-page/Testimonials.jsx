@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, A11y, Keyboard } from "swiper/modules";
 import "swiper/css";
+import { motion } from "framer-motion";
 import { FaStar, FaUser, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import defaultData from "../../local/Testimonials.json";
 
@@ -49,7 +50,13 @@ export default function Testimonials({ data }) {
         <section aria-labelledby="testimonials-title" className="overflow-hidden">
             <div className="container">
                 {/* Header with Navigation Buttons */}
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
+                >
                     <div>
                         <h2
                             id="testimonials-title"
@@ -85,7 +92,7 @@ export default function Testimonials({ data }) {
                             </button>
                         </div>
                     )}
-                </div>
+                </motion.div>
 
                 <hr className="mt-6 border-gray-200" />
 

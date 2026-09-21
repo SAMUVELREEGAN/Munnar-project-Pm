@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
     FaArrowRight,
     FaMobileScreenButton,
@@ -205,7 +206,13 @@ export default function Contact({
             >
                 <div className="container grid items-start gap-8 px-4 sm:px-6 lg:grid-cols-2">
                     {/* Contact information */}
-                    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-100 sm:p-10">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-40px" }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-100 sm:p-10"
+                    >
                         <h2 className="text-2xl font-bold text-gray-900">{infoTitle}</h2>
                         <p className="mt-3 text-base leading-relaxed text-gray-600">{infoText}</p>
 
@@ -241,7 +248,9 @@ export default function Contact({
                             <ul className="flex items-center gap-2">
                                 {socials.map((s) => (
                                     <li key={s.label}>
-                                        <a
+                                        <motion.a
+                                            whileHover={{ scale: 1.15, rotate: 5 }}
+                                            whileTap={{ scale: 0.9 }}
                                             href={s.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -250,15 +259,21 @@ export default function Contact({
                                             className={`grid h-8 w-8 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
                                         >
                                             {SOCIAL_ICONS[s.icon]}
-                                        </a>
+                                        </motion.a>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Form */}
-                    <div className="rounded-3xl bg-[#eef4ec] p-6 shadow-sm sm:p-10">
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-40px" }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        className="rounded-3xl bg-[#eef4ec] p-6 shadow-sm sm:p-10"
+                    >
                         <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-900">
                             <FaAsterisk size={15} className="text-green-600" />
                             {formBadge}
@@ -353,7 +368,7 @@ export default function Contact({
                                 </button>
                             </div>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </>

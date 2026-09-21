@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { FaUsers, FaArrowRight, FaCar } from "react-icons/fa6";
 import iconMap from "../Reuseable/iconMap";
 
@@ -24,17 +25,28 @@ function VehicleImage({ src, alt }) {
                 alt={alt}
                 loading="lazy"
                 onError={() => setFailed(true)}
-                className="h-full w-full object-contain object-center transition-transform duration-300 hover:scale-105"
+                className="h-full w-full object-contain object-center transition-transform duration-500 hover:scale-105"
             />
         </div>
     );
 }
 
-function VehicleCard({ vehicle }) {
+function VehicleCard({ vehicle, index = 0 }) {
     const FooterIcon = iconMap[vehicle.footerInfo?.icon];
 
     return (
-        <article className="relative flex flex-col overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-100 transition-shadow duration-200 hover:shadow-lg">
+        <motion.article
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{
+                duration: 0.35,
+                delay: index * 0.04,
+                ease: [0.16, 1, 0.3, 1],
+            }}
+            whileHover={{ y: -6 }}
+            className="relative flex flex-col overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-100 hover:cursor-pointer hover:shadow-xl hover:ring-green-600/30 transition-shadow duration-300 mb-5"
+        >
             {/* Decorative corner + seat badge */}
             <div className="absolute right-0 top-0 h-28 w-32 rounded-bl-[80px] bg-green-50" aria-hidden="true" />
             <span
@@ -75,14 +87,16 @@ function VehicleCard({ vehicle }) {
 
             {/* Footer action bar: Equal-sized Book Now + Specification badge */}
             <div className="mt-auto grid grid-cols-2 items-center gap-3 border-t border-gray-100 pt-4">
-                <Link
-                    to={`/contact-us`}
-                    aria-label={`Book ${vehicle.title}`}
-                    className={`flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-green-600 px-3 text-sm sm:text-base font-bold text-white shadow-sm transition-all hover:bg-green-700 hover:shadow-md ${focusRing}`}
-                >
-                    <span>Book Now</span>
-                    <FaArrowRight size={15} />
-                </Link>
+                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
+                    <Link
+                        to={`/contact-us`}
+                        aria-label={`Book ${vehicle.title}`}
+                        className={`flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-green-600 px-3 text-sm sm:text-base font-bold text-white shadow-sm transition-colors hover:bg-green-700 ${focusRing}`}
+                    >
+                        <span>Book Now</span>
+                        <FaArrowRight size={15} />
+                    </Link>
+                </motion.div>
 
                 {vehicle.footerInfo ? (
                     <div
@@ -104,33 +118,38 @@ function VehicleCard({ vehicle }) {
                     </div>
                 )}
             </div>
-        </article>
+        </motion.article>
     );
 }
 
 export default function Vehicles({ VehiclePackages = {} }) {
-
     if (!VehiclePackages) return null;
 
     const { pageTitle, pageDescription, vehicles } = VehiclePackages;
 
     return (
-        <section aria-labelledby="vehicles-title" className="py-10" >
+        <section aria-labelledby="vehicles-title" className="py-10">
             <div className="container">
                 {/* Header */}
-                <div className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12"
+                >
                     <h2 id="vehicles-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
                         {pageTitle}
                     </h2>
                     <p className="text-base sm:text-lg leading-relaxed text-gray-600 md:pt-1">{pageDescription}</p>
-                </div>
+                </motion.div>
 
                 <hr className="mt-8 border-gray-200 sm:mt-10" />
 
                 {/* Grid */}
                 <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    {vehicles?.map((vehicle) => (
-                        <VehicleCard key={vehicle.id} vehicle={vehicle} />
+                    {vehicles?.map((vehicle, i) => (
+                        <VehicleCard key={vehicle.id} vehicle={vehicle} index={i} />
                     ))}
                 </div>
             </div>
