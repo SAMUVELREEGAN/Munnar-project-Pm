@@ -6,7 +6,7 @@ export default function Features({ accessibilitySection }) {
     const { title, subtitle, features } = accessibilitySection;
 
     return (
-        <section aria-labelledby="features-title" className="lg:py-10 py-8">
+        <section aria-labelledby="features-title" className="py-5 lg:py-8">
             <div className="grid container items-center gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-12">
                 {/* Intro */}
                 <div>

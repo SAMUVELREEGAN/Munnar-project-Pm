@@ -14,17 +14,17 @@ import {
 
 /* ---------- Presentational icons (keyed by name from ContactPage.json) ---------- */
 const CONTACT_ICONS = {
-    phone: <FaMobileScreenButton size={28} />,
-    email: <FaEnvelope size={28} />,
-    clock: <FaClock size={28} />,
-    location: <FaLocationDot size={28} />,
+    phone: <FaMobileScreenButton size={25} />,
+    email: <FaEnvelope size={25} />,
+    clock: <FaClock size={25} />,
+    location: <FaLocationDot size={25} />,
 };
 
 const SOCIAL_ICONS = {
-    facebook: <FaFacebookF size={22} />,
-    instagram: <FaInstagram size={22} />,
-    youtube: <FaYoutube size={22} />,
-    whatsapp: <FaWhatsapp size={22} />,
+    facebook: <FaFacebookF size={18} />,
+    instagram: <FaInstagram size={18} />,
+    youtube: <FaYoutube size={18} />,
+    whatsapp: <FaWhatsapp size={18} />,
 };
 /* ------------------------------------------------------------------------------ */
 
@@ -247,7 +247,7 @@ export default function Contact({
                                             rel="noopener noreferrer"
                                             aria-label={`${s.label} (opens in a new tab)`}
                                             title={s.label}
-                                            className={`grid h-11 w-11 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                            className={`grid h-8 w-8 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
                                         >
                                             {SOCIAL_ICONS[s.icon]}
                                         </a>

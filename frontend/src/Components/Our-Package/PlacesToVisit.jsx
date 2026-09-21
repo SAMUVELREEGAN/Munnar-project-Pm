@@ -1,83 +1,76 @@
 import { useMemo, useState } from "react";
 import placeData from "../../local/PlacesVisit.json";
 import PlaceCard from "../Reuseable/PlaceCard";
-
-/* ---------- Easy-to-edit content ---------- */
-const TITLE = "Places to Visit in Munnar & Kerala";
-const DESC =
-    "Discover the most loved sightseeing spots around Munnar and across Kerala. Tell us which ones you would like to see and we will plan the route for you.";
-/* ------------------------------------------ */
+import { FaWandMagicSparkles } from "react-icons/fa6";
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
 const EMPTY_PLACES = [];
 
-export default function PlacesToVisit({ title = TITLE, desc = DESC }) {
+export default function PlacesToVisit() {
     const places = placeData?.places ?? EMPTY_PLACES;
-    const [active, setActive] = useState("All");
+    const [activeRegion, setActiveRegion] = useState("All");
 
-    // Filter chips come from the optional "region" field in the JSON
-    const filters = useMemo(() => {
-        const regions = [...new Set(places.map((p) => p.region).filter(Boolean))];
-        return regions.length > 1 ? ["All", ...regions] : [];
-    }, [places]);
+    const filterTabs = [
+        { label: "All Spots", value: "All", count: places.length },
+        { label: "Munnar High Range", value: "Munnar", count: places.filter((p) => p.region === "Munnar").length },
+        { label: "Kerala Extender", value: "Kerala", count: places.filter((p) => p.region === "Kerala").length },
+    ];
 
-    const visible = active === "All" ? places : places.filter((p) => p.region === active);
+    const visiblePlaces = useMemo(() => {
+        if (activeRegion === "All") return places;
+        return places.filter((p) => p.region === activeRegion);
+    }, [places, activeRegion]);
 
     return (
-        <section aria-labelledby="places-title" className="" >
+        <section aria-labelledby="places-title" className="py-8">
             <div className="container">
                 {/* Header */}
-                <div className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12">
-                    <h2 id="places-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
-                        {title}
-                    </h2>
-                    <p className="text-base sm:text-lg leading-relaxed text-gray-600 md:pt-1">{desc}</p>
-                </div>
-
-                <hr className="mt-8 border-gray-200 sm:mt-10" />
-
-                {/* Filters */}
-                {filters.length > 0 && (
-                    <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-                        <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter places by region">
-                            {filters.map((f) => {
-                                const on = f === active;
-                                return (
-                                    <button
-                                        key={f}
-                                        type="button"
-                                        aria-pressed={on}
-                                        onClick={() => setActive(f)}
-                                        className={`rounded-full border px-5 py-2.5 text-sm sm:text-base font-semibold transition-colors ${focusRing} ${on
-                                            ? "border-green-600 bg-green-600 text-white shadow-sm"
-                                            : "border-gray-200 bg-white text-gray-700 hover:border-green-600 hover:text-green-700 shadow-sm"
-                                            }`}
-                                    >
-                                        {f}
-                                    </button>
-                                );
-                            })}
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                    <div>
+                        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100/80 px-3.5 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800">
+                            <FaWandMagicSparkles size={11} className="text-emerald-600" />
+                            <span>Top Sightseeing Destinations</span>
                         </div>
-                        <p className="text-sm sm:text-base font-medium text-gray-600" aria-live="polite">
-                            Showing <strong className="text-gray-900">{visible.length}</strong> of {places.length} places
+                        <h2 id="places-title" className="mt-3 text-2xl font-bold leading-tight text-gray-900 sm:text-3xl lg:text-4xl">
+                            Places to Visit in Munnar & Kerala
+                        </h2>
+                        <p className="mt-2 max-w-[700px] text-sm sm:text-base leading-relaxed text-gray-600">
+                            Pick your must-see landmarks and customize with a personal chauffeur at the wheel, scenic routes, and zero hassle.
                         </p>
                     </div>
-                )}
 
-                {/* Cards */}
-                {visible.length > 0 ? (
-                    <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                        {visible.map((p, i) => (
-                            <PlaceCard key={`${p.title}-${i}`} {...p} />
-                        ))}
+                    {/* Filter Tabs on Right */}
+                    <div className="flex flex-wrap gap-2 shrink-0">
+                        {filterTabs.map((tab) => {
+                            const isActive = activeRegion === tab.value;
+                            return (
+                                <button
+                                    key={tab.value}
+                                    type="button"
+                                    onClick={() => setActiveRegion(tab.value)}
+                                    className={`rounded-full px-4 py-2 text-xs sm:text-sm font-bold transition-all ${
+                                        isActive
+                                            ? "bg-green-600 text-white border border-green-600 shadow-sm"
+                                            : "bg-white text-gray-700 border border-gray-200 hover:border-green-600 hover:text-green-700 shadow-sm"
+                                    } ${focusRing}`}
+                                >
+                                    {tab.label} {tab.count > 0 && <span className="opacity-80">({tab.count})</span>}
+                                </button>
+                            );
+                        })}
                     </div>
-                ) : (
-                    <p className="mt-8 rounded-3xl bg-white p-8 text-center text-base text-gray-600">
-                        Places will be listed here soon. Message us and we will suggest a route.
-                    </p>
-                )}
+                </div>
+
+                <hr className="mt-6 border-gray-200" />
+
+                {/* Places Grid */}
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {visiblePlaces.slice(0, 8).map((p, i) => (
+                        <PlaceCard key={`${p.title}-${i}`} {...p} />
+                    ))}
+                </div>
             </div>
         </section>
     );

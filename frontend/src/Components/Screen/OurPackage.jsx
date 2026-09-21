@@ -1,17 +1,22 @@
-import React from 'react'
-import PageHero from '../Reuseable/PageHero'
-import PackageSection from "../../local/OurPackage.json"
-import Packages from '../Our-Package/Packages'
-import VehiclePackages from '../Our-Package/VehiclePackages'
-import PlacesToVisit from '../Our-Package/PlacesToVisit'
+import React from 'react';
+import PackageSection from "../../local/OurPackage.json";
+import Packages from '../Our-Package/Packages';
+import VehiclePackages from '../Our-Package/VehiclePackages';
+import PlacesToVisit from '../Our-Package/PlacesToVisit';
+import TrustBanner from '../Our-Package/TrustBanner';
+import PageHero from '../Reuseable/PageHero';
 
 export const OurPackage = () => {
     return (
-        <section className='space-y-8 lg:space-y-16' >
-            <PageHero title={PackageSection?.pageTitle} description={PackageSection?.pageDescription} />
+        <div className="space-y-6 lg:space-y-12 pb-12">
+            <PageHero
+                title={PackageSection?.pageTitle}
+                description={PackageSection?.pageDescription}
+            />
             <Packages />
             <VehiclePackages />
             <PlacesToVisit />
-        </section>
-    )
-}
+            <TrustBanner />
+        </div>
+    );
+};

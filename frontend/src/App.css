@@ -9,14 +9,19 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply tracking-tight;
   }
 }
 
 @layer components {
   .container {
-    @apply w-full max-w-[1320px] mx-auto px-5 sm:px-6 lg:px-8;
+    @apply w-full max-w-[1420px] mx-auto px-5 sm:px-6 lg:px-8;
   }
 
   .text-h1 {

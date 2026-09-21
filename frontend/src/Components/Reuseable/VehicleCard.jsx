@@ -98,7 +98,7 @@ function VehicleImage({ src, title, type }) {
                     loading="lazy"
                     draggable="false"
                     onError={() => setFailed(true)}
-                    className="h-full w-full object-contain p-4 mix-blend-multiply"
+                    className="h-full w-full object-contain object-center p-2 mix-blend-multiply transition-transform duration-300 hover:scale-105"
                 />
             )}
         </div>

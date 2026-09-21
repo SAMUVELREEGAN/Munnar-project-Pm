@@ -10,42 +10,47 @@ export default function ContentSection({
     const imageOnLeft = imagePosition === "left";
 
     return (
-        <section
-            className={`${className}`}
-        >
+        <section className={`py-4 lg:py-6 ${className}`}>
             <div className="container">
-                {(title || intro) && (
-                    <header className="mb-8 sm:mb-10">
-                        {title && <h2 className="text-h2 font-bold text-gray-900">{title}</h2>}
-                        {intro && (
-                            <p className="mt-4 max-w-[800px] text-base sm:text-lg leading-relaxed text-gray-600">{intro}</p>
-                        )}
-                    </header>
-                )}
-
-                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
-                    {/* Text (first in the DOM so it reads first on mobile and for screen readers) */}
+                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                    {/* Text column */}
                     <div
-                        className={`space-y-5 text-base sm:text-[17px] leading-relaxed text-gray-600 ${imageOnLeft ? "lg:order-2" : "lg:order-1"
-                            }`}
+                        className={`flex flex-col justify-center ${
+                            imageOnLeft ? "lg:order-2" : "lg:order-1"
+                        }`}
                     >
-                        {paragraphs.map((text, i) => (
-                            <p key={i}>{text}</p>
-                        ))}
+                        {title && (
+                            <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+                                {title}
+                            </h2>
+                        )}
+                        {intro && (
+                            <p className="mt-3 text-base sm:text-lg leading-relaxed text-gray-600">
+                                {intro}
+                            </p>
+                        )}
+                        <div className="mt-4 space-y-3.5 text-sm sm:text-base leading-relaxed text-gray-600">
+                            {paragraphs.map((text, i) => (
+                                <p key={i}>{text}</p>
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Image */}
+                    {/* Image column */}
                     {image && (
                         <div
-                            className={`w-full ${imageOnLeft ? "lg:order-1 lg:justify-self-start" : "lg:order-2 lg:justify-self-end"} lg:max-w-[460px]`}
+                            className={`flex w-full items-center justify-center ${
+                                imageOnLeft ? "lg:order-1" : "lg:order-2"
+                            }`}
                         >
-                            <img
-                                src={image}
-                                alt={imageAlt}
-                                loading="lazy"
-                                className="aspect-square w-full rounded-[32px] object-cover sm:rounded-[44px]"
-                            />
-
+                            <div className="relative w-full overflow-hidden rounded-3xl sm:rounded-[36px] bg-green-50 shadow-md">
+                                <img
+                                    src={image}
+                                    alt={imageAlt}
+                                    loading="lazy"
+                                    className="aspect-[4/3] sm:aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
+                                />
+                            </div>
                         </div>
                     )}
                 </div>

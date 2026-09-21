@@ -12,20 +12,22 @@ const focusRing =
 /* Card photo with a green placeholder if the file is missing */
 function CardImage({ src }) {
     const [failed, setFailed] = useState(false);
-    const shape = "aspect-[4/3] w-full rounded-3xl";
+    const shape = "aspect-[4/3] w-full rounded-2xl overflow-hidden";
 
     if (failed || !src) {
         return <div className={`${shape} bg-gradient-to-br from-green-700 to-green-900`} aria-hidden="true" />;
     }
     return (
-        <img
-            src={src}
-            alt=""
-            loading="lazy"
-            draggable="false"
-            onError={() => setFailed(true)}
-            className={`${shape} object-cover`}
-        />
+        <div className={shape}>
+            <img
+                src={src}
+                alt=""
+                loading="lazy"
+                draggable="false"
+                onError={() => setFailed(true)}
+                className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+            />
+        </div>
     );
 }
 
@@ -79,14 +81,14 @@ export default function Services({ OurTourPackages }) {
                     </button>
                 </div>
 
-                {/* Carousel – clipped to the container; extra cards stay hidden until you slide */}
-                <div className="-mx-1 px-1">
+                {/* Carousel – clipped to the container */}
+                <div className="-mx-2 px-2">
                     <Swiper
                         modules={[A11y, Keyboard]}
                         keyboard={{ enabled: true }}
                         grabCursor
                         slidesPerView={1}
-                        spaceBetween={16}
+                        spaceBetween={20}
                         breakpoints={{
                             640: { slidesPerView: 2, spaceBetween: 20 },
                             1024: { slidesPerView: 3, spaceBetween: 24 },
@@ -98,24 +100,35 @@ export default function Services({ OurTourPackages }) {
                         onSlideChange={syncEdges}
                         onBreakpoint={syncEdges}
                         onResize={syncEdges}
-                        className="w-full"
+                        className="w-full !py-3"
                     >
                         {SERVICES.map((item) => (
                             <SwiperSlide key={item.title} className="!h-auto">
-                                <article className="flex h-full flex-col">
+                                <article className="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                                     <CardImage src={item.image} />
-                                    <h3 className="mt-4 text-lg sm:text-xl font-bold text-gray-900">{item.title}</h3>
-                                    <p className="mt-2.5 flex-1 text-sm sm:text-base leading-relaxed text-gray-600">
-                                        {item.description}
-                                    </p>
-                                    <Link
-                                        to={"/contact-us"}
-                                        aria-label={`Learn more about ${item.title}`}
-                                        className={`mt-5 inline-flex items-center gap-2 self-start rounded-full bg-green-100 px-5 py-3 text-sm sm:text-base font-semibold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
-                                    >
-                                        Learn more
-                                        <FaArrowRight size={16} />
-                                    </Link>
+                                    <div className="flex flex-1 flex-col pt-3">
+                                        <h3
+                                            className="mt-2 min-h-[3rem] sm:min-h-[3.5rem] text-lg sm:text-xl font-bold text-gray-900 leading-snug line-clamp-2"
+                                            title={item.title}
+                                        >
+                                            {item.title}
+                                        </h3>
+                                        <p
+                                            className="mt-2 min-h-[4.5rem] sm:min-h-[4.875rem] text-sm sm:text-base leading-relaxed text-gray-600 line-clamp-3"
+                                        >
+                                            {item.description}
+                                        </p>
+                                        <div className="mt-auto flex items-center justify-center pt-4">
+                                            <Link
+                                                to={"/contact-us"}
+                                                aria-label={`Learn more about ${item.title}`}
+                                                className={`inline-flex items-center gap-2 rounded-full bg-green-100 px-6 py-2.5 text-sm sm:text-base font-bold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                            >
+                                                <span>Learn more</span>
+                                                <FaArrowRight size={15} />
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </article>
                             </SwiperSlide>
                         ))}

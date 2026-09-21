@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUsers, FaArrowRight, FaCar } from "react-icons/fa6";
+import iconMap from "../Reuseable/iconMap";
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
@@ -11,36 +12,40 @@ function VehicleImage({ src, alt }) {
 
     if (failed) {
         return (
-            <div className="grid h-24 w-40 place-items-center rounded-2xl bg-green-50 text-green-600" aria-hidden="true">
-                <FaCar size={44} />
+            <div className="grid h-44 w-full place-items-center rounded-2xl bg-green-50 text-green-600" aria-hidden="true">
+                <FaCar size={56} />
             </div>
         );
     }
     return (
-        <img
-            src={src}
-            alt={alt}
-            loading="lazy"
-            onError={() => setFailed(true)}
-            className="h-24 w-44 object-contain object-left"
-        />
+        <div className="flex h-44 sm:h-48 w-full items-center justify-center">
+            <img
+                src={src}
+                alt={alt}
+                loading="lazy"
+                onError={() => setFailed(true)}
+                className="h-full w-full object-contain object-center transition-transform duration-300 hover:scale-105"
+            />
+        </div>
     );
 }
 
 function VehicleCard({ vehicle }) {
+    const FooterIcon = iconMap[vehicle.footerInfo?.icon];
+
     return (
-        <article className="relative flex flex-col overflow-hidden rounded-3xl bg-white p-5 shadow-sm">
+        <article className="relative flex flex-col overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-100 transition-shadow duration-200 hover:shadow-lg">
             {/* Decorative corner + seat badge */}
             <div className="absolute right-0 top-0 h-28 w-32 rounded-bl-[80px] bg-green-50" aria-hidden="true" />
             <span
-                className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-lg bg-green-600 px-2.5 py-1 text-xs sm:text-sm font-bold text-white shadow-sm"
+                className="absolute right-4 top-4 z-10 inline-flex items-center gap-1.5 rounded-lg bg-green-600 px-2.5 py-1 text-xs sm:text-sm font-bold text-white shadow-sm"
                 aria-label={`${vehicle.capacity} seats`}
             >
                 <FaUsers size={16} />
-                {vehicle.capacity}
+                {vehicle.capacity} Seats
             </span>
 
-            <div className="relative">
+            <div className="relative mt-2 mb-2 flex w-full items-center justify-center">
                 <VehicleImage src={vehicle.image} alt={`${vehicle.tag}`} />
             </div>
 
@@ -50,7 +55,7 @@ function VehicleCard({ vehicle }) {
                     {vehicle.tag}
                 </span>
                 {vehicle.isLowestPrice && (
-                    <span className="-mr-5 rounded-l-md bg-green-600 px-3 py-1 text-xs font-bold text-white">
+                    <span className="-mr-6 rounded-l-md bg-green-600 px-3 py-1 text-xs font-bold text-white shadow-sm">
                         Lowest Price
                     </span>
                 )}
@@ -68,16 +73,36 @@ function VehicleCard({ vehicle }) {
                 ))}
             </dl>
 
-            {/* Luggage + book */}
-            <div className="">
+            {/* Footer action bar: Equal-sized Book Now + Specification badge */}
+            <div className="mt-auto grid grid-cols-2 items-center gap-3 border-t border-gray-100 pt-4">
                 <Link
                     to={`/contact-us`}
                     aria-label={`Book ${vehicle.title}`}
-                    className={`inline-flex items-center justify-center gap-2 rounded-full bg-green-100 px-5 py-3 text-sm sm:text-base font-semibold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                    className={`flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-green-600 px-3 text-sm sm:text-base font-bold text-white shadow-sm transition-all hover:bg-green-700 hover:shadow-md ${focusRing}`}
                 >
-                    Book Now
-                    <FaArrowRight size={16} />
+                    <span>Book Now</span>
+                    <FaArrowRight size={15} />
                 </Link>
+
+                {vehicle.footerInfo ? (
+                    <div
+                        className="flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#eef5ed] px-3 text-xs sm:text-sm font-medium text-gray-700 ring-1 ring-green-600/15"
+                        title={`${vehicle.footerInfo.label}: ${vehicle.footerInfo.value}`}
+                    >
+                        {FooterIcon && (
+                            <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-green-600/10 text-green-700">
+                                <FooterIcon size={15} />
+                            </span>
+                        )}
+                        <span className="truncate whitespace-nowrap">
+                            <strong className="font-bold text-gray-900">{vehicle.footerInfo.value}</strong> {vehicle.footerInfo.label}
+                        </span>
+                    </div>
+                ) : (
+                    <div className="flex h-12 w-full items-center justify-center rounded-2xl bg-green-50 text-xs font-semibold text-green-700">
+                        Available
+                    </div>
+                )}
             </div>
         </article>
     );

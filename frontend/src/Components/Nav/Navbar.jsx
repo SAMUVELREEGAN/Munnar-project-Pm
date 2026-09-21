@@ -5,8 +5,6 @@ import { FaArrowRight } from "react-icons/fa6";
 /* ---------- Easy-to-edit settings ---------- */
 const SITE_NAME = "Munnar Taxi Service";
 
-const SITE_TAGLINE = "Local Taxi & Sightseeing Tours in Munnar, Kerala";
-
 const DEFAULT_LOGO = "/images/munnar_logo.webp";
 
 const NAV_LINKS = [
@@ -54,24 +52,13 @@ export default function Navbar() {
                 <Link
                     to="/"
                     aria-label={`${SITE_NAME} home`}
-                    className={`flex min-w-0 items-center gap-2.5 rounded-lg ${focusRing}`}
+                    className={`flex items-center rounded-lg ${focusRing}`}
                 >
                     <img
                         src={DEFAULT_LOGO}
-                        alt=""
-                        width="46"
-                        height="46"
-                        className="h-[38px] w-[38px] shrink-0 object-contain sm:h-[46px] sm:w-[46px]"
+                        alt={SITE_NAME}
+                        className="h-11 sm:h-14 w-auto object-contain"
                     />
-
-                    <span className="flex min-w-0 flex-col leading-tight">
-                        <span className="whitespace-nowrap text-base font-extrabold text-green-600 min-[400px]:text-[17px] sm:text-[22px]">
-                            {SITE_NAME}
-                        </span>
-                        <span className="mt-[2px] hidden whitespace-nowrap text-xs font-semibold text-gray-600 md:block lg:hidden xl:block">
-                            {SITE_TAGLINE}
-                        </span>
-                    </span>
                 </Link>
 
                 {/* Links – dropdown panel on mobile/tablet, inline (pushed to the right) on desktop */}
