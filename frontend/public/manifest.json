@@ -1,0 +1,15 @@
+{
+  "short_name": "Munnar Taxi",
+  "name": "Munnar Taxi Service - Sightseeing & Airport Taxi",
+  "icons": [
+    {
+      "src": "images/munnar_logo.webp",
+      "sizes": "192x192 512x512",
+      "type": "image/webp"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#16a34a",
+  "background_color": "#ffffff"
+}

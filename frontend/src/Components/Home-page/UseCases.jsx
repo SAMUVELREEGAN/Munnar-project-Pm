@@ -1,4 +1,13 @@
-import { FaPlaneDeparture, FaMountainSun, FaHeart, FaBuilding } from "react-icons/fa6";
+import {
+    FaPlaneDeparture,
+    FaMountainSun,
+    FaHeart,
+    FaBuilding,
+    FaRing,
+    FaPeopleGroup,
+    FaCarSide,
+    FaMapLocationDot,
+} from "react-icons/fa6";
 import iconMap from "../Reuseable/iconMap";
 
 /* ---------- Default content (can also be passed as props) ---------- */
@@ -7,6 +16,7 @@ const DEFAULT_TITLE = "Use Cases";
 const DEFAULT_PARAGRAPHS = [
     "Airport and railway transfers, sightseeing tours, honeymoon and family trips, and group or corporate travel are the main ways our services are used. Each one is a real-world scenario where safe, planned transport matters, whether the trip is booked well ahead or arranged at short notice.",
     "Every service is supported by experienced local drivers, flexible booking options and careful coordination, so travellers can enjoy Munnar without worrying about the road.",
+    "With round-the-clock customer assistance, instant WhatsApp booking support, and transparent billing, travellers receive a dependable, premium travel experience across Kerala.",
 ];
 
 const DEFAULT_ITEMS = [
@@ -21,14 +31,24 @@ const DEFAULT_ITEMS = [
         icon: "FaMountainSun",
     },
     {
-        title: "Honeymoon & Family Trips",
-        text: "Private, unhurried travel for couples and families with a comfortable vehicle for the whole trip. Multi-day packages can include planned stops, flexible timings and space for luggage and children's seats on request.",
+        title: "Honeymoon & Romantic Trips",
+        text: "Private, unhurried travel for couples with a comfortable vehicle for the whole trip. Multi-day packages can include planned stops, flexible timings and scenic viewpoints tailored specifically for couples.",
         icon: "FaHeart",
+    },
+    {
+        title: "Family Vacations & Multi-Day Tours",
+        text: "Spacious multi-seater vehicles for family trips across Kerala. Connect Munnar with Alleppey backwaters, Thekkady wildlife sanctuaries, and Kochi heritage sites with comfortable hill chauffeurs.",
+        icon: "FaPeopleGroup",
     },
     {
         title: "Group & Corporate Travel",
         text: "Tempo travellers and larger vehicles for tour groups, company outings and events. Coordinated pick-ups, clear timings and professional drivers keep everyone together and the schedule on track.",
         icon: "FaBuilding",
+    },
+    {
+        title: "Weddings & Special Events",
+        text: "Dedicated multi-vehicle fleet coordination for destination weddings and family celebrations. Seamless guest transfers from transit hubs to venues with dedicated driver support.",
+        icon: "FaRing",
     },
 ];
 
@@ -39,6 +59,10 @@ const localIconMap = {
     FaMountainSun,
     FaHeart,
     FaBuilding,
+    FaRing,
+    FaPeopleGroup,
+    FaCarSide,
+    FaMapLocationDot,
 };
 /* ------------------------------------------------------------------- */
 
@@ -56,13 +80,13 @@ export default function UseCases({
             aria-labelledby="use-cases-title"
             className="py-4 sm:py-6"
         >
-            <div className="container grid gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-16">
+            <div className="container grid gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12 items-start">
                 {/* Intro (stays in view while the cards scroll on desktop) */}
-                <div className="lg:sticky lg:top-24 lg:self-start">
+                <div className="lg:sticky lg:top-28 xl:top-32 lg:self-start">
                     <h2 id="use-cases-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
                         {title}
                     </h2>
-                    <div className="mt-4 sm:mt-6 max-w-[440px] space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base text-gray-600">
+                    <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
                         {paragraphs.map((text, i) => (
                             <p key={i}>{text}</p>
                         ))}

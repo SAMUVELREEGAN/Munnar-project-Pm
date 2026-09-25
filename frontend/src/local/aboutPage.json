@@ -28,8 +28,11 @@
     "useCasesSection": {
         "title": "Use Cases",
         "leftParagraphs": [
-            "Airport Transfers, Sightseeing Tours, Weddings & Events, Family Vacations, Honeymoon Trips, Corporate Travel, City Tours, And Personal Travel Represent The Different Ways The Services Are Utilized. These Use Cases Reflect Real-World Scenarios Where Structured And Reliable Transport Is Required For Both Planned And On-Demand Travel, Supported By Chauffeur-Driven Vehicles, Flexible Booking Options, And Coordinated Service Execution.",
-            "Airport Transfers Include Scheduled Pickup And Drop-Off With Flight Monitoring, Meet And Greet Services, And Waiting Time Support To Handle Delays. Corporate Travel And Roadshows Require Timely And Professional Transport For Meetings And Business Movement. Weddings, Events, And City Tours Involve Coordinated Group Travel, While Honeymoon And Family Tour Transport Ensure Comfortable And Safe Mobility For Couples And Assisted Passengers."
+            "Airport Transfers, Sightseeing Tours, Weddings & Events, Family Vacations, Honeymoon Trips, Corporate Travel, City Tours, and Personal Travel represent the diverse real-world transport scenarios where our services are deployed. Each use case reflects a unique travel requirement demanding structured scheduling, reliable vehicle condition, and professional chauffeur execution across both plain highways and winding mountain ghats.",
+            "Airport and Railway Transfers feature scheduled door-to-door pick-up and drop-off with 24/7 flight tracking, meet-and-greet services, and generous waiting time to comfortably handle flight delays at Cochin International Airport (COK), Coimbatore (CJB), and Madurai (IXM).",
+            "Munnar Sightseeing and Holiday Tours are led by hill-certified local chauffeurs who possess deep knowledge of the Western Ghats terrain, prime visiting hours for tea plantations, hidden waterfalls, dams, and viewpoints, ensuring an unhurried and authentic exploration experience.",
+            "For Corporate Travel and Executive Delegations, our fleet offers punctual transport for meetings, offsites, and roadshows, backed by GST-compliant invoicing, pristine executive sedans, and dedicated coordination support.",
+            "Weddings, Special Events, and Family Gatherings benefit from multi-vehicle fleet coordination, enabling seamless guest arrivals, transit shuttles, and large group movement using spacious Tempo Travellers and premium SUVs."
         ],
         "rightCards": [
             {

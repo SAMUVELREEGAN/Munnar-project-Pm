@@ -32,7 +32,7 @@ export default function HeroSection({ HeroContent }) {
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-[32px] font-extrabold uppercase leading-[1.1] sm:text-5xl lg:text-[56px]"
+                        className="text-[26px] min-[400px]:text-[32px] sm:text-5xl lg:text-[56px] font-extrabold uppercase leading-[1.2] sm:leading-[54px] lg:leading-[65px]"
                     >
                         <span className="block text-green-500">{title}</span>
                     </motion.h1>
