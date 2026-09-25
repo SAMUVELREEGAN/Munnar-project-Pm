@@ -125,7 +125,7 @@ export default function Subscribe({ onSubscribe = async () => {} }) {
                     </div>
 
                     {/* In-UI Validation & Status Feedback */}
-                    <div id="subscribe-error-msg" role="status" aria-live="polite" className="mt-2.5 min-h-[22px]">
+                    <div id="subscribe-error-msg" role="status" aria-live="polite" className="mt-2.5 min-h-[22px] flex items-center justify-center">
                         <AnimatePresence mode="wait">
                             {isError && (
                                 <motion.p
@@ -133,10 +133,10 @@ export default function Subscribe({ onSubscribe = async () => {} }) {
                                     initial={{ opacity: 0, y: -6 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -6 }}
-                                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-red-600"
+                                    className="inline-flex items-start sm:items-center justify-center gap-1.5 text-xs sm:text-sm font-medium text-red-600 text-left sm:text-center max-w-full"
                                 >
-                                    <FaCircleExclamation size={14} className="text-red-500 shrink-0" />
-                                    <span>{error}</span>
+                                    <FaCircleExclamation size={14} className="text-red-500 shrink-0 mt-0.5 sm:mt-0" />
+                                    <span className="leading-tight sm:leading-normal">{error}</span>
                                 </motion.p>
                             )}
                             {!isError && status === "success" && (
@@ -145,10 +145,10 @@ export default function Subscribe({ onSubscribe = async () => {} }) {
                                     initial={{ opacity: 0, y: -6 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -6 }}
-                                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-green-700"
+                                    className="inline-flex items-start sm:items-center justify-center gap-1.5 text-xs sm:text-sm font-semibold text-green-700 text-left sm:text-center max-w-full"
                                 >
-                                    <FaCircleCheck size={14} className="text-green-600 shrink-0" />
-                                    <span>Thank you! You've successfully subscribed.</span>
+                                    <FaCircleCheck size={14} className="text-green-600 shrink-0 mt-0.5 sm:mt-0" />
+                                    <span className="leading-tight sm:leading-normal">Thank you! You've successfully subscribed.</span>
                                 </motion.p>
                             )}
                             {!isError && status === "error" && (
@@ -157,10 +157,10 @@ export default function Subscribe({ onSubscribe = async () => {} }) {
                                     initial={{ opacity: 0, y: -6 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -6 }}
-                                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-red-600"
+                                    className="inline-flex items-start sm:items-center justify-center gap-1.5 text-xs sm:text-sm font-semibold text-red-600 text-left sm:text-center max-w-full"
                                 >
-                                    <FaCircleExclamation size={14} className="text-red-500 shrink-0" />
-                                    <span>Something went wrong. Please try again later.</span>
+                                    <FaCircleExclamation size={14} className="text-red-500 shrink-0 mt-0.5 sm:mt-0" />
+                                    <span className="leading-tight sm:leading-normal">Something went wrong. Please try again later.</span>
                                 </motion.p>
                             )}
                         </AnimatePresence>

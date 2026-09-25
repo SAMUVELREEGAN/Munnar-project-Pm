@@ -1,8 +1,8 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PackageCard from "../Reuseable/PackageCard";
 import data from "../../local/OurPackage.json";
-import { FaMagnifyingGlass, FaRotateLeft, FaCheck } from "react-icons/fa6";
+import { FaMagnifyingGlass, FaRotateLeft, FaCheck, FaChevronDown } from "react-icons/fa6";
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
@@ -11,6 +11,95 @@ const EMPTY_PACKAGES = [];
 
 const whatsappLink = (number, text) =>
     `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+
+const DURATION_OPTIONS = [
+    { value: "all", label: "Any Duration" },
+    { value: "day", label: "Day Tours (1-12 Hrs)" },
+    { value: "multiday", label: "Multi-Day Packages" },
+];
+
+const SORT_OPTIONS = [
+    { value: "popular", label: "Sort: Most Popular" },
+    { value: "rating", label: "Sort: Highest Rated" },
+    { value: "price-low", label: "Sort: Price Low to High" },
+    { value: "price-high", label: "Sort: Price High to Low" },
+];
+
+function CustomDropdown({ options, value, onChange, className = "" }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("touchstart", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("touchstart", handleClickOutside);
+        };
+    }, []);
+
+    const selectedOption = options.find((opt) => opt.value === value) || options[0];
+
+    return (
+        <div ref={dropdownRef} className={`relative w-full ${className}`}>
+            <button
+                type="button"
+                onClick={() => setIsOpen((prev) => !prev)}
+                className={`flex w-full items-center justify-between gap-2 rounded-xl border border-gray-200 bg-gray-50/70 px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-800 transition-colors hover:bg-white hover:border-green-600 focus:border-green-600 focus:bg-white focus:outline-none ${focusRing}`}
+                aria-haspopup="listbox"
+                aria-expanded={isOpen}
+            >
+                <span className="truncate text-left">{selectedOption.label}</span>
+                <FaChevronDown
+                    size={11}
+                    className={`text-gray-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180 text-green-600" : ""}`}
+                />
+            </button>
+
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -4, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -4, scale: 0.98 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute left-0 right-0 top-full mt-1.5 z-40 max-h-60 overflow-auto rounded-xl border border-gray-200 bg-white p-1.5 shadow-xl ring-1 ring-black/5"
+                        role="listbox"
+                    >
+                        {options.map((option) => {
+                            const isSelected = option.value === value;
+                            return (
+                                <button
+                                    key={option.value}
+                                    type="button"
+                                    onClick={() => {
+                                        onChange(option.value);
+                                        setIsOpen(false);
+                                    }}
+                                    className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-xs sm:text-sm font-medium transition-colors ${
+                                        isSelected
+                                            ? "bg-green-50 text-green-700 font-semibold"
+                                            : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                    }`}
+                                    role="option"
+                                    aria-selected={isSelected}
+                                >
+                                    <span className="truncate">{option.label}</span>
+                                    {isSelected && <FaCheck size={11} className="text-green-600 shrink-0 ml-2" />}
+                                </button>
+                            );
+                        })}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+}
 
 export default function Packages() {
     const packages = data?.packages ?? EMPTY_PACKAGES;
@@ -139,29 +228,20 @@ export default function Packages() {
 
                         {/* Duration Select */}
                         <div className="w-full md:w-48">
-                            <select
+                            <CustomDropdown
+                                options={DURATION_OPTIONS}
                                 value={durationFilter}
-                                onChange={(e) => setDurationFilter(e.target.value)}
-                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-700 focus:border-green-600 focus:bg-white focus:outline-none"
-                            >
-                                <option value="all">Any Duration</option>
-                                <option value="day">Day Tours (1-12 Hrs)</option>
-                                <option value="multiday">Multi-Day Packages</option>
-                            </select>
+                                onChange={setDurationFilter}
+                            />
                         </div>
 
                         {/* Sort Select */}
                         <div className="w-full md:w-52">
-                            <select
+                            <CustomDropdown
+                                options={SORT_OPTIONS}
                                 value={sortBy}
-                                onChange={(e) => setSortBy(e.target.value)}
-                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-700 focus:border-green-600 focus:bg-white focus:outline-none"
-                            >
-                                <option value="popular">Sort: Most Popular</option>
-                                <option value="rating">Sort: Highest Rated</option>
-                                <option value="price-low">Sort: Price Low to High</option>
-                                <option value="price-high">Sort: Price High to Low</option>
-                            </select>
+                                onChange={setSortBy}
+                            />
                         </div>
 
                         {/* Reset button */}

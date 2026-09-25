@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaUsers, FaClock, FaSnowflake, FaWandMagicSparkles } from "react-icons/fa6";
 
-const WHATSAPP_NUMBER = "919876543210";
-
-const whatsappLink = (text) =>
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-
 const VEHICLE_FLEET = [
     {
         id: "sedan",

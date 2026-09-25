@@ -33,16 +33,9 @@ function AvatarImage({ src, alt }) {
 
 export default function Testimonials({ data }) {
     const [swiper, setSwiper] = useState(null);
-    const [atStart, setAtStart] = useState(true);
-    const [atEnd, setAtEnd] = useState(false);
 
     const testimonialData = data ?? defaultData;
     const { title, subtitle, testimonials = [] } = testimonialData;
-
-    const syncEdges = (s) => {
-        setAtStart(s.isBeginning);
-        setAtEnd(s.isEnd);
-    };
 
     const navBtn = `grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full border border-green-600 text-green-600 transition-all hover:bg-green-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-600 shadow-sm ${focusRing}`;
 
@@ -114,13 +107,7 @@ export default function Testimonials({ data }) {
                             640: { slidesPerView: 2, spaceBetween: 20 },
                             1024: { slidesPerView: 3, spaceBetween: 24 },
                         }}
-                        onSwiper={(s) => {
-                            setSwiper(s);
-                            syncEdges(s);
-                        }}
-                        onSlideChange={syncEdges}
-                        onBreakpoint={syncEdges}
-                        onResize={syncEdges}
+                        onSwiper={setSwiper}
                         className="w-full !py-2 sm:!py-3"
                     >
                         {testimonials.map((item) => (
