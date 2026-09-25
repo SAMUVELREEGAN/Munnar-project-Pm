@@ -45,7 +45,7 @@ export default function Services({ OurTourPackages }) {
         setAtEnd(s.isEnd);
     };
 
-    const navBtn = `grid h-11 w-11 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-600 ${focusRing}`;
+    const navBtn = `grid h-11 w-11 place-items-center rounded-full border border-green-600 text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-700 ${focusRing}`;
 
     return (
         <section aria-labelledby="services-title" className="overflow-hidden">
@@ -58,13 +58,13 @@ export default function Services({ OurTourPackages }) {
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     className="grid gap-3 sm:gap-4 md:grid-cols-2 md:items-start md:gap-12"
                 >
-                    <h2 id="services-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900">
+                    <h2 id="services-title" className="font-display text-[28px] sm:text-4xl lg:text-[44px] font-semibold leading-tight text-gray-900">
                         {title}
                     </h2>
                     <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 md:pt-1">{desc}</p>
                 </motion.div>
 
-                <hr className="mt-6 border-gray-200 sm:mt-10" />
+                <div className="mt-6 sm:mt-10 h-px w-full bg-gradient-to-r from-transparent via-cream-300 to-transparent" />
 
                 {/* Prev / next */}
                 <motion.div
@@ -128,12 +128,12 @@ export default function Services({ OurTourPackages }) {
                                 <motion.article
                                     whileHover={{ y: -6 }}
                                     transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                                    className="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-4 sm:p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-xl hover:border-green-600/30 transition-shadow duration-300"
+                                    className="flex h-full flex-col rounded-[28px] border border-cream-200 bg-[#fffdf8] p-4 sm:p-5 shadow-soft hover:shadow-lift hover:border-green-700/20 transition-all duration-500"
                                 >
                                     <CardImage src={item.image} />
                                     <div className="flex flex-1 flex-col pt-3">
                                         <h3
-                                            className="mt-1 sm:mt-2 min-h-[2.5rem] sm:min-h-[3.5rem] text-base sm:text-lg lg:text-xl font-bold text-gray-900 leading-snug line-clamp-2"
+                                            className="mt-1 sm:mt-2 min-h-[2.5rem] sm:min-h-[3.5rem] font-display text-lg sm:text-xl lg:text-[22px] font-semibold text-gray-900 leading-snug line-clamp-2"
                                             title={item.title}
                                         >
                                             {item.title}
@@ -148,7 +148,7 @@ export default function Services({ OurTourPackages }) {
                                                 <Link
                                                     to={"/contact-us"}
                                                     aria-label={`Learn more about ${item.title}`}
-                                                    className={`inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-green-100 px-5 sm:px-6 py-2.5 text-xs sm:text-sm md:text-base font-bold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                                    className={`inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-green-50 px-5 sm:px-6 py-2.5 text-xs sm:text-sm md:text-base font-semibold text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 ${focusRing}`}
                                                 >
                                                     <span>Learn more</span>
                                                     <FaArrowRight size={14} />

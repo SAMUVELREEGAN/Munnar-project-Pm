@@ -36,15 +36,15 @@ export default function PlacesToVisit() {
                     className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 sm:gap-4"
                 >
                     <div>
-                        <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100/80 px-3 py-0.5 sm:px-3.5 sm:py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800">
+                        <div className="inline-flex items-center gap-1.5 rounded-full bg-gold-50 px-3 py-0.5 sm:px-3.5 sm:py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-gold-600">
                             <FaWandMagicSparkles size={11} className="text-emerald-600" />
                             <span>Top Sightseeing Destinations</span>
                         </div>
-                        <h2 id="places-title" className="mt-2.5 sm:mt-3 text-2xl font-bold leading-tight text-gray-900 sm:text-3xl lg:text-4xl">
-                            Places to Visit in Munnar & Kerala
+                        <h2 id="places-title" className="mt-2.5 sm:mt-3 font-display text-[28px] font-semibold leading-tight text-gray-900 sm:text-4xl lg:text-[44px]">
+                            Top Places to Visit in Munnar
                         </h2>
                         <p className="mt-2 max-w-[700px] text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
-                            Pick your must-see landmarks and customize with a personal chauffeur at the wheel, scenic routes, and zero hassle.
+                            Explore the most beautiful tourist attractions in Munnar. From tea gardens to waterfalls and wildlife, enjoy a perfect trip.
                         </p>
                     </div>
 
@@ -58,9 +58,9 @@ export default function PlacesToVisit() {
                                     key={tab.value}
                                     type="button"
                                     onClick={() => setActiveRegion(tab.value)}
-                                    className={`rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold transition-colors ${isActive
-                                            ? "bg-green-600 text-white border border-green-600 shadow-sm"
-                                            : "bg-white text-gray-700 border border-gray-200 hover:border-green-600 hover:text-green-700 shadow-sm"
+                                    className={`rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 ${isActive
+                                            ? "bg-green-600 text-cream-50 border border-green-600 shadow-soft"
+                                            : "bg-[#fffdf8] text-gray-700 border border-cream-200 hover:border-green-600 hover:text-green-700 shadow-soft"
                                         } ${focusRing}`}
                                 >
                                     {tab.label} {tab.count > 0 && <span className="opacity-80">({tab.count})</span>}
@@ -70,7 +70,7 @@ export default function PlacesToVisit() {
                     </div>
                 </motion.div>
 
-                <hr className="mt-5 sm:mt-6 border-gray-200" />
+                <div className="mt-5 sm:mt-6 h-px w-full bg-gradient-to-r from-transparent via-cream-300 to-transparent" />
 
                 {/* Places Grid */}
                 <AnimatePresence mode="popLayout">

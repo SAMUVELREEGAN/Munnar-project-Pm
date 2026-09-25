@@ -37,7 +37,7 @@ export default function Testimonials({ data }) {
     const testimonialData = data ?? defaultData;
     const { title, subtitle, testimonials = [] } = testimonialData;
 
-    const navBtn = `grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full border border-green-600 text-green-600 transition-all hover:bg-green-600 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-600 shadow-sm ${focusRing}`;
+    const navBtn = `grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full border border-green-600 text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-700 shadow-soft ${focusRing}`;
 
     return (
         <section aria-labelledby="testimonials-title" className="overflow-hidden">
@@ -53,7 +53,7 @@ export default function Testimonials({ data }) {
                     <div>
                         <h2
                             id="testimonials-title"
-                            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight"
+                            className="font-display text-[28px] sm:text-4xl lg:text-[44px] font-semibold text-gray-900 tracking-tight"
                         >
                             {title}
                         </h2>
@@ -87,7 +87,7 @@ export default function Testimonials({ data }) {
                     )}
                 </motion.div>
 
-                <hr className="mt-6 border-gray-200" />
+                <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-cream-300 to-transparent" />
 
                 {/* Swiper Auto-scroll Carousel */}
                 <div className="mt-6 sm:mt-8 w-full overflow-hidden">
@@ -112,10 +112,10 @@ export default function Testimonials({ data }) {
                     >
                         {testimonials.map((item) => (
                             <SwiperSlide key={item.id || item.name} className="!h-auto">
-                                <article className="flex h-full flex-col justify-between rounded-3xl border border-green-200/70 bg-white p-5 sm:p-7 md:p-8 shadow-[0_4px_25px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-green-600/40">
+                                <article className="flex h-full flex-col justify-between rounded-[28px] border border-cream-200 bg-[#fffdf8] p-5 sm:p-7 md:p-8 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift hover:border-green-700/20">
                                     <div>
                                         {/* 5 Stars with Brand Green Accent */}
-                                        <div className="flex items-center gap-1 text-green-600">
+                                        <div className="flex items-center gap-1 text-gold-500">
                                             {[...Array(item.rating || 5)].map((_, i) => (
                                                 <FaStar key={i} size={15} />
                                             ))}
@@ -129,18 +129,20 @@ export default function Testimonials({ data }) {
 
                                     <div>
                                         {/* Divider */}
-                                        <hr className="my-4 sm:my-5 border-gray-100" />
+                                        <div className="my-4 sm:my-5 h-px w-full bg-cream-200" />
 
                                         {/* Author Profile */}
                                         <div className="flex items-center gap-3">
                                             <AvatarImage src={item.image} alt={item.name} />
                                             <div className="min-w-0">
-                                                <h3 className="text-xs sm:text-sm md:text-base font-bold text-gray-900 leading-tight truncate">
-                                                    {item.name}
+                                                <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 leading-tight truncate">
+                                                    - {item.name}
                                                 </h3>
-                                                <p className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-green-700 font-medium truncate">
-                                                    ( {item.role} )
-                                                </p>
+                                                {item.role && (
+                                                    <p className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-green-700 font-medium truncate">
+                                                        {item.role}
+                                                    </p>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

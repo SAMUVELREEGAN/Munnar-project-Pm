@@ -1,70 +1,63 @@
 {
     "heroSection": {
-        "title": "About Us",
-        "description": "Choose Munnar Taxi Service for dependable transportation and memorable travel experiences."
+        "title": "About Our Munnar Taxi Service",
+        "description": "Your trusted travel partner for safe and comfortable journeys"
     },
     "CompanySection": {
-        "title": "Company",
+        "title": "Who We Are",
         "image": "/images/Munnar-bg.webp",
-        "imageAlt": "Munnar taxi van driving through hill roads",
+        "imageAlt": "Scenic Munnar tea plantations and hills",
         "paragraphs": [
-            "Munnar Taxi Services positions itself as a premier transportation provider in Kerala, offering Sedan, SUV, and Maxi Cab transport services through a structured and system-driven platform. The company operates across multiple transport use cases, including airport transfers, Munnar sightseeing, corporate travel, and family vacation trips.",
-            "With over 10,000 trips completed within a 12-month period, the company emphasizes operational experience and service consistency. Its driver network includes trained professionals capable of handling both standard and customized travel itineraries, particularly for tourists exploring the hill stations and families requiring additional care during long journeys.",
-            "The company differentiates itself through its digital-first approach, where all bookings are handled via its website or mobile application instead of manual coordination. This system-driven model enables better scheduling, reduced operational errors, and consistent service delivery across different travel types.",
-            "Additionally, the company places strong focus on local expertise, positioning Munnar sightseeing not as an optional feature but as a core offering. This includes hill-driving-certified chauffeurs, well-maintained vehicles suited for mountain terrain, and structured booking processes tailored for both daily commutes and multi-day Kerala tour packages.",
-            "Overall, the company is structured around reliability, operational control, and comfort, aiming to deliver consistent transport services across different customer segments and travel requirements."
+            "We are a leading taxi service provider in Munnar, offering reliable, safe, and affordable transportation for tourists and travelers. With years of experience in hill station travel, we ensure every journey is smooth and memorable.",
+            "From airport transfers to full-day sightseeing, our goal is to provide a comfortable travel experience with professional drivers who know every corner of Munnar."
         ]
     },
     "bookingSection": {
-        "title": "Booking",
-        "image": "/images/aboutpage.png",
-        "imageAlt": "Munnar taxi booking process with vehicle and passenger",
+        "title": "Our Mission",
+        "image": "/images/munnar-tea-gardens.jpg",
+        "imageAlt": "Munnar hills and tea gardens",
         "paragraphs": [
-            "Bookings Can Be Made Via Website Or Mobile App, Allowing Users To Select Vehicle, Enter Trip Details, And Schedule A Booking Based On Their Requirements. The Process Includes Driver Assignment And Real-Time Communication, Ensuring That Each Trip Is Coordinated Clearly From Request To Completion. Users Are Required To Place Advance Bookings Through The System, Typically With A Minimum Notice Period, Using The Booking Form Available On The Website Or Through The Mobile Application.",
-            "The Booking Flow Involves Selecting The Appropriate Vehicle Type Based On Passenger Count And Luggage, Followed By Entering Pickup Location, Destination, Date, And Time. Accurate Details Are Important, As Vehicle Allocation And Pricing Depend On The Selected Service And Requirements Once The Booking Is Confirmed, A Driver Is Assigned, And Trip Coordination Begins. For Airport Transfers, Additional Features Such As Flight Monitoring, Meet And Greet, And Waiting Time Handling Are Included To Ensure Timely Pickup Even In Case Of Delays.",
-            "Bookings Can Also Be Made Through The Mobile Application For Faster Processing And Better Availability, Especially For Shorter Notice Periods. The Entire Process Is System-Driven, Ensuring Structured Scheduling, Accurate Service Allocation, And Consistent Execution Across Different Types Of Transport Requirements."
+            "Our mission is to deliver safe, reliable, and comfortable taxi services for every traveler visiting Munnar. We are committed to providing a seamless travel experience with well-maintained vehicles and professionally trained drivers who prioritize customer satisfaction.",
+            "We aim to make every journey enjoyable by offering punctual services, transparent pricing, and personalized travel solutions that meet the unique needs of our customers. whether it is a airport transfers, sightseeing, or long-distance travel, we ensure a smooth and memorable ride."
+        ]
+    },
+    "visionSection": {
+        "title": "Our Vision",
+        "image": "/images/Munnar-bg.webp",
+        "imageAlt": "Panoramic view of Munnar hills",
+        "paragraphs": [
+            "Our vision is to become the most trusted and preferred taxi service provider in Munnar and accross kerala by setting new standards in travel comfort, safety, and customer service.",
+            "we strive to expand our services with modern vehicles, innovative booking solutions, and eco-friendly travel options while maintaining high-quality service standards."
         ]
     },
     "useCasesSection": {
-        "title": "Use Cases",
-        "leftParagraphs": [
-            "Airport Transfers, Sightseeing Tours, Weddings & Events, Family Vacations, Honeymoon Trips, Corporate Travel, City Tours, and Personal Travel represent the diverse real-world transport scenarios where our services are deployed. Each use case reflects a unique travel requirement demanding structured scheduling, reliable vehicle condition, and professional chauffeur execution across both plain highways and winding mountain ghats.",
-            "Airport and Railway Transfers feature scheduled door-to-door pick-up and drop-off with 24/7 flight tracking, meet-and-greet services, and generous waiting time to comfortably handle flight delays at Cochin International Airport (COK), Coimbatore (CJB), and Madurai (IXM).",
-            "Munnar Sightseeing and Holiday Tours are led by hill-certified local chauffeurs who possess deep knowledge of the Western Ghats terrain, prime visiting hours for tea plantations, hidden waterfalls, dams, and viewpoints, ensuring an unhurried and authentic exploration experience.",
-            "For Corporate Travel and Executive Delegations, our fleet offers punctual transport for meetings, offsites, and roadshows, backed by GST-compliant invoicing, pristine executive sedans, and dedicated coordination support.",
-            "Weddings, Special Events, and Family Gatherings benefit from multi-vehicle fleet coordination, enabling seamless guest arrivals, transit shuttles, and large group movement using spacious Tempo Travellers and premium SUVs."
-        ],
+        "title": "Why Choose Us?",
+        "leftParagraphs": [],
         "rightCards": [
             {
                 "id": 1,
-                "title": "Airport Transfers",
-                "icon": "FaPlaneDeparture",
-                "description": "Airport Transfers Include Pickup And Drop-Off Services Between Locations And The Airport, Supported By Flight Monitoring, Meet And Greet Assistance, And Waiting Time Handling. This Ensures Passengers Are Picked Up On Time Even During Delays, Providing A Structured And Reliable Travel Experience For Both Arrivals And Departures."
+                "title": "Professional Drivers",
+                "icon": "FaCircleCheck",
+                "description": "Experienced and friendly drivers for safe travel."
             },
             {
                 "id": 2,
-                "title": "Corporate Travel",
-                "icon": "FaBuilding",
-                "description": "Corporate Travel Is Designed For Business Professionals Requiring Timely And Organized Transport For Meetings, Office Commutes, And Roadshows. The Service Ensures Punctuality, Professional Chauffeur Support, And Efficient Movement Across Locations, Making It Suitable For Companies That Require Consistent And Dependable Transportation For Employees And Business Operations."
+                "title": "Affordable Pricing",
+                "icon": "FaCircleCheck",
+                "description": "Transparent pricing with no hidden charges."
             },
             {
                 "id": 3,
-                "title": "Weddings & Events",
-                "icon": "FaRing",
-                "description": "Weddings And Events Require Coordinated Group Travel And Special Attention To Detail. Our Service Provides Well-Maintained Vehicles, Professional Chauffeurs, And Flexible Scheduling To Ensure Your Special Day Runs Smoothly, From Guest Pickups To Venue Transfers Across Munnar And Surrounding Areas."
+                "title": "24/7 Support",
+                "icon": "FaCircleCheck",
+                "description": "We are always available for your travel needs."
+            },
+            {
+                "id": 4,
+                "title": "Clean Vehicles",
+                "icon": "FaCircleCheck",
+                "description": "Well-maintained cars for a comfortable journey."
             }
-        ]
-    },
-    "pricingSection": {
-        "title": "Pricing",
-        "introParagraph": "One-Way Trips, Hourly Booking, Airport Transfer Pricing, Sightseeing Package Pricing, Pricing Based On Distance, And Pricing Based On Vehicle Type Define How Costs Are Structured. The Pricing Model Is Segmented Based On Vehicle Category, Service Type, And Usage Duration, Ensuring Flexibility Across Different Travel Needs.",
-        "image": "/images/munnar-taxi-pricing.jpg",
-        "imageAlt": "Munnar taxi van driving through scenic hill roads",
-        "paragraphs": [
-            "Each Vehicle Type Follows A Predefined Pricing Structure. For Example, Sedan, SUV, And Maxi Cab Services Typically Include Fixed Rates For Airport Pickup, Standard One-Way Trips, And Hourly Charter Services With Minimum Booking Durations. Hourly Charter Services Generally Start With A Minimum Number Of Hours, Allowing Users To Retain The Vehicle For Continuous Use Across Multiple Stops.",
-            "Airport Transfer Pricing Includes Additional Service Elements Such As Meet And Greet, Flight Monitoring, And Waiting Time, Ensuring Passengers Are Accommodated Even In Case Of Delays. Pricing Remains Consistent Based On Vehicle Selection And Service Scope.",
-            "Sightseeing Packages Follow A More Dynamic Pricing Model, Where Charges Are Calculated Based On Distance Traveled, Base Fare, And Additional Factors Such As Time Of Booking, Waiting Time, And Service Requirements. Additional Charges May Apply For Late-Night Hours, Non-Office Hours, Extra Stops, Or Door-To-Door Assistance.",
-            "The Overall Pricing System Is Designed To Provide Transparency By Clearly Separating Costs Based On Service Type, Duration, And Operational Requirements, Allowing Users To Estimate And Control Their Travel Expenses Effectively."
         ]
     }
 }

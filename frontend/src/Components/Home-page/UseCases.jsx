@@ -80,29 +80,32 @@ export default function UseCases({
             aria-labelledby="use-cases-title"
             className="py-4 sm:py-6"
         >
-            <div className="container grid gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12 items-start">
-                {/* Intro (stays in view while the cards scroll on desktop) */}
-                <div className="lg:sticky lg:top-28 xl:top-32 lg:self-start">
-                    <h2 id="use-cases-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+            <div className={`container grid gap-6 sm:gap-8 items-start ${paragraphs?.length ? "lg:grid-cols-2 lg:gap-10 xl:gap-12" : ""}`}>
+                {/* Intro */}
+                <div className={paragraphs?.length ? "lg:sticky lg:top-28 xl:top-32 lg:self-start" : ""}>
+                    <h2 id="use-cases-title" className="font-display text-[28px] sm:text-4xl lg:text-[44px] font-semibold text-gray-900">
                         {title}
                     </h2>
-                    <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
-                        {paragraphs.map((text, i) => (
-                            <p key={i}>{text}</p>
-                        ))}
-                    </div>
+                    <span aria-hidden="true" className="gold-rule-left" />
+                    {!!paragraphs?.length && (
+                        <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
+                            {paragraphs.map((text, i) => (
+                                <p key={i}>{text}</p>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 {/* Cards */}
-                <ul className="space-y-4 sm:space-y-5">
+                <ul className={`space-y-4 sm:space-y-5 ${!paragraphs?.length ? "sm:grid sm:grid-cols-2 sm:gap-5 sm:space-y-0" : ""}`}>
                     {cardItems.map((item) => {
                         const IconComponent = localIconMap[item.icon];
                         return (
-                            <li key={item.id ?? item.title} className="rounded-3xl bg-white p-5 sm:p-7 md:p-8 shadow-sm ring-1 ring-gray-100">
+                            <li key={item.id ?? item.title} className="rounded-[28px] bg-[#fffdf8] p-5 sm:p-7 md:p-8 shadow-soft ring-1 ring-cream-200 transition-all duration-500 hover:shadow-lift">
                                 <div className="flex items-start justify-between gap-3 sm:gap-4">
-                                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">{item?.title}</h3>
+                                    <h3 className="font-display text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">{item?.title}</h3>
                                     {IconComponent && (
-                                        <span className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-600">
+                                        <span className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-700">
                                             <IconComponent size={24} />
                                         </span>
                                     )}

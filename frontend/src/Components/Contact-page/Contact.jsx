@@ -47,10 +47,10 @@ const validators = {
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return "Enter a valid email, e.g. name@example.com.";
         return "";
     },
-    // optional – only checked when something is typed
+    // required on contact form (matches live site)
     phone: (value) => {
         const v = value.trim();
-        if (!v) return "";
+        if (!v) return "Please enter your phone number.";
         const digits = v.replace(/\D/g, "");
         if (digits.length < 10 || digits.length > 13) return "Enter a valid phone number (10 to 13 digits).";
         return "";
@@ -79,7 +79,7 @@ const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
 const fieldBase =
-    "w-full rounded-md border bg-green-50 px-3.5 py-3 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-1";
+    "w-full rounded-xl border bg-[#fffdf8] px-3.5 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 transition-all duration-300";
 
 const fieldStates = {
     idle: "border-green-200 focus:border-green-600 focus:ring-green-600",
@@ -202,7 +202,7 @@ export default function Contact({
         <>
             <section
                 aria-label="Contact details and enquiry form"
-                className="bg-[#f7f9f6] py-6 sm:py-12 lg:py-16"
+                className="py-6 sm:py-12 lg:py-16"
             >
                 <div className="container grid items-start gap-6 sm:gap-8 lg:grid-cols-2">
                     {/* Contact information */}
@@ -211,18 +211,20 @@ export default function Contact({
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-40px" }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="rounded-3xl bg-white p-5 sm:p-8 lg:p-10 shadow-sm ring-1 ring-gray-100"
+                        className="rounded-[28px] bg-[#fffdf8] p-5 sm:p-8 lg:p-10 shadow-soft ring-1 ring-cream-200"
                     >
-                        <h2 className="text-xl sm:text-2xl font-bold text-gray-900">{infoTitle}</h2>
-                        <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">{infoText}</p>
+                        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-gray-900">{infoTitle}</h2>
+                        {infoText && (
+                            <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">{infoText}</p>
+                        )}
 
                         <ul className="mt-6 sm:mt-8">
                             {contacts.map((item) => (
                                 <li
                                     key={item.id ?? item.label}
-                                    className="flex items-start gap-3 sm:gap-4 border-b border-gray-100 py-4 sm:py-5 first:pt-2 last:border-b-0 last:pb-0"
+                                    className="flex items-start gap-3 sm:gap-4 border-b border-cream-200 py-4 sm:py-5 first:pt-2 last:border-b-0 last:pb-0"
                                 >
-                                    <span className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-600 shadow-sm">
+                                    <span className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-700 shadow-soft">
                                         {CONTACT_ICONS[item.icon]}
                                     </span>
                                     <div className="min-w-0 pt-0.5">
@@ -243,7 +245,7 @@ export default function Contact({
                         </ul>
 
                         {/* Social icons */}
-                        <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4 border-t border-gray-100 pt-5 sm:pt-6">
+                        <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4 border-t border-cream-200 pt-5 sm:pt-6">
                             <p className="text-sm sm:text-base font-bold text-gray-900">{socialsTitle}</p>
                             <ul className="flex items-center gap-2">
                                 {socials.map((s) => (
@@ -256,7 +258,7 @@ export default function Contact({
                                             rel="noopener noreferrer"
                                             aria-label={`${s.label} (opens in a new tab)`}
                                             title={s.label}
-                                            className={`grid h-8 w-8 place-items-center rounded-full border border-green-600 text-green-600 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                            className={`grid h-8 w-8 place-items-center rounded-full border border-green-600 text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 ${focusRing}`}
                                         >
                                             {SOCIAL_ICONS[s.icon]}
                                         </motion.a>
@@ -272,66 +274,73 @@ export default function Contact({
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-40px" }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="rounded-3xl bg-[#eef4ec] p-5 sm:p-8 lg:p-10 shadow-sm"
+                        className="rounded-[28px] bg-cream-100 p-5 sm:p-8 lg:p-10 shadow-soft border border-cream-200"
                     >
-                        <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-gray-900">
-                            <FaAsterisk size={13} className="text-green-600" />
-                            {formBadge}
-                        </span>
+                        {formBadge && (
+                            <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-gray-900">
+                                <FaAsterisk size={13} className="text-green-600" />
+                                {formBadge}
+                            </span>
+                        )}
 
-                        <h2 className="mt-4 sm:mt-5 text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">{formTitle}</h2>
-                        <p className="mt-2.5 sm:mt-4 max-w-[560px] text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">{formText}</p>
+                        <h2 className={`${formBadge ? "mt-4 sm:mt-5" : ""} font-display text-[28px] sm:text-4xl lg:text-[42px] font-semibold text-gray-900`}>{formTitle}</h2>
+                        {formText && (
+                            <p className="mt-2.5 sm:mt-4 max-w-[560px] text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">{formText}</p>
+                        )}
 
                         {/* noValidate: the browser's pop-up bubbles are replaced by the inline messages below */}
                         <form onSubmit={handleSubmit} noValidate className="mt-5 sm:mt-6 space-y-3.5 sm:space-y-4">
                             <div>
-                                <Label htmlFor="contact-name">Name</Label>
+                                <Label htmlFor="contact-name">Your Name</Label>
                                 <input
                                     {...fieldProps("name")}
                                     type="text"
                                     required
                                     autoComplete="name"
-                                    placeholder="Name"
+                                    placeholder="Your Name"
                                 />
                                 {showError("name") && <FieldError id="contact-name-error" message={errors.name} />}
                             </div>
 
                             <div>
-                                <Label htmlFor="contact-email">Email address</Label>
+                                <Label htmlFor="contact-email">Your Email</Label>
                                 <input
                                     {...fieldProps("email")}
                                     type="email"
                                     required
                                     autoComplete="email"
-                                    placeholder="Email Address"
+                                    placeholder="Your Email"
                                 />
                                 {showError("email") && <FieldError id="contact-email-error" message={errors.email} />}
                             </div>
 
                             <div>
-                                <Label htmlFor="contact-phone">Phone number</Label>
+                                <Label htmlFor="contact-phone">Phone Number</Label>
                                 <input
                                     {...fieldProps("phone")}
                                     type="tel"
                                     inputMode="tel"
                                     maxLength={18}
                                     autoComplete="tel"
-                                    placeholder="Phone Number (optional)"
+                                    required
+                                    placeholder="Phone Number"
                                 />
                                 {showError("phone") && <FieldError id="contact-phone-error" message={errors.phone} />}
                             </div>
 
-                            <div>
-                                <Label htmlFor="contact-service">Service you're interested in</Label>
-                                <select {...fieldProps("service")}>
-                                    <option value="">Service You're Interested In</option>
-                                    {services.map((s) => (
-                                        <option key={s} value={s}>
-                                            {s}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
+                            {services?.length > 0 && (
+                                <div>
+                                    <Label htmlFor="contact-service">Service you're interested in</Label>
+                                    <select {...fieldProps("service")}>
+                                        <option value="">Service You're Interested In</option>
+                                        {services.map((s) => (
+                                            <option key={s} value={s}>
+                                                {s}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            )}
 
                             <div>
                                 <Label htmlFor="contact-message">Message</Label>
@@ -340,7 +349,7 @@ export default function Contact({
                                     rows={4}
                                     required
                                     maxLength={MESSAGE_MAX}
-                                    placeholder="Message"
+                                    placeholder="Write your message..."
                                     className={`${fieldProps("message").className} resize-y`}
                                 />
                                 <div className="mt-1.5 flex items-start justify-between gap-3">
@@ -359,10 +368,10 @@ export default function Contact({
                                 <button
                                     type="submit"
                                     disabled={status === "loading"}
-                                    className={`inline-flex w-full sm:w-auto items-center justify-center gap-3 sm:gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-6 sm:pr-7 text-sm sm:text-base font-bold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-70 shadow-sm ${focusRing}`}
+                                    className={`inline-flex w-full sm:w-auto items-center justify-center gap-3 sm:gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-6 sm:pr-7 text-sm sm:text-base font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow disabled:cursor-not-allowed disabled:opacity-70 shadow-soft ${focusRing}`}
                                 >
-                                    <span className="grid h-8 w-9 sm:h-9 sm:w-[52px] place-items-center rounded-full bg-white">
-                                        <FaArrowRight size={15} className="text-green-600" />
+                                    <span className="grid h-8 w-9 sm:h-9 sm:w-[52px] place-items-center rounded-full bg-cream-50">
+                                        <FaArrowRight size={15} className="text-green-700" />
                                     </span>
                                     <span>{status === "loading" ? "Sending…" : "Send Message"}</span>
                                 </button>

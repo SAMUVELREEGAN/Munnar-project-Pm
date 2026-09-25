@@ -1,76 +1,67 @@
 {
-    "vehicles": [
-        {
-            "title": "Sedan",
-            "type": "sedan",
-            "seats": 4,
-            "duration": "1 day",
-            "distance": "100 km",
-            "price": 2500,
-            "image": "/images/cochin-airport.jpg"
-        },
-        {
-            "title": "Ertiga",
-            "type": "mpv",
-            "seats": 5,
-            "duration": "1 day",
-            "distance": "100 km",
-            "price": 3000,
-            "image": "/images/kochi-direction.jpg"
-        },
-        {
-            "title": "Innova",
-            "type": "mpv",
-            "seats": 7,
-            "duration": "1 day",
-            "distance": "100 km",
-            "price": 3500,
-            "image": "/images/innova-tavera.png"
-        },
-        {
-            "title": "Innova Crysta",
-            "type": "mpv",
-            "seats": 8,
-            "duration": "1 day",
-            "distance": "100 km",
-            "price": 4000,
-            "image": "/images/kerala-tour.png"
-        },
-        {
-            "title": "Tempo Traveller",
-            "type": "van",
-            "seats": 12,
-            "duration": "1 day",
-            "distance": "100 km",
-            "price": 4500,
-            "image": "/images/kochi-direction.jpg"
-        },
-        {
-            "title": "Tempo Traveller",
-            "type": "van",
-            "seats": 14,
-            "duration": "1 day",
-            "distance": "100 km",
-            "price": 5000,
-            "image": "/images/munnar-innova.jpg"
-        },
-        {
-            "title": "Tempo Traveller",
-            "type": "van",
-            "seats": 17,
-            "duration": "1 day",
-            "distance": "100 km",
-            "price": 5500,
-            "image": "/images/van.png"
-        },
-        {
-            "title": "Tempo Traveller",
-            "type": "van",
-            "seats": 17,
-            "duration": "1 day",
-            "distance": "100 km",
-            "price": 5500,
-            "image": "/images/van3.png"
-        }
-    ]
+  "vehicles": [
+    {
+      "title": "Sedan 4 seater 1 day 100km",
+      "type": "sedan",
+      "seats": 4,
+      "duration": "1 day",
+      "distance": "100 km",
+      "price": 2500,
+      "image": "/images/car.png"
+    },
+    {
+      "title": "Ertiga 5 seater 1 day 100km",
+      "type": "mpv",
+      "seats": 5,
+      "duration": "1 day",
+      "distance": "100 km",
+      "price": 3000,
+      "image": "/images/Ertiga.webp"
+    },
+    {
+      "title": "Inova 7 seater 1 day 100km",
+      "type": "mpv",
+      "seats": 7,
+      "duration": "1 day",
+      "distance": "100 km",
+      "price": 3500,
+      "image": "/images/munnar-innova.jpg"
+    },
+    {
+      "title": "Inova crysta 8 seater 1 day 100km",
+      "type": "mpv",
+      "seats": 8,
+      "duration": "1 day",
+      "distance": "100 km",
+      "price": 4000,
+      "image": "/images/munnar-innova.jpg"
+    },
+    {
+      "title": "Tempo traveller 12 seater 1 day 100km",
+      "type": "van",
+      "seats": 12,
+      "duration": "1 day",
+      "distance": "100 km",
+      "price": 4500,
+      "image": "/images/van.png"
+    },
+    {
+      "title": "Tempo traveller 14 seater 1 day 100km",
+      "type": "van",
+      "seats": 14,
+      "duration": "1 day",
+      "distance": "100 km",
+      "price": 5000,
+      "image": "/images/van.png"
+    },
+    {
+      "title": "Tempo traveller 17 seater 1 day 100 km",
+      "type": "van",
+      "seats": 17,
+      "duration": "1 day",
+      "distance": "100 km",
+      "price": 5500,
+      "image": "/images/van.png"
+    }
+  ]
 }

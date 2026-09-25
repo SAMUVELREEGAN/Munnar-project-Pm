@@ -23,7 +23,7 @@ export default function PlaceCard({
         <motion.article
             whileHover={{ y: -6 }}
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200/80 bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-green-600/30 transition-shadow duration-300"
+            className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-cream-200 bg-[#fffdf8] p-4 shadow-soft hover:shadow-lift hover:border-green-700/20 transition-all duration-500"
         >
             {/* Image Container with Category Badge */}
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gray-100">
@@ -56,7 +56,7 @@ export default function PlaceCard({
                     </p>
                 )}
 
-                <h3 className="mt-1.5 text-base font-bold text-gray-900 leading-snug line-clamp-1" title={title}>
+                <h3 className="mt-1.5 font-display text-lg font-semibold text-gray-900 leading-snug line-clamp-1" title={title}>
                     {title}
                 </h3>
 

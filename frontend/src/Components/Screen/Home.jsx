@@ -1,25 +1,21 @@
 import React from 'react'
 import HeroSection from '../Home-page/HeroSection'
-import Services from '../Home-page/Services'
-import PickupProcess from '../Home-page/PickupProcess'
-import Vehicles from '../Home-page/Vehicles'
-import WhyChooseUs from '../Home-page/WhyChooseUs'
+import RouteCategories from '../Home-page/RouteCategories'
 import Features from '../Home-page/Features'
+import TopPlaces from '../Home-page/TopPlaces'
+import Vehicles from '../Home-page/Vehicles'
 import Testimonials from '../Home-page/Testimonials'
+import Subscribe from '../Home-page/Subscribe'
 import HomeSection from "../../local/HomePage.json"
-import Subscribe from "../Home-page/Subscribe"
 
 export const Home = () => {
-
-
     return (
-        <div className='space-y-8 sm:space-y-12 lg:space-y-20 pb-8 sm:pb-12' >
+        <div className='space-y-14 sm:space-y-20 lg:space-y-28 pb-16 sm:pb-20' >
             <HeroSection HeroContent={HomeSection?.homePage?.heroSection} />
-            <Services OurTourPackages={HomeSection?.homePage?.OurTourPackages} />
-            <PickupProcess StepCard={HomeSection?.scheduleSection} />
+            <RouteCategories data={HomeSection?.routeCategories} />
+            <Features accessibilitySection={HomeSection?.accessibilitySection || HomeSection?.premiumServices} />
+            <TopPlaces data={HomeSection?.topPlacesSection} />
             <Vehicles VehiclePackages={HomeSection?.VehiclePackages} />
-            <WhyChooseUs whyChooseUs={HomeSection?.whyChooseUs} />
-            <Features accessibilitySection={HomeSection?.accessibilitySection} />
             <Testimonials />
             <Subscribe />
         </div>

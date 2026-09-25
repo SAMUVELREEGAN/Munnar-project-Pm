@@ -26,9 +26,12 @@ export default function ContentSection({
                         }`}
                     >
                         {title && (
-                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900">
-                                {title}
-                            </h2>
+                            <>
+                                <h2 className="font-display text-[28px] sm:text-4xl lg:text-[44px] font-semibold leading-tight text-gray-900">
+                                    {title}
+                                </h2>
+                                <span aria-hidden="true" className="gold-rule-left" />
+                            </>
                         )}
                         {intro && (
                             <p className="mt-3 text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600">
@@ -53,7 +56,7 @@ export default function ContentSection({
                                 imageOnLeft ? "lg:order-1" : "lg:order-2"
                             }`}
                         >
-                            <div className="group relative w-full overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-[36px] bg-green-50 shadow-md">
+                            <div className="group relative w-full overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-[36px] bg-cream-100 shadow-soft">
                                 <img
                                     src={image}
                                     alt={imageAlt}

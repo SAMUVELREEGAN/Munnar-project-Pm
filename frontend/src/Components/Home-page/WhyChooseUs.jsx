@@ -14,7 +14,7 @@ export default function WhyChooseUs({ whyChooseUs }) {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative min-h-[220px] sm:min-h-[320px] overflow-hidden rounded-3xl sm:rounded-[48px] bg-gradient-to-br from-green-700 to-green-900 group"
+                    className="relative min-h-[220px] sm:min-h-[320px] overflow-hidden rounded-3xl sm:rounded-[40px] bg-gradient-to-br from-green-800 to-green-900 group shadow-soft"
                 >
                     <img
                         src={image}
@@ -30,11 +30,12 @@ export default function WhyChooseUs({ whyChooseUs }) {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex flex-col justify-center rounded-3xl sm:rounded-[40px] bg-gradient-to-br from-green-100/70 via-white to-green-100/70 p-5 sm:p-8 md:p-10 shadow-sm"
+                    className="flex flex-col justify-center rounded-3xl sm:rounded-[40px] bg-[#fffdf8] p-5 sm:p-8 md:p-10 shadow-soft border border-cream-200"
                 >
-                    <h2 id="why-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+                    <h2 id="why-title" className="font-display text-[28px] sm:text-4xl lg:text-[44px] font-semibold text-gray-900">
                         {title}
                     </h2>
+                    <span aria-hidden="true" className="gold-rule-left" />
 
                     <ul className="mt-8 space-y-6">
                         {features.map((reason, index) => {
@@ -55,12 +56,12 @@ export default function WhyChooseUs({ whyChooseUs }) {
                                     <motion.span
                                         whileHover={{ scale: 1.15, rotate: 5 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                        className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-green-100 text-green-600 shadow-sm"
+                                        className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-green-50 text-green-700 shadow-soft"
                                     >
                                         <IconComponent size={20} />
                                     </motion.span>
                                     <div>
-                                        <h3 className="text-base sm:text-lg font-bold text-gray-900">{reason.title}</h3>
+                                        <h3 className="font-display text-lg sm:text-xl font-semibold text-gray-900">{reason.title}</h3>
                                         <p className="mt-1.5 text-sm sm:text-[15px] leading-relaxed text-gray-600">{reason.description}</p>
                                     </div>
                                 </motion.li>

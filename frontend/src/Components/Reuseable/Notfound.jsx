@@ -128,7 +128,7 @@ export default function NotFound() {
     }, []);
 
     return (
-        <section className="bg-green-50 px-4 pt-28 pb-12 sm:pt-36 sm:pb-16">
+        <section className="bg-cream px-4 pt-28 pb-12 sm:pt-36 sm:pb-16">
             {/* One-time animation: the taxi arrives and stops at the sign. Skipped if the visitor prefers reduced motion. */}
             <style>{`
                 @keyframes mt-taxi-arrive {
@@ -141,12 +141,12 @@ export default function NotFound() {
             `}</style>
 
             <div className="container mx-auto max-w-3xl">
-                <div className="overflow-hidden rounded-3xl shadow-[0_6px_22px_rgba(0,0,0,0.14)]">
+                <div className="overflow-hidden rounded-3xl shadow-lift">
                     <DeadEndScene />
                 </div>
 
                 <div className="mx-auto mt-8 max-w-xl text-center sm:mt-10">
-                    <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">We couldn&rsquo;t find that page</h1>
+                    <h1 className="font-display text-3xl font-semibold text-gray-900 sm:text-5xl">We couldn&rsquo;t find that page</h1>
 
                     <p className="mt-3 text-base text-gray-600 sm:text-lg">
                         The link may be broken, or the page may have moved. Go back to the homepage, or look through our
@@ -156,17 +156,17 @@ export default function NotFound() {
                     <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                         <Link
                             to={HOME_LINK}
-                            className={`inline-flex items-center gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-7 text-base font-bold text-white transition-colors hover:bg-green-700 ${focusRing}`}
+                            className={`inline-flex items-center gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-7 text-base font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow ${focusRing}`}
                         >
-                            <span className="grid h-9 w-[52px] place-items-center rounded-full bg-white">
-                                <FaArrowRight size={16} className="rotate-180 text-green-600" />
+                            <span className="grid h-9 w-[52px] place-items-center rounded-full bg-cream-50">
+                                <FaArrowRight size={16} className="rotate-180 text-green-700" />
                             </span>
                             Back to home
                         </Link>
 
                         <Link
                             to={PACKAGES_LINK}
-                            className={`inline-flex items-center whitespace-nowrap rounded-full border-2 border-green-600 px-7 py-[10px] text-base font-bold text-green-700 transition-colors hover:bg-white ${focusRing}`}
+                            className={`inline-flex items-center whitespace-nowrap rounded-full border-2 border-green-600 px-7 py-[10px] text-base font-semibold tracking-wide text-green-700 transition-all duration-300 hover:bg-[#fffdf8] ${focusRing}`}
                         >
                             See tour packages
                         </Link>

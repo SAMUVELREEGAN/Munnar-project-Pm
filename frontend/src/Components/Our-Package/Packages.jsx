@@ -9,9 +9,6 @@ const focusRing =
 
 const EMPTY_PACKAGES = [];
 
-const whatsappLink = (number, text) =>
-    `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
-
 const DURATION_OPTIONS = [
     { value: "all", label: "Any Duration" },
     { value: "day", label: "Day Tours (1-12 Hrs)" },
@@ -50,7 +47,7 @@ function CustomDropdown({ options, value, onChange, className = "" }) {
             <button
                 type="button"
                 onClick={() => setIsOpen((prev) => !prev)}
-                className={`flex w-full items-center justify-between gap-2 rounded-xl border border-gray-200 bg-gray-50/70 px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-800 transition-colors hover:bg-white hover:border-green-600 focus:border-green-600 focus:bg-white focus:outline-none ${focusRing}`}
+                className={`flex w-full items-center justify-between gap-2 rounded-xl border border-cream-200 bg-cream-50/80 px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-800 transition-all duration-300 hover:bg-[#fffdf8] hover:border-green-600 focus:border-green-600 focus:bg-[#fffdf8] focus:outline-none ${focusRing}`}
                 aria-haspopup="listbox"
                 aria-expanded={isOpen}
             >
@@ -68,7 +65,7 @@ function CustomDropdown({ options, value, onChange, className = "" }) {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -4, scale: 0.98 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute left-0 right-0 top-full mt-1.5 z-40 max-h-60 overflow-auto rounded-xl border border-gray-200 bg-white p-1.5 shadow-xl ring-1 ring-black/5"
+                        className="absolute left-0 right-0 top-full mt-1.5 z-40 max-h-60 overflow-auto rounded-xl border border-cream-200 bg-[#fffdf8] p-1.5 shadow-lift ring-1 ring-black/5"
                         role="listbox"
                     >
                         {options.map((option) => {
@@ -103,7 +100,6 @@ function CustomDropdown({ options, value, onChange, className = "" }) {
 
 export default function Packages() {
     const packages = data?.packages ?? EMPTY_PACKAGES;
-    const whatsappNumber = data?.whatsappNumber || "919876543210";
     const [activeCategory, setActiveCategory] = useState("All");
     const [searchTerm, setSearchTerm] = useState("");
     const [durationFilter, setDurationFilter] = useState("all");
@@ -197,9 +193,9 @@ export default function Packages() {
                                 key={cat}
                                 type="button"
                                 onClick={() => setActiveCategory(cat)}
-                                className={`rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold transition-colors duration-200 ${isActive
-                                        ? "bg-green-600 text-white border border-green-600 shadow-sm"
-                                        : "bg-white text-gray-700 border border-gray-200 hover:border-green-600 hover:text-green-700 shadow-sm"
+                                className={`rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 ${isActive
+                                        ? "bg-green-600 text-cream-50 border border-green-600 shadow-soft"
+                                        : "bg-[#fffdf8] text-gray-700 border border-cream-200 hover:border-green-600 hover:text-green-700 shadow-soft"
                                     } ${focusRing}`}
                             >
                                 {cat} {count > 0 && <span className="opacity-80">({count})</span>}
@@ -209,7 +205,7 @@ export default function Packages() {
                 </div>
 
                 {/* Search & Filter Bar */}
-                <div className="mt-5 sm:mt-6 rounded-2xl border border-gray-200 bg-white p-3 sm:p-4 shadow-sm">
+                <div className="mt-5 sm:mt-6 rounded-2xl border border-cream-200 bg-[#fffdf8] p-3 sm:p-4 shadow-soft">
                     <div className="flex flex-col gap-2.5 sm:gap-3 md:flex-row md:items-center">
                         {/* Search Input */}
                         <div className="relative flex-1">
@@ -222,7 +218,7 @@ export default function Packages() {
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 placeholder="Search destination (Mattupetty, Top Station)..."
-                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 py-2 sm:py-2.5 pl-9 sm:pl-10 pr-4 text-xs sm:text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-600 focus:bg-white focus:outline-none"
+                                className="w-full rounded-xl border border-cream-200 bg-cream-50/50 py-2 sm:py-2.5 pl-9 sm:pl-10 pr-4 text-xs sm:text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-600 focus:bg-[#fffdf8] focus:outline-none"
                             />
                         </div>
 
@@ -250,7 +246,7 @@ export default function Packages() {
                             onClick={handleReset}
                             title="Reset all filters"
                             aria-label="Reset all filters"
-                            className="flex h-10 w-full md:w-10 items-center justify-center gap-1.5 shrink-0 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-600 transition-colors hover:border-green-600 hover:text-green-600"
+                            className="flex h-10 w-full md:w-10 items-center justify-center gap-1.5 shrink-0 rounded-xl border border-cream-200 text-xs sm:text-sm text-gray-600 transition-all duration-300 hover:border-green-600 hover:text-green-700"
                         >
                             <FaRotateLeft size={13} />
                             <span className="md:hidden font-medium">Reset</span>
@@ -312,7 +308,7 @@ export default function Packages() {
                             initial={{ opacity: 0, scale: 0.96 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.25 }}
-                            className="mt-6 sm:mt-8 rounded-3xl border border-gray-200 bg-white p-6 sm:p-10 text-center"
+                            className="mt-6 sm:mt-8 rounded-[28px] border border-cream-200 bg-[#fffdf8] p-6 sm:p-10 text-center shadow-soft"
                         >
                             <p className="text-sm sm:text-base text-gray-600">
                                 No packages match your search criteria. Try adjusting your filters.
@@ -321,7 +317,7 @@ export default function Packages() {
                                 whileTap={{ scale: 0.95 }}
                                 type="button"
                                 onClick={handleReset}
-                                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm hover:bg-green-700"
+                                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-2.5 text-xs sm:text-sm font-semibold tracking-wide text-cream-50 shadow-soft hover:bg-green-700"
                             >
                                 <FaRotateLeft size={13} />
                                 <span>Reset Filters</span>
@@ -329,44 +325,6 @@ export default function Packages() {
                         </motion.div>
                     )}
                 </AnimatePresence>
-
-                {/* Custom Itinerary Callout Banner */}
-                <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="mt-8 sm:mt-12 flex flex-col items-center justify-between gap-4 sm:gap-5 rounded-3xl border border-green-200/80 bg-gradient-to-r from-[#eef7ee] via-white to-[#eef7ee] p-5 text-center sm:flex-row sm:text-left sm:p-8 shadow-sm"
-                >
-                    <div>
-                        <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900">
-                            Looking for custom dates, luxury tempo travellers, or honeymoon-tailored packages?
-                        </h3>
-                        <p className="mt-1 text-xs sm:text-sm text-gray-600">
-                            We customize point-to-point itineraries with experienced hill drivers and best-rate guarantees.
-                        </p>
-                    </div>
-                    <div className="flex flex-col min-[480px]:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full sm:w-auto shrink-0">
-                        <motion.a
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.96 }}
-                            href="/contact-us"
-                            className={`w-full min-[480px]:w-auto text-center rounded-xl border border-gray-300 bg-white px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-gray-800 shadow-sm transition-colors hover:border-green-600 hover:text-green-700 ${focusRing}`}
-                        >
-                            CUSTOM ITINERARY
-                        </motion.a>
-                        <motion.a
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.96 }}
-                            href={whatsappLink(whatsappNumber, "Hi Munnar Taxi, I would like to speak to a tour planner for a custom Kerala trip.")}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`w-full min-[480px]:w-auto text-center rounded-xl bg-green-600 px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 ${focusRing}`}
-                        >
-                            TOUR PLANNER
-                        </motion.a>
-                    </div>
-                </motion.div>
             </div>
         </section>
     );

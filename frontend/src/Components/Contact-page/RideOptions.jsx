@@ -27,11 +27,11 @@ export default function RideOptions({
     return (
         <section
             aria-labelledby="ride-options-title"
-            className="bg-[#f7f9f6] py-14 sm:py-20"
+            className="py-14 sm:py-20"
         >
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
                 {badge && (
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3.5 py-1.5 text-sm font-semibold text-green-700">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-50 px-3.5 py-1.5 text-sm font-semibold text-gold-600">
                         <FaLocationDot size={15} />
                         {badge}
                     </span>
@@ -39,7 +39,7 @@ export default function RideOptions({
 
                 <h2
                     id="ride-options-title"
-                    className="mt-4 max-w-[760px] text-2xl font-bold leading-snug text-gray-900 sm:text-3xl"
+                    className="mt-4 max-w-[760px] font-display text-[28px] font-semibold leading-snug text-gray-900 sm:text-4xl"
                 >
                     {title}
                 </h2>
@@ -50,8 +50,8 @@ export default function RideOptions({
                             <CardImage src={item.image} />
 
                             {/* Text card overlaps the bottom of the photo */}
-                            <div className="relative z-10 -mt-28 mx-5 flex flex-1 flex-col items-center rounded-2xl bg-white px-6 py-7 text-center shadow-[0_4px_16px_rgba(0,0,0,0.12)] ring-1 ring-gray-100 sm:-mt-36 sm:mx-6">
-                                <h3 className="text-base sm:text-lg font-bold text-gray-900">{item.title}</h3>
+                            <div className="relative z-10 -mt-28 mx-5 flex flex-1 flex-col items-center rounded-2xl bg-[#fffdf8] px-6 py-7 text-center shadow-lift ring-1 ring-cream-200 sm:-mt-36 sm:mx-6">
+                                <h3 className="font-display text-lg sm:text-xl font-semibold text-gray-900">{item.title}</h3>
                                 <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-gray-600">{item.text}</p>
                             </div>
                         </li>

@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa6";
+import { Link, NavLink } from "react-router-dom";
+import { FaArrowRight, FaHouse, FaSuitcase, FaUsers, FaPhone, FaMountainSun } from "react-icons/fa6";
 
 /* ---------- Easy-to-edit settings ---------- */
 const SITE_NAME = "Munnar Taxi Service";
@@ -8,117 +7,107 @@ const SITE_NAME = "Munnar Taxi Service";
 const DEFAULT_LOGO = "/images/munnar_logo.webp";
 
 const NAV_LINKS = [
-    { label: "Home", to: "/", end: true },
-    { label: "Tour Packages", to: "/our-tour-packages" },
-    { label: "About Us", to: "/about" },
-    { label: "Contact Us", to: "/contact-us" },
+    { label: "Home", to: "/", end: true, icon: FaHouse },
+    { label: "About", shortLabel: "About", to: "/about", icon: FaUsers },
+    { label: "Tour Packages", shortLabel: "Packages", to: "/our-tour-packages", icon: FaSuitcase },
+    { label: "Places to Visit", shortLabel: "Places", to: "/places-to-visit", icon: FaMountainSun },
+    { label: "Contact Us", shortLabel: "Contact", to: "/contact-us", icon: FaPhone },
 ];
 /* ------------------------------------------- */
 
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
+const bookNowClass = `inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-3.5 text-sm font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow sm:gap-3 sm:p-2 sm:pr-7 sm:text-base ${focusRing}`;
+
 export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const barRef = useRef(null);
-    const location = useLocation();
-
-    // close the mobile menu when the route changes
-    useEffect(() => {
-        setMenuOpen(false);
-    }, [location.pathname]);
-
-    // close on outside click / Escape
-    useEffect(() => {
-        const onClick = (e) => {
-            if (barRef.current && !barRef.current.contains(e.target)) setMenuOpen(false);
-        };
-        const onKey = (e) => e.key === "Escape" && setMenuOpen(false);
-        document.addEventListener("mousedown", onClick);
-        document.addEventListener("keydown", onKey);
-        return () => {
-            document.removeEventListener("mousedown", onClick);
-            document.removeEventListener("keydown", onKey);
-        };
-    }, []);
-
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 px-2.5 py-2.5 sm:px-4 sm:py-3.5 transition-all duration-300">
-            <div
-                ref={barRef}
-                className="relative container flex min-h-[63px] sm:min-h-[73px] items-center justify-between gap-2 rounded-full bg-white/95 backdrop-blur-md py-2 pl-3.5 pr-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] sm:gap-5 sm:py-2.5 sm:pl-5 sm:pr-3.5 border border-white/60"
-            >
-                {/* Logo */}
-                <Link
-                    to="/"
-                    aria-label={`${SITE_NAME} home`}
-                    className={`flex items-center rounded-lg ${focusRing}`}
-                >
-                    <img
-                        src={DEFAULT_LOGO}
-                        alt={SITE_NAME}
-                        className="h-11 sm:h-[59px] w-auto object-contain"
-                    />
-                </Link>
+        <>
+            {/* ---------- Top bar: solid navbar (logo + Book Now; desktop links) ---------- */}
+            <header className="fixed top-0 left-0 right-0 z-50 bg-[#fffdf8] border-b border-cream-200 shadow-soft pt-[env(safe-area-inset-top)]">
+                <div className="container flex min-h-[60px] sm:min-h-[72px] items-center justify-between gap-3 py-2 sm:py-2.5">
+                    <Link
+                        to="/"
+                        aria-label={`${SITE_NAME} home`}
+                        className={`flex shrink-0 items-center rounded-lg ${focusRing}`}
+                    >
+                        <img
+                            src={DEFAULT_LOGO}
+                            alt={SITE_NAME}
+                            className="h-10 sm:h-[56px] w-auto object-contain"
+                        />
+                    </Link>
 
-                {/* Links – dropdown panel on mobile/tablet, inline (pushed to the right) on desktop */}
-                <nav
-                    id="site-nav"
-                    aria-label="Main"
-                    className={`${menuOpen ? "block" : "hidden"} absolute inset-x-2 sm:inset-x-0 top-full mt-2 rounded-3xl bg-white px-5 py-3.5 shadow-2xl border border-gray-100 lg:static lg:ml-auto lg:mt-0 lg:block lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none lg:border-0`}
-                >
-                    <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-5 xl:gap-7">
-                        {NAV_LINKS.map((link) => (
-                            <li key={link.to} className="border-b border-gray-100 last:border-b-0 lg:border-0">
+                    {/* Desktop links */}
+                    <nav
+                        aria-label="Main"
+                        className="ml-auto hidden lg:block"
+                    >
+                        <ul className="flex items-center gap-4 xl:gap-7">
+                            {NAV_LINKS.map((link) => (
+                                <li key={link.to}>
+                                    <NavLink
+                                        to={link.to}
+                                        end={link.end}
+                                        className={({ isActive }) =>
+                                            `relative inline-block whitespace-nowrap rounded py-1.5 text-[14px] xl:text-[15px] font-medium tracking-wide transition-colors duration-300 hover:text-green-700 after:absolute after:left-0 after:-bottom-0.5 after:h-px after:bg-gold-500 after:transition-all after:duration-300 ${focusRing} ${
+                                                isActive
+                                                    ? "text-green-700 after:w-full"
+                                                    : "text-gray-700 after:w-0"
+                                            }`
+                                        }
+                                    >
+                                        {link.label}
+                                    </NavLink>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <Link
+                        to="/contact-us"
+                        aria-label="Book Now"
+                        className={`${bookNowClass} shrink-0`}
+                    >
+                        <span className="grid h-8 w-8 place-items-center rounded-full bg-cream-50 sm:h-10 sm:w-[48px]">
+                            <FaArrowRight size={14} className="text-green-700 sm:text-[16px]" />
+                        </span>
+                        <span className="pr-1 sm:pr-0">Book Now</span>
+                    </Link>
+                </div>
+            </header>
+
+            {/* ---------- Mobile / tablet bottom navigation ---------- */}
+            <nav
+                aria-label="Mobile"
+                className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-[#fffdf8] border-t border-cream-200 shadow-[0_-8px_24px_rgba(28,25,20,0.06)] pb-[env(safe-area-inset-bottom)]"
+            >
+                <ul className="mx-auto grid max-w-lg grid-cols-5 gap-0.5 px-1.5 py-1.5">
+                    {NAV_LINKS.map((link) => {
+                        const Icon = link.icon;
+                        return (
+                            <li key={link.to} className="min-w-0">
                                 <NavLink
                                     to={link.to}
                                     end={link.end}
                                     className={({ isActive }) =>
-                                        `block whitespace-nowrap rounded py-3 text-base font-semibold transition-colors hover:text-green-600 lg:inline-block lg:py-1.5 lg:text-[15px] xl:text-base ${focusRing} ${isActive ? "text-green-600" : "text-gray-800"
+                                        `flex flex-col items-center justify-center gap-1 rounded-2xl px-0.5 py-2 text-center transition-all duration-300 ${focusRing} ${
+                                            isActive
+                                                ? "bg-green-600 text-cream-50 shadow-soft"
+                                                : "text-gray-600 hover:bg-cream-100 hover:text-green-700"
                                         }`
                                     }
                                 >
-                                    {link.label}
+                                    <Icon size={16} aria-hidden="true" />
+                                    <span className="max-w-full truncate text-[9px] font-semibold tracking-wide leading-none sm:text-[10px]">
+                                        {link.shortLabel || link.label}
+                                    </span>
                                 </NavLink>
                             </li>
-                        ))}
-
-                        {/* Book Now – wrapped in <li> (valid HTML) */}
-                        <li className="py-2.5 lg:py-0">
-                            <Link
-                                to="/contact-us"
-                                aria-label="Book Now"
-                                className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-4 text-sm font-bold text-white transition-colors hover:bg-green-700 max-[400px]:pr-2 sm:gap-4 sm:p-2 sm:pr-8 sm:text-base ${focusRing}`}
-                            >
-                                <span className="grid h-8 w-[38px] place-items-center rounded-full bg-white sm:h-10 sm:w-[54px]">
-                                    <FaArrowRight size={16} className="text-green-600" />
-                                </span>
-                                <span className="max-[400px]:hidden">Book Now</span>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-
-                {/* Hamburger – mobile/tablet only */}
-                <div className="flex shrink-0 items-center gap-2.5 lg:hidden">
-                    <button
-                        type="button"
-                        aria-label={menuOpen ? "Close menu" : "Open menu"}
-                        aria-expanded={menuOpen}
-                        aria-controls="site-nav"
-                        onClick={() => setMenuOpen((v) => !v)}
-                        className={`flex h-10 w-10 flex-col items-center justify-center gap-[5px] rounded-full bg-green-50 sm:h-11 sm:w-11 ${focusRing}`}
-                    >
-                        <span
-                            className={`h-0.5 w-[18px] rounded bg-green-600 transition-transform ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}
-                        />
-                        <span className={`h-0.5 w-[18px] rounded bg-green-600 transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
-                        <span
-                            className={`h-0.5 w-[18px] rounded bg-green-600 transition-transform ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
-                        />
-                    </button>
-                </div>
-            </div>
-        </header>
+                        );
+                    })}
+                </ul>
+            </nav>
+        </>
     );
 }

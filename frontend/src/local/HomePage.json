@@ -1,293 +1,321 @@
 {
-    "homePage": {
-        "heroSection": {
-            "title": "Munnar Taxi & Service",
-            "desc": "Explore Munnar in comfort and convenience with our reliable taxi services, offering comfortable rides for local sightseeing, airport transfers, and outstation travel. Enjoy easy booking, professional drivers, and a smooth travel experience throughout Munnar",
-            "bgImage": "/images/Munnar-bg.webp"
-        },
-        "OurTourPackages": {
-            "title": "Our Tour Packages & Travel Services",
-            "desc": "Book reliable, comfortable taxi services designed to support local sightseeing, airport transfers, outstation trips, and personal travel needs. From convenient city rides to customized tour packages, every service is designed to provide a smooth, safe, and dependable travel experience across Munnar."
-        }
+  "homePage": {
+    "heroSection": {
+      "title": "Explore Munnar with Comfort & Style",
+      "desc": "",
+      "contactLine": "Contact: +91 90611 40533 | 94003 80433",
+      "bgImage": "/images/Munnar-bg.webp"
     },
-    "statsSection": {
-        "badge": "More Than",
-        "number": "10,000",
-        "label": "Trips In 12 Months",
-        "leftParagraph": "The Company Focuses On Operational Consistency, Supported By Trained Drivers Who Handle Both Standard And Assisted Transport, Including Services For Elderly Passengers And Families.",
-        "rightTitle": "How Many Travelers Have Benefited?",
-        "rightParagraph": "The Service Has Benefited Many Travelers By Making Transport More Accessible And Affordable, Contributing To Improved Mobility Support Across The Community. Therefore, It Enables Safer And More Comfortable Travel For Individuals With Mobility Needs, Supporting Their Daily Routines, Medical Visits, And Overall Independence."
-    },
-    "scheduleSection": {
-        "title": "Our Munnar Airport Pickup Schedule",
-        "features": [
-            {
-                "id": 1,
-                "icon": "FaHandshake",
-                "title": "Meet And Greet",
-                "description": "A Professional Chauffeur Will Wait At The Airport Arrival Hall Holding A Signboard With The Passenger's Name, Making It Easier To Identify The Driver Immediately After Arrival."
-            },
-            {
-                "id": 2,
-                "icon": "FaPlaneDeparture",
-                "title": "Flight Monitoring",
-                "description": "The Flight Is Monitored In Real Time To Track Delays Or Early Arrivals. The Service Also Includes Up To One Hour Of Waiting Time After The Flight Lands."
-            },
-            {
-                "id": 3,
-                "icon": "FaPhoneVolume",
-                "title": "Establish Contact",
-                "description": "The Assigned Driver Will Contact The Passenger Through WhatsApp, Phone Call, Or SMS Before Arrival To Ensure Smooth Coordination And Easier Pickup."
-            },
-            {
-                "id": 4,
-                "icon": "MdChildFriendly",
-                "title": "Child Seats Available",
-                "description": "Child Seats And Booster Seats Can Be Provided Upon Request To Ensure Safer Travel For Families Traveling With Young Children."
-            }
-        ]
-    },
-    "VehiclePackages": {
-        "pageTitle": "Munnar Taxi & Vehicle Fleet",
-        "pageDescription": "Reliable Taxi Services For Your Everyday And Special Travel Needs. Whether It's An Airport Pickup, Sightseeing Tour, Or Group Travel, We Provide Spotless, Well-Maintained Vehicles With Professional Chauffeurs.",
-        "vehicles": [
-            {
-                "id": 1,
-                "capacity": 4,
-                "image": "/images/munnar-innova.jpg",
-                "isLowestPrice": true,
-                "tag": "Economy Sedan",
-                "title": "Toyota Etios Taxi",
-                "pricing": [
-                    {
-                        "label": "Airport Arrival Pick Up",
-                        "value": "₹2,200"
-                    },
-                    {
-                        "label": "Full Day Sightseeing",
-                        "value": "₹2,500/Day (100km)"
-                    },
-                    {
-                        "label": "Extra Distance Rate",
-                        "value": "₹14/Km"
-                    }
-                ],
-                "footerInfo": {
-                    "icon": "FaSuitcaseRolling",
-                    "label": "Luggage",
-                    "value": "3"
-                },
-                "buttonText": "Book Now",
-                "buttonLink": "/contact-us"
-            },
-            {
-                "id": 2,
-                "capacity": 6,
-                "image": "/images/van.png",
-                "isLowestPrice": false,
-                "tag": "Family MPV",
-                "title": "Maruti Suzuki Ertiga",
-                "pricing": [
-                    {
-                        "label": "Airport Arrival Pick Up",
-                        "value": "₹2,800"
-                    },
-                    {
-                        "label": "Full Day Sightseeing",
-                        "value": "₹3,000/Day (100km)"
-                    },
-                    {
-                        "label": "Extra Distance Rate",
-                        "value": "₹16/Km"
-                    }
-                ],
-                "footerInfo": {
-                    "icon": "FaSuitcaseRolling",
-                    "label": "Luggage",
-                    "value": "4"
-                },
-                "buttonText": "Book Now",
-                "buttonLink": "/contact-us"
-            },
-            {
-                "id": 3,
-                "capacity": 4,
-                "image": "/images/car.png",
-                "isLowestPrice": false,
-                "tag": "Luxury Sedan",
-                "title": "Mercedes-Benz E-Class",
-                "pricing": [
-                    {
-                        "label": "Airport Arrival Pick Up",
-                        "value": "₹4,500"
-                    },
-                    {
-                        "label": "Full Day Sightseeing",
-                        "value": "₹5,000/Day (100km)"
-                    },
-                    {
-                        "label": "Extra Distance Rate",
-                        "value": "₹28/Km"
-                    }
-                ],
-                "footerInfo": {
-                    "icon": "FaSuitcaseRolling",
-                    "label": "Luggage",
-                    "value": "3"
-                },
-                "buttonText": "Book Now",
-                "buttonLink": "/contact-us"
-            },
-            {
-                "id": 4,
-                "capacity": 7,
-                "image": "/images/van2.png",
-                "isLowestPrice": false,
-                "tag": "VIP Luxury MPV",
-                "title": "Toyota Alphard VIP",
-                "pricing": [
-                    {
-                        "label": "Airport Arrival Pick Up",
-                        "value": "₹5,000"
-                    },
-                    {
-                        "label": "Full Day Sightseeing",
-                        "value": "₹5,500/Day (100km)"
-                    },
-                    {
-                        "label": "Extra Distance Rate",
-                        "value": "₹30/Km"
-                    }
-                ],
-                "footerInfo": {
-                    "icon": "FaSuitcaseRolling",
-                    "label": "Luggage",
-                    "value": "5"
-                },
-                "buttonText": "Book Now",
-                "buttonLink": "/contact-us"
-            },
-            {
-                "id": 5,
-                "capacity": 8,
-                "image": "/images/van3.png",
-                "isLowestPrice": false,
-                "tag": "Executive Van",
-                "title": "Mercedes-Benz V-Class",
-                "pricing": [
-                    {
-                        "label": "Airport Arrival Pick Up",
-                        "value": "₹5,500"
-                    },
-                    {
-                        "label": "Full Day Sightseeing",
-                        "value": "₹6,000/Day (100km)"
-                    },
-                    {
-                        "label": "Extra Distance Rate",
-                        "value": "₹32/Km"
-                    }
-                ],
-                "footerInfo": {
-                    "icon": "FaSuitcaseRolling",
-                    "label": "Luggage",
-                    "value": "6"
-                },
-                "buttonText": "Book Now",
-                "buttonLink": "/contact-us"
-            },
-            {
-                "id": 6,
-                "capacity": "12-14",
-                "image": "/images/van.png",
-                "isLowestPrice": false,
-                "tag": "Minibus / Van",
-                "title": "Toyota HiAce Commuter",
-                "pricing": [
-                    {
-                        "label": "Airport Arrival Pick Up",
-                        "value": "₹5,500"
-                    },
-                    {
-                        "label": "Full Day Sightseeing",
-                        "value": "₹5,500/Day (100km)"
-                    },
-                    {
-                        "label": "Extra Distance Rate",
-                        "value": "₹26/Km"
-                    }
-                ],
-                "footerInfo": {
-                    "icon": "FaSuitcaseRolling",
-                    "label": "Luggage",
-                    "value": "10"
-                },
-                "buttonText": "Book Now",
-                "buttonLink": "/contact-us"
-            }
-        ]
-    },
-    "whyChooseUs": {
-        "image": "/images/munnar-tea-gardens.jpg",
-        "imageAlt": "Scenic view of Munnar tea plantations and hills",
-        "title": "Why Choose Us",
-        "features": [
-            {
-                "id": 1,
-                "icon": "FaCircleCheck",
-                "title": "Refined & Reliable Travel:",
-                "description": "Precision-Driven Service With Punctuality And Smooth Coordination Across All Munnar Routes."
-            },
-            {
-                "id": 2,
-                "icon": "FaCircleCheck",
-                "title": "Local Expertise & Safety:",
-                "description": "Experienced Drivers Who Know The Hill Terrain, Ensuring Safe And Comfortable Travel."
-            },
-            {
-                "id": 3,
-                "icon": "FaCircleCheck",
-                "title": "Tailored Travel Experience:",
-                "description": "Flexible Packages And Customizable Itineraries Designed To Match Your Exact Munnar Travel Needs."
-            }
-        ]
-    },
-    "accessibilitySection": {
-        "title": "Making Everyday Travel More Accessible",
-        "subtitle": "Helping Passengers Reach Their Destinations With Comfort, Safety, And Ease.",
-        "features": [
-            {
-                "id": 1,
-                "icon": "FaComments",
-                "title": "Easy Communication",
-                "description": "Stay Connected With Your Driver Through Call Or Message For Smooth Coordination Before And During Your Trip."
-            },
-            {
-                "id": 2,
-                "icon": "FaPlaneDeparture",
-                "title": "On-Time Pickup",
-                "description": "We Ensure Timely Arrivals And Well-Planned Scheduling So Your Travel Stays On Track Without Unnecessary Waiting."
-            },
-            {
-                "id": 3,
-                "icon": "MdSelfImprovement",
-                "title": "Comfortable Travel",
-                "description": "Enjoy A Relaxed Journey With Clean, Well-Maintained Vehicles Designed For Comfort And Convenience."
-            },
-            {
-                "id": 4,
-                "icon": "FaTicket",
-                "title": "Flexible Booking",
-                "description": "Book Your Ride Based On Your Schedule With Options That Suit Both Planned And Last-Minute Travel Needs."
-            }
-        ]
-    },
-    "excellencySection": {
-        "title": "Our Excellency",
-        "description": "Munnar's Best And Prime Taxi Service For Customers. They Can Access Our Wide Range Of Vehicles Effortlessly And Enjoy The Convenience Of Rides.",
-        "form": {
-            "placeholder": "Enter Email Address",
-            "buttonText": "Subscribe Now"
-        }
+    "OurTourPackages": {
+      "title": "Kerala Taxi Service & Munnar Tour Cabs",
+      "desc": "Trusted Kerala tourism taxi services with comfortable cab rentals, airport pickups, Munnar sightseeing taxis, and Kerala tour package transportation services."
     }
+  },
+  "routeCategories": {
+    "title": "Kerala Taxi Service & Munnar Tour Cabs",
+    "subtitle": "Trusted Kerala tourism taxi services with comfortable cab rentals, airport pickups, Munnar sightseeing taxis, and Kerala tour package transportation services.",
+    "categories": [
+      {
+        "title": "Kerala Taxi Services",
+        "items": [
+          "Kerala Taxi Service",
+          "Kerala Tour Packages Taxi",
+          "Kerala Rental Cab Service",
+          "Kerala Tourism Taxi Service",
+          "Kerala Cab Service",
+          "Munnar Local Sightseeing Taxi Service",
+          "Munnar Local Sightseeing Cab Service"
+        ]
+      },
+      {
+        "title": "Cochin to Munnar Routes",
+        "items": [
+          "Cochin to Munnar Taxi Service",
+          "Ernakulam to Munnar Taxi Service",
+          "Cochin Airport to Munnar Taxi",
+          "Aluva to Munnar Taxi Service",
+          "Angamaly to Munnar Taxi Service",
+          "Cherai to Munnar Taxi Service",
+          "Thrissur to Munnar Taxi Service"
+        ]
+      },
+      {
+        "title": "South Kerala Routes",
+        "items": [
+          "Varkala to Munnar Taxi Service",
+          "Kovalam to Munnar Taxi Service",
+          "Thiruvananthapuram to Munnar Taxi",
+          "Ashtamudi to Munnar Taxi Service",
+          "Jatayu to Munnar Taxi Service",
+          "Alappuzha to Munnar Taxi Service",
+          "Thekkady to Munnar Taxi Service"
+        ]
+      },
+      {
+        "title": "Tamil Nadu Routes",
+        "items": [
+          "Coimbatore to Munnar Taxi Service",
+          "Coimbatore Airport to Munnar Taxi",
+          "Madurai to Munnar Taxi Service",
+          "Madurai Airport to Munnar Taxi",
+          "Theni to Munnar Taxi Service",
+          "Bodinayakanur to Munnar Taxi",
+          "Udumalpet to Munnar Taxi Service"
+        ]
+      },
+      {
+        "title": "Tourist Destination Routes",
+        "items": [
+          "Guruvayoor to Munnar Taxi Service",
+          "Palakkad to Munnar Taxi Service",
+          "Wayanad to Munnar Taxi Service",
+          "Munnar to All Kerala Taxi Service",
+          "Munnar to All Kerala Cab Service"
+        ]
+      }
+    ]
+  },
+  "premiumServices": {
+    "title": "Our Premium Taxi Services",
+    "subtitle": "Experience safe, comfortable, and reliable taxi services for your perfect hill station journey in Munnar.",
+    "features": [
+      {
+        "id": 1,
+        "icon": "FaPlaneDeparture",
+        "title": "Airport Transfers",
+        "description": "Enjoy smooth and punctual pickup and drop services between Kochi International Airport and Munnar with our professional drivers."
+      },
+      {
+        "id": 2,
+        "icon": "FaMountainSun",
+        "title": "Sightseeing Tours",
+        "description": "Discover the beauty of Munnar with guided sightseeing tours covering tea plantations, waterfalls, dams, and scenic viewpoints."
+      },
+      {
+        "id": 3,
+        "icon": "FaCarSide",
+        "title": "Full-Day Taxi Packages",
+        "description": "Book flexible full-day packages to explore Munnar at your own pace with complete comfort and convenience."
+      },
+      {
+        "id": 4,
+        "icon": "FaMapLocationDot",
+        "title": "Outstation Trips",
+        "description": "Travel to nearby destinations like Thekkady, Alleppey, and Kochi with our reliable and well-maintained taxi services."
+      }
+    ]
+  },
+  "topPlacesSection": {
+    "title": "Top Places in Munnar",
+    "places": [
+      {
+        "title": "Periyakannal Water Falls"
+      },
+      {
+        "title": "Gap Road View Point"
+      },
+      {
+        "title": "Tea Garden"
+      },
+      {
+        "title": "Hills View Point"
+      },
+      {
+        "title": "Sengulam Dam"
+      },
+      {
+        "title": "Dreamland fun activity"
+      },
+      {
+        "title": "Elephant Ride Jungle"
+      },
+      {
+        "title": "Spice Garden"
+      },
+      {
+        "title": "Rose Garden"
+      }
+    ]
+  },
+  "VehiclePackages": {
+    "pageTitle": "Our Vehicle Fleet",
+    "pageDescription": "Comfortable, well-maintained vehicles for every type of journey in Munnar.",
+    "vehicles": [
+      {
+        "id": 1,
+        "title": "Innova Cab",
+        "shortDesc": "Spacious and comfortable for family trips.",
+        "image": "/images/munnar-innova.jpg",
+        "isLowestPrice": false,
+        "pricing": [],
+        "footerInfo": null,
+        "buttonText": "Book Now",
+        "buttonLink": "/contact-us"
+      },
+      {
+        "id": 2,
+        "title": "Tempo Traveller",
+        "shortDesc": "Perfect for group travel and tours.",
+        "image": "/images/van.png",
+        "isLowestPrice": false,
+        "pricing": [],
+        "footerInfo": null,
+        "buttonText": "Book Now",
+        "buttonLink": "/contact-us"
+      },
+      {
+        "id": 3,
+        "title": "Ertiga",
+        "shortDesc": "Ideal for small families and city rides.",
+        "image": "/images/Ertiga.webp",
+        "isLowestPrice": false,
+        "pricing": [],
+        "footerInfo": null,
+        "buttonText": "Book Now",
+        "buttonLink": "/contact-us"
+      },
+      {
+        "id": 4,
+        "title": "Etios",
+        "shortDesc": "Affordable and reliable sedan option.",
+        "image": "/images/car.png",
+        "isLowestPrice": false,
+        "pricing": [],
+        "footerInfo": null,
+        "buttonText": "Book Now",
+        "buttonLink": "/contact-us"
+      },
+      {
+        "id": 5,
+        "title": "Verito",
+        "shortDesc": "Comfortable ride with good mileage.",
+        "image": "/images/car.png",
+        "isLowestPrice": false,
+        "pricing": [],
+        "footerInfo": null,
+        "buttonText": "Book Now",
+        "buttonLink": "/contact-us"
+      },
+      {
+        "id": 6,
+        "title": "52 Seater Bus",
+        "shortDesc": "Best choice for large group travel.",
+        "image": "/images/van2.png",
+        "isLowestPrice": false,
+        "pricing": [],
+        "footerInfo": null,
+        "buttonText": "Book Now",
+        "buttonLink": "/contact-us"
+      },
+      {
+        "id": 7,
+        "title": "Innova Crysta (7+1)",
+        "shortDesc": "Premium SUV for luxury travel experience.",
+        "image": "/images/munnar-innova.jpg",
+        "isLowestPrice": false,
+        "pricing": [],
+        "footerInfo": null,
+        "buttonText": "Book Now",
+        "buttonLink": "/contact-us"
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "image": "/images/munnar-tea-gardens.jpg",
+    "imageAlt": "Scenic view of Munnar tea plantations and hills",
+    "title": "Why Choose Us?",
+    "features": [
+      {
+        "id": 1,
+        "icon": "FaCircleCheck",
+        "title": "Professional Drivers",
+        "description": "Experienced and friendly drivers for safe travel."
+      },
+      {
+        "id": 2,
+        "icon": "FaCircleCheck",
+        "title": "Affordable Pricing",
+        "description": "Transparent pricing with no hidden charges."
+      },
+      {
+        "id": 3,
+        "icon": "FaCircleCheck",
+        "title": "24/7 Support",
+        "description": "We are always available for your travel needs."
+      },
+      {
+        "id": 4,
+        "icon": "FaCircleCheck",
+        "title": "Clean Vehicles",
+        "description": "Well-maintained cars for a comfortable journey."
+      }
+    ]
+  },
+  "accessibilitySection": {
+    "title": "Our Premium Taxi Services",
+    "subtitle": "Experience safe, comfortable, and reliable taxi services for your perfect hill station journey in Munnar.",
+    "features": [
+      {
+        "id": 1,
+        "icon": "FaPlaneDeparture",
+        "title": "Airport Transfers",
+        "description": "Enjoy smooth and punctual pickup and drop services between Kochi International Airport and Munnar with our professional drivers."
+      },
+      {
+        "id": 2,
+        "icon": "FaMountainSun",
+        "title": "Sightseeing Tours",
+        "description": "Discover the beauty of Munnar with guided sightseeing tours covering tea plantations, waterfalls, dams, and scenic viewpoints."
+      },
+      {
+        "id": 3,
+        "icon": "FaCarSide",
+        "title": "Full-Day Taxi Packages",
+        "description": "Book flexible full-day packages to explore Munnar at your own pace with complete comfort and convenience."
+      },
+      {
+        "id": 4,
+        "icon": "FaMapLocationDot",
+        "title": "Outstation Trips",
+        "description": "Travel to nearby destinations like Thekkady, Alleppey, and Kochi with our reliable and well-maintained taxi services."
+      }
+    ]
+  },
+  "excellencySection": {
+    "title": "Book Your Munnar Taxi Today",
+    "description": "Plan your perfect hill station trip with our reliable taxi services.",
+    "form": {
+      "placeholder": "Enter Email Address",
+      "buttonText": "Book Now"
+    }
+  },
+  "scheduleSection": {
+    "title": "Our Premium Taxi Services",
+    "features": [
+      {
+        "id": 1,
+        "icon": "FaPlaneDeparture",
+        "title": "Airport Transfers",
+        "description": "Enjoy smooth and punctual pickup and drop services between Kochi International Airport and Munnar with our professional drivers."
+      },
+      {
+        "id": 2,
+        "icon": "FaMountainSun",
+        "title": "Sightseeing Tours",
+        "description": "Discover the beauty of Munnar with guided sightseeing tours covering tea plantations, waterfalls, dams, and scenic viewpoints."
+      },
+      {
+        "id": 3,
+        "icon": "FaCarSide",
+        "title": "Full-Day Taxi Packages",
+        "description": "Book flexible full-day packages to explore Munnar at your own pace with complete comfort and convenience."
+      },
+      {
+        "id": 4,
+        "icon": "FaMapLocationDot",
+        "title": "Outstation Trips",
+        "description": "Travel to nearby destinations like Thekkady, Alleppey, and Kochi with our reliable and well-maintained taxi services."
+      }
+    ]
+  }
 }

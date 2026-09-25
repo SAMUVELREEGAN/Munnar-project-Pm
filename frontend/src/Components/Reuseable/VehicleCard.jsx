@@ -130,7 +130,7 @@ export default function VehicleCard({
         distance && { icon: <FaRoute size={16} />, text: distance },
     ].filter(Boolean);
 
-    const bookClass = `mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-700 px-4 py-3 text-sm sm:text-base font-bold text-white transition-colors hover:bg-green-800 ${focusRing}`;
+    const bookClass = `mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-700 px-4 py-3 text-sm sm:text-base font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-800 ${focusRing}`;
     const bookContent = (
         <>
             <span>Book Now</span>
@@ -181,12 +181,12 @@ export default function VehicleCard({
         <motion.article
             whileHover={{ y: -6 }}
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            className="flex h-full flex-col rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100 hover:shadow-lg transition-shadow duration-300"
+            className="flex h-full flex-col rounded-[28px] bg-[#fffdf8] p-3 shadow-soft ring-1 ring-cream-200 hover:shadow-lift transition-all duration-500"
         >
             <VehicleImage src={image} title={title} type={type} />
 
             <div className="flex flex-1 flex-col px-2 pb-2 pt-4">
-                <Heading className="text-lg font-bold leading-snug text-gray-900">{title}</Heading>
+                <Heading className="font-display text-xl font-semibold leading-snug text-gray-900">{title}</Heading>
                 {subtitle && <p className="mt-1 text-sm text-gray-500">{subtitle}</p>}
 
                 {chips.length > 0 && (
@@ -204,7 +204,7 @@ export default function VehicleCard({
                 <div className="mt-auto" />
 
                 {hasPrice && (
-                    <div className="mt-4 flex items-baseline justify-between gap-2 border-t border-gray-100 pt-3">
+                    <div className="mt-4 flex items-baseline justify-between gap-2 border-t border-cream-200 pt-3">
                         <span className="text-xl sm:text-2xl font-bold text-green-700">{formatPrice(price)}</span>
                         {priceNote && <span className="text-xs text-gray-500">{priceNote}</span>}
                     </div>

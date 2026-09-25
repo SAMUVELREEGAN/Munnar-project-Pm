@@ -33,7 +33,7 @@ export default function TrustBanner() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="rounded-3xl bg-white p-5 sm:p-8 lg:p-12 shadow-sm border border-gray-100"
+                    className="rounded-[28px] bg-[#fffdf8] p-5 sm:p-8 lg:p-12 shadow-soft border border-cream-200"
                 >
                     <h2 id="how-it-works-title" className="sr-only">
                         How Our Booking Process Works
@@ -61,7 +61,7 @@ export default function TrustBanner() {
                                     {!isLast && (
                                         <div
                                             aria-hidden="true"
-                                            className="hidden lg:block absolute left-14 top-7 w-[calc(100%-3.5rem)] border-t-2 border-dashed border-gray-200 pointer-events-none z-0"
+                                            className="hidden lg:block absolute left-14 top-7 w-[calc(100%-3.5rem)] border-t-2 border-dashed border-cream-300 pointer-events-none z-0"
                                         />
                                     )}
 
@@ -69,13 +69,13 @@ export default function TrustBanner() {
                                     <motion.div
                                         whileHover={{ scale: 1.15, rotate: 4 }}
                                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                                        className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-green-50 text-green-600 ring-1 ring-green-100/80 shadow-sm cursor-pointer"
+                                        className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-green-50 text-green-700 ring-1 ring-green-100/80 shadow-soft cursor-pointer"
                                     >
                                         <Icon className="text-xl text-green-600" />
                                     </motion.div>
 
                                     {/* Content */}
-                                    <h3 className="mt-5 text-base sm:text-lg font-bold text-gray-900 tracking-tight transition-colors duration-200 group-hover:text-green-700">
+                                    <h3 className="mt-5 font-display text-lg sm:text-xl font-semibold text-gray-900 tracking-tight transition-colors duration-300 group-hover:text-green-700">
                                         {step.title}
                                     </h3>
                                     <p className="mt-2 text-xs sm:text-sm text-gray-500 leading-relaxed">
