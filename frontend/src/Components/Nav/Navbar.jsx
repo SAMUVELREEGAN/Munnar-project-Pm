@@ -43,10 +43,10 @@ export default function Navbar() {
     }, []);
 
     return (
-        <header className="sticky top-0 z-50 px-2 py-2 sm:px-2.5 sm:py-3">
+        <header className="fixed top-0 left-0 right-0 z-50 px-2.5 py-2 sm:px-4 sm:py-3 transition-all duration-300">
             <div
                 ref={barRef}
-                className="relative container flex min-h-[62px] items-center justify-between gap-2 rounded-full bg-white py-1.5 pl-3 pr-2 shadow-[0_6px_22px_rgba(0,0,0,0.14)] sm:min-h-[70px] sm:gap-5 sm:pl-[18px] sm:pr-3"
+                className="relative container flex min-h-[58px] sm:min-h-[68px] items-center justify-between gap-2 rounded-full bg-white/95 backdrop-blur-md py-1.5 pl-3 pr-2 shadow-[0_8px_30px_rgba(0,0,0,0.12)] sm:gap-5 sm:pl-[18px] sm:pr-3 border border-white/60"
             >
                 {/* Logo */}
                 <Link
@@ -57,7 +57,7 @@ export default function Navbar() {
                     <img
                         src={DEFAULT_LOGO}
                         alt={SITE_NAME}
-                        className="h-11 sm:h-14 w-auto object-contain"
+                        className="h-10 sm:h-14 w-auto object-contain"
                     />
                 </Link>
 
@@ -65,7 +65,7 @@ export default function Navbar() {
                 <nav
                     id="site-nav"
                     aria-label="Main"
-                    className={`${menuOpen ? "block" : "hidden"} absolute inset-x-0 top-full mt-2 rounded-3xl bg-white px-5 py-2 shadow-xl lg:static lg:ml-auto lg:mt-0 lg:block lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none`}
+                    className={`${menuOpen ? "block" : "hidden"} absolute inset-x-2 sm:inset-x-0 top-full mt-2 rounded-3xl bg-white px-5 py-3 shadow-2xl border border-gray-100 lg:static lg:ml-auto lg:mt-0 lg:block lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none lg:border-0`}
                 >
                     <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-5 xl:gap-7">
                         {NAV_LINKS.map((link) => (
@@ -74,7 +74,7 @@ export default function Navbar() {
                                     to={link.to}
                                     end={link.end}
                                     className={({ isActive }) =>
-                                        `block whitespace-nowrap rounded py-[15px] text-base font-semibold transition-colors hover:text-green-600 lg:inline-block lg:py-1.5 lg:text-[15px] xl:text-base ${focusRing} ${isActive ? "text-green-600" : "text-gray-800"
+                                        `block whitespace-nowrap rounded py-3 text-base font-semibold transition-colors hover:text-green-600 lg:inline-block lg:py-1.5 lg:text-[15px] xl:text-base ${focusRing} ${isActive ? "text-green-600" : "text-gray-800"
                                         }`
                                     }
                                 >
@@ -84,7 +84,7 @@ export default function Navbar() {
                         ))}
 
                         {/* Book Now – wrapped in <li> (valid HTML) */}
-                        <li className="py-3 lg:py-0">
+                        <li className="py-2.5 lg:py-0">
                             <Link
                                 to="/contact-us"
                                 aria-label="Book Now"
@@ -99,8 +99,7 @@ export default function Navbar() {
                     </ul>
                 </nav>
 
-                {/* Hamburger – mobile/tablet only. Hidden on desktop so this empty box
-                    no longer takes up space on the right side of the bar. */}
+                {/* Hamburger – mobile/tablet only */}
                 <div className="flex shrink-0 items-center gap-2.5 lg:hidden">
                     <button
                         type="button"

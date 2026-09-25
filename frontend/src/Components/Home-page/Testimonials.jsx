@@ -97,7 +97,7 @@ export default function Testimonials({ data }) {
                 <hr className="mt-6 border-gray-200" />
 
                 {/* Swiper Auto-scroll Carousel */}
-                <div className="mt-8 -mx-2 px-2">
+                <div className="mt-6 sm:mt-8 w-full overflow-hidden">
                     <Swiper
                         modules={[Autoplay, A11y, Keyboard]}
                         keyboard={{ enabled: true }}
@@ -109,7 +109,7 @@ export default function Testimonials({ data }) {
                             pauseOnMouseEnter: true,
                         }}
                         slidesPerView={1}
-                        spaceBetween={20}
+                        spaceBetween={16}
                         breakpoints={{
                             640: { slidesPerView: 2, spaceBetween: 20 },
                             1024: { slidesPerView: 3, spaceBetween: 24 },
@@ -121,37 +121,37 @@ export default function Testimonials({ data }) {
                         onSlideChange={syncEdges}
                         onBreakpoint={syncEdges}
                         onResize={syncEdges}
-                        className="w-full !py-3"
+                        className="w-full !py-2 sm:!py-3"
                     >
                         {testimonials.map((item) => (
                             <SwiperSlide key={item.id || item.name} className="!h-auto">
-                                <article className="flex h-full flex-col justify-between rounded-[32px] border border-green-200/70 bg-white p-7 sm:p-8 shadow-[0_4px_25px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-green-600/40">
+                                <article className="flex h-full flex-col justify-between rounded-3xl border border-green-200/70 bg-white p-5 sm:p-7 md:p-8 shadow-[0_4px_25px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-green-600/40">
                                     <div>
                                         {/* 5 Stars with Brand Green Accent */}
                                         <div className="flex items-center gap-1 text-green-600">
                                             {[...Array(item.rating || 5)].map((_, i) => (
-                                                <FaStar key={i} size={17} />
+                                                <FaStar key={i} size={15} />
                                             ))}
                                         </div>
 
                                         {/* Comment */}
-                                        <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-gray-700 line-clamp-4 min-h-[4.5rem]">
+                                        <p className="mt-3.5 sm:mt-4 text-xs sm:text-sm md:text-[15px] leading-relaxed text-gray-700 line-clamp-4 min-h-[3.8rem] sm:min-h-[4.5rem]">
                                             "{item.comment}"
                                         </p>
                                     </div>
 
                                     <div>
                                         {/* Divider */}
-                                        <hr className="my-5 border-gray-100" />
+                                        <hr className="my-4 sm:my-5 border-gray-100" />
 
                                         {/* Author Profile */}
-                                        <div className="flex items-center gap-3.5">
+                                        <div className="flex items-center gap-3">
                                             <AvatarImage src={item.image} alt={item.name} />
-                                            <div>
-                                                <h3 className="text-sm sm:text-base font-bold text-gray-900 leading-tight">
+                                            <div className="min-w-0">
+                                                <h3 className="text-xs sm:text-sm md:text-base font-bold text-gray-900 leading-tight truncate">
                                                     {item.name}
                                                 </h3>
-                                                <p className="mt-1 text-xs text-green-700 font-medium">
+                                                <p className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-green-700 font-medium truncate">
                                                     ( {item.role} )
                                                 </p>
                                             </div>

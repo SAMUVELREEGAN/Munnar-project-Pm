@@ -56,15 +56,15 @@ export default function Services({ OurTourPackages }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="grid gap-4 md:grid-cols-2 md:items-start md:gap-12"
+                    className="grid gap-3 sm:gap-4 md:grid-cols-2 md:items-start md:gap-12"
                 >
-                    <h2 id="services-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+                    <h2 id="services-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900">
                         {title}
                     </h2>
-                    <p className="text-base sm:text-lg leading-relaxed text-gray-600 md:pt-1">{desc}</p>
+                    <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 md:pt-1">{desc}</p>
                 </motion.div>
 
-                <hr className="mt-8 border-gray-200 sm:mt-10" />
+                <hr className="mt-6 border-gray-200 sm:mt-10" />
 
                 {/* Prev / next */}
                 <motion.div
@@ -72,7 +72,7 @@ export default function Services({ OurTourPackages }) {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: 0.05 }}
-                    className="mb-5 mt-6 flex justify-end gap-2"
+                    className="mb-4 mt-4 sm:mb-5 sm:mt-6 flex justify-end gap-2"
                 >
                     <motion.button
                         whileTap={{ scale: 0.9 }}
@@ -82,7 +82,7 @@ export default function Services({ OurTourPackages }) {
                         onClick={() => swiper?.slidePrev()}
                         className={navBtn}
                     >
-                        <FaChevronLeft size={20} />
+                        <FaChevronLeft size={18} />
                     </motion.button>
                     <motion.button
                         whileTap={{ scale: 0.9 }}
@@ -92,7 +92,7 @@ export default function Services({ OurTourPackages }) {
                         onClick={() => swiper?.slideNext()}
                         className={navBtn}
                     >
-                        <FaChevronRight size={20} />
+                        <FaChevronRight size={18} />
                     </motion.button>
                 </motion.div>
 
@@ -102,14 +102,14 @@ export default function Services({ OurTourPackages }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-                    className="-mx-2 px-2"
+                    className="w-full overflow-hidden"
                 >
                     <Swiper
                         modules={[A11y, Keyboard]}
                         keyboard={{ enabled: true }}
                         grabCursor
                         slidesPerView={1}
-                        spaceBetween={20}
+                        spaceBetween={16}
                         breakpoints={{
                             640: { slidesPerView: 2, spaceBetween: 20 },
                             1024: { slidesPerView: 3, spaceBetween: 24 },
@@ -121,37 +121,37 @@ export default function Services({ OurTourPackages }) {
                         onSlideChange={syncEdges}
                         onBreakpoint={syncEdges}
                         onResize={syncEdges}
-                        className="w-full !py-3"
+                        className="w-full !py-2 sm:!py-3"
                     >
                         {SERVICES.map((item) => (
                             <SwiperSlide key={item.title} className="!h-auto">
                                 <motion.article
                                     whileHover={{ y: -6 }}
                                     transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                                    className="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-xl hover:border-green-600/30 transition-shadow duration-300"
+                                    className="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-4 sm:p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-xl hover:border-green-600/30 transition-shadow duration-300"
                                 >
                                     <CardImage src={item.image} />
                                     <div className="flex flex-1 flex-col pt-3">
                                         <h3
-                                            className="mt-2 min-h-[3rem] sm:min-h-[3.5rem] text-lg sm:text-xl font-bold text-gray-900 leading-snug line-clamp-2"
+                                            className="mt-1 sm:mt-2 min-h-[2.5rem] sm:min-h-[3.5rem] text-base sm:text-lg lg:text-xl font-bold text-gray-900 leading-snug line-clamp-2"
                                             title={item.title}
                                         >
                                             {item.title}
                                         </h3>
                                         <p
-                                            className="mt-2 min-h-[4.5rem] sm:min-h-[4.875rem] text-sm sm:text-base leading-relaxed text-gray-600 line-clamp-3"
+                                            className="mt-2 min-h-[3.8rem] sm:min-h-[4.875rem] text-xs sm:text-sm lg:text-base leading-relaxed text-gray-600 line-clamp-3"
                                         >
                                             {item.description}
                                         </p>
                                         <div className="mt-auto flex items-center justify-center pt-4">
-                                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                                                 <Link
                                                     to={"/contact-us"}
                                                     aria-label={`Learn more about ${item.title}`}
-                                                    className={`inline-flex items-center gap-2 rounded-full bg-green-100 px-6 py-2.5 text-sm sm:text-base font-bold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
+                                                    className={`inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-green-100 px-5 sm:px-6 py-2.5 text-xs sm:text-sm md:text-base font-bold text-green-700 transition-colors hover:bg-green-600 hover:text-white ${focusRing}`}
                                                 >
                                                     <span>Learn more</span>
-                                                    <FaArrowRight size={15} />
+                                                    <FaArrowRight size={14} />
                                                 </Link>
                                             </motion.div>
                                         </div>

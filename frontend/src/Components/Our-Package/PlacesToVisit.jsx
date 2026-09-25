@@ -25,7 +25,7 @@ export default function PlacesToVisit() {
     }, [places, activeRegion]);
 
     return (
-        <section aria-labelledby="places-title" className="py-8">
+        <section aria-labelledby="places-title" className="py-4 sm:py-8">
             <div className="container">
                 {/* Header */}
                 <motion.div
@@ -33,23 +33,23 @@ export default function PlacesToVisit() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex flex-col md:flex-row md:items-end md:justify-between gap-4"
+                    className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 sm:gap-4"
                 >
                     <div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100/80 px-3.5 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800">
+                        <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100/80 px-3 py-0.5 sm:px-3.5 sm:py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800">
                             <FaWandMagicSparkles size={11} className="text-emerald-600" />
                             <span>Top Sightseeing Destinations</span>
                         </div>
-                        <h2 id="places-title" className="mt-3 text-2xl font-bold leading-tight text-gray-900 sm:text-3xl lg:text-4xl">
+                        <h2 id="places-title" className="mt-2.5 sm:mt-3 text-2xl font-bold leading-tight text-gray-900 sm:text-3xl lg:text-4xl">
                             Places to Visit in Munnar & Kerala
                         </h2>
-                        <p className="mt-2 max-w-[700px] text-sm sm:text-base leading-relaxed text-gray-600">
+                        <p className="mt-2 max-w-[700px] text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
                             Pick your must-see landmarks and customize with a personal chauffeur at the wheel, scenic routes, and zero hassle.
                         </p>
                     </div>
 
                     {/* Filter Tabs on Right */}
-                    <div className="flex flex-wrap gap-2 shrink-0">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 shrink-0">
                         {filterTabs.map((tab) => {
                             const isActive = activeRegion === tab.value;
                             return (
@@ -58,7 +58,7 @@ export default function PlacesToVisit() {
                                     key={tab.value}
                                     type="button"
                                     onClick={() => setActiveRegion(tab.value)}
-                                    className={`rounded-full px-4 py-2 text-xs sm:text-sm font-bold transition-colors ${isActive
+                                    className={`rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold transition-colors ${isActive
                                             ? "bg-green-600 text-white border border-green-600 shadow-sm"
                                             : "bg-white text-gray-700 border border-gray-200 hover:border-green-600 hover:text-green-700 shadow-sm"
                                         } ${focusRing}`}
@@ -70,7 +70,7 @@ export default function PlacesToVisit() {
                     </div>
                 </motion.div>
 
-                <hr className="mt-6 border-gray-200" />
+                <hr className="mt-5 sm:mt-6 border-gray-200" />
 
                 {/* Places Grid */}
                 <AnimatePresence mode="popLayout">
@@ -80,7 +80,7 @@ export default function PlacesToVisit() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                        className="mt-6 sm:mt-8 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3"
                     >
                         {visiblePlaces.map((p, i) => (
                             <motion.div

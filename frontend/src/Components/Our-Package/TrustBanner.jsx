@@ -26,20 +26,20 @@ const HOW_IT_WORKS_STEPS = [
 
 export default function TrustBanner() {
     return (
-        <section aria-labelledby="how-it-works-title" className="py-8">
+        <section aria-labelledby="how-it-works-title" className="py-4 sm:py-8">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="rounded-3xl bg-white p-6 sm:p-10 lg:p-12 shadow-sm border border-gray-100"
+                    className="rounded-3xl bg-white p-5 sm:p-8 lg:p-12 shadow-sm border border-gray-100"
                 >
                     <h2 id="how-it-works-title" className="sr-only">
                         How Our Booking Process Works
                     </h2>
 
-                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
                         {HOW_IT_WORKS_STEPS.map((step, index) => {
                             const Icon = step.icon;
                             const isLast = index === HOW_IT_WORKS_STEPS.length - 1;

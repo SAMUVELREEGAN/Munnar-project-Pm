@@ -13,12 +13,12 @@ export default function PickupProcess({ StepCard }) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="mt-10 text-2xl font-bold text-gray-900 sm:mt-12 sm:text-3xl"
+                    className="mt-6 text-2xl font-bold text-gray-900 sm:mt-10 sm:text-3xl lg:text-4xl"
                 >
                     {title}
                 </motion.h2>
 
-                <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                <ul className="mt-6 sm:mt-8 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     {features.map((step, index) => {
                         const IconComponent = iconMap[step.icon];
                         return (
@@ -33,7 +33,7 @@ export default function PickupProcess({ StepCard }) {
                                     ease: [0.16, 1, 0.3, 1],
                                 }}
                                 whileHover={{ y: -6 }}
-                                className="flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-6 text-center shadow-sm sm:p-7 hover:shadow-lg transition-shadow duration-300"
+                                className="flex flex-col items-center rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-sm sm:p-7 hover:shadow-lg transition-shadow duration-300"
                             >
                                 <motion.span
                                     whileHover={{ scale: 1.15, rotate: 5 }}

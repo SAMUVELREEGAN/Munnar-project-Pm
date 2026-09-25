@@ -6,8 +6,8 @@ export default function Features({ accessibilitySection }) {
     const { title, subtitle, features } = accessibilitySection;
 
     return (
-        <section aria-labelledby="features-title" className="py-5 lg:py-8">
-            <div className="grid container items-center gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-12">
+        <section aria-labelledby="features-title" className="py-4 sm:py-6 lg:py-8">
+            <div className="grid container items-center gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-12">
                 {/* Intro */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -15,14 +15,14 @@ export default function Features({ accessibilitySection }) {
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h2 id="features-title" className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+                    <h2 id="features-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900">
                         {title}
                     </h2>
-                    <p className="mt-4 max-w-[420px] text-base sm:text-lg leading-relaxed text-gray-600">{subtitle}</p>
+                    <p className="mt-3 sm:mt-4 max-w-[420px] text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600">{subtitle}</p>
                 </motion.div>
 
                 {/* Cards */}
-                <ul className="grid gap-5 sm:grid-cols-2">
+                <ul className="grid gap-4 sm:gap-5 sm:grid-cols-2">
                     {features.map((feature, index) => {
                         const IconComponent = iconMap[feature.icon];
                         return (
@@ -37,7 +37,7 @@ export default function Features({ accessibilitySection }) {
                                     ease: [0.16, 1, 0.3, 1],
                                 }}
                                 whileHover={{ y: -6 }}
-                                className="flex flex-col items-center rounded-3xl bg-white px-6 py-8 text-center shadow-sm hover:shadow-lg transition-shadow duration-300"
+                                className="flex flex-col items-center rounded-3xl bg-white p-5 sm:px-6 sm:py-8 text-center shadow-sm hover:shadow-lg transition-shadow duration-300"
                             >
                                 <motion.span
                                     whileHover={{ scale: 1.15, rotate: 5 }}

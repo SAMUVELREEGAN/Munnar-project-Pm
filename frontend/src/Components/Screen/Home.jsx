@@ -13,7 +13,7 @@ export const Home = () => {
 
 
     return (
-        <section className='space-y-8 lg:space-y-20' >
+        <div className='space-y-8 sm:space-y-12 lg:space-y-20 pb-8 sm:pb-12' >
             <HeroSection HeroContent={HomeSection?.homePage?.heroSection} />
             <Services OurTourPackages={HomeSection?.homePage?.OurTourPackages} />
             <PickupProcess StepCard={HomeSection?.scheduleSection} />
@@ -22,6 +22,6 @@ export const Home = () => {
             <Features accessibilitySection={HomeSection?.accessibilitySection} />
             <Testimonials />
             <Subscribe />
-        </section>
+        </div>
     )
 }

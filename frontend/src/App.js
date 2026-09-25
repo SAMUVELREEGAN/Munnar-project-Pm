@@ -11,10 +11,10 @@ import NotFound from './Components/Reuseable/Notfound';
 
 function App() {
   return (
-    <div className="App bg-[#f7f9f6]">
+    <div className="App min-h-screen w-full overflow-x-hidden bg-[#f7f9f6] flex flex-col">
       <ScrollToTop />
       <Navbar />
-      <main>
+      <main className="flex-1 w-full overflow-x-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -22,8 +22,8 @@ function App() {
           <Route path='/our-tour-packages' element={<OurPackage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 }

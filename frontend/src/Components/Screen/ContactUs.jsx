@@ -5,11 +5,10 @@ import ContactUsSection from "../../local/ContactPage.json"
 
 export const ContactUs = () => {
     return (
-        <section>
+        <div className="space-y-4 sm:space-y-8 pb-8 sm:pb-12">
             <PageHero
                 title={ContactUsSection?.heroSection?.title}
                 description={ContactUsSection?.heroSection?.description}
-
             />
             <Contact
                 infoTitle={ContactUsSection?.contactSection?.infoTitle}
@@ -22,7 +21,6 @@ export const ContactUs = () => {
                 formText={ContactUsSection?.contactSection?.formText}
                 services={ContactUsSection?.contactSection?.services}
             />
-        </section>
-
+        </div>
     )
 }

@@ -9,7 +9,7 @@ import Subscribe from '../Home-page/Subscribe';
 
 export const OurPackage = () => {
     return (
-        <div className="space-y-6 lg:space-y-12 pb-12">
+        <div className="space-y-6 sm:space-y-10 lg:space-y-16 pb-8 sm:pb-12">
             <PageHero
                 title={PackageSection?.pageTitle}
                 description={PackageSection?.pageDescription}

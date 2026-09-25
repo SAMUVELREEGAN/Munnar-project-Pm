@@ -8,7 +8,7 @@ export default function HeroSection({ HeroContent }) {
     return (
         <section
             aria-labelledby="hero-title"
-            className="relative -mt-[78px] overflow-hidden pt-[78px] sm:-mt-[94px] sm:pt-[94px]"
+            className="relative w-full min-h-[580px] sm:min-h-[660px] lg:min-h-[85vh] xl:min-h-[92vh] flex items-center overflow-hidden pt-24 sm:pt-32 pb-12 sm:pb-16"
         >
             <img
                 src={bgImage}
@@ -17,15 +17,15 @@ export default function HeroSection({ HeroContent }) {
                 className="absolute inset-0 h-full w-full object-cover object-center"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/45" />
 
             {/* Content */}
-            <div className="relative container flex min-h-[560px] items-center px-4 pb-12 pt-10 sm:min-h-[640px] sm:px-6 lg:min-h-[720px]">
+            <div className="relative container w-full px-4 sm:px-6 my-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full rounded-[28px] bg-black/60 p-6 backdrop-blur-[3px] sm:p-10 md:ml-auto md:max-w-[640px] lg:max-w-[720px] lg:p-12 shadow-2xl border border-white/10"
+                    className="w-full rounded-[24px] sm:rounded-[28px] bg-black/60 p-5 sm:p-8 md:p-10 md:ml-auto md:max-w-[640px] lg:max-w-[720px] lg:p-12 shadow-2xl border border-white/10 backdrop-blur-[3px]"
                 >
                     <motion.h1
                         id="hero-title"

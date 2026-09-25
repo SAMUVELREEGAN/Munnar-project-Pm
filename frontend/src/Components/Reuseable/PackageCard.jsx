@@ -180,32 +180,32 @@ export default function PackageCard({
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-2 text-base font-bold text-gray-900 leading-snug line-clamp-2 min-h-[2.6rem]" title={title}>
+                <h3 className="mt-2 text-sm sm:text-base font-bold text-gray-900 leading-snug line-clamp-2 min-h-[2.4rem] sm:min-h-[2.6rem]" title={title}>
                     {title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-1 text-xs sm:text-[13px] leading-relaxed text-gray-600 line-clamp-2 min-h-[2.3rem]">
+                <p className="mt-1 text-xs sm:text-[13px] leading-relaxed text-gray-600 line-clamp-2 min-h-[2rem] sm:min-h-[2.3rem]">
                     {description}
                 </p>
 
                 {/* Route Tags */}
                 {routes.length > 0 && (
-                    <div className="mt-3 flex items-baseline gap-1.5 text-xs min-h-[1.75rem]">
-                        <span className="text-[11px] font-bold uppercase tracking-wide text-gray-600 shrink-0">
+                    <div className="mt-2.5 sm:mt-3 flex items-baseline gap-1.5 text-xs min-h-[1.75rem]">
+                        <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wide text-gray-600 shrink-0">
                             Route:
                         </span>
-                        <div className="flex flex-wrap items-center gap-1.5">
+                        <div className="flex flex-wrap items-center gap-1 sm:gap-1.5">
                             {routes.slice(0, 2).map((r) => (
                                 <span
                                     key={r}
-                                    className="inline-flex items-center rounded-md bg-gray-100 px-2 py-0.5 text-[11px] font-medium text-gray-800 whitespace-nowrap"
+                                    className="inline-flex items-center rounded-md bg-gray-100 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-[11px] font-medium text-gray-800 whitespace-nowrap"
                                 >
                                     {r}
                                 </span>
                             ))}
                             {(extraRoutesCount > 0 || routes.length > 2) && (
-                                <span className="inline-flex items-center rounded-md bg-green-50 px-1.5 py-0.5 text-[11px] font-bold text-green-700 ring-1 ring-green-600/15 whitespace-nowrap">
+                                <span className="inline-flex items-center rounded-md bg-green-50 px-1.5 py-0.5 text-[10px] sm:text-[11px] font-bold text-green-700 ring-1 ring-green-600/15 whitespace-nowrap">
                                     +{extraRoutesCount + Math.max(0, routes.length - 2)}
                                 </span>
                             )}
@@ -217,8 +217,8 @@ export default function PackageCard({
                 {inclusions.length > 0 && (
                     <div className="mt-2.5 space-y-1 text-xs text-gray-600">
                         {inclusions.map((inc) => (
-                            <div key={inc} className="flex items-center gap-1.5 text-[12px]">
-                                <FaCheck size={11} className="text-emerald-600 shrink-0" />
+                            <div key={inc} className="flex items-center gap-1.5 text-[11px] sm:text-[12px]">
+                                <FaCheck size={10} className="text-emerald-600 shrink-0" />
                                 <span className="truncate">{inc}</span>
                             </div>
                         ))}
@@ -226,21 +226,21 @@ export default function PackageCard({
                 )}
 
                 {/* Spacer pushes price & button to bottom */}
-                <div className="mt-auto pt-4" />
+                <div className="mt-auto pt-3 sm:pt-4" />
 
                 {/* Footer Price & Book Row */}
-                <div className="flex items-center justify-between border-t border-gray-100 pt-3">
+                <div className="flex flex-wrap min-[340px]:flex-nowrap items-center justify-between gap-2 border-t border-gray-100 pt-3">
                     <div>
-                        <span className="block text-[11px] text-gray-500">From</span>
-                        <div className="flex items-baseline gap-1.5">
-                            <span className="text-lg font-extrabold text-gray-900">{price}</span>
+                        <span className="block text-[10px] sm:text-[11px] text-gray-500">From</span>
+                        <div className="flex items-baseline gap-1 sm:gap-1.5">
+                            <span className="text-base sm:text-lg font-extrabold text-gray-900">{price}</span>
                             {originalPrice && (
-                                <span className="text-xs text-gray-400 line-through">{originalPrice}</span>
+                                <span className="text-[11px] sm:text-xs text-gray-400 line-through">{originalPrice}</span>
                             )}
                         </div>
                     </div>
 
-                    {bookButton}
+                    <div className="shrink-0">{bookButton}</div>
                 </div>
             </div>
         </motion.article>

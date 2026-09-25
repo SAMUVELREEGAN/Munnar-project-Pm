@@ -128,7 +128,7 @@ export default function NotFound() {
     }, []);
 
     return (
-        <section className="bg-green-50 px-4 py-10 sm:py-16">
+        <section className="bg-green-50 px-4 pt-28 pb-12 sm:pt-36 sm:pb-16">
             {/* One-time animation: the taxi arrives and stops at the sign. Skipped if the visitor prefers reduced motion. */}
             <style>{`
                 @keyframes mt-taxi-arrive {

@@ -7,14 +7,14 @@ export default function WhyChooseUs({ whyChooseUs }) {
 
     return (
         <section aria-labelledby="why-title">
-            <div className="container grid gap-4 px-4 sm:px-6 lg:grid-cols-2 lg:gap-5">
+            <div className="container grid gap-5 sm:gap-6 lg:grid-cols-2 lg:gap-8">
                 {/* Photo */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative min-h-[260px] overflow-hidden rounded-[40px] bg-gradient-to-br from-green-700 to-green-900 sm:min-h-[360px] sm:rounded-[56px] group"
+                    className="relative min-h-[220px] sm:min-h-[320px] overflow-hidden rounded-3xl sm:rounded-[48px] bg-gradient-to-br from-green-700 to-green-900 group"
                 >
                     <img
                         src={image}
@@ -30,9 +30,9 @@ export default function WhyChooseUs({ whyChooseUs }) {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex flex-col justify-center rounded-[32px] bg-gradient-to-br from-green-100/70 via-white to-green-100/70 p-7 sm:rounded-[40px] sm:p-12 shadow-sm"
+                    className="flex flex-col justify-center rounded-3xl sm:rounded-[40px] bg-gradient-to-br from-green-100/70 via-white to-green-100/70 p-5 sm:p-8 md:p-10 shadow-sm"
                 >
-                    <h2 id="why-title" className="text-3xl font-bold text-gray-900">
+                    <h2 id="why-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
                         {title}
                     </h2>
 

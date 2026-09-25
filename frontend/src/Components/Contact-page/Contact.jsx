@@ -202,40 +202,40 @@ export default function Contact({
         <>
             <section
                 aria-label="Contact details and enquiry form"
-                className="bg-[#f7f9f6] py-12 sm:py-16"
+                className="bg-[#f7f9f6] py-6 sm:py-12 lg:py-16"
             >
-                <div className="container grid items-start gap-8 px-4 sm:px-6 lg:grid-cols-2">
+                <div className="container grid items-start gap-6 sm:gap-8 lg:grid-cols-2">
                     {/* Contact information */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-40px" }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-100 sm:p-10"
+                        className="rounded-3xl bg-white p-5 sm:p-8 lg:p-10 shadow-sm ring-1 ring-gray-100"
                     >
-                        <h2 className="text-2xl font-bold text-gray-900">{infoTitle}</h2>
-                        <p className="mt-3 text-base leading-relaxed text-gray-600">{infoText}</p>
+                        <h2 className="text-xl sm:text-2xl font-bold text-gray-900">{infoTitle}</h2>
+                        <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">{infoText}</p>
 
-                        <ul className="mt-8">
+                        <ul className="mt-6 sm:mt-8">
                             {contacts.map((item) => (
                                 <li
                                     key={item.id ?? item.label}
-                                    className="flex items-start gap-4 border-b border-gray-100 py-5 first:pt-2 last:border-b-0 last:pb-0"
+                                    className="flex items-start gap-3 sm:gap-4 border-b border-gray-100 py-4 sm:py-5 first:pt-2 last:border-b-0 last:pb-0"
                                 >
-                                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-600 shadow-sm">
+                                    <span className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-600 shadow-sm">
                                         {CONTACT_ICONS[item.icon]}
                                     </span>
                                     <div className="min-w-0 pt-0.5">
-                                        <p className="text-base sm:text-lg font-bold text-gray-900">{item.label}</p>
+                                        <p className="text-sm sm:text-base md:text-lg font-bold text-gray-900">{item.label}</p>
                                         {item.href ? (
                                             <a
                                                 href={item.href}
-                                                className={`mt-1 block break-words rounded text-sm sm:text-base text-gray-600 transition-colors hover:text-green-700 ${focusRing}`}
+                                                className={`mt-0.5 sm:mt-1 block break-words rounded text-xs sm:text-sm md:text-base text-gray-600 transition-colors hover:text-green-700 ${focusRing}`}
                                             >
                                                 {item.value}
                                             </a>
                                         ) : (
-                                            <p className="mt-1 break-words text-sm sm:text-base text-gray-600">{item.value}</p>
+                                            <p className="mt-0.5 sm:mt-1 break-words text-xs sm:text-sm md:text-base text-gray-600">{item.value}</p>
                                         )}
                                     </div>
                                 </li>
@@ -243,8 +243,8 @@ export default function Contact({
                         </ul>
 
                         {/* Social icons */}
-                        <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-gray-100 pt-6">
-                            <p className="text-base font-bold text-gray-900">{socialsTitle}</p>
+                        <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4 border-t border-gray-100 pt-5 sm:pt-6">
+                            <p className="text-sm sm:text-base font-bold text-gray-900">{socialsTitle}</p>
                             <ul className="flex items-center gap-2">
                                 {socials.map((s) => (
                                     <li key={s.label}>
@@ -272,18 +272,18 @@ export default function Contact({
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-40px" }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="rounded-3xl bg-[#eef4ec] p-6 shadow-sm sm:p-10"
+                        className="rounded-3xl bg-[#eef4ec] p-5 sm:p-8 lg:p-10 shadow-sm"
                     >
-                        <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-900">
-                            <FaAsterisk size={15} className="text-green-600" />
+                        <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-gray-900">
+                            <FaAsterisk size={13} className="text-green-600" />
                             {formBadge}
                         </span>
 
-                        <h2 className="mt-5 text-3xl font-bold text-gray-900 sm:text-4xl">{formTitle}</h2>
-                        <p className="mt-4 max-w-[560px] text-base leading-relaxed text-gray-600">{formText}</p>
+                        <h2 className="mt-4 sm:mt-5 text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">{formTitle}</h2>
+                        <p className="mt-2.5 sm:mt-4 max-w-[560px] text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">{formText}</p>
 
                         {/* noValidate: the browser's pop-up bubbles are replaced by the inline messages below */}
-                        <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-4">
+                        <form onSubmit={handleSubmit} noValidate className="mt-5 sm:mt-6 space-y-3.5 sm:space-y-4">
                             <div>
                                 <Label htmlFor="contact-name">Name</Label>
                                 <input
@@ -337,7 +337,7 @@ export default function Contact({
                                 <Label htmlFor="contact-message">Message</Label>
                                 <textarea
                                     {...fieldProps("message")}
-                                    rows={5}
+                                    rows={4}
                                     required
                                     maxLength={MESSAGE_MAX}
                                     placeholder="Message"
@@ -355,16 +355,16 @@ export default function Contact({
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap items-center gap-4">
+                            <div className="pt-2">
                                 <button
                                     type="submit"
                                     disabled={status === "loading"}
-                                    className={`inline-flex items-center gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-7 text-base font-bold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-70 ${focusRing}`}
+                                    className={`inline-flex w-full sm:w-auto items-center justify-center gap-3 sm:gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-6 sm:pr-7 text-sm sm:text-base font-bold text-white transition-colors hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-70 shadow-sm ${focusRing}`}
                                 >
-                                    <span className="grid h-9 w-[52px] place-items-center rounded-full bg-white">
-                                        <FaArrowRight size={16} className="text-green-600" />
+                                    <span className="grid h-8 w-9 sm:h-9 sm:w-[52px] place-items-center rounded-full bg-white">
+                                        <FaArrowRight size={15} className="text-green-600" />
                                     </span>
-                                    {status === "loading" ? "Sending…" : "Send Message"}
+                                    <span>{status === "loading" ? "Sending…" : "Send Message"}</span>
                                 </button>
                             </div>
                         </form>

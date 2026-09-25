@@ -7,16 +7,14 @@ import Subscribe from '../Home-page/Subscribe'
 
 
 export const About = () => {
-
     return (
-        <section className='space-y-8 lg:space-y-16' >
+        <div className='space-y-6 sm:space-y-10 lg:space-y-16 pb-8 sm:pb-12'>
             <PageHero title={AboutSection?.heroSection?.title} description={AboutSection?.heroSection?.description} />
             <ContentSection
                 title={AboutSection?.CompanySection?.title}
                 image={AboutSection?.CompanySection?.image}
                 imageAlt={AboutSection?.CompanySection?.imageAlt}
                 paragraphs={AboutSection?.CompanySection?.paragraphs}
-
             />
             <ContentSection
                 title={AboutSection?.bookingSection?.title}
@@ -31,6 +29,6 @@ export const About = () => {
                 rightCards={AboutSection?.useCasesSection?.rightCards}
             />
             <Subscribe />
-        </section>
+        </div>
     )
 }

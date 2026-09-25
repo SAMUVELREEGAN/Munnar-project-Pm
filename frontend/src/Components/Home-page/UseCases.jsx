@@ -54,15 +54,15 @@ export default function UseCases({
     return (
         <section
             aria-labelledby="use-cases-title"
-            className=""
+            className="py-4 sm:py-6"
         >
-            <div className="container grid gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-16">
+            <div className="container grid gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-16">
                 {/* Intro (stays in view while the cards scroll on desktop) */}
-                <div className="lg:sticky lg:top-10 lg:self-start lg:pt-6 ">
-                    <h2 id="use-cases-title" className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                <div className="lg:sticky lg:top-24 lg:self-start">
+                    <h2 id="use-cases-title" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
                         {title}
                     </h2>
-                    <div className="mt-6 max-w-[440px] space-y-4 text-h5 text-gray-600">
+                    <div className="mt-4 sm:mt-6 max-w-[440px] space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base text-gray-600">
                         {paragraphs.map((text, i) => (
                             <p key={i}>{text}</p>
                         ))}
@@ -70,20 +70,20 @@ export default function UseCases({
                 </div>
 
                 {/* Cards */}
-                <ul className="space-y-5">
+                <ul className="space-y-4 sm:space-y-5">
                     {cardItems.map((item) => {
                         const IconComponent = localIconMap[item.icon];
                         return (
-                            <li key={item.id ?? item.title} className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-100 sm:p-8">
-                                <div className="flex items-start justify-between gap-4">
-                                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">{item?.title}</h3>
+                            <li key={item.id ?? item.title} className="rounded-3xl bg-white p-5 sm:p-7 md:p-8 shadow-sm ring-1 ring-gray-100">
+                                <div className="flex items-start justify-between gap-3 sm:gap-4">
+                                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">{item?.title}</h3>
                                     {IconComponent && (
-                                        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-600">
-                                            <IconComponent size={28} />
+                                        <span className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-2xl bg-green-50 text-green-600">
+                                            <IconComponent size={24} />
                                         </span>
                                     )}
                                 </div>
-                                <p className="mt-3.5 text-sm sm:text-base leading-relaxed text-gray-600">{item?.text ?? item?.description}</p>
+                                <p className="mt-2.5 sm:mt-3.5 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">{item?.text ?? item?.description}</p>
                             </li>
                         );
                     })}

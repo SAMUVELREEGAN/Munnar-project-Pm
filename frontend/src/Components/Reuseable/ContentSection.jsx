@@ -12,9 +12,9 @@ export default function ContentSection({
     const imageOnLeft = imagePosition === "left";
 
     return (
-        <section className={`py-4 lg:py-6 ${className}`}>
+        <section className={`py-4 sm:py-6 lg:py-8 ${className}`}>
             <div className="container">
-                <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
                     {/* Text column */}
                     <motion.div
                         initial={{ opacity: 0, x: imageOnLeft ? 20 : -20 }}
@@ -26,16 +26,16 @@ export default function ContentSection({
                         }`}
                     >
                         {title && (
-                            <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900">
                                 {title}
                             </h2>
                         )}
                         {intro && (
-                            <p className="mt-3 text-base sm:text-lg leading-relaxed text-gray-600">
+                            <p className="mt-3 text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600">
                                 {intro}
                             </p>
                         )}
-                        <div className="mt-4 space-y-3.5 text-sm sm:text-base leading-relaxed text-gray-600">
+                        <div className="mt-3.5 space-y-3 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
                             {paragraphs.map((text, i) => (
                                 <p key={i}>{text}</p>
                             ))}
@@ -53,12 +53,12 @@ export default function ContentSection({
                                 imageOnLeft ? "lg:order-1" : "lg:order-2"
                             }`}
                         >
-                            <div className="group relative w-full overflow-hidden rounded-3xl sm:rounded-[36px] bg-green-50 shadow-md">
+                            <div className="group relative w-full overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-[36px] bg-green-50 shadow-md">
                                 <img
                                     src={image}
                                     alt={imageAlt}
                                     loading="lazy"
-                                    className="aspect-[4/3] sm:aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="aspect-[16/10] sm:aspect-[4/3] lg:aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
                         </motion.div>

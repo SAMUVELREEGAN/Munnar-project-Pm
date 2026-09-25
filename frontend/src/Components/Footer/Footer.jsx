@@ -82,7 +82,7 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="relative overflow-hidden bg-green-700 px-4 py-12 sm:px-6 sm:py-16">
+        <footer className="relative overflow-hidden bg-green-700 px-3 py-10 sm:px-6 sm:py-16">
             {/* Decorative shapes */}
             <div
                 aria-hidden="true"
@@ -91,20 +91,20 @@ export default function Footer() {
             <CornerShape className="-right-3 top-4" />
             <CornerShape className="-left-3 bottom-4" />
 
-            <div className="relative container rounded-[2rem] bg-white p-7 shadow-xl sm:p-12">
-                <div className="grid gap-10 lg:grid-cols-[1.35fr_0.8fr_1.9fr] lg:gap-12">
+            <div className="relative container rounded-3xl sm:rounded-[2rem] bg-white p-5 sm:p-10 lg:p-12 shadow-xl">
+                <div className="grid gap-8 sm:gap-10 lg:grid-cols-[1.35fr_0.8fr_1.9fr] lg:gap-12">
                     {/* About */}
                     <div>
                         <Link to="/" aria-label={`${BRAND} – home`} className={`inline-block rounded ${focusRing}`}>
-                            <img src={logoSrc} alt={BRAND} className="h-14 w-auto" />
+                            <img src={logoSrc} alt={BRAND} className="h-12 sm:h-14 w-auto" />
                         </Link>
-                        <p className="mt-6 max-w-sm text-sm sm:text-[15px] leading-relaxed text-gray-600">{ABOUT_TEXT}</p>
+                        <p className="mt-4 sm:mt-6 max-w-sm text-xs sm:text-sm md:text-[15px] leading-relaxed text-gray-600">{ABOUT_TEXT}</p>
                     </div>
 
                     {/* Company */}
                     <nav aria-label="Company">
                         <ColumnTitle>Company</ColumnTitle>
-                        <ul className="mt-5 space-y-3">
+                        <ul className="mt-4 sm:mt-5 space-y-2.5 sm:space-y-3">
                             {COMPANY_LINKS.map((l) => (
                                 <li key={l.label}>
                                     <Link to={l.to} className={linkClass}>
@@ -118,7 +118,7 @@ export default function Footer() {
                     {/* Services */}
                     <nav aria-label="Services">
                         <ColumnTitle>Services</ColumnTitle>
-                        <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                        <ul className="mt-4 sm:mt-5 grid gap-x-6 sm:gap-x-8 gap-y-2.5 sm:gap-y-3 grid-cols-1 min-[420px]:grid-cols-2">
                             {SERVICE_LINKS.map((l) => (
                                 <li key={l.label}>
                                     <Link to={l.to} className={linkClass}>
@@ -130,11 +130,11 @@ export default function Footer() {
                     </nav>
                 </div>
 
-                <hr className="mt-10 border-gray-200 sm:mt-12" />
+                <hr className="mt-8 sm:mt-10 lg:mt-12 border-gray-200" />
 
                 {/* Bottom bar */}
-                <div className="mt-6 flex flex-col items-center justify-between gap-5 sm:flex-row">
-                    <p className="text-center text-sm text-gray-600 sm:text-left">
+                <div className="mt-5 sm:mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <p className="text-center text-xs sm:text-sm text-gray-600 sm:text-left">
                         Copyright © {year} <strong className="font-bold text-gray-900">{BRAND}</strong>. All Rights Reserved
                     </p>
 
@@ -147,7 +147,7 @@ export default function Footer() {
                                     rel="noopener noreferrer"
                                     aria-label={`${s.label} (opens in a new tab)`}
                                     title={s.label}
-                                    className={`grid h-10 w-10 place-items-center rounded-full text-green-700 transition-colors hover:bg-green-700 hover:text-white ${focusRing}`}
+                                    className={`grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-full text-green-700 transition-colors hover:bg-green-700 hover:text-white ${focusRing}`}
                                 >
                                     {s.icon}
                                 </a>

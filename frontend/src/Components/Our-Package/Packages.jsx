@@ -120,20 +120,20 @@ export default function Packages() {
                 </div>
 
                 {/* Search & Filter Bar */}
-                <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-3 shadow-sm">
-                    <div className="flex flex-col gap-3 md:flex-row md:items-center">
+                <div className="mt-5 sm:mt-6 rounded-2xl border border-gray-200 bg-white p-3 sm:p-4 shadow-sm">
+                    <div className="flex flex-col gap-2.5 sm:gap-3 md:flex-row md:items-center">
                         {/* Search Input */}
                         <div className="relative flex-1">
                             <FaMagnifyingGlass
-                                size={15}
+                                size={14}
                                 className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
                             />
                             <input
                                 type="text"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                placeholder="Search by destination (e.g. Mattupetty, Top Station)..."
-                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 py-2.5 pl-10 pr-4 text-xs sm:text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-600 focus:bg-white focus:outline-none"
+                                placeholder="Search destination (Mattupetty, Top Station)..."
+                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 py-2 sm:py-2.5 pl-9 sm:pl-10 pr-4 text-xs sm:text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-600 focus:bg-white focus:outline-none"
                             />
                         </div>
 
@@ -142,7 +142,7 @@ export default function Packages() {
                             <select
                                 value={durationFilter}
                                 onChange={(e) => setDurationFilter(e.target.value)}
-                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2.5 text-xs sm:text-sm font-medium text-gray-700 focus:border-green-600 focus:bg-white focus:outline-none"
+                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-700 focus:border-green-600 focus:bg-white focus:outline-none"
                             >
                                 <option value="all">Any Duration</option>
                                 <option value="day">Day Tours (1-12 Hrs)</option>
@@ -155,7 +155,7 @@ export default function Packages() {
                             <select
                                 value={sortBy}
                                 onChange={(e) => setSortBy(e.target.value)}
-                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2.5 text-xs sm:text-sm font-medium text-gray-700 focus:border-green-600 focus:bg-white focus:outline-none"
+                                className="w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-700 focus:border-green-600 focus:bg-white focus:outline-none"
                             >
                                 <option value="popular">Sort: Most Popular</option>
                                 <option value="rating">Sort: Highest Rated</option>
@@ -170,29 +170,30 @@ export default function Packages() {
                             onClick={handleReset}
                             title="Reset all filters"
                             aria-label="Reset all filters"
-                            className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-gray-200 text-gray-500 transition-colors hover:border-green-600 hover:text-green-600"
+                            className="flex h-10 w-full md:w-10 items-center justify-center gap-1.5 shrink-0 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-600 transition-colors hover:border-green-600 hover:text-green-600"
                         >
-                            <FaRotateLeft size={14} />
+                            <FaRotateLeft size={13} />
+                            <span className="md:hidden font-medium">Reset</span>
                         </button>
                     </div>
                 </div>
 
                 {/* Status bar & Trust points */}
-                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-600">
+                <div className="mt-3.5 sm:mt-4 flex flex-col min-[540px]:flex-row items-start min-[540px]:items-center justify-between gap-2.5 sm:gap-3 text-[11px] sm:text-xs text-gray-600">
                     <p>
                         Showing <strong className="text-gray-900">{filteredAndSorted.length}</strong> of{" "}
-                        {packages.length} curated sightseeing packages
+                        {packages.length} curated packages
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-gray-700">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[11px] sm:text-xs font-semibold text-gray-700">
                         <span className="inline-flex items-center gap-1 text-emerald-700">
-                            <FaCheck size={12} className="text-emerald-600" /> Transparent Pricing
+                            <FaCheck size={11} className="text-emerald-600" /> Transparent Pricing
                         </span>
                         <span className="inline-flex items-center gap-1 text-emerald-700">
-                            <FaCheck size={12} className="text-emerald-600" /> 0% Hidden Commission
+                            <FaCheck size={11} className="text-emerald-600" /> 0% Hidden Fees
                         </span>
                         <span className="inline-flex items-center gap-1 text-emerald-700">
-                            <FaCheck size={12} className="text-emerald-600" /> Free 24h Cancellation
+                            <FaCheck size={11} className="text-emerald-600" /> Free 24h Cancel
                         </span>
                     </div>
                 </div>
@@ -206,7 +207,7 @@ export default function Packages() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.25 }}
-                            className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
+                            className="mt-5 sm:mt-6 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
                         >
                             {filteredAndSorted.map((pkg, i) => (
                                 <motion.div
@@ -231,18 +232,18 @@ export default function Packages() {
                             initial={{ opacity: 0, scale: 0.96 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.25 }}
-                            className="mt-8 rounded-3xl border border-gray-200 bg-white p-10 text-center"
+                            className="mt-6 sm:mt-8 rounded-3xl border border-gray-200 bg-white p-6 sm:p-10 text-center"
                         >
-                            <p className="text-base text-gray-600">
+                            <p className="text-sm sm:text-base text-gray-600">
                                 No packages match your search criteria. Try adjusting your filters.
                             </p>
                             <motion.button
                                 whileTap={{ scale: 0.95 }}
                                 type="button"
                                 onClick={handleReset}
-                                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-green-700"
+                                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-green-600 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm hover:bg-green-700"
                             >
-                                <FaRotateLeft size={14} />
+                                <FaRotateLeft size={13} />
                                 <span>Reset Filters</span>
                             </motion.button>
                         </motion.div>
@@ -255,24 +256,24 @@ export default function Packages() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                    className="mt-12 flex flex-col items-center justify-between gap-5 rounded-3xl border border-green-200/80 bg-gradient-to-r from-[#eef7ee] via-white to-[#eef7ee] p-6 text-center sm:flex-row sm:text-left sm:p-8 shadow-sm"
+                    className="mt-8 sm:mt-12 flex flex-col items-center justify-between gap-4 sm:gap-5 rounded-3xl border border-green-200/80 bg-gradient-to-r from-[#eef7ee] via-white to-[#eef7ee] p-5 text-center sm:flex-row sm:text-left sm:p-8 shadow-sm"
                 >
                     <div>
-                        <h3 className="text-base sm:text-lg font-bold text-gray-900">
+                        <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900">
                             Looking for custom dates, luxury tempo travellers, or honeymoon-tailored packages?
                         </h3>
                         <p className="mt-1 text-xs sm:text-sm text-gray-600">
                             We customize point-to-point itineraries with experienced hill drivers and best-rate guarantees.
                         </p>
                     </div>
-                    <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                    <div className="flex flex-col min-[480px]:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full sm:w-auto shrink-0">
                         <motion.a
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.96 }}
                             href="/contact-us"
-                            className={`rounded-xl border border-gray-300 bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-gray-800 shadow-sm transition-colors hover:border-green-600 hover:text-green-700 ${focusRing}`}
+                            className={`w-full min-[480px]:w-auto text-center rounded-xl border border-gray-300 bg-white px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-gray-800 shadow-sm transition-colors hover:border-green-600 hover:text-green-700 ${focusRing}`}
                         >
-                            BUILD CUSTOM ITINERARY
+                            CUSTOM ITINERARY
                         </motion.a>
                         <motion.a
                             whileHover={{ scale: 1.03 }}
@@ -280,9 +281,9 @@ export default function Packages() {
                             href={whatsappLink(whatsappNumber, "Hi Munnar Taxi, I would like to speak to a tour planner for a custom Kerala trip.")}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`rounded-xl bg-green-600 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 ${focusRing}`}
+                            className={`w-full min-[480px]:w-auto text-center rounded-xl bg-green-600 px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 ${focusRing}`}
                         >
-                            SPEAK TO TOUR PLANNER
+                            TOUR PLANNER
                         </motion.a>
                     </div>
                 </motion.div>
