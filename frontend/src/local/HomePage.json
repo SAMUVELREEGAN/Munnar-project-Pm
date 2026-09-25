@@ -48,57 +48,57 @@
         ]
     },
     "VehiclePackages": {
-        "pageTitle": "Munnar Taxi Services",
-        "pageDescription": "Reliable Taxi Services For Your Everyday And Special Travel Needs. Whether It's An Airport Pickup, A Business Trip, Or A Personal Ride, We Make Sure Your Journey Is Comfortable, Well-Coordinated, And Easy From Start To Finish.",
+        "pageTitle": "Munnar Taxi & Vehicle Fleet",
+        "pageDescription": "Reliable Taxi Services For Your Everyday And Special Travel Needs. Whether It's An Airport Pickup, Sightseeing Tour, Or Group Travel, We Provide Spotless, Well-Maintained Vehicles With Professional Chauffeurs.",
         "vehicles": [
             {
                 "id": 1,
-                "capacity": 5,
-                "image": "/images/van.png",
+                "capacity": 4,
+                "image": "/images/munnar-innova.jpg",
                 "isLowestPrice": true,
-                "tag": "Wheelchair Accessible Vehicle",
-                "title": "Wheelchair Transport",
+                "tag": "Economy Sedan",
+                "title": "Toyota Etios Taxi",
                 "pricing": [
                     {
                         "label": "Airport Arrival Pick Up",
-                        "value": "₹2,500"
+                        "value": "₹2,200"
                     },
                     {
-                        "label": "Charter Service",
-                        "value": "₹1,800/Hour (Min 3)"
+                        "label": "Full Day Sightseeing",
+                        "value": "₹2,500/Day (100km)"
                     },
                     {
-                        "label": "One Way",
-                        "value": "₹800 - ₹2,000"
+                        "label": "Extra Distance Rate",
+                        "value": "₹14/Km"
                     }
                 ],
                 "footerInfo": {
-                    "icon": "FaWheelchair",
-                    "label": "Wheelchair Users",
-                    "value": "1-2"
+                    "icon": "FaSuitcaseRolling",
+                    "label": "Luggage",
+                    "value": "3"
                 },
-                "buttonText": "Find More",
-                "buttonLink": "#wheelchair"
+                "buttonText": "Book Now",
+                "buttonLink": "/contact-us"
             },
             {
                 "id": 2,
                 "capacity": 6,
-                "image": "/images/van2.png",
+                "image": "/images/van.png",
                 "isLowestPrice": false,
-                "tag": "Toyota Alphard",
-                "title": "6 Seater Maxicab",
+                "tag": "Family MPV",
+                "title": "Maruti Suzuki Ertiga",
                 "pricing": [
                     {
                         "label": "Airport Arrival Pick Up",
                         "value": "₹2,800"
                     },
                     {
-                        "label": "Charter Service",
-                        "value": "₹2,000/Hour (Min 3)"
+                        "label": "Full Day Sightseeing",
+                        "value": "₹3,000/Day (100km)"
                     },
                     {
-                        "label": "One Way",
-                        "value": "₹1,200"
+                        "label": "Extra Distance Rate",
+                        "value": "₹16/Km"
                     }
                 ],
                 "footerInfo": {
@@ -107,85 +107,85 @@
                     "value": "4"
                 },
                 "buttonText": "Book Now",
-                "buttonLink": "#book-alphard"
+                "buttonLink": "/contact-us"
             },
             {
                 "id": 3,
-                "capacity": "9-13",
-                "image": "/images/van3.png",
+                "capacity": 4,
+                "image": "/images/car.png",
                 "isLowestPrice": false,
-                "tag": "Toyota Hiace",
-                "title": "13 Seater Maxicab",
+                "tag": "Luxury Sedan",
+                "title": "Mercedes-Benz E-Class",
                 "pricing": [
                     {
                         "label": "Airport Arrival Pick Up",
-                        "value": "₹3,500"
+                        "value": "₹4,500"
                     },
                     {
-                        "label": "Charter Service",
-                        "value": "₹2,500/Hour (Min 3)"
+                        "label": "Full Day Sightseeing",
+                        "value": "₹5,000/Day (100km)"
                     },
                     {
-                        "label": "One Way",
-                        "value": "₹1,800"
+                        "label": "Extra Distance Rate",
+                        "value": "₹28/Km"
                     }
                 ],
                 "footerInfo": {
                     "icon": "FaSuitcaseRolling",
                     "label": "Luggage",
-                    "value": "9"
+                    "value": "3"
                 },
                 "buttonText": "Book Now",
-                "buttonLink": "#book-hiace"
+                "buttonLink": "/contact-us"
             },
             {
                 "id": 4,
-                "capacity": 3,
-                "image": "/images/car.png",
+                "capacity": 7,
+                "image": "/images/van2.png",
                 "isLowestPrice": false,
-                "tag": "Mercedes E Class",
-                "title": "Luxury Sedan",
+                "tag": "VIP Luxury MPV",
+                "title": "Toyota Alphard VIP",
                 "pricing": [
                     {
                         "label": "Airport Arrival Pick Up",
-                        "value": "₹3,000"
+                        "value": "₹5,000"
                     },
                     {
-                        "label": "Charter Service",
-                        "value": "₹2,200/Hour (Min 3)"
+                        "label": "Full Day Sightseeing",
+                        "value": "₹5,500/Day (100km)"
                     },
                     {
-                        "label": "One Way",
-                        "value": "₹1,500"
+                        "label": "Extra Distance Rate",
+                        "value": "₹30/Km"
                     }
                 ],
                 "footerInfo": {
                     "icon": "FaSuitcaseRolling",
                     "label": "Luggage",
-                    "value": "2"
+                    "value": "5"
                 },
                 "buttonText": "Book Now",
-                "buttonLink": "#book-mercedes"
+                "buttonLink": "/contact-us"
             },
             {
                 "id": 5,
-                "capacity": 7,
-                "image": "/images/van2.png",
+                "capacity": 8,
+                "image": "/images/van3.png",
                 "isLowestPrice": false,
-                "tag": "Mercedes Viano",
-                "title": "7 Seater Maxicab",
+                "tag": "Executive Van",
+                "title": "Mercedes-Benz V-Class",
                 "pricing": [
                     {
                         "label": "Airport Arrival Pick Up",
-                        "value": "₹4,000"
+                        "value": "₹5,500"
                     },
                     {
-                        "label": "Charter Service",
-                        "value": "₹3,000/Hour (Min 3)"
+                        "label": "Full Day Sightseeing",
+                        "value": "₹6,000/Day (100km)"
                     },
                     {
-                        "label": "One Way",
-                        "value": "₹2,000"
+                        "label": "Extra Distance Rate",
+                        "value": "₹32/Km"
                     }
                 ],
                 "footerInfo": {
@@ -194,28 +194,36 @@
                     "value": "6"
                 },
                 "buttonText": "Book Now",
-                "buttonLink": "#book-viano"
+                "buttonLink": "/contact-us"
             },
             {
                 "id": 6,
-                "capacity": 5,
-                "image": "/images/van3.png",
+                "capacity": "12-14",
+                "image": "/images/van.png",
                 "isLowestPrice": false,
-                "tag": "Viano / Hiace",
-                "title": "Bicycle Transport",
+                "tag": "Minibus / Van",
+                "title": "Toyota HiAce Commuter",
                 "pricing": [
                     {
-                        "label": "One Way",
-                        "value": "₹1,000 - ₹2,500"
+                        "label": "Airport Arrival Pick Up",
+                        "value": "₹5,500"
+                    },
+                    {
+                        "label": "Full Day Sightseeing",
+                        "value": "₹5,500/Day (100km)"
+                    },
+                    {
+                        "label": "Extra Distance Rate",
+                        "value": "₹26/Km"
                     }
                 ],
                 "footerInfo": {
-                    "icon": "FaBicycle",
-                    "label": "Bicycles",
-                    "value": "4"
+                    "icon": "FaSuitcaseRolling",
+                    "label": "Luggage",
+                    "value": "10"
                 },
                 "buttonText": "Book Now",
-                "buttonLink": "#book-bicycle"
+                "buttonLink": "/contact-us"
             }
         ]
     },

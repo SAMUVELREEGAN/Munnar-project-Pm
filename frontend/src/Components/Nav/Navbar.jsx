@@ -43,10 +43,10 @@ export default function Navbar() {
     }, []);
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 px-2.5 py-2 sm:px-4 sm:py-3 transition-all duration-300">
+        <header className="fixed top-0 left-0 right-0 z-50 px-2.5 py-2.5 sm:px-4 sm:py-3.5 transition-all duration-300">
             <div
                 ref={barRef}
-                className="relative container flex min-h-[58px] sm:min-h-[68px] items-center justify-between gap-2 rounded-full bg-white/95 backdrop-blur-md py-1.5 pl-3 pr-2 shadow-[0_8px_30px_rgba(0,0,0,0.12)] sm:gap-5 sm:pl-[18px] sm:pr-3 border border-white/60"
+                className="relative container flex min-h-[63px] sm:min-h-[73px] items-center justify-between gap-2 rounded-full bg-white/95 backdrop-blur-md py-2 pl-3.5 pr-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] sm:gap-5 sm:py-2.5 sm:pl-5 sm:pr-3.5 border border-white/60"
             >
                 {/* Logo */}
                 <Link
@@ -57,7 +57,7 @@ export default function Navbar() {
                     <img
                         src={DEFAULT_LOGO}
                         alt={SITE_NAME}
-                        className="h-10 sm:h-14 w-auto object-contain"
+                        className="h-11 sm:h-[59px] w-auto object-contain"
                     />
                 </Link>
 
@@ -65,7 +65,7 @@ export default function Navbar() {
                 <nav
                     id="site-nav"
                     aria-label="Main"
-                    className={`${menuOpen ? "block" : "hidden"} absolute inset-x-2 sm:inset-x-0 top-full mt-2 rounded-3xl bg-white px-5 py-3 shadow-2xl border border-gray-100 lg:static lg:ml-auto lg:mt-0 lg:block lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none lg:border-0`}
+                    className={`${menuOpen ? "block" : "hidden"} absolute inset-x-2 sm:inset-x-0 top-full mt-2 rounded-3xl bg-white px-5 py-3.5 shadow-2xl border border-gray-100 lg:static lg:ml-auto lg:mt-0 lg:block lg:rounded-none lg:bg-transparent lg:p-0 lg:shadow-none lg:border-0`}
                 >
                     <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-5 xl:gap-7">
                         {NAV_LINKS.map((link) => (
@@ -88,9 +88,9 @@ export default function Navbar() {
                             <Link
                                 to="/contact-us"
                                 aria-label="Book Now"
-                                className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-[5px] pr-3.5 text-sm font-bold text-white transition-colors hover:bg-green-700 max-[400px]:pr-[5px] sm:gap-4 sm:p-1.5 sm:pr-7 sm:text-base ${focusRing}`}
+                                className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-4 text-sm font-bold text-white transition-colors hover:bg-green-700 max-[400px]:pr-2 sm:gap-4 sm:p-2 sm:pr-8 sm:text-base ${focusRing}`}
                             >
-                                <span className="grid h-8 w-[38px] place-items-center rounded-full bg-white sm:h-9 sm:w-[52px]">
+                                <span className="grid h-8 w-[38px] place-items-center rounded-full bg-white sm:h-10 sm:w-[54px]">
                                     <FaArrowRight size={16} className="text-green-600" />
                                 </span>
                                 <span className="max-[400px]:hidden">Book Now</span>
