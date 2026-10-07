@@ -12,8 +12,7 @@ import NotFound from './Components/Reuseable/Notfound';
 
 function App() {
   return (
-    <div className="App relative min-h-screen w-full overflow-x-hidden bg-cream flex flex-col">
-      <div className="site-grain" aria-hidden="true" />
+    <div className="App relative min-h-screen w-full overflow-x-hidden bg-white flex flex-col">
       <ScrollToTop />
       <Navbar />
       <main className="flex-1 w-full overflow-x-hidden pb-[calc(5.25rem+env(safe-area-inset-bottom))] lg:pb-0">

@@ -1,29 +1,117 @@
 {
   "title": "What Our Customers Say",
-  "subtitle": "",
+  "subtitle": "Real Google reviews from travelers who explored Munnar with Munnar Jothilaxmi Tours and Travels",
   "testimonials": [
     {
       "id": 1,
       "rating": 5,
-      "comment": "Best taxi service in Munnar! Very comfortable ride.",
-      "name": "Rajesh",
-      "role": "",
+      "comment": "Wonderful service by Veeresh and Vijay bhaiya. Both are very helpful and genuine.",
+      "name": "Ayush Gupta",
+      "role": "1 review · 4 months ago",
       "image": ""
     },
     {
       "id": 2,
       "rating": 5,
-      "comment": "Driver was very polite and showed all tourist spots.",
-      "name": "Priya",
-      "role": "",
+      "comment": "I happened to see the best places in Munnar and Rubin has been a great 👍 person and his driving skills are super good, very supportive to clients, kind, pleasant person.",
+      "name": "Anand Pidic",
+      "role": "Local Guide · 4 reviews · 2 months ago",
       "image": ""
     },
     {
       "id": 3,
       "rating": 5,
-      "comment": "Affordable price and excellent service. Highly recommended!",
-      "name": "Arjun",
-      "role": "",
+      "comment": "Veeresh was very kind and polite driver. He was very knowledgeable about the places we were going to.",
+      "name": "RAMRATAN JAVA",
+      "role": "9 reviews · 8 months ago",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "rating": 5,
+      "comment": "It is very good service, driver Veeresh Is also veri friendly and decent person. Thank you for your service Chhetta.",
+      "name": "Akhil Sharma",
+      "role": "6 reviews · 4 months ago",
+      "image": ""
+    },
+    {
+      "id": 5,
+      "rating": 5,
+      "comment": "Loved the trip from munnar to cherayi. The driver was good, engaged in conversations. Also, made us comfortable while traveling. Catered to our needs on our way. Polite and professional.",
+      "name": "Aaryan gupta",
+      "role": "7 reviews · 5 months ago",
+      "image": ""
+    },
+    {
+      "id": 6,
+      "rating": 5,
+      "comment": "Veeresh is very kind & helpful. Treats guests as family. He is a very safe & skilful driver. A very pleasant experience.",
+      "name": "Vasudeo Ridhorkar",
+      "role": "1 review · 3 months ago",
+      "image": ""
+    },
+    {
+      "id": 7,
+      "rating": 5,
+      "comment": "So we were a family of 4 adults and a 3 year old..Came to munnar mount serene munnar in our own car..but hired a taxi to do the local itenary...Had no second thoughts Got the ph. number of taxi from local because taxis from resorts charge high. Highly satisfied with the prompt and professional service!",
+      "name": "raam portfolio",
+      "role": "Local Guide · 7 reviews · a year ago",
+      "image": ""
+    },
+    {
+      "id": 8,
+      "rating": 5,
+      "comment": "Very friendly and helpful attitude. His driving skills are quite good. Was willing to take us to show more places in Munnar than we planned. provided almost 20X7 hrs on-call support to help us. We wish Veeresh all the best.",
+      "name": "Ramakrishnan Venkatraman",
+      "role": "13 reviews · 8 months ago",
+      "image": ""
+    },
+    {
+      "id": 9,
+      "rating": 5,
+      "comment": "Had a great experience during my Munnar trip! The driver was extremely punctual, professional, and very friendly throughout. I've travelled with him before as well, and he's always been reliable and excellent. Highly recommended!",
+      "name": "vidhi upadhyay",
+      "role": "6 reviews · 6 months ago",
+      "image": ""
+    },
+    {
+      "id": 10,
+      "rating": 5,
+      "comment": "I recently travelled to Chinnakanel/Munnar with my family, and I used the services of Jothilaxmi Tours and Travels. They have safe drivers with clean cars, and we used Veeresh repeatedly for 3 of our trips while we were there.",
+      "name": "AJIT VARMA",
+      "role": "Local Guide · 15 reviews · 8 months ago",
+      "image": ""
+    },
+    {
+      "id": 11,
+      "rating": 5,
+      "comment": "Shri Veereshraja, the owner of the Taxi service is a very pleasant and professional person. Neat and well maintained car for traveling. We engaged him for a sightseeing tour once and hired him for next 3 days also !",
+      "name": "venkatakrishnan v",
+      "role": "5 reviews · 2 months ago",
+      "image": ""
+    },
+    {
+      "id": 12,
+      "rating": 5,
+      "comment": "Hi I am Krishna reddy from Hyderabad. I travelled Munnar and used services Jyothilaxmi Tours and Travels for sight view near by locations. The cars are very neat n clean and drivers are experts in driving in ghats. Mr Ghowtham CAB service was top notch.",
+      "name": "krishna reddy",
+      "role": "3 reviews · 4 months ago",
+      "image": ""
+    },
+    {
+      "id": 13,
+      "rating": 5,
+      "comment": "Channi is a great driver arranged by the very helpful Veeresh. He made sure to assign the most soft spoken and professional person for the jeep ride to kolukkumalai peak.",
+      "name": "Jairoop Riar",
+      "role": "Local Guide · 31 reviews · 10 months ago",
+      "image": ""
+    },
+    {
+      "id": 14,
+      "rating": 5,
+      "comment": "Vireesh and his brother are great guys with cab, very humble, jovial and more importantly they don't argue with customers. This was my second time with Vireesh and will surely recommend others to use their them whoso ever is coming to Club Mahindra, Munnar",
+      "name": "Sourav Mitra",
+      "role": "Local Guide · 15 reviews · 2 years ago",
       "image": ""
     }
   ]

@@ -51,9 +51,10 @@ module.exports = {
         display: ['"Cormorant Garamond"', "Georgia", "serif"],
       },
       boxShadow: {
-        soft: "0 8px 30px rgba(28, 25, 20, 0.06)",
-        lift: "0 22px 50px rgba(28, 25, 20, 0.12)",
-        glow: "0 10px 28px rgba(47, 90, 58, 0.22)",
+        soft: "0 10px 30px -4px rgba(16, 24, 40, 0.08), 0 4px 12px -2px rgba(16, 24, 40, 0.04)",
+        card: "0 12px 32px -4px rgba(16, 24, 40, 0.10), 0 4px 12px -2px rgba(16, 24, 40, 0.05)",
+        lift: "0 22px 45px -6px rgba(16, 24, 40, 0.14), 0 10px 20px -5px rgba(16, 24, 40, 0.08)",
+        glow: "0 10px 28px rgba(47, 90, 58, 0.25)",
       },
       transitionTimingFunction: {
         luxe: "cubic-bezier(0.16, 1, 0.3, 1)",

@@ -6,9 +6,11 @@ import PackageSection from "../../local/OurPackage.json";
 const VEHICLE_IMAGES = {
     Sedan: "/images/car.png",
     Ertiga: "/images/Ertiga.webp",
-    Inova: "/images/munnar-innova.jpg",
-    "Inova crysta": "/images/munnar-innova.jpg",
-    Tempo: "/images/van.png",
+    Inova: "/images/Innova-Cab.jpeg",
+    "Inova crysta": "/images/Innova-Cab.jpeg",
+    Tempo: "/images/Tempo-Traveller.jpeg",
+    Bus: "/images/Seater-Bus.jpeg",
+    Verito: "/images/Verito.jpeg",
 };
 
 function pickImage(title = "") {
