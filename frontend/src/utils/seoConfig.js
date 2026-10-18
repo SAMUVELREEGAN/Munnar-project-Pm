@@ -1,7 +1,9 @@
 /**
- * Centralized SEO Configuration
- * Title targets: 50–60 characters
- * Description targets: 100–130 characters
+ * Centralized Technical SEO Configuration
+ * - Canonical domain: https://munnarjothilaxmitaxi.com
+ * - Target Title: 50–60 characters
+ * - Target Meta Description: 100–130 characters
+ * - Valid Schema.org JSON-LD (TaxiService, WebSite, Organization, BreadcrumbList, ContactPage, Service)
  */
 
 const BASE_URL = "https://munnarjothilaxmitaxi.com";
@@ -13,27 +15,54 @@ export const SEO_CONFIG = {
         canonicalUrl: `${BASE_URL}/`,
         schema: {
             "@context": "https://schema.org",
-            "@type": "TaxiService",
-            "name": "Jothilaxmi Munnar Taxi Service",
-            "image": `${BASE_URL}/images/Munnar-bg.webp`,
-            "logo": `${BASE_URL}/images/munnar_logo.webp`,
-            "telephone": ["+919061140533", "+919400380433"],
-            "url": BASE_URL,
-            "priceRange": "₹₹",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Munnar Town",
-                "addressLocality": "Munnar",
-                "addressRegion": "Kerala",
-                "postalCode": "685612",
-                "addressCountry": "IN"
-            },
-            "areaServed": [
-                { "@type": "City", "name": "Munnar" },
-                { "@type": "State", "name": "Kerala" },
-                { "@type": "Airport", "name": "Cochin International Airport" }
-            ],
-            "description": "Professional Munnar taxi service offering airport transfers, Kerala tour packages, and sightseeing cabs."
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": `${BASE_URL}/#website`,
+                    "url": `${BASE_URL}/`,
+                    "name": "Munnar Taxi Service | Jothilaxmi Cabs",
+                    "description": "Professional Munnar taxi service offering airport transfers, Kerala tour packages, and sightseeing cabs."
+                },
+                {
+                    "@type": "TaxiService",
+                    "@id": `${BASE_URL}/#taxiservice`,
+                    "name": "Jothilaxmi Munnar Taxi Service",
+                    "url": `${BASE_URL}/`,
+                    "logo": `${BASE_URL}/images/munnar_logo.webp`,
+                    "image": `${BASE_URL}/images/Munnar-bg.webp`,
+                    "telephone": ["+919061140533", "+919400380433"],
+                    "priceRange": "₹₹",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Munnar Town",
+                        "addressLocality": "Munnar",
+                        "addressRegion": "Kerala",
+                        "postalCode": "685612",
+                        "addressCountry": "IN"
+                    },
+                    "openingHoursSpecification": [
+                        {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday",
+                                "Sunday"
+                            ],
+                            "opens": "00:00",
+                            "closes": "23:59"
+                        }
+                    ],
+                    "areaServed": [
+                        { "@type": "City", "name": "Munnar" },
+                        { "@type": "State", "name": "Kerala" },
+                        { "@type": "Airport", "name": "Cochin International Airport" }
+                    ]
+                }
+            ]
         }
     },
     about: {
@@ -42,32 +71,80 @@ export const SEO_CONFIG = {
         canonicalUrl: `${BASE_URL}/about`,
         schema: {
             "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "name": "About Jothilaxmi Munnar Taxi Service",
-            "url": `${BASE_URL}/about`,
-            "description": "Discover the story, mission, and commitment to safe hill-station driving behind Jothilaxmi Munnar Taxi Service."
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": `${BASE_URL}/#organization`,
+                    "name": "Jothilaxmi Munnar Taxi Service",
+                    "url": `${BASE_URL}/`,
+                    "logo": `${BASE_URL}/images/munnar_logo.webp`,
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+919061140533",
+                        "contactType": "customer service",
+                        "areaServed": "IN"
+                    }
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": `${BASE_URL}/`
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "About Us",
+                            "item": `${BASE_URL}/about`
+                        }
+                    ]
+                }
+            ]
         }
     },
     packages: {
         title: "Munnar Tour Packages | Kerala Sightseeing Taxi Fares", // 52 chars
-        description: "Explore top Munnar tour packages with affordable taxi fares. Book day sightseeing tours, Cochin transfers, and Kerala holiday cabs.", // 130 chars
+        description: "Explore top Munnar tour packages with affordable taxi fares. Book sightseeing tours, Cochin airport cabs, and Kerala holidays.", // 126 chars
         canonicalUrl: `${BASE_URL}/our-tour-packages`,
         schema: {
             "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "Munnar Sightseeing Tour Packages",
-            "description": "Curated Munnar sightseeing day tours and Kerala holiday cab packages with experienced drivers.",
-            "brand": {
-                "@type": "Brand",
-                "name": "Jothilaxmi Cabs"
-            },
-            "offers": {
-                "@type": "AggregateOffer",
-                "priceCurrency": "INR",
-                "lowPrice": "1800",
-                "highPrice": "15000",
-                "offerCount": "12"
-            }
+            "@graph": [
+                {
+                    "@type": "Service",
+                    "name": "Munnar Sightseeing Taxi Tour Packages",
+                    "provider": {
+                        "@type": "TaxiService",
+                        "name": "Jothilaxmi Munnar Taxi Service",
+                        "telephone": "+919061140533"
+                    },
+                    "serviceType": "Sightseeing Taxi & Tour Packages",
+                    "areaServed": {
+                        "@type": "City",
+                        "name": "Munnar"
+                    },
+                    "description": "Full-day and multi-day sightseeing cab packages covering Mattupetty Dam, Eravikulam National Park, Top Station, and Cochin Airport transfers."
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": `${BASE_URL}/`
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Tour Packages",
+                            "item": `${BASE_URL}/our-tour-packages`
+                        }
+                    ]
+                }
+            ]
         }
     },
     places: {
@@ -76,9 +153,35 @@ export const SEO_CONFIG = {
         canonicalUrl: `${BASE_URL}/places-to-visit`,
         schema: {
             "@context": "https://schema.org",
-            "@type": "TouristDestination",
-            "name": "Munnar Tourist Attractions",
-            "description": "Comprehensive tourist guide covering scenic tea plantations, national parks, waterfalls, and dams in Munnar, Kerala."
+            "@graph": [
+                {
+                    "@type": "TouristDestination",
+                    "name": "Munnar Tourist Attractions",
+                    "description": "Scenic hill station attractions in Munnar including tea plantations, wildlife parks, lakes, dams, and viewpoints.",
+                    "touristType": ["Eco-tourism", "Adventure tourism", "Sightseeing"],
+                    "containedInPlace": {
+                        "@type": "AdministrativeArea",
+                        "name": "Idukki District, Kerala, India"
+                    }
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": `${BASE_URL}/`
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Places to Visit",
+                            "item": `${BASE_URL}/places-to-visit`
+                        }
+                    ]
+                }
+            ]
         }
     },
     contact: {
@@ -87,10 +190,44 @@ export const SEO_CONFIG = {
         canonicalUrl: `${BASE_URL}/contact-us`,
         schema: {
             "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "name": "Contact Jothilaxmi Munnar Taxi Service",
-            "url": `${BASE_URL}/contact-us`,
-            "telephone": "+919400380433"
+            "@graph": [
+                {
+                    "@type": "ContactPage",
+                    "name": "Contact Jothilaxmi Munnar Taxi Service",
+                    "url": `${BASE_URL}/contact-us`,
+                    "mainEntity": {
+                        "@type": "TaxiService",
+                        "name": "Jothilaxmi Munnar Taxi Service",
+                        "telephone": ["+919400380433", "+919061140533"],
+                        "email": "veereshvv792484@gmail.com",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Munnar Town",
+                            "addressLocality": "Munnar",
+                            "addressRegion": "Kerala",
+                            "postalCode": "685612",
+                            "addressCountry": "IN"
+                        }
+                    }
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Home",
+                            "item": `${BASE_URL}/`
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contact Us",
+                            "item": `${BASE_URL}/contact-us`
+                        }
+                    ]
+                }
+            ]
         }
     },
     notFound: {

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { SEO_CONFIG } = require("../src/utils/seoConfig");
 
 const BUILD_DIR = path.join(__dirname, "..", "build");
 const BASE_HTML_PATH = path.join(BUILD_DIR, "index.html");
@@ -9,62 +10,79 @@ if (!fs.existsSync(BASE_HTML_PATH)) {
     process.exit(1);
 }
 
-const baseHtml = fs.readFileSync(BASE_HTML_PATH, "utf8");
+let baseHtml = fs.readFileSync(BASE_HTML_PATH, "utf8");
+
+// Also inject Schema.org JSON-LD into the root build/index.html for the homepage
+if (SEO_CONFIG.home && SEO_CONFIG.home.schema) {
+    const homeSchemaTag = `<script type="application/ld+json">${JSON.stringify(SEO_CONFIG.home.schema)}</script>`;
+    if (!baseHtml.includes("application/ld+json")) {
+        baseHtml = baseHtml.replace("</head>", `${homeSchemaTag}</head>`);
+        fs.writeFileSync(BASE_HTML_PATH, baseHtml, "utf8");
+        console.log("Injected Schema.org JSON-LD into /index.html (homepage)");
+    }
+}
 
 const ROUTES = [
     {
         path: "about",
-        title: "About Us | Trusted Munnar Taxi Service & Tour Operators",
-        description: "Learn about Jothilaxmi Cabs, Munnar's trusted taxi partner offering safe hill travel, expert drivers, and custom Kerala tours.",
-        canonical: "https://munnarjothilaxmitaxi.com/about",
+        title: SEO_CONFIG.about.title,
+        description: SEO_CONFIG.about.description,
+        canonical: SEO_CONFIG.about.canonicalUrl,
+        schema: SEO_CONFIG.about.schema,
         h1: "About Our Munnar Taxi Service",
         summary: "Jothilaxmi Cabs is a leading taxi and tour operator in Munnar, Kerala. We provide safe, comfortable, and affordable transportation with experienced local drivers for Cochin airport transfers, sightseeing tours, and outstation trips."
     },
     {
         path: "our-tour-packages",
-        title: "Munnar Tour Packages | Kerala Sightseeing Taxi Fares",
-        description: "Explore top Munnar tour packages with affordable taxi fares. Book day sightseeing tours, Cochin transfers, and Kerala holiday cabs.",
-        canonical: "https://munnarjothilaxmitaxi.com/our-tour-packages",
+        title: SEO_CONFIG.packages.title,
+        description: SEO_CONFIG.packages.description,
+        canonical: SEO_CONFIG.packages.canonicalUrl,
+        schema: SEO_CONFIG.packages.schema,
         h1: "Munnar Tour Packages & Sightseeing Taxi Fares",
         summary: "Discover full-day and multi-day tour packages in Munnar and across Kerala. Enjoy sightseeing tours to Mattupetty Dam, Top Station, and Eravikulam National Park with transparent fares and comfortable vehicles."
     },
     {
         path: "places-to-visit",
-        title: "Top Places to Visit in Munnar | Kerala Sightseeing Guide",
-        description: "Discover top tourist places to visit in Munnar including tea gardens, Mattupetty Dam, and viewpoints with convenient taxi service.",
-        canonical: "https://munnarjothilaxmitaxi.com/places-to-visit",
+        title: SEO_CONFIG.places.title,
+        description: SEO_CONFIG.places.description,
+        canonical: SEO_CONFIG.places.canonicalUrl,
+        schema: SEO_CONFIG.places.schema,
         h1: "Top Places to Visit in Munnar",
         summary: "Explore Munnar's famous tourist spots: rolling tea plantations, Eravikulam National Park, Mattupetty Dam, Echo Point, Kundala Lake, and Attukad Waterfalls with private sightseeing taxi cabs."
     },
     {
         path: "contact-us",
-        title: "Contact Us | Munnar Taxi Booking & 24/7 Cab Customer Care",
-        description: "Contact Jothilaxmi Munnar Taxi for fast cab bookings, 24/7 customer support, airport pickup quotes, and custom Kerala tour plans.",
-        canonical: "https://munnarjothilaxmitaxi.com/contact-us",
+        title: SEO_CONFIG.contact.title,
+        description: SEO_CONFIG.contact.description,
+        canonical: SEO_CONFIG.contact.canonicalUrl,
+        schema: SEO_CONFIG.contact.schema,
         h1: "Contact Us - Munnar Taxi Booking",
         summary: "Contact Jothilaxmi Cabs for 24/7 taxi booking in Munnar. Call +91 94003 80433 or +91 90611 40533 for Cochin airport pickups, sightseeing cab rentals, and custom holiday quotes."
     },
     {
         path: "packages",
-        title: "Munnar Tour Packages | Kerala Sightseeing Taxi Fares",
-        description: "Explore top Munnar tour packages with affordable taxi fares. Book day sightseeing tours, Cochin transfers, and Kerala holiday cabs.",
-        canonical: "https://munnarjothilaxmitaxi.com/our-tour-packages",
+        title: SEO_CONFIG.packages.title,
+        description: SEO_CONFIG.packages.description,
+        canonical: SEO_CONFIG.packages.canonicalUrl,
+        schema: SEO_CONFIG.packages.schema,
         h1: "Munnar Tour Packages & Sightseeing Taxi Fares",
         summary: "Discover full-day and multi-day tour packages in Munnar and across Kerala. Enjoy sightseeing tours to Mattupetty Dam, Top Station, and Eravikulam National Park with transparent fares and comfortable vehicles."
     },
     {
         path: "placetovisit",
-        title: "Top Places to Visit in Munnar | Kerala Sightseeing Guide",
-        description: "Discover top tourist places to visit in Munnar including tea gardens, Mattupetty Dam, and viewpoints with convenient taxi service.",
-        canonical: "https://munnarjothilaxmitaxi.com/places-to-visit",
+        title: SEO_CONFIG.places.title,
+        description: SEO_CONFIG.places.description,
+        canonical: SEO_CONFIG.places.canonicalUrl,
+        schema: SEO_CONFIG.places.schema,
         h1: "Top Places to Visit in Munnar",
         summary: "Explore Munnar's famous tourist spots: rolling tea plantations, Eravikulam National Park, Mattupetty Dam, Echo Point, Kundala Lake, and Attukad Waterfalls with private sightseeing taxi cabs."
     },
     {
         path: "contact",
-        title: "Contact Us | Munnar Taxi Booking & 24/7 Cab Customer Care",
-        description: "Contact Jothilaxmi Munnar Taxi for fast cab bookings, 24/7 customer support, airport pickup quotes, and custom Kerala tour plans.",
-        canonical: "https://munnarjothilaxmitaxi.com/contact-us",
+        title: SEO_CONFIG.contact.title,
+        description: SEO_CONFIG.contact.description,
+        canonical: SEO_CONFIG.contact.canonicalUrl,
+        schema: SEO_CONFIG.contact.schema,
         h1: "Contact Us - Munnar Taxi Booking",
         summary: "Contact Jothilaxmi Cabs for 24/7 taxi booking in Munnar. Call +91 94003 80433 or +91 90611 40533 for Cochin airport pickups, sightseeing cab rentals, and custom holiday quotes."
     }
@@ -73,47 +91,57 @@ const ROUTES = [
 ROUTES.forEach((route) => {
     let routeHtml = baseHtml;
 
-    // Replace Title
+    // Replace Title with data-rh="true" to prevent React Helmet duplicates
     routeHtml = routeHtml.replace(
-        /<title>.*?<\/title>/i,
-        `<title>${route.title}</title>`
+        /<title.*?>.*?<\/title>/i,
+        `<title data-rh="true">${route.title}</title>`
     );
 
     // Replace Meta Description
     routeHtml = routeHtml.replace(
-        /<meta name="description" content=".*?"\s*\/?>/i,
-        `<meta name="description" content="${route.description}" />`
+        /<meta[^>]*?name="description"[^>]*?>/i,
+        `<meta data-rh="true" name="description" content="${route.description}" />`
     );
 
-    // Replace Canonical
+    // Replace Canonical Link
     routeHtml = routeHtml.replace(
-        /<link rel="canonical" href=".*?"\s*\/?>/i,
-        `<link rel="canonical" href="${route.canonical}" />`
+        /<link[^>]*?rel="canonical"[^>]*?>/i,
+        `<link data-rh="true" rel="canonical" href="${route.canonical}" />`
     );
 
-    // Replace OG Title & Description
+    // Replace OG Title & Description & URL
     routeHtml = routeHtml.replace(
-        /<meta property="og:title" content=".*?"\s*\/?>/i,
-        `<meta property="og:title" content="${route.title}" />`
+        /<meta[^>]*?property="og:title"[^>]*?>/i,
+        `<meta data-rh="true" property="og:title" content="${route.title}" />`
     );
     routeHtml = routeHtml.replace(
-        /<meta property="og:description" content=".*?"\s*\/?>/i,
-        `<meta property="og:description" content="${route.description}" />`
+        /<meta[^>]*?property="og:description"[^>]*?>/i,
+        `<meta data-rh="true" property="og:description" content="${route.description}" />`
     );
     routeHtml = routeHtml.replace(
-        /<meta property="og:url" content=".*?"\s*\/?>/i,
-        `<meta property="og:url" content="${route.canonical}" />`
+        /<meta[^>]*?property="og:url"[^>]*?>/i,
+        `<meta data-rh="true" property="og:url" content="${route.canonical}" />`
     );
 
     // Replace Twitter Title & Description
     routeHtml = routeHtml.replace(
-        /<meta name="twitter:title" content=".*?"\s*\/?>/i,
-        `<meta name="twitter:title" content="${route.title}" />`
+        /<meta[^>]*?name="twitter:title"[^>]*?>/i,
+        `<meta data-rh="true" name="twitter:title" content="${route.title}" />`
     );
     routeHtml = routeHtml.replace(
-        /<meta name="twitter:description" content=".*?"\s*\/?>/i,
-        `<meta name="twitter:description" content="${route.description}" />`
+        /<meta[^>]*?name="twitter:description"[^>]*?>/i,
+        `<meta data-rh="true" name="twitter:description" content="${route.description}" />`
     );
+
+    // Replace or inject JSON-LD schema
+    if (route.schema) {
+        const schemaTag = `<script type="application/ld+json">${JSON.stringify(route.schema)}</script>`;
+        if (routeHtml.includes("application/ld+json")) {
+            routeHtml = routeHtml.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/i, schemaTag);
+        } else {
+            routeHtml = routeHtml.replace("</head>", `${schemaTag}</head>`);
+        }
+    }
 
     // Inject route-specific pre-rendered content inside root container
     const prerenderedContent = `

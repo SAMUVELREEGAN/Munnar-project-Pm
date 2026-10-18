@@ -28,7 +28,7 @@ export const Home = () => {
     const combinedSchema = {
         "@context": "https://schema.org",
         "@graph": [
-            SEO_CONFIG.home.schema,
+            ...(SEO_CONFIG.home.schema["@graph"] || [SEO_CONFIG.home.schema]),
             faqSchema
         ]
     };
