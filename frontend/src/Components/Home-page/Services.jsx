@@ -11,7 +11,7 @@ const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
 /* Card photo with a green placeholder if the file is missing */
-function CardImage({ src }) {
+function CardImage({ src, title = "Tour package" }) {
     const [failed, setFailed] = useState(false);
     const shape = "aspect-[4/3] w-full rounded-2xl overflow-hidden";
 
@@ -22,8 +22,11 @@ function CardImage({ src }) {
         <div className={shape}>
             <img
                 src={src}
-                alt=""
+                alt={title}
+                width="400"
+                height="300"
                 loading="lazy"
+                decoding="async"
                 draggable="false"
                 onError={() => setFailed(true)}
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
@@ -130,7 +133,7 @@ export default function Services({ OurTourPackages }) {
                                     transition={{ type: "spring", stiffness: 350, damping: 25 }}
                                     className="flex h-full flex-col rounded-[28px] border border-cream-200 bg-[#fffdf8] p-4 sm:p-5 shadow-soft hover:shadow-lift hover:border-green-700/20 transition-all duration-500"
                                 >
-                                    <CardImage src={item.image} />
+                                    <CardImage src={item.image} title={item.title} />
                                     <div className="flex flex-1 flex-col pt-3">
                                         <h3
                                             className="mt-1 sm:mt-2 min-h-[2.5rem] sm:min-h-[3.5rem] font-display text-lg sm:text-xl lg:text-[22px] font-semibold text-gray-900 leading-snug line-clamp-2"
@@ -148,7 +151,7 @@ export default function Services({ OurTourPackages }) {
                                                 <Link
                                                     to={"/contact-us"}
                                                     aria-label={`Learn more about ${item.title}`}
-                                                    className={`inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-green-50 px-5 sm:px-6 py-2.5 text-xs sm:text-sm md:text-base font-semibold text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 ${focusRing}`}
+                                                    className={`inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-green-50 px-5 sm:px-6 py-2.5 text-xs sm:text-sm md:text-base font-semibold text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 ${focusRing}`}
                                                 >
                                                     <span>Learn more</span>
                                                     <FaArrowRight size={14} />

@@ -12,15 +12,21 @@ if (!fs.existsSync(BASE_HTML_PATH)) {
 
 let baseHtml = fs.readFileSync(BASE_HTML_PATH, "utf8");
 
+// Ensure exact responsive viewport meta tag: width=device-width, initial-scale=1.0
+baseHtml = baseHtml.replace(
+    /<meta name="viewport" content="[^"]*"\s*\/?>/i,
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
+);
+
 // Also inject Schema.org JSON-LD into the root build/index.html for the homepage
 if (SEO_CONFIG.home && SEO_CONFIG.home.schema) {
     const homeSchemaTag = `<script type="application/ld+json">${JSON.stringify(SEO_CONFIG.home.schema)}</script>`;
     if (!baseHtml.includes("application/ld+json")) {
         baseHtml = baseHtml.replace("</head>", `${homeSchemaTag}</head>`);
-        fs.writeFileSync(BASE_HTML_PATH, baseHtml, "utf8");
-        console.log("Injected Schema.org JSON-LD into /index.html (homepage)");
     }
 }
+fs.writeFileSync(BASE_HTML_PATH, baseHtml, "utf8");
+console.log("Updated root /index.html with viewport and Schema.org JSON-LD");
 
 const ROUTES = [
     {

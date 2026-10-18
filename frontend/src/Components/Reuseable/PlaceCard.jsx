@@ -33,7 +33,10 @@ export default function PlaceCard({
                     <img
                         src={url}
                         alt={title}
+                        width="400"
+                        height="250"
                         loading="lazy"
+                        decoding="async"
                         draggable="false"
                         onError={() => setFailed(true)}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

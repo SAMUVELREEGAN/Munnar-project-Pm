@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preload Primary LCP Hero Image for immediate above-the-fold paint -->
+    <link rel="preload" as="image" href="%PUBLIC_URL%/images/Munnar-bg.webp" type="image/webp" fetchpriority="high" />
 
     <!-- Browser tab / mobile UI color -->
     <meta name="theme-color" content="#2f5a3a" />

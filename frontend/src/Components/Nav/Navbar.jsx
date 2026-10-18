@@ -18,7 +18,7 @@ const NAV_LINKS = [
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
-const bookNowClass = `inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-3.5 text-sm font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow sm:gap-3 sm:p-2 sm:pr-7 sm:text-base ${focusRing}`;
+const bookNowClass = `inline-flex min-h-[44px] items-center justify-center gap-2 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-3.5 text-sm font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow sm:gap-3 sm:p-2 sm:pr-7 sm:text-base ${focusRing}`;
 
 export default function Navbar() {
     return (
@@ -29,11 +29,13 @@ export default function Navbar() {
                     <Link
                         to="/"
                         aria-label={`${SITE_NAME} home`}
-                        className={`flex shrink-0 items-center rounded-lg ${focusRing}`}
+                        className={`flex min-h-[44px] shrink-0 items-center rounded-lg ${focusRing}`}
                     >
                         <img
                             src={DEFAULT_LOGO}
                             alt={SITE_NAME}
+                            width="153"
+                            height="56"
                             className="h-10 sm:h-[56px] w-auto object-contain"
                         />
                     </Link>
@@ -91,14 +93,14 @@ export default function Navbar() {
                                     to={link.to}
                                     end={link.end}
                                     className={({ isActive }) =>
-                                        `flex flex-col items-center justify-center gap-1 rounded-2xl px-0.5 py-2 text-center transition-all duration-300 ${focusRing} ${
+                                        `flex min-h-[48px] w-full flex-col items-center justify-center gap-1 rounded-2xl px-0.5 py-1.5 text-center transition-all duration-300 ${focusRing} ${
                                             isActive
                                                 ? "bg-green-600 text-cream-50 shadow-soft"
-                                                : "text-gray-600 hover:bg-cream-100 hover:text-green-700"
+                                                : "text-gray-600 hover:bg-cream-100 hover:text-green-700 active:bg-cream-200"
                                         }`
                                     }
                                 >
-                                    <Icon size={16} aria-hidden="true" />
+                                    <Icon size={17} aria-hidden="true" />
                                     <span className="max-w-full truncate text-[9px] font-semibold tracking-wide leading-none sm:text-[10px]">
                                         {link.shortLabel || link.label}
                                     </span>

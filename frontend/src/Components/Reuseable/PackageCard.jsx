@@ -64,7 +64,7 @@ export default function PackageCard({
         </>
     );
 
-    const bookClass = `inline-flex items-center justify-center gap-1.5 rounded-xl bg-green-600 px-4 py-2.5 text-xs sm:text-sm font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow ${focusRing}`;
+    const bookClass = `inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-xl bg-green-600 px-4 py-2.5 text-xs sm:text-sm font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow ${focusRing}`;
 
     let bookButton;
     if (bookHref) {
@@ -118,7 +118,10 @@ export default function PackageCard({
                     <img
                         src={resolveSrc(image)}
                         alt={title}
+                        width="400"
+                        height="250"
                         loading="lazy"
+                        decoding="async"
                         draggable="false"
                         onError={() => setImgFailed(true)}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -146,7 +149,7 @@ export default function PackageCard({
                     type="button"
                     onClick={toggleFav}
                     aria-label={fav ? "Remove from wishlist" : "Add to wishlist"}
-                    className={`absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm ${
+                    className={`absolute right-3 top-3 grid h-10 w-10 sm:h-9 sm:w-9 place-items-center rounded-full bg-white/90 backdrop-blur-sm shadow-sm ${
                         fav ? "text-rose-600" : "text-gray-700 hover:text-rose-600"
                     } ${focusRing}`}
                 >

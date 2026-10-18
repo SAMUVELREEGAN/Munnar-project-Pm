@@ -21,7 +21,10 @@ function VehicleImage({ src, alt }) {
             <img
                 src={src}
                 alt={alt}
+                width="320"
+                height="192"
                 loading="lazy"
+                decoding="async"
                 onError={() => setFailed(true)}
                 className="h-full w-full object-contain object-center transition-transform duration-500 hover:scale-105"
             />

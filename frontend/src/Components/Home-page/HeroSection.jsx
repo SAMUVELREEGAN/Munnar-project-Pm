@@ -8,7 +8,7 @@ const HERO_INTERVAL_MS = 5500;
 /* Nature-only hero backgrounds (no vehicles) */
 const NATURAL_SLIDES = [
     "/images/Munnar-bg.webp",
-    "/images/munnar-tea-gardens.jpg",
+    "/images/munnar-tea-gardens.webp",
 ];
 
 function buildSlides(primary) {
@@ -25,11 +25,15 @@ export default function HeroSection({ HeroContent }) {
     const slides = useMemo(() => buildSlides(bgImage), [bgImage]);
     const [active, setActive] = useState(0);
 
+    // Defer secondary background slide preloading so initial LCP and INP are never blocked
     useEffect(() => {
-        slides.forEach((src) => {
-            const img = new Image();
-            img.src = src;
-        });
+        const timer = setTimeout(() => {
+            slides.slice(1).forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+        }, 2500);
+        return () => clearTimeout(timer);
     }, [slides]);
 
     useEffect(() => {
@@ -54,7 +58,11 @@ export default function HeroSection({ HeroContent }) {
                         key={src}
                         src={src}
                         alt=""
+                        width="1600"
+                        height="900"
                         fetchPriority={i === 0 ? "high" : "low"}
+                        loading={i === 0 ? "eager" : "lazy"}
+                        decoding="async"
                         className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-[1200ms] ease-out ${
                             i === active ? "opacity-100" : "opacity-0"
                         }`}
@@ -73,7 +81,7 @@ export default function HeroSection({ HeroContent }) {
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     className="w-full max-w-[720px] md:ml-auto"
                 >
-                    <div className="rounded-[28px] sm:rounded-[32px] bg-[#1a1610]/50 p-6 sm:p-8 md:p-10 lg:p-12 shadow-lift border border-white/10 backdrop-blur-md">
+                    <div className="rounded-[28px] sm:rounded-[32px] bg-[#1a1610]/50 p-4 min-[360px]:p-5 sm:p-8 md:p-10 lg:p-12 shadow-lift border border-white/10 backdrop-blur-md">
                         <div className="mb-4 flex items-center gap-3">
                             <span aria-hidden="true" className="block h-px w-10 bg-gold-400" />
                             <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-gold-400">
@@ -123,7 +131,7 @@ export default function HeroSection({ HeroContent }) {
                                 <Link
                                     to="/contact-us"
                                     aria-label="Book Now"
-                                    className="group inline-flex items-center gap-3 whitespace-nowrap rounded-full bg-green-600 p-[5px] pr-5 text-sm font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow sm:gap-4 sm:p-1.5 sm:pr-7 sm:text-base"
+                                    className="group inline-flex min-h-[44px] items-center gap-3 whitespace-nowrap rounded-full bg-green-600 p-[5px] pr-5 text-sm font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow sm:gap-4 sm:p-1.5 sm:pr-7 sm:text-base"
                                 >
                                     <span className="grid h-9 w-10 place-items-center rounded-full bg-cream-50 sm:h-9 sm:w-[52px] transition-transform duration-300 group-hover:translate-x-1">
                                         <FaArrowRight size={16} className="text-green-700" />
@@ -134,7 +142,7 @@ export default function HeroSection({ HeroContent }) {
 
                             {slides.length > 1 && (
                                 <div
-                                    className="flex items-center gap-2"
+                                    className="flex items-center gap-1 sm:gap-2"
                                     role="tablist"
                                     aria-label="Hero images"
                                 >
@@ -146,12 +154,16 @@ export default function HeroSection({ HeroContent }) {
                                             aria-selected={i === active}
                                             aria-label={`Show image ${i + 1}`}
                                             onClick={() => setActive(i)}
-                                            className={`h-1.5 rounded-full transition-all duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream-50 ${
-                                                i === active
-                                                    ? "w-8 bg-gold-400"
-                                                    : "w-1.5 bg-cream-50/40 hover:bg-cream-50/70"
-                                            }`}
-                                        />
+                                            className="group flex min-h-[44px] min-w-[36px] sm:min-w-[44px] items-center justify-center p-1.5 sm:p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream-50"
+                                        >
+                                            <span
+                                                className={`h-1.5 rounded-full transition-all duration-500 ${
+                                                    i === active
+                                                        ? "w-8 bg-gold-400"
+                                                        : "w-2 bg-cream-50/40 group-hover:bg-cream-50/70"
+                                                }`}
+                                            />
+                                        </button>
                                     ))}
                                 </div>
                             )}

@@ -19,7 +19,10 @@ export default function WhyChooseUs({ whyChooseUs }) {
                     <img
                         src={image}
                         alt={imageAlt}
+                        width="600"
+                        height="400"
                         loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                 </motion.div>

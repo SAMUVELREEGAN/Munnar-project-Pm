@@ -79,7 +79,7 @@ const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
 const fieldBase =
-    "w-full rounded-xl border bg-[#fffdf8] px-3.5 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 transition-all duration-300";
+    "w-full rounded-xl border bg-[#fffdf8] px-3.5 py-3 text-base sm:text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 transition-all duration-300";
 
 const fieldStates = {
     idle: "border-green-200 focus:border-green-600 focus:ring-green-600",
@@ -258,7 +258,7 @@ export default function Contact({
                                             rel="noopener noreferrer"
                                             aria-label={`${s.label} (opens in a new tab)`}
                                             title={s.label}
-                                            className={`grid h-8 w-8 place-items-center rounded-full border border-green-600 text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 ${focusRing}`}
+                                            className={`grid h-11 w-11 sm:h-10 sm:w-10 place-items-center rounded-full border border-green-600 text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 ${focusRing}`}
                                         >
                                             {SOCIAL_ICONS[s.icon]}
                                         </motion.a>
@@ -368,7 +368,7 @@ export default function Contact({
                                 <button
                                     type="submit"
                                     disabled={status === "loading"}
-                                    className={`inline-flex w-full sm:w-auto items-center justify-center gap-3 sm:gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-6 sm:pr-7 text-sm sm:text-base font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow disabled:cursor-not-allowed disabled:opacity-70 shadow-soft ${focusRing}`}
+                                    className={`inline-flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-3 sm:gap-4 whitespace-nowrap rounded-full bg-green-600 p-1.5 pr-6 sm:pr-7 text-sm sm:text-base font-semibold tracking-wide text-cream-50 transition-all duration-300 hover:bg-green-700 hover:shadow-glow disabled:cursor-not-allowed disabled:opacity-70 shadow-soft ${focusRing}`}
                                 >
                                     <span className="grid h-8 w-9 sm:h-9 sm:w-[52px] place-items-center rounded-full bg-cream-50">
                                         <FaArrowRight size={15} className="text-green-700" />

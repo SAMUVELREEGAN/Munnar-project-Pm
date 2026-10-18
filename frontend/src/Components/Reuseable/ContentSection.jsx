@@ -60,7 +60,10 @@ export default function ContentSection({
                                 <img
                                     src={image}
                                     alt={imageAlt}
+                                    width="600"
+                                    height="450"
                                     loading="lazy"
+                                    decoding="async"
                                     className="aspect-[16/10] sm:aspect-[4/3] lg:aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>

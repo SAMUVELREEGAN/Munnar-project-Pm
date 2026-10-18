@@ -70,6 +70,8 @@ function AvatarImage({ src, alt, name }) {
         <img
             src={src}
             alt={alt || name}
+            width="44"
+            height="44"
             loading="lazy"
             onError={() => setFailed(true)}
             className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-green-600/20"
@@ -87,7 +89,7 @@ export default function Testimonials({ data }) {
         testimonials = [],
     } = testimonialData;
 
-    const navBtn = `grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full border border-green-600 text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-700 shadow-soft ${focusRing}`;
+    const navBtn = `grid h-11 w-11 place-items-center rounded-full border border-green-600 text-green-700 transition-all duration-300 hover:bg-green-600 hover:text-cream-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-green-700 shadow-soft ${focusRing}`;
 
     return (
         <section aria-labelledby="testimonials-title" className="overflow-hidden">
@@ -180,7 +182,7 @@ export default function Testimonials({ data }) {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="View on Google Maps"
-                                                className="flex items-center gap-1.5 text-[11px] font-medium text-gray-500 hover:text-green-700 transition-colors"
+                                                className="inline-flex min-h-[36px] items-center gap-1.5 px-2 py-1 text-[11px] font-medium text-gray-500 hover:text-green-700 transition-colors"
                                             >
                                                 <GoogleIcon size={13} />
                                                 <span>Google Review</span>

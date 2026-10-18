@@ -32,7 +32,7 @@ const PHONES = [
 const focusRing =
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600";
 
-const linkClass = `rounded text-sm sm:text-[15px] font-medium text-gray-600 transition-colors duration-300 hover:text-green-700 ${focusRing}`;
+const linkClass = `inline-block py-1.5 rounded text-sm sm:text-[15px] font-medium text-gray-600 transition-colors duration-300 hover:text-green-700 ${focusRing}`;
 
 function ColumnTitle({ children }) {
     return (
@@ -70,7 +70,13 @@ export default function Footer() {
                     {/* Brand */}
                     <div>
                         <Link to="/" aria-label={`${BRAND} – home`} className={`inline-block rounded ${focusRing}`}>
-                            <img src={logoSrc} alt={BRAND} className="h-12 sm:h-14 w-auto" />
+                            <img
+                                src={logoSrc}
+                                alt={BRAND}
+                                width="168"
+                                height="56"
+                                className="h-12 sm:h-14 w-auto object-contain"
+                            />
                         </Link>
                         <p className="mt-4 font-display text-xl font-semibold text-gray-900">{BRAND}</p>
                         <p className="mt-3 max-w-sm text-xs sm:text-sm md:text-[15px] leading-relaxed text-gray-600">{ABOUT_TEXT}</p>

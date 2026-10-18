@@ -57,7 +57,7 @@ export default function FAQSection() {
                                     type="button"
                                     onClick={() => toggle(idx)}
                                     aria-expanded={isOpen}
-                                    className="flex w-full items-center justify-between gap-4 p-4 sm:p-5 text-left transition-colors"
+                                    className="flex w-full items-center justify-between gap-4 p-4 sm:p-5 text-left transition-colors rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                                 >
                                     <h3 className="font-display text-base sm:text-lg font-semibold text-gray-900">
                                         {faq.question}

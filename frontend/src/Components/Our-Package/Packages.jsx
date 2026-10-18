@@ -27,18 +27,19 @@ function CustomDropdown({ options, value, onChange, className = "" }) {
     const dropdownRef = useRef(null);
 
     useEffect(() => {
+        if (!isOpen) return;
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setIsOpen(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
-        document.addEventListener("touchstart", handleClickOutside);
+        document.addEventListener("touchstart", handleClickOutside, { passive: true });
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
             document.removeEventListener("touchstart", handleClickOutside);
         };
-    }, []);
+    }, [isOpen]);
 
     const selectedOption = options.find((opt) => opt.value === value) || options[0];
 
@@ -47,7 +48,7 @@ function CustomDropdown({ options, value, onChange, className = "" }) {
             <button
                 type="button"
                 onClick={() => setIsOpen((prev) => !prev)}
-                className={`flex w-full items-center justify-between gap-2 rounded-xl border border-cream-200 bg-cream-50/80 px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-800 transition-all duration-300 hover:bg-[#fffdf8] hover:border-green-600 focus:border-green-600 focus:bg-[#fffdf8] focus:outline-none ${focusRing}`}
+                className={`flex min-h-[44px] w-full items-center justify-between gap-2 rounded-xl border border-cream-200 bg-cream-50/80 px-3.5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-800 transition-all duration-300 hover:bg-[#fffdf8] hover:border-green-600 focus:border-green-600 focus:bg-[#fffdf8] focus:outline-none ${focusRing}`}
                 aria-haspopup="listbox"
                 aria-expanded={isOpen}
             >
@@ -78,7 +79,7 @@ function CustomDropdown({ options, value, onChange, className = "" }) {
                                         onChange(option.value);
                                         setIsOpen(false);
                                     }}
-                                    className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-xs sm:text-sm font-medium transition-colors ${
+                                    className={`flex min-h-[40px] w-full items-center justify-between rounded-lg px-3 py-2 text-left text-xs sm:text-sm font-medium transition-colors ${
                                         isSelected
                                             ? "bg-green-50 text-green-700 font-semibold"
                                             : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -203,7 +204,7 @@ export default function Packages() {
                                 key={cat}
                                 type="button"
                                 onClick={() => setActiveCategory(cat)}
-                                className={`rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 ${isActive
+                                className={`inline-flex min-h-[40px] sm:min-h-[44px] items-center justify-center rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 ${isActive
                                         ? "bg-green-600 text-cream-50 border border-green-600 shadow-soft"
                                         : "bg-[#fffdf8] text-gray-700 border border-cream-200 hover:border-green-600 hover:text-green-700 shadow-soft"
                                     } ${focusRing}`}
@@ -228,7 +229,7 @@ export default function Packages() {
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 placeholder="Search destination (Mattupetty, Top Station)..."
-                                className="w-full rounded-xl border border-cream-200 bg-cream-50/50 py-2 sm:py-2.5 pl-9 sm:pl-10 pr-4 text-xs sm:text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-600 focus:bg-[#fffdf8] focus:outline-none"
+                                className="w-full min-h-[44px] rounded-xl border border-cream-200 bg-cream-50/50 py-2 sm:py-2.5 pl-9 sm:pl-10 pr-4 text-base sm:text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-600 focus:bg-[#fffdf8] focus:outline-none"
                             />
                         </div>
 

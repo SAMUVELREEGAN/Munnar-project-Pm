@@ -62,7 +62,10 @@ export default function VehiclePackages() {
                                 <img
                                     src={pickImage(v.title)}
                                     alt={v.title}
+                                    width="320"
+                                    height="200"
                                     loading="lazy"
+                                    decoding="async"
                                     className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
                                 />
                             </div>
@@ -99,7 +102,7 @@ export default function VehiclePackages() {
                                         <Link
                                             to="/contact-us"
                                             aria-label={`Book ${v.title}`}
-                                            className="inline-block rounded-xl bg-green-600 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide text-cream-50 shadow-soft transition-all duration-300 hover:bg-green-700"
+                                            className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-green-600 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide text-cream-50 shadow-soft transition-all duration-300 hover:bg-green-700"
                                         >
                                             Book Now
                                         </Link>
