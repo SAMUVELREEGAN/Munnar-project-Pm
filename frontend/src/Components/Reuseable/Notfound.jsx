@@ -1,10 +1,9 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
+import SEO from "../SEO/SEO";
+import { SEO_CONFIG } from "../../utils/seoConfig";
 
 /* ---------- Easy-to-edit settings ---------- */
-const SITE_NAME = "Munnar Taxi Service";
-
 const HOME_LINK = "/";
 const PACKAGES_LINK = "/our-tour-packages";
 const CONTACT_LINK = "/contact-us";
@@ -118,17 +117,9 @@ function DeadEndScene() {
 }
 
 export default function NotFound() {
-    // set a helpful browser tab title for this page
-    useEffect(() => {
-        const previous = document.title;
-        document.title = `Page not found | ${SITE_NAME}`;
-        return () => {
-            document.title = previous;
-        };
-    }, []);
-
     return (
         <section className="bg-cream px-4 pt-28 pb-12 sm:pt-36 sm:pb-16">
+            <SEO {...SEO_CONFIG.notFound} />
             {/* One-time animation: the taxi arrives and stops at the sign. Skipped if the visitor prefers reduced motion. */}
             <style>{`
                 @keyframes mt-taxi-arrive {

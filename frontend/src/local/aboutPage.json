@@ -1,15 +1,48 @@
 {
     "heroSection": {
         "title": "About Our Munnar Taxi Service",
-        "description": "Your trusted travel partner for safe and comfortable journeys"
+        "description": "Your trusted travel partner for safe, comfortable, and memorable journeys across Kerala"
     },
     "CompanySection": {
         "title": "Who We Are",
         "image": "/images/Munnar-bg.webp",
         "imageAlt": "Scenic Munnar tea plantations and hills",
         "paragraphs": [
-            "We are a leading taxi service provider in Munnar, offering reliable, safe, and affordable transportation for tourists and travelers. With years of experience in hill station travel, we ensure every journey is smooth and memorable.",
-            "From airport transfers to full-day sightseeing, our goal is to provide a comfortable travel experience with professional drivers who know every corner of Munnar."
+            "Jothilaxmi Cabs is a premier taxi and tour service provider headquartered in Munnar, Kerala. With years of dedicated experience operating across the Western Ghats, we specialize in delivering safe, punctual, and reliable travel solutions for holidaymakers, honeymoon couples, family groups, and solo travelers.",
+            "Our extensive local knowledge of Munnar's unique hill terrain, tea estate routes, forest checkpoints, and weather patterns allows us to plan seamless itineraries. Whether you need an early-morning pickup at Cochin International Airport or a relaxed full-day sightseeing tour covering Mattupetty, Top Station, and Eravikulam National Park, our polite and licensed chauffeurs ensure every mile is pleasant and worry-free."
+        ]
+    },
+    "useCasesSection": {
+        "title": "Why Choose Us?",
+        "leftParagraphs": [
+            "Navigating high-altitude hill stations requires seasoned driving skills, well-serviced vehicles, and intimate familiarity with local roads. At Jothilaxmi Cabs, we take pride in maintaining strict vehicle maintenance schedules and employing experienced drivers trained in defensive mountain driving.",
+            "We believe that exceptional travel begins with honest service. We offer upfront pricing without hidden charges or surprise surcharges, flexible customized travel schedules, and round-the-clock telephone and WhatsApp customer support to assist you throughout your Kerala holiday."
+        ],
+        "rightCards": [
+            {
+                "id": 1,
+                "title": "Professional Drivers",
+                "icon": "FaCircleCheck",
+                "description": "Experienced, courteous, and police-verified drivers with extensive hill driving experience."
+            },
+            {
+                "id": 2,
+                "title": "Affordable Pricing",
+                "icon": "FaCircleCheck",
+                "description": "Transparent fixed rates with no hidden fees, night charges, or surprise extras."
+            },
+            {
+                "id": 3,
+                "title": "24/7 Support",
+                "icon": "FaCircleCheck",
+                "description": "Dedicated customer assistance available anytime for bookings, inquiries, and route guidance."
+            },
+            {
+                "id": 4,
+                "title": "Clean Vehicles",
+                "icon": "FaCircleCheck",
+                "description": "Air-conditioned, sanitized, and well-maintained sedans, SUVs, and luxury Tempo Travellers."
+            }
         ]
     },
     "bookingSection": {
@@ -17,8 +50,8 @@
         "image": "/images/munnar-tea-gardens.jpg",
         "imageAlt": "Munnar hills and tea gardens",
         "paragraphs": [
-            "Our mission is to deliver safe, reliable, and comfortable taxi services for every traveler visiting Munnar. We are committed to providing a seamless travel experience with well-maintained vehicles and professionally trained drivers who prioritize customer satisfaction.",
-            "We aim to make every journey enjoyable by offering punctual services, transparent pricing, and personalized travel solutions that meet the unique needs of our customers. whether it is a airport transfers, sightseeing, or long-distance travel, we ensure a smooth and memorable ride."
+            "Our mission is to deliver dependable, safe, and hospitable taxi services that exceed traveler expectations throughout Munnar and Kerala. We are committed to fostering authentic tourism by connecting guests with the natural splendor, vibrant wildlife, and cultural warmth of the high ranges.",
+            "We aim to make every trip convenient through prompt airport pickups, transparent billing, and tailor-made sightseeing schedules. From luxury honeymoon couples seeking scenic solitude to family vacations needing spacious multi-passenger vans, our services adapt to your distinctive travel preferences."
         ]
     },
     "visionSection": {
@@ -26,38 +59,8 @@
         "image": "/images/Munnar-bg.webp",
         "imageAlt": "Panoramic view of Munnar hills",
         "paragraphs": [
-            "Our vision is to become the most trusted and preferred taxi service provider in Munnar and accross kerala by setting new standards in travel comfort, safety, and customer service.",
-            "we strive to expand our services with modern vehicles, innovative booking solutions, and eco-friendly travel options while maintaining high-quality service standards."
-        ]
-    },
-    "useCasesSection": {
-        "title": "Why Choose Us?",
-        "leftParagraphs": [],
-        "rightCards": [
-            {
-                "id": 1,
-                "title": "Professional Drivers",
-                "icon": "FaCircleCheck",
-                "description": "Experienced and friendly drivers for safe travel."
-            },
-            {
-                "id": 2,
-                "title": "Affordable Pricing",
-                "icon": "FaCircleCheck",
-                "description": "Transparent pricing with no hidden charges."
-            },
-            {
-                "id": 3,
-                "title": "24/7 Support",
-                "icon": "FaCircleCheck",
-                "description": "We are always available for your travel needs."
-            },
-            {
-                "id": 4,
-                "title": "Clean Vehicles",
-                "icon": "FaCircleCheck",
-                "description": "Well-maintained cars for a comfortable journey."
-            }
+            "Our vision is to be recognized as Kerala's most trusted and sustainable hill-station taxi service, setting gold standards for passenger safety, driver courtesy, and customer satisfaction.",
+            "As tourism in Munnar continues to evolve, we continually modernize our vehicle fleet, incorporate eco-conscious travel practices, and provide effortless digital booking experiences while preserving genuine Kerala hospitality."
         ]
     }
 }

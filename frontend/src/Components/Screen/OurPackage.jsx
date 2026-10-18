@@ -4,17 +4,27 @@ import Packages from '../Our-Package/Packages';
 import VehiclePackages from '../Our-Package/VehiclePackages';
 import PageHero from '../Reuseable/PageHero';
 import Subscribe from '../Home-page/Subscribe';
+import SEO from '../SEO/SEO';
+import { SEO_CONFIG } from '../../utils/seoConfig';
 
 export const OurPackage = () => {
     return (
-        <div className="space-y-10 sm:space-y-16 lg:space-y-24 pb-16 sm:pb-20">
-            <PageHero
-                title={PackageSection?.pageTitle}
-                description={PackageSection?.pageDescription}
+        <>
+            <SEO
+                title={SEO_CONFIG.packages.title}
+                description={SEO_CONFIG.packages.description}
+                canonicalUrl={SEO_CONFIG.packages.canonicalUrl}
+                schema={SEO_CONFIG.packages.schema}
             />
-            <Packages />
-            <VehiclePackages />
-            <Subscribe />
-        </div>
+            <div className="space-y-10 sm:space-y-16 lg:space-y-24 pb-16 sm:pb-20">
+                <PageHero
+                    title={PackageSection?.pageTitle}
+                    description={PackageSection?.pageDescription}
+                />
+                <Packages />
+                <VehiclePackages />
+                <Subscribe />
+            </div>
+        </>
     );
 };

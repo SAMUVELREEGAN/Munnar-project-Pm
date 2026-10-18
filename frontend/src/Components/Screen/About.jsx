@@ -4,11 +4,20 @@ import ContentSection from '../Reuseable/ContentSection'
 import UseCases from '../Home-page/UseCases'
 import AboutSection from "../../local/aboutPage.json"
 import Subscribe from '../Home-page/Subscribe'
+import SEO from '../SEO/SEO'
+import { SEO_CONFIG } from '../../utils/seoConfig'
 
 export const About = () => {
     return (
-        <div className='space-y-10 sm:space-y-16 lg:space-y-24 pb-16 sm:pb-20'>
-            <PageHero title={AboutSection?.heroSection?.title} description={AboutSection?.heroSection?.description} />
+        <>
+            <SEO
+                title={SEO_CONFIG.about.title}
+                description={SEO_CONFIG.about.description}
+                canonicalUrl={SEO_CONFIG.about.canonicalUrl}
+                schema={SEO_CONFIG.about.schema}
+            />
+            <div className='space-y-10 sm:space-y-16 lg:space-y-24 pb-16 sm:pb-20'>
+                <PageHero title={AboutSection?.heroSection?.title} description={AboutSection?.heroSection?.description} />
             <ContentSection
                 title={AboutSection?.CompanySection?.title}
                 image={AboutSection?.CompanySection?.image}
@@ -35,5 +44,6 @@ export const About = () => {
             />
             <Subscribe />
         </div>
+        </>
     )
 }

@@ -201,9 +201,9 @@ export default function Testimonials({ data }) {
                                         <div className="flex items-center gap-3">
                                             <AvatarImage src={item.image} alt={item.name} name={item.name} />
                                             <div className="min-w-0">
-                                                <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 leading-tight truncate">
+                                                <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 leading-tight truncate">
                                                     {item.name}
-                                                </h3>
+                                                </p>
                                                 {item.role && (
                                                     <p className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-green-700 font-medium truncate">
                                                         {item.role}

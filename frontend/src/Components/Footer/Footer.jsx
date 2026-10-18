@@ -37,7 +37,7 @@ const linkClass = `rounded text-sm sm:text-[15px] font-medium text-gray-600 tran
 function ColumnTitle({ children }) {
     return (
         <div>
-            <h3 className="font-display text-lg sm:text-xl font-semibold text-gray-900">{children}</h3>
+            <p className="font-display text-lg sm:text-xl font-semibold text-gray-900">{children}</p>
             <span aria-hidden="true" className="mt-3 block h-[2px] w-10 overflow-hidden rounded-full bg-cream-200">
                 <span className="block h-full w-1/2 rounded-full bg-gold-500" />
             </span>
@@ -72,7 +72,7 @@ export default function Footer() {
                         <Link to="/" aria-label={`${BRAND} – home`} className={`inline-block rounded ${focusRing}`}>
                             <img src={logoSrc} alt={BRAND} className="h-12 sm:h-14 w-auto" />
                         </Link>
-                        <h3 className="mt-4 font-display text-xl font-semibold text-gray-900">{BRAND}</h3>
+                        <p className="mt-4 font-display text-xl font-semibold text-gray-900">{BRAND}</p>
                         <p className="mt-3 max-w-sm text-xs sm:text-sm md:text-[15px] leading-relaxed text-gray-600">{ABOUT_TEXT}</p>
                     </div>
 

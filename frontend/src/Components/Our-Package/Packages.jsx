@@ -176,8 +176,18 @@ export default function Packages() {
     };
 
     return (
-        <section className="py-2">
+        <section aria-labelledby="packages-section-title" className="py-2">
             <div className="container">
+                <div className="text-center mb-6 sm:mb-8">
+                    <h2
+                        id="packages-section-title"
+                        className="font-display text-[26px] sm:text-3xl lg:text-[38px] font-semibold text-gray-900"
+                    >
+                        Popular Munnar Sightseeing Packages
+                    </h2>
+                    <span aria-hidden="true" className="gold-rule mt-3 block" />
+                </div>
+
                 {/* Category Pill Tabs */}
                 <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
                     {categories.map((cat) => {

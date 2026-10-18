@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Browser tab / mobile UI color (matches the site's green) -->
+    <!-- Browser tab / mobile UI color -->
     <meta name="theme-color" content="#2f5a3a" />
 
     <!-- Icons -->
@@ -12,31 +12,74 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/munnar_logo.webp" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- SEO -->
-    <title>Munnar Taxi Service | Jothilaxmi Taxi Booking</title>
+    <!-- SEO Meta Tags (Target 50-60 chars title, 100-130 chars description) -->
+    <title>Munnar Taxi Service | Jothilaxmi Cabs & Tour Packages</title>
+    <meta
+      name="description"
+      content="Book reliable Munnar taxi services with Jothilaxmi Cabs. Affordable sightseeing tours, Cochin airport pickups, and Kerala cabs."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://munnarjothilaxmitaxi.com/" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
-    <meta
-      name="description"
-      content="Trusted Kerala tourism taxi services with comfortable cab rentals, airport pickups, Munnar sightseeing taxis, and Kerala tour package transportation services. Contact: +91 90611 40533 | 94003 80433"
-    />
-    <meta name="robots" content="index, follow" />
 
-    <!-- Social sharing (WhatsApp, Facebook, etc.) -->
+    <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Munnar Taxi Service | Jothilaxmi Taxi Booking" />
-    <meta property="og:title" content="Munnar Taxi Service | Jothilaxmi Taxi Booking" />
+    <meta property="og:site_name" content="Munnar Taxi Service | Jothilaxmi Cabs" />
+    <meta property="og:title" content="Munnar Taxi Service | Jothilaxmi Cabs & Tour Packages" />
     <meta
       property="og:description"
-      content="Explore Munnar with comfort &amp; style. Airport transfers, sightseeing taxis and Kerala tour packages."
+      content="Book reliable Munnar taxi services with Jothilaxmi Cabs. Affordable sightseeing tours, Cochin airport pickups, and Kerala cabs."
     />
-    <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://munnarjothilaxmitaxi.com/" />
-    <link rel="canonical" href="https://munnarjothilaxmitaxi.com/" />
+    <meta property="og:image" content="https://munnarjothilaxmitaxi.com/images/Munnar-bg.webp" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Munnar Taxi Service | Jothilaxmi Cabs & Tour Packages" />
+    <meta
+      name="twitter:description"
+      content="Book reliable Munnar taxi services with Jothilaxmi Cabs. Affordable sightseeing tours, Cochin airport pickups, and Kerala cabs."
+    />
+    <meta name="twitter:image" content="https://munnarjothilaxmitaxi.com/images/Munnar-bg.webp" />
   </head>
   <body>
-    <noscript>Please enable JavaScript to use Munnar Taxi Service.</noscript>
-    <div id="root"></div>
+    <!-- Fallback content for search engine crawlers and non-JavaScript clients -->
+    <noscript>
+      <header>
+        <h1>Munnar Taxi Service & Kerala Tour Packages - Jothilaxmi Cabs</h1>
+        <p>Explore Munnar with comfort and style. Jothilaxmi Cabs offers premier taxi services, Cochin airport transfers, full-day Munnar sightseeing tours, and customized Kerala holiday packages with experienced local drivers.</p>
+      </header>
+      <main>
+        <section>
+          <h2>Kerala Taxi Services & Major Routes</h2>
+          <p>We provide punctual cab services across Kerala including Cochin Airport to Munnar taxi, Ernakulam, Aluva, Cherai, Thrissur, Varkala, Kovalam, Thekkady, and Alappuzha. We also connect key Tamil Nadu routes including Coimbatore and Madurai to Munnar.</p>
+        </section>
+        <section>
+          <h2>Munnar Sightseeing Tour Packages</h2>
+          <p>Experience full-day and multi-day holiday packages covering Eravikulam National Park, Mattupetty Dam, Echo Point, Kundala Lake, Top Station, Blossom Park, Attukal Waterfalls, and tea factory museum tours.</p>
+        </section>
+        <section>
+          <h2>Our Travel Vehicle Fleet</h2>
+          <p>Choose from well-maintained, sanitized vehicles including Sedan (Swift Dzire, Etios), premium SUVs (Innova, Innova Crysta, Ertiga), and luxury Tempo Travellers for group tours. Call +91 90611 40533 or +91 94003 80433 for 24/7 taxi booking.</p>
+        </section>
+      </main>
+    </noscript>
+
+    <!-- React App Root Container with Crawlable Initial Content (hydrated on mount) -->
+    <div id="root">
+      <div style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; font-family: sans-serif; text-align: center; color: #1a1610;">
+        <h1>Munnar Taxi Service | Jothilaxmi Cabs & Tour Packages</h1>
+        <p style="max-width: 640px; margin-top: 1rem; line-height: 1.6; color: #4b5563;">
+          Welcome to Jothilaxmi Munnar Taxi Service. We provide reliable hill station cabs, Cochin airport pickups, full-day Munnar sightseeing tours, and complete Kerala holiday transportation.
+        </p>
+        <p style="margin-top: 1rem; font-weight: 600; color: #15803d;">
+          24/7 Booking Helpline: +91 90611 40533 | +91 94003 80433
+        </p>
+      </div>
+    </div>
   </body>
 </html>

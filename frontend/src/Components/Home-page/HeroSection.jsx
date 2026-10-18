@@ -45,7 +45,7 @@ export default function HeroSection({ HeroContent }) {
     return (
         <section
             aria-labelledby="hero-title"
-            className="relative w-full min-h-[100svh] sm:min-h-[660px] lg:min-h-[85vh] xl:min-h-[92vh] flex items-end sm:items-center overflow-hidden pt-24 sm:pt-32 pb-28 sm:pb-16 lg:pb-16"
+            className="relative w-full min-h-[100svh] sm:min-h-[660px] lg:min-h-[85vh] xl:min-h-[92vh] flex items-end sm:items-center overflow-hidden pt-20 sm:pt-24 pb-28 sm:pb-16 lg:pb-16"
         >
             {/* Dynamic background – stacked crossfade */}
             <div className="absolute inset-0" aria-hidden="true">

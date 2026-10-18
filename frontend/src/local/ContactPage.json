@@ -1,11 +1,11 @@
 {
     "heroSection": {
-        "title": "Let’s Plan Your Munnar Trip",
-        "description": "Contact us for best taxi services & tour packages"
+        "title": "Contact Us - Munnar Taxi Booking",
+        "description": "Get in touch with Jothilaxmi Cabs for 24/7 airport transfers, full-day sightseeing taxi rentals, and custom Kerala tour plans."
     },
     "contactSection": {
         "infoTitle": "Contact Information",
-        "infoText": "",
+        "infoText": "Have questions about our Munnar taxi fares, airport pickups, or customized Kerala tour packages? Reach out to our dedicated support team 24/7 via phone, WhatsApp, or email for immediate assistance and transparent quotes.",
         "contacts": [
             {
                 "id": 1,
@@ -32,13 +32,13 @@
                 "id": 4,
                 "icon": "clock",
                 "label": "Availability",
-                "value": "24/7 Available"
+                "value": "24/7 Service Available"
             },
             {
                 "id": 5,
                 "icon": "location",
                 "label": "Our Location",
-                "value": "Munnar, Kerala"
+                "value": "Munnar Town, Idukki District, Kerala - 685612"
             }
         ],
         "socialsTitle": "Follow us",
@@ -68,9 +68,14 @@
                 "href": "https://www.youtube.com/"
             }
         ],
-        "formBadge": "",
-        "formTitle": "Send a Message",
-        "formText": "",
-        "services": []
+        "formBadge": "Fast Response Guaranteed",
+        "formTitle": "Send a Booking Inquiry",
+        "formText": "Fill out the travel request form below with your journey dates, pickup location, and vehicle requirements. Our booking team will contact you promptly with an all-inclusive quote.",
+        "services": [
+            "Munnar Local Sightseeing (Full Day)",
+            "Cochin Airport Pickup & Drop",
+            "Munnar to Alleppey / Varkala Outstation",
+            "Custom Multi-Day Kerala Tour Package"
+        ]
     }
 }

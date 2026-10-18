@@ -41,7 +41,7 @@ export default function PlacesToVisit() {
                             <span>Top Sightseeing Destinations</span>
                         </div>
                         <h2 id="places-title" className="mt-2.5 sm:mt-3 font-display text-[28px] font-semibold leading-tight text-gray-900 sm:text-4xl lg:text-[44px]">
-                            Top Places to Visit in Munnar
+                            Famous Sightseeing Spots & Attractions
                         </h2>
                         <p className="mt-2 max-w-[700px] text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
                             Explore the most beautiful tourist attractions in Munnar. From tea gardens to waterfalls and wildlife, enjoy a perfect trip.

@@ -1,138 +1,138 @@
 {
     "places": [
         {
-            "title": "Tea Gardens",
+            "title": "Tea Gardens & Plantations",
             "region": "Munnar",
             "category": "Nature",
-            "location": "Munnar",
+            "location": "Munnar, Kerala",
             "type": "hills",
-            "description": "Endless lush green tea plantations offering breathtaking views.",
+            "description": "Endless emerald tea plantations rolling across misty hills. Tour century-old tea estates, watch fresh tea leaves plucked by local pickers, and sample authentic Munnar fresh tea.",
             "image": "/place-visite/padmanabhaswamy-temple.webp"
         },
         {
             "title": "Eravikulam National Park",
             "region": "Munnar",
             "category": "Wildlife",
-            "location": "Munnar",
+            "location": "Munnar, Kerala",
             "type": "forest",
-            "description": "Home to the rare Nilgiri Tahr and scenic mountain landscapes.",
+            "description": "Sanctuary for the endangered Nilgiri Tahr mountain goat and blooming Neelakurinji flowers. Enjoy scenic safari bus rides through high-altitude shola grasslands and Anamudi views.",
             "image": "/place-visite/Eravikulam-national-park.webp"
         },
         {
-            "title": "Mattupetty Dam",
+            "title": "Mattupetty Dam & Reservoir",
             "region": "Munnar",
             "category": "Lake & Dam",
-            "location": "Munnar",
+            "location": "Munnar, Kerala",
             "type": "lake",
-            "description": "A peaceful picnic spot with boating and stunning reservoir views.",
+            "description": "A gravity dam surrounded by lush green hills and tea plantations. Enjoy thrilling speedboating, peaceful pedal boats, and frequent wild elephant sightings near the water edge.",
             "image": "/place-visite/Mattupetty-Dam-Munnar.webp"
         },
         {
             "title": "Echo Point",
             "region": "Munnar",
             "category": "Viewpoint",
-            "location": "Munnar",
+            "location": "Munnar, Kerala",
             "type": "hills",
-            "description": "A unique place where your voice echoes through the hills.",
+            "description": "A picturesque confluence of three mountain streams where natural acoustics create an enchanting echo of your voice across the misty reservoir valley and eucalyptus trees.",
             "image": "/place-visite/Echo-Point_munnar.webp"
         },
         {
-            "title": "Top Station",
+            "title": "Top Station Viewpoint",
             "region": "Munnar",
             "category": "Viewpoint",
-            "location": "Munnar",
+            "location": "Munnar, Kerala",
             "type": "hills",
-            "description": "Highest point in Munnar with panoramic valley views.",
+            "description": "The highest altitude point on the Munnar-Kodaikanal road offering breathtaking 360-degree panoramic views of the Western Ghats and the rolling plains of neighboring Tamil Nadu.",
             "image": "/place-visite/topstation-tour-munnar.webp"
         },
         {
             "title": "Attukal Waterfalls",
             "region": "Munnar",
             "category": "Waterfall",
-            "location": "Munnar",
+            "location": "Pallivasal, Munnar",
             "type": "waterfall",
-            "description": "A scenic waterfall perfect for nature lovers and photographers.",
+            "description": "A cascade of cool mountain water plunging through rocky cliffs surrounded by lush green foliage. An ideal spot for photography, nature treks, and refreshing mountain air.",
             "image": "/place-visite/Attukal Waterfalls.webp"
         },
         {
-            "title": "Kundala Lake",
+            "title": "Kundala Lake & Dam",
             "region": "Munnar",
             "category": "Lake & Dam",
-            "location": "Munnar",
+            "location": "Munnar, Kerala",
             "type": "lake",
-            "description": "A serene lake known for pedal boating and cherry blossoms.",
+            "description": "Home to Asia's first arch dam, surrounded by fragrant pine groves. Experience unique Kashmiri-style Shikara boat rides, pedal boating, and blooming cherry blossoms in winter.",
             "image": "/place-visite/kundalaka_lake.webp"
         },
         {
-            "title": "Blossom Park",
+            "title": "Blossom International Park",
             "region": "Munnar",
             "category": "Garden",
-            "location": "Munnar",
+            "location": "Munnar Town",
             "type": "hills",
-            "description": "A beautiful park with gardens, cycling, and family activities.",
+            "description": "A serene 16-acre park beside the Muthirapuzha River featuring landscaped floral gardens, tree houses, children's play areas, cycling trails, and peaceful walking pathways.",
             "image": "/place-visite/blossom_park.webp"
         },
         {
             "title": "Pothamedu View Point",
             "region": "Munnar",
             "category": "Viewpoint",
-            "location": "Munnar",
+            "location": "Munnar, Kerala",
             "type": "hills",
-            "description": "Perfect viewpoint to enjoy sunrise and sunset over tea estates.",
+            "description": "Spectacular cliffside viewpoint looking down upon sprawling cardamom, pepper, and tea plantations. Renowned for dramatic sunset views and mist rolling through valley gorges.",
             "image": "/place-visite/Pothamedu-View-Point-sunrise.webp"
         },
         {
             "title": "Chinnar Wildlife Sanctuary",
             "region": "Munnar",
             "category": "Wildlife",
-            "location": "Marayoor",
+            "location": "Marayoor, Munnar",
             "type": "forest",
-            "description": "A protected area with diverse wildlife and trekking options.",
+            "description": "A protected rain-shadow sanctuary home to the rare Grizzled Giant Squirrel, star tortoises, leopards, and sandalwood forests. Offers guided nature walks and watchtower visits.",
             "image": "/place-visite/Chinnar-Forest.webp"
         },
         {
-            "title": "Jadayu Eagle",
+            "title": "Jatayu Earth's Center",
             "region": "Kerala",
             "category": "Adventure",
-            "location": "Kollam",
+            "location": "Chadayamangalam, Kollam",
             "type": "hills",
-            "description": "Home to the world's largest bird sculpture and a famous adventure tourism destination in Kerala.",
+            "description": "A world-renowned tourism park featuring the world's largest functional bird sculpture, state-of-the-art cable car rides, 6D theater, and adventure activities atop Jatayu rock.",
             "image": "/place-visite/jadayu.webp"
         },
         {
-            "title": "Padmanaba temple",
+            "title": "Sree Padmanabhaswamy Temple",
             "region": "Kerala",
             "category": "Temple",
             "location": "Thiruvananthapuram",
             "type": "temple",
-            "description": "A historic Hindu temple in Thiruvananthapuram known for its stunning architecture and rich treasures.",
+            "description": "A sacred Dravidian-style architectural masterpiece dedicated to Lord Vishnu, world-famous for its intricate stone carvings, sacred gold-plated gopuram, and ancient heritage.",
             "image": "/place-visite/padmanabhaswamy-temple.webp"
         },
         {
-            "title": "Varkala Beach",
+            "title": "Varkala Cliff Beach",
             "region": "Kerala",
             "category": "Beach",
-            "location": "Varkala",
+            "location": "Varkala, Kerala",
             "type": "beach",
-            "description": "A beautiful cliffside beach famous for its scenic views, cafes, and peaceful atmosphere.",
+            "description": "Kerala's only cliff beach bordering the Arabian Sea. Renowned for scenic coastal boardwalks, natural mineral water springs, seaside seafood restaurants, and panoramic sunsets.",
             "image": "/place-visite/varkala-beach.webp"
         },
         {
-            "title": "Alappuzha",
+            "title": "Alappuzha Backwaters",
             "region": "Kerala",
             "category": "Backwaters",
-            "location": "Alappuzha",
+            "location": "Alappuzha (Alleppey)",
             "type": "lake",
-            "description": "Known as the Venice of the East, Alappuzha is famous for its backwaters and houseboat cruises.",
+            "description": "Known as the Venice of the East, famous for tranquil palm-fringed canals, lagoon networks, traditional houseboat cruises, and peaceful village life across Vembanad Lake.",
             "image": "/place-visite/Azhappula.webp"
         },
         {
-            "title": "Guruvayur Temple",
+            "title": "Guruvayur Sri Krishna Temple",
             "region": "Kerala",
             "category": "Temple",
-            "location": "Guruvayur",
+            "location": "Guruvayur, Thrissur",
             "type": "temple",
-            "description": "One of the most revered Krishna temples in India, attracting devotees from across the country.",
+            "description": "One of India's most holy pilgrimage sites, known as Bhuloka Vaikunta. Features traditional Kerala temple rituals, elephant sanctuary visits, and cultural devotional ceremonies.",
             "image": "/place-visite/Guruvayur-Temple.webp"
         }
     ]
