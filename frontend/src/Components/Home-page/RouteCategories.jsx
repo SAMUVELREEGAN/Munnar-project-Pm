@@ -38,7 +38,7 @@ export default function RouteCategories({ data }) {
                             <h3 className="font-display text-lg font-semibold text-gray-900">{cat.title}</h3>
                             <ul className="mt-4 space-y-2">
                                 {cat.items.map((item) => (
-                                    <li key={item} className="text-xs sm:text-sm leading-relaxed text-gray-600">
+                                    <li key={item} className="text-sm sm:text-base leading-relaxed text-gray-600">
                                         {item}
                                     </li>
                                 ))}

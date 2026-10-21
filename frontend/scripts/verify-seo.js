@@ -85,15 +85,41 @@ PAGES.forEach((page) => {
 
     // Robots meta test
     const robotsMatch = html.match(/<meta[^>]*?name="robots"[^>]*?content="([\s\S]*?)"/i);
-    check(`${page.file} robots is index, follow`, robotsMatch && robotsMatch[1].includes("index"));
+    check(`${page.file} robots is index, follow`, robotsMatch && robotsMatch[1].includes("index") && !robotsMatch[1].includes("noindex"));
+
+    // Hreflang self-references
+    check(`${page.file} has hreflang en`, /hreflang="en"/i.test(html));
+    check(`${page.file} has hreflang en-IN`, /hreflang="en-IN"/i.test(html));
+    check(`${page.file} has hreflang x-default`, /hreflang="x-default"/i.test(html));
+
+    // Favicon links
+    check(`${page.file} links favicon.ico`, /rel="icon"[^>]*favicon\.ico/i.test(html) || /href="[^"]*favicon\.ico"/i.test(html));
 
     // H1 check in body
     check(`${page.file} has <h1> heading`, /<h1[^>]*?>([\s\S]*?)<\/h1>/i.test(html));
 
+    // Crawlable word count (strip tags roughly)
+    const bodyText = html.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    const wordCount = bodyText.split(/\s+/).filter(Boolean).length;
+    check(`${page.file} has substantial content (${wordCount} words)`, wordCount >= 120, `Need crawlable text for SEMrush / bots`);
+
     // Structured data check
     const hasSchema = html.includes("application/ld+json");
     check(`${page.file} has JSON-LD schema`, hasSchema);
+    if (hasSchema) {
+        try {
+            const schemaMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i);
+            JSON.parse(schemaMatch[1]);
+            check(`${page.file} JSON-LD parses`, true);
+        } catch (e) {
+            check(`${page.file} JSON-LD parses`, false, e.message);
+        }
+    }
 });
+
+// 5. Hostinger rewrite rules present
+const htaccessPath = path.join(BUILD_DIR, ".htaccess");
+check(".htaccess exists for Hostinger SPA + static files", fs.existsSync(htaccessPath));
 
 console.log("\n==========================================");
 if (failed) {

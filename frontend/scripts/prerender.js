@@ -115,6 +115,30 @@ ROUTES.forEach((route) => {
         `<link data-rh="true" rel="canonical" href="${route.canonical}" />`
     );
 
+    // Replace hreflang alternates (self-referencing for this route)
+    const hreflangBlock = [
+        `<link data-rh="true" rel="alternate" hreflang="en" href="${route.canonical}" />`,
+        `<link data-rh="true" rel="alternate" hreflang="en-IN" href="${route.canonical}" />`,
+        `<link data-rh="true" rel="alternate" hreflang="x-default" href="${route.canonical}" />`,
+    ].join("");
+    if (/rel="alternate"[^>]*hreflang=/i.test(routeHtml)) {
+        routeHtml = routeHtml.replace(
+            /(<link[^>]*?rel="alternate"[^>]*?hreflang="en"[^>]*?>)([\s\S]*?)(<link[^>]*?rel="alternate"[^>]*?hreflang="x-default"[^>]*?>)/i,
+            hreflangBlock
+        );
+    } else {
+        routeHtml = routeHtml.replace(
+            /<link[^>]*?rel="canonical"[^>]*?>/i,
+            (match) => `${match}${hreflangBlock}`
+        );
+    }
+
+    // Ensure robots allows indexing on prerendered marketing pages
+    routeHtml = routeHtml.replace(
+        /<meta[^>]*?name="robots"[^>]*?>/i,
+        `<meta data-rh="true" name="robots" content="index, follow" />`
+    );
+
     // Replace OG Title & Description & URL
     routeHtml = routeHtml.replace(
         /<meta[^>]*?property="og:title"[^>]*?>/i,
@@ -149,12 +173,24 @@ ROUTES.forEach((route) => {
         }
     }
 
-    // Inject route-specific pre-rendered content inside root container
+    // Inject route-specific pre-rendered content inside root container (crawlable text)
     const prerenderedContent = `
-      <div style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; font-family: sans-serif; text-align: center; color: #1a1610;">
+      <div style="min-height: 100vh; padding: 2rem; font-family: Georgia, serif; color: #1a1610; line-height: 1.65; max-width: 920px; margin: 0 auto;">
         <h1>${route.h1}</h1>
-        <p style="max-width: 640px; margin-top: 1rem; line-height: 1.6; color: #4b5563;">
+        <p style="margin-top: 1rem; color: #4b5563;">
           ${route.summary}
+        </p>
+        <h2>Book Munnar Taxi &amp; Kerala Tour Cabs</h2>
+        <p style="color: #4b5563;">
+          Jothilaxmi Cabs offers Cochin Airport to Munnar transfers, full-day sightseeing taxis, outstation Kerala
+          packages, and clean vehicles from sedans to Tempo Travellers. Transparent fares include fuel and driver
+          allowance. Call +91 90611 40533 or +91 94003 80433 for 24/7 booking support.
+        </p>
+        <h3>Popular Munnar sightseeing stops</h3>
+        <p style="color: #4b5563;">
+          Eravikulam National Park, Mattupetty Dam, Echo Point, Kundala Lake, Top Station, Attukal Waterfalls, tea
+          gardens, and Blossom Park are commonly covered on our local cab itineraries. Share your hotel and travel
+          dates for a customised plan.
         </p>
         <p style="margin-top: 1rem; font-weight: 600; color: #15803d;">
           24/7 Booking Helpline: +91 90611 40533 | +91 94003 80433

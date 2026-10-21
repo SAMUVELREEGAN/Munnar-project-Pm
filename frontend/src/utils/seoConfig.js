@@ -24,14 +24,17 @@ export const SEO_CONFIG = {
                     "description": "Professional Munnar taxi service offering airport transfers, Kerala tour packages, and sightseeing cabs."
                 },
                 {
-                    "@type": "TaxiService",
+                    "@type": ["TaxiService", "LocalBusiness"],
                     "@id": `${BASE_URL}/#taxiservice`,
                     "name": "Jothilaxmi Munnar Taxi Service",
                     "url": `${BASE_URL}/`,
                     "logo": `${BASE_URL}/images/munnar_logo.webp`,
                     "image": `${BASE_URL}/images/Munnar-bg.webp`,
                     "telephone": ["+919061140533", "+919400380433"],
+                    "email": "veereshvv792484@gmail.com",
                     "priceRange": "₹₹",
+                    "currenciesAccepted": "INR",
+                    "paymentAccepted": "Cash, UPI",
                     "address": {
                         "@type": "PostalAddress",
                         "streetAddress": "Munnar Town",
@@ -39,6 +42,11 @@ export const SEO_CONFIG = {
                         "addressRegion": "Kerala",
                         "postalCode": "685612",
                         "addressCountry": "IN"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 10.0889,
+                        "longitude": 77.0595
                     },
                     "openingHoursSpecification": [
                         {

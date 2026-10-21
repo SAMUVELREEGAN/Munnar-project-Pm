@@ -25,11 +25,18 @@ export default function SEO({
             {description && <meta name="description" content={description} />}
             {keywords && <meta name="keywords" content={keywords} />}
             <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
+            <html lang="en" />
             <link rel="canonical" href={fullCanonical} />
+
+            {/* Self-referencing hreflang (single-language site) */}
+            <link rel="alternate" hrefLang="en" href={fullCanonical} />
+            <link rel="alternate" hrefLang="en-IN" href={fullCanonical} />
+            <link rel="alternate" hrefLang="x-default" href={fullCanonical} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={ogType} />
             <meta property="og:site_name" content={DEFAULT_SITE_NAME} />
+            <meta property="og:locale" content="en_IN" />
             {title && <meta property="og:title" content={title} />}
             {description && <meta property="og:description" content={description} />}
             <meta property="og:url" content={fullCanonical} />

@@ -38,7 +38,7 @@ export default function ContentSection({
                                 {intro}
                             </p>
                         )}
-                        <div className="mt-3.5 space-y-3 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
+                        <div className="mt-3.5 space-y-3 text-sm sm:text-base leading-relaxed text-gray-600">
                             {paragraphs.map((text, i) => (
                                 <p key={i}>{text}</p>
                             ))}

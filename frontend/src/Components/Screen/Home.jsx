@@ -6,15 +6,17 @@ import TopPlaces from '../Home-page/TopPlaces'
 import Vehicles from '../Home-page/Vehicles'
 import Testimonials from '../Home-page/Testimonials'
 import FAQSection, { FAQS } from '../Home-page/FAQSection'
+import SeoContent from '../Home-page/SeoContent'
 import Subscribe from '../Home-page/Subscribe'
 import HomeSection from "../../local/HomePage.json"
 import SEO from '../SEO/SEO'
 import { SEO_CONFIG } from '../../utils/seoConfig'
 
 export const Home = () => {
+    // FAQPage node without nested @context (invalid inside @graph)
     const faqSchema = {
-        "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://munnarjothilaxmitaxi.com/#faq",
         "mainEntity": FAQS.map((faq) => ({
             "@type": "Question",
             "name": faq.question,
@@ -47,6 +49,7 @@ export const Home = () => {
                 <Features accessibilitySection={HomeSection?.accessibilitySection || HomeSection?.premiumServices} />
                 <TopPlaces data={HomeSection?.topPlacesSection} />
                 <Vehicles VehiclePackages={HomeSection?.VehiclePackages} />
+                <SeoContent />
                 <Testimonials />
                 <FAQSection />
                 <Subscribe />

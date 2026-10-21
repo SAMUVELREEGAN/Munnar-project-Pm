@@ -1,0 +1,25 @@
+# Hostinger / Apache — serve real static files; SPA fallback only when missing
+Options -MultiViews
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Prefer HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Canonical host (non-www)
+  RewriteCond %{HTTP_HOST} ^www\.munnarjothilaxmitaxi\.com$ [NC]
+  RewriteRule ^ https://munnarjothilaxmitaxi.com%{REQUEST_URI} [L,R=301]
+
+  # Existing files and directories are served as-is (favicon, robots.txt, sitemap.xml, assets)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Correct MIME types so crawlers do not treat sitemap/robots as HTML
+AddType text/plain .txt
+AddType application/xml .xml
+AddType image/x-icon .ico
+AddType image/png .png
