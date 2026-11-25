@@ -11,15 +11,15 @@
                 "id": 1,
                 "icon": "phone",
                 "label": "Phone Number",
-                "value": "+91 94003 80433",
-                "href": "tel:+919400380433"
+                "value": "+91 90611 40533",
+                "href": "tel:+919061140533"
             },
             {
                 "id": 2,
                 "icon": "phone",
                 "label": "Alternate Phone",
-                "value": "+91 90611 40533",
-                "href": "tel:+919061140533"
+                "value": "+91 94003 80433",
+                "href": "tel:+919400380433"
             },
             {
                 "id": 3,
